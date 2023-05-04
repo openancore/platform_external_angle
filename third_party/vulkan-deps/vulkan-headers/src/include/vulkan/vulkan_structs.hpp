@@ -70174,6 +70174,105 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PhysicalDeviceRayTracingPipelinePropertiesKHR;
   };
 
+  struct PhysicalDeviceRayTracingPositionFetchFeaturesKHR
+  {
+    using NativeType = VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceRayTracingPositionFetchFeaturesKHR;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceRayTracingPositionFetchFeaturesKHR( VULKAN_HPP_NAMESPACE::Bool32 rayTracingPositionFetch_ = {},
+                                                                           void *                       pNext_                   = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , rayTracingPositionFetch( rayTracingPositionFetch_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR
+      PhysicalDeviceRayTracingPositionFetchFeaturesKHR( PhysicalDeviceRayTracingPositionFetchFeaturesKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceRayTracingPositionFetchFeaturesKHR( VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceRayTracingPositionFetchFeaturesKHR( *reinterpret_cast<PhysicalDeviceRayTracingPositionFetchFeaturesKHR const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceRayTracingPositionFetchFeaturesKHR & operator=( PhysicalDeviceRayTracingPositionFetchFeaturesKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceRayTracingPositionFetchFeaturesKHR & operator=( VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceRayTracingPositionFetchFeaturesKHR const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceRayTracingPositionFetchFeaturesKHR & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceRayTracingPositionFetchFeaturesKHR &
+                            setRayTracingPositionFetch( VULKAN_HPP_NAMESPACE::Bool32 rayTracingPositionFetch_ ) VULKAN_HPP_NOEXCEPT
+    {
+      rayTracingPositionFetch = rayTracingPositionFetch_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR *>( this );
+    }
+
+    operator VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, rayTracingPositionFetch );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceRayTracingPositionFetchFeaturesKHR const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceRayTracingPositionFetchFeaturesKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( rayTracingPositionFetch == rhs.rayTracingPositionFetch );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceRayTracingPositionFetchFeaturesKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                   = StructureType::ePhysicalDeviceRayTracingPositionFetchFeaturesKHR;
+    void *                              pNext                   = {};
+    VULKAN_HPP_NAMESPACE::Bool32        rayTracingPositionFetch = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceRayTracingPositionFetchFeaturesKHR>
+  {
+    using Type = PhysicalDeviceRayTracingPositionFetchFeaturesKHR;
+  };
+
   struct PhysicalDeviceRayTracingPropertiesNV
   {
     using NativeType = VkPhysicalDeviceRayTracingPropertiesNV;
@@ -102833,10 +102932,10 @@ namespace VULKAN_HPP_NAMESPACE
     static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoDecodeH265PictureInfoKHR;
 
 #if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR VideoDecodeH265PictureInfoKHR( StdVideoDecodeH265PictureInfo * pStdPictureInfo_      = {},
-                                                        uint32_t                        sliceSegmentCount_    = {},
-                                                        const uint32_t *                pSliceSegmentOffsets_ = {},
-                                                        const void *                    pNext_                = nullptr ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR VideoDecodeH265PictureInfoKHR( const StdVideoDecodeH265PictureInfo * pStdPictureInfo_      = {},
+                                                        uint32_t                              sliceSegmentCount_    = {},
+                                                        const uint32_t *                      pSliceSegmentOffsets_ = {},
+                                                        const void *                          pNext_                = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
       , pStdPictureInfo( pStdPictureInfo_ )
       , sliceSegmentCount( sliceSegmentCount_ )
@@ -102852,7 +102951,7 @@ namespace VULKAN_HPP_NAMESPACE
     }
 
 #  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
-    VideoDecodeH265PictureInfoKHR( StdVideoDecodeH265PictureInfo *                                       pStdPictureInfo_,
+    VideoDecodeH265PictureInfoKHR( const StdVideoDecodeH265PictureInfo *                                 pStdPictureInfo_,
                                    VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const uint32_t> const & sliceSegmentOffsets_,
                                    const void *                                                          pNext_ = nullptr )
       : pNext( pNext_ )
@@ -102879,7 +102978,7 @@ namespace VULKAN_HPP_NAMESPACE
       return *this;
     }
 
-    VULKAN_HPP_CONSTEXPR_14 VideoDecodeH265PictureInfoKHR & setPStdPictureInfo( StdVideoDecodeH265PictureInfo * pStdPictureInfo_ ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR_14 VideoDecodeH265PictureInfoKHR & setPStdPictureInfo( const StdVideoDecodeH265PictureInfo * pStdPictureInfo_ ) VULKAN_HPP_NOEXCEPT
     {
       pStdPictureInfo = pStdPictureInfo_;
       return *this;
@@ -102924,7 +103023,7 @@ namespace VULKAN_HPP_NAMESPACE
 #  else
     std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
                const void * const &,
-               StdVideoDecodeH265PictureInfo * const &,
+               const StdVideoDecodeH265PictureInfo * const &,
                uint32_t const &,
                const uint32_t * const &>
 #  endif
@@ -102954,11 +103053,11 @@ namespace VULKAN_HPP_NAMESPACE
 #endif
 
   public:
-    VULKAN_HPP_NAMESPACE::StructureType sType                = StructureType::eVideoDecodeH265PictureInfoKHR;
-    const void *                        pNext                = {};
-    StdVideoDecodeH265PictureInfo *     pStdPictureInfo      = {};
-    uint32_t                            sliceSegmentCount    = {};
-    const uint32_t *                    pSliceSegmentOffsets = {};
+    VULKAN_HPP_NAMESPACE::StructureType   sType                = StructureType::eVideoDecodeH265PictureInfoKHR;
+    const void *                          pNext                = {};
+    const StdVideoDecodeH265PictureInfo * pStdPictureInfo      = {};
+    uint32_t                              sliceSegmentCount    = {};
+    const uint32_t *                      pSliceSegmentOffsets = {};
   };
 
   template <>
