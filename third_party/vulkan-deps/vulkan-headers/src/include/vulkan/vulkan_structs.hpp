@@ -51549,6 +51549,108 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PhysicalDeviceAmigoProfilingFeaturesSEC;
   };
 
+  struct PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT
+  {
+    using NativeType = VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT( VULKAN_HPP_NAMESPACE::Bool32 attachmentFeedbackLoopDynamicState_ = {},
+                                                                                      void *                       pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , attachmentFeedbackLoopDynamicState( attachmentFeedbackLoopDynamicState_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT( PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT const & rhs )
+      VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT( VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT(
+          *reinterpret_cast<PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT &
+      operator=( PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT &
+      operator=( VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT &
+                            setAttachmentFeedbackLoopDynamicState( VULKAN_HPP_NAMESPACE::Bool32 attachmentFeedbackLoopDynamicState_ ) VULKAN_HPP_NOEXCEPT
+    {
+      attachmentFeedbackLoopDynamicState = attachmentFeedbackLoopDynamicState_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT *>( this );
+    }
+
+    operator VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, attachmentFeedbackLoopDynamicState );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( attachmentFeedbackLoopDynamicState == rhs.attachmentFeedbackLoopDynamicState );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                              = StructureType::ePhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT;
+    void *                              pNext                              = {};
+    VULKAN_HPP_NAMESPACE::Bool32        attachmentFeedbackLoopDynamicState = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT>
+  {
+    using Type = PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT;
+  };
+
   struct PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT
   {
     using NativeType = VkPhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT;
