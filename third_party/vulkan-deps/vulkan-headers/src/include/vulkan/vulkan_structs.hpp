@@ -56517,6 +56517,108 @@ namespace VULKAN_HPP_NAMESPACE
   };
   using PhysicalDeviceDynamicRenderingFeaturesKHR = PhysicalDeviceDynamicRenderingFeatures;
 
+  struct PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT
+  {
+    using NativeType = VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT( VULKAN_HPP_NAMESPACE::Bool32 dynamicRenderingUnusedAttachments_ = {},
+                                                                                     void *                       pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , dynamicRenderingUnusedAttachments( dynamicRenderingUnusedAttachments_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT( PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT const & rhs )
+      VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT( VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT(
+          *reinterpret_cast<PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT &
+      operator=( PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT &
+      operator=( VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT &
+                            setDynamicRenderingUnusedAttachments( VULKAN_HPP_NAMESPACE::Bool32 dynamicRenderingUnusedAttachments_ ) VULKAN_HPP_NOEXCEPT
+    {
+      dynamicRenderingUnusedAttachments = dynamicRenderingUnusedAttachments_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT *>( this );
+    }
+
+    operator VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, dynamicRenderingUnusedAttachments );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( dynamicRenderingUnusedAttachments == rhs.dynamicRenderingUnusedAttachments );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                             = StructureType::ePhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT;
+    void *                              pNext                             = {};
+    VULKAN_HPP_NAMESPACE::Bool32        dynamicRenderingUnusedAttachments = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT>
+  {
+    using Type = PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT;
+  };
+
   struct PhysicalDeviceExclusiveScissorFeaturesNV
   {
     using NativeType = VkPhysicalDeviceExclusiveScissorFeaturesNV;
