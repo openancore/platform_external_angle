@@ -32884,6 +32884,104 @@ namespace VULKAN_HPP_NAMESPACE
     VULKAN_HPP_NAMESPACE::ExternalMemoryHandleTypeFlagsNV compatibleHandleTypes         = {};
   };
 
+  struct ExternalMemoryAcquireUnmodifiedEXT
+  {
+    using NativeType = VkExternalMemoryAcquireUnmodifiedEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eExternalMemoryAcquireUnmodifiedEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR ExternalMemoryAcquireUnmodifiedEXT( VULKAN_HPP_NAMESPACE::Bool32 acquireUnmodifiedMemory_ = {},
+                                                             const void *                 pNext_                   = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , acquireUnmodifiedMemory( acquireUnmodifiedMemory_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR ExternalMemoryAcquireUnmodifiedEXT( ExternalMemoryAcquireUnmodifiedEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    ExternalMemoryAcquireUnmodifiedEXT( VkExternalMemoryAcquireUnmodifiedEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : ExternalMemoryAcquireUnmodifiedEXT( *reinterpret_cast<ExternalMemoryAcquireUnmodifiedEXT const *>( &rhs ) )
+    {
+    }
+
+    ExternalMemoryAcquireUnmodifiedEXT & operator=( ExternalMemoryAcquireUnmodifiedEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    ExternalMemoryAcquireUnmodifiedEXT & operator=( VkExternalMemoryAcquireUnmodifiedEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::ExternalMemoryAcquireUnmodifiedEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 ExternalMemoryAcquireUnmodifiedEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ExternalMemoryAcquireUnmodifiedEXT &
+                            setAcquireUnmodifiedMemory( VULKAN_HPP_NAMESPACE::Bool32 acquireUnmodifiedMemory_ ) VULKAN_HPP_NOEXCEPT
+    {
+      acquireUnmodifiedMemory = acquireUnmodifiedMemory_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkExternalMemoryAcquireUnmodifiedEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkExternalMemoryAcquireUnmodifiedEXT *>( this );
+    }
+
+    operator VkExternalMemoryAcquireUnmodifiedEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkExternalMemoryAcquireUnmodifiedEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, acquireUnmodifiedMemory );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( ExternalMemoryAcquireUnmodifiedEXT const & ) const = default;
+#else
+    bool operator==( ExternalMemoryAcquireUnmodifiedEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( acquireUnmodifiedMemory == rhs.acquireUnmodifiedMemory );
+#  endif
+    }
+
+    bool operator!=( ExternalMemoryAcquireUnmodifiedEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                   = StructureType::eExternalMemoryAcquireUnmodifiedEXT;
+    const void *                        pNext                   = {};
+    VULKAN_HPP_NAMESPACE::Bool32        acquireUnmodifiedMemory = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eExternalMemoryAcquireUnmodifiedEXT>
+  {
+    using Type = ExternalMemoryAcquireUnmodifiedEXT;
+  };
+
   struct ExternalMemoryBufferCreateInfo
   {
     using NativeType = VkExternalMemoryBufferCreateInfo;
