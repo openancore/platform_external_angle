@@ -20847,6 +20847,231 @@ namespace VULKAN_HPP_NAMESPACE
   };
   using DependencyInfoKHR = DependencyInfo;
 
+  struct DepthBiasInfoEXT
+  {
+    using NativeType = VkDepthBiasInfoEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eDepthBiasInfoEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR DepthBiasInfoEXT( float        depthBiasConstantFactor_ = {},
+                                           float        depthBiasClamp_          = {},
+                                           float        depthBiasSlopeFactor_    = {},
+                                           const void * pNext_                   = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , depthBiasConstantFactor( depthBiasConstantFactor_ )
+      , depthBiasClamp( depthBiasClamp_ )
+      , depthBiasSlopeFactor( depthBiasSlopeFactor_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR DepthBiasInfoEXT( DepthBiasInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    DepthBiasInfoEXT( VkDepthBiasInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT : DepthBiasInfoEXT( *reinterpret_cast<DepthBiasInfoEXT const *>( &rhs ) ) {}
+
+    DepthBiasInfoEXT & operator=( DepthBiasInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    DepthBiasInfoEXT & operator=( VkDepthBiasInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::DepthBiasInfoEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 DepthBiasInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 DepthBiasInfoEXT & setDepthBiasConstantFactor( float depthBiasConstantFactor_ ) VULKAN_HPP_NOEXCEPT
+    {
+      depthBiasConstantFactor = depthBiasConstantFactor_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 DepthBiasInfoEXT & setDepthBiasClamp( float depthBiasClamp_ ) VULKAN_HPP_NOEXCEPT
+    {
+      depthBiasClamp = depthBiasClamp_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 DepthBiasInfoEXT & setDepthBiasSlopeFactor( float depthBiasSlopeFactor_ ) VULKAN_HPP_NOEXCEPT
+    {
+      depthBiasSlopeFactor = depthBiasSlopeFactor_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkDepthBiasInfoEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkDepthBiasInfoEXT *>( this );
+    }
+
+    operator VkDepthBiasInfoEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkDepthBiasInfoEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, float const &, float const &, float const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, depthBiasConstantFactor, depthBiasClamp, depthBiasSlopeFactor );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( DepthBiasInfoEXT const & ) const = default;
+#else
+    bool operator==( DepthBiasInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( depthBiasConstantFactor == rhs.depthBiasConstantFactor ) &&
+             ( depthBiasClamp == rhs.depthBiasClamp ) && ( depthBiasSlopeFactor == rhs.depthBiasSlopeFactor );
+#  endif
+    }
+
+    bool operator!=( DepthBiasInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                   = StructureType::eDepthBiasInfoEXT;
+    const void *                        pNext                   = {};
+    float                               depthBiasConstantFactor = {};
+    float                               depthBiasClamp          = {};
+    float                               depthBiasSlopeFactor    = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eDepthBiasInfoEXT>
+  {
+    using Type = DepthBiasInfoEXT;
+  };
+
+  struct DepthBiasRepresentationInfoEXT
+  {
+    using NativeType = VkDepthBiasRepresentationInfoEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eDepthBiasRepresentationInfoEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR DepthBiasRepresentationInfoEXT( VULKAN_HPP_NAMESPACE::DepthBiasRepresentationEXT depthBiasRepresentation_ =
+                                                           VULKAN_HPP_NAMESPACE::DepthBiasRepresentationEXT::eLeastRepresentableValueFormat,
+                                                         VULKAN_HPP_NAMESPACE::Bool32 depthBiasExact_ = {},
+                                                         const void *                 pNext_          = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , depthBiasRepresentation( depthBiasRepresentation_ )
+      , depthBiasExact( depthBiasExact_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR DepthBiasRepresentationInfoEXT( DepthBiasRepresentationInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    DepthBiasRepresentationInfoEXT( VkDepthBiasRepresentationInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : DepthBiasRepresentationInfoEXT( *reinterpret_cast<DepthBiasRepresentationInfoEXT const *>( &rhs ) )
+    {
+    }
+
+    DepthBiasRepresentationInfoEXT & operator=( DepthBiasRepresentationInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    DepthBiasRepresentationInfoEXT & operator=( VkDepthBiasRepresentationInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::DepthBiasRepresentationInfoEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 DepthBiasRepresentationInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 DepthBiasRepresentationInfoEXT &
+                            setDepthBiasRepresentation( VULKAN_HPP_NAMESPACE::DepthBiasRepresentationEXT depthBiasRepresentation_ ) VULKAN_HPP_NOEXCEPT
+    {
+      depthBiasRepresentation = depthBiasRepresentation_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 DepthBiasRepresentationInfoEXT & setDepthBiasExact( VULKAN_HPP_NAMESPACE::Bool32 depthBiasExact_ ) VULKAN_HPP_NOEXCEPT
+    {
+      depthBiasExact = depthBiasExact_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkDepthBiasRepresentationInfoEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkDepthBiasRepresentationInfoEXT *>( this );
+    }
+
+    operator VkDepthBiasRepresentationInfoEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkDepthBiasRepresentationInfoEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               VULKAN_HPP_NAMESPACE::DepthBiasRepresentationEXT const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, depthBiasRepresentation, depthBiasExact );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( DepthBiasRepresentationInfoEXT const & ) const = default;
+#else
+    bool operator==( DepthBiasRepresentationInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( depthBiasRepresentation == rhs.depthBiasRepresentation ) &&
+             ( depthBiasExact == rhs.depthBiasExact );
+#  endif
+    }
+
+    bool operator!=( DepthBiasRepresentationInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType              sType                   = StructureType::eDepthBiasRepresentationInfoEXT;
+    const void *                                     pNext                   = {};
+    VULKAN_HPP_NAMESPACE::DepthBiasRepresentationEXT depthBiasRepresentation = VULKAN_HPP_NAMESPACE::DepthBiasRepresentationEXT::eLeastRepresentableValueFormat;
+    VULKAN_HPP_NAMESPACE::Bool32                     depthBiasExact          = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eDepthBiasRepresentationInfoEXT>
+  {
+    using Type = DepthBiasRepresentationInfoEXT;
+  };
+
   struct DescriptorAddressInfoEXT
   {
     using NativeType = VkDescriptorAddressInfoEXT;
@@ -32629,6 +32854,101 @@ namespace VULKAN_HPP_NAMESPACE
   };
 #endif /*VK_USE_PLATFORM_ANDROID_KHR*/
 
+#if defined( VK_USE_PLATFORM_SCREEN_QNX )
+  struct ExternalFormatQNX
+  {
+    using NativeType = VkExternalFormatQNX;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eExternalFormatQNX;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR ExternalFormatQNX( uint64_t externalFormat_ = {}, void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , externalFormat( externalFormat_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR ExternalFormatQNX( ExternalFormatQNX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    ExternalFormatQNX( VkExternalFormatQNX const & rhs ) VULKAN_HPP_NOEXCEPT : ExternalFormatQNX( *reinterpret_cast<ExternalFormatQNX const *>( &rhs ) ) {}
+
+    ExternalFormatQNX & operator=( ExternalFormatQNX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    ExternalFormatQNX & operator=( VkExternalFormatQNX const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::ExternalFormatQNX const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 ExternalFormatQNX & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ExternalFormatQNX & setExternalFormat( uint64_t externalFormat_ ) VULKAN_HPP_NOEXCEPT
+    {
+      externalFormat = externalFormat_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkExternalFormatQNX const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkExternalFormatQNX *>( this );
+    }
+
+    operator VkExternalFormatQNX &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkExternalFormatQNX *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, uint64_t const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, externalFormat );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( ExternalFormatQNX const & ) const = default;
+#  else
+    bool operator==( ExternalFormatQNX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( externalFormat == rhs.externalFormat );
+#    endif
+    }
+
+    bool operator!=( ExternalFormatQNX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType          = StructureType::eExternalFormatQNX;
+    void *                              pNext          = {};
+    uint64_t                            externalFormat = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eExternalFormatQNX>
+  {
+    using Type = ExternalFormatQNX;
+  };
+#endif /*VK_USE_PLATFORM_SCREEN_QNX*/
+
   struct ExternalImageFormatProperties
   {
     using NativeType = VkExternalImageFormatProperties;
@@ -43587,6 +43907,104 @@ namespace VULKAN_HPP_NAMESPACE
   };
 #endif /*VK_USE_PLATFORM_METAL_EXT*/
 
+#if defined( VK_USE_PLATFORM_SCREEN_QNX )
+  struct ImportScreenBufferInfoQNX
+  {
+    using NativeType = VkImportScreenBufferInfoQNX;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eImportScreenBufferInfoQNX;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR ImportScreenBufferInfoQNX( struct _screen_buffer * buffer_ = {}, const void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , buffer( buffer_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR ImportScreenBufferInfoQNX( ImportScreenBufferInfoQNX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    ImportScreenBufferInfoQNX( VkImportScreenBufferInfoQNX const & rhs ) VULKAN_HPP_NOEXCEPT
+      : ImportScreenBufferInfoQNX( *reinterpret_cast<ImportScreenBufferInfoQNX const *>( &rhs ) )
+    {
+    }
+
+    ImportScreenBufferInfoQNX & operator=( ImportScreenBufferInfoQNX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    ImportScreenBufferInfoQNX & operator=( VkImportScreenBufferInfoQNX const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::ImportScreenBufferInfoQNX const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 ImportScreenBufferInfoQNX & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ImportScreenBufferInfoQNX & setBuffer( struct _screen_buffer * buffer_ ) VULKAN_HPP_NOEXCEPT
+    {
+      buffer = buffer_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkImportScreenBufferInfoQNX const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkImportScreenBufferInfoQNX *>( this );
+    }
+
+    operator VkImportScreenBufferInfoQNX &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkImportScreenBufferInfoQNX *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, struct _screen_buffer * const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, buffer );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( ImportScreenBufferInfoQNX const & ) const = default;
+#  else
+    bool operator==( ImportScreenBufferInfoQNX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( buffer == rhs.buffer );
+#    endif
+    }
+
+    bool operator!=( ImportScreenBufferInfoQNX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType  = StructureType::eImportScreenBufferInfoQNX;
+    const void *                        pNext  = {};
+    struct _screen_buffer *             buffer = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eImportScreenBufferInfoQNX>
+  {
+    using Type = ImportScreenBufferInfoQNX;
+  };
+#endif /*VK_USE_PLATFORM_SCREEN_QNX*/
+
   struct ImportSemaphoreFdInfoKHR
   {
     using NativeType = VkImportSemaphoreFdInfoKHR;
@@ -54050,6 +54468,140 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV;
   };
 
+  struct PhysicalDeviceDepthBiasControlFeaturesEXT
+  {
+    using NativeType = VkPhysicalDeviceDepthBiasControlFeaturesEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceDepthBiasControlFeaturesEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceDepthBiasControlFeaturesEXT( VULKAN_HPP_NAMESPACE::Bool32 depthBiasControl_                                = {},
+                                                                    VULKAN_HPP_NAMESPACE::Bool32 leastRepresentableValueForceUnormRepresentation_ = {},
+                                                                    VULKAN_HPP_NAMESPACE::Bool32 floatRepresentation_                             = {},
+                                                                    VULKAN_HPP_NAMESPACE::Bool32 depthBiasExact_                                  = {},
+                                                                    void *                       pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , depthBiasControl( depthBiasControl_ )
+      , leastRepresentableValueForceUnormRepresentation( leastRepresentableValueForceUnormRepresentation_ )
+      , floatRepresentation( floatRepresentation_ )
+      , depthBiasExact( depthBiasExact_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceDepthBiasControlFeaturesEXT( PhysicalDeviceDepthBiasControlFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceDepthBiasControlFeaturesEXT( VkPhysicalDeviceDepthBiasControlFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceDepthBiasControlFeaturesEXT( *reinterpret_cast<PhysicalDeviceDepthBiasControlFeaturesEXT const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceDepthBiasControlFeaturesEXT & operator=( PhysicalDeviceDepthBiasControlFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceDepthBiasControlFeaturesEXT & operator=( VkPhysicalDeviceDepthBiasControlFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceDepthBiasControlFeaturesEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceDepthBiasControlFeaturesEXT & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceDepthBiasControlFeaturesEXT &
+                            setDepthBiasControl( VULKAN_HPP_NAMESPACE::Bool32 depthBiasControl_ ) VULKAN_HPP_NOEXCEPT
+    {
+      depthBiasControl = depthBiasControl_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceDepthBiasControlFeaturesEXT &
+      setLeastRepresentableValueForceUnormRepresentation( VULKAN_HPP_NAMESPACE::Bool32 leastRepresentableValueForceUnormRepresentation_ ) VULKAN_HPP_NOEXCEPT
+    {
+      leastRepresentableValueForceUnormRepresentation = leastRepresentableValueForceUnormRepresentation_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceDepthBiasControlFeaturesEXT &
+                            setFloatRepresentation( VULKAN_HPP_NAMESPACE::Bool32 floatRepresentation_ ) VULKAN_HPP_NOEXCEPT
+    {
+      floatRepresentation = floatRepresentation_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceDepthBiasControlFeaturesEXT & setDepthBiasExact( VULKAN_HPP_NAMESPACE::Bool32 depthBiasExact_ ) VULKAN_HPP_NOEXCEPT
+    {
+      depthBiasExact = depthBiasExact_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceDepthBiasControlFeaturesEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceDepthBiasControlFeaturesEXT *>( this );
+    }
+
+    operator VkPhysicalDeviceDepthBiasControlFeaturesEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceDepthBiasControlFeaturesEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               void * const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, depthBiasControl, leastRepresentableValueForceUnormRepresentation, floatRepresentation, depthBiasExact );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceDepthBiasControlFeaturesEXT const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceDepthBiasControlFeaturesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( depthBiasControl == rhs.depthBiasControl ) &&
+             ( leastRepresentableValueForceUnormRepresentation == rhs.leastRepresentableValueForceUnormRepresentation ) &&
+             ( floatRepresentation == rhs.floatRepresentation ) && ( depthBiasExact == rhs.depthBiasExact );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceDepthBiasControlFeaturesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                                           = StructureType::ePhysicalDeviceDepthBiasControlFeaturesEXT;
+    void *                              pNext                                           = {};
+    VULKAN_HPP_NAMESPACE::Bool32        depthBiasControl                                = {};
+    VULKAN_HPP_NAMESPACE::Bool32        leastRepresentableValueForceUnormRepresentation = {};
+    VULKAN_HPP_NAMESPACE::Bool32        floatRepresentation                             = {};
+    VULKAN_HPP_NAMESPACE::Bool32        depthBiasExact                                  = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceDepthBiasControlFeaturesEXT>
+  {
+    using Type = PhysicalDeviceDepthBiasControlFeaturesEXT;
+  };
+
   struct PhysicalDeviceDepthClampZeroOneFeaturesEXT
   {
     using NativeType = VkPhysicalDeviceDepthClampZeroOneFeaturesEXT;
@@ -58135,6 +58687,108 @@ namespace VULKAN_HPP_NAMESPACE
   {
     using Type = PhysicalDeviceExternalMemoryRDMAFeaturesNV;
   };
+
+#if defined( VK_USE_PLATFORM_SCREEN_QNX )
+  struct PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX
+  {
+    using NativeType = VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceExternalMemoryScreenBufferFeaturesQNX;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX( VULKAN_HPP_NAMESPACE::Bool32 screenBufferImport_ = {},
+                                                                              void *                       pNext_              = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , screenBufferImport( screenBufferImport_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR
+      PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX( PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX( VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX( *reinterpret_cast<PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX &
+      operator=( PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX & operator=( VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX &
+                            setScreenBufferImport( VULKAN_HPP_NAMESPACE::Bool32 screenBufferImport_ ) VULKAN_HPP_NOEXCEPT
+    {
+      screenBufferImport = screenBufferImport_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX *>( this );
+    }
+
+    operator VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, screenBufferImport );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX const & ) const = default;
+#  else
+    bool operator==( PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( screenBufferImport == rhs.screenBufferImport );
+#    endif
+    }
+
+    bool operator!=( PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType              = StructureType::ePhysicalDeviceExternalMemoryScreenBufferFeaturesQNX;
+    void *                              pNext              = {};
+    VULKAN_HPP_NAMESPACE::Bool32        screenBufferImport = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceExternalMemoryScreenBufferFeaturesQNX>
+  {
+    using Type = PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX;
+  };
+#endif /*VK_USE_PLATFORM_SCREEN_QNX*/
 
   struct PhysicalDeviceExternalSemaphoreInfo
   {
@@ -77551,6 +78205,247 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PhysicalDeviceVertexInputDynamicStateFeaturesEXT;
   };
 
+  struct VideoProfileInfoKHR
+  {
+    using NativeType = VkVideoProfileInfoKHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoProfileInfoKHR;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR VideoProfileInfoKHR(
+      VULKAN_HPP_NAMESPACE::VideoCodecOperationFlagBitsKHR videoCodecOperation_ = VULKAN_HPP_NAMESPACE::VideoCodecOperationFlagBitsKHR::eNone,
+      VULKAN_HPP_NAMESPACE::VideoChromaSubsamplingFlagsKHR chromaSubsampling_   = {},
+      VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagsKHR lumaBitDepth_        = {},
+      VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagsKHR chromaBitDepth_      = {},
+      const void *                                         pNext_               = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , videoCodecOperation( videoCodecOperation_ )
+      , chromaSubsampling( chromaSubsampling_ )
+      , lumaBitDepth( lumaBitDepth_ )
+      , chromaBitDepth( chromaBitDepth_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR VideoProfileInfoKHR( VideoProfileInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    VideoProfileInfoKHR( VkVideoProfileInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT : VideoProfileInfoKHR( *reinterpret_cast<VideoProfileInfoKHR const *>( &rhs ) )
+    {
+    }
+
+    VideoProfileInfoKHR & operator=( VideoProfileInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    VideoProfileInfoKHR & operator=( VkVideoProfileInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoProfileInfoKHR const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 VideoProfileInfoKHR & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoProfileInfoKHR &
+                            setVideoCodecOperation( VULKAN_HPP_NAMESPACE::VideoCodecOperationFlagBitsKHR videoCodecOperation_ ) VULKAN_HPP_NOEXCEPT
+    {
+      videoCodecOperation = videoCodecOperation_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoProfileInfoKHR &
+                            setChromaSubsampling( VULKAN_HPP_NAMESPACE::VideoChromaSubsamplingFlagsKHR chromaSubsampling_ ) VULKAN_HPP_NOEXCEPT
+    {
+      chromaSubsampling = chromaSubsampling_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoProfileInfoKHR & setLumaBitDepth( VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagsKHR lumaBitDepth_ ) VULKAN_HPP_NOEXCEPT
+    {
+      lumaBitDepth = lumaBitDepth_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoProfileInfoKHR & setChromaBitDepth( VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagsKHR chromaBitDepth_ ) VULKAN_HPP_NOEXCEPT
+    {
+      chromaBitDepth = chromaBitDepth_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkVideoProfileInfoKHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkVideoProfileInfoKHR *>( this );
+    }
+
+    operator VkVideoProfileInfoKHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkVideoProfileInfoKHR *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               VULKAN_HPP_NAMESPACE::VideoCodecOperationFlagBitsKHR const &,
+               VULKAN_HPP_NAMESPACE::VideoChromaSubsamplingFlagsKHR const &,
+               VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagsKHR const &,
+               VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagsKHR const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, videoCodecOperation, chromaSubsampling, lumaBitDepth, chromaBitDepth );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( VideoProfileInfoKHR const & ) const = default;
+#else
+    bool operator==( VideoProfileInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( videoCodecOperation == rhs.videoCodecOperation ) &&
+             ( chromaSubsampling == rhs.chromaSubsampling ) && ( lumaBitDepth == rhs.lumaBitDepth ) && ( chromaBitDepth == rhs.chromaBitDepth );
+#  endif
+    }
+
+    bool operator!=( VideoProfileInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType                  sType               = StructureType::eVideoProfileInfoKHR;
+    const void *                                         pNext               = {};
+    VULKAN_HPP_NAMESPACE::VideoCodecOperationFlagBitsKHR videoCodecOperation = VULKAN_HPP_NAMESPACE::VideoCodecOperationFlagBitsKHR::eNone;
+    VULKAN_HPP_NAMESPACE::VideoChromaSubsamplingFlagsKHR chromaSubsampling   = {};
+    VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagsKHR lumaBitDepth        = {};
+    VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagsKHR chromaBitDepth      = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eVideoProfileInfoKHR>
+  {
+    using Type = VideoProfileInfoKHR;
+  };
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct PhysicalDeviceVideoEncodeQualityLevelInfoKHR
+  {
+    using NativeType = VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceVideoEncodeQualityLevelInfoKHR;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceVideoEncodeQualityLevelInfoKHR( const VULKAN_HPP_NAMESPACE::VideoProfileInfoKHR * pVideoProfile_ = {},
+                                                                       uint32_t                                          qualityLevel_  = {},
+                                                                       const void *                                      pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , pVideoProfile( pVideoProfile_ )
+      , qualityLevel( qualityLevel_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceVideoEncodeQualityLevelInfoKHR( PhysicalDeviceVideoEncodeQualityLevelInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceVideoEncodeQualityLevelInfoKHR( VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceVideoEncodeQualityLevelInfoKHR( *reinterpret_cast<PhysicalDeviceVideoEncodeQualityLevelInfoKHR const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceVideoEncodeQualityLevelInfoKHR & operator=( PhysicalDeviceVideoEncodeQualityLevelInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceVideoEncodeQualityLevelInfoKHR & operator=( VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceVideoEncodeQualityLevelInfoKHR const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceVideoEncodeQualityLevelInfoKHR & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceVideoEncodeQualityLevelInfoKHR &
+                            setPVideoProfile( const VULKAN_HPP_NAMESPACE::VideoProfileInfoKHR * pVideoProfile_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pVideoProfile = pVideoProfile_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceVideoEncodeQualityLevelInfoKHR & setQualityLevel( uint32_t qualityLevel_ ) VULKAN_HPP_NOEXCEPT
+    {
+      qualityLevel = qualityLevel_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR *>( this );
+    }
+
+    operator VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, const VULKAN_HPP_NAMESPACE::VideoProfileInfoKHR * const &, uint32_t const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, pVideoProfile, qualityLevel );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceVideoEncodeQualityLevelInfoKHR const & ) const = default;
+#  else
+    bool operator==( PhysicalDeviceVideoEncodeQualityLevelInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( pVideoProfile == rhs.pVideoProfile ) && ( qualityLevel == rhs.qualityLevel );
+#    endif
+    }
+
+    bool operator!=( PhysicalDeviceVideoEncodeQualityLevelInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType               sType         = StructureType::ePhysicalDeviceVideoEncodeQualityLevelInfoKHR;
+    const void *                                      pNext         = {};
+    const VULKAN_HPP_NAMESPACE::VideoProfileInfoKHR * pVideoProfile = {};
+    uint32_t                                          qualityLevel  = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceVideoEncodeQualityLevelInfoKHR>
+  {
+    using Type = PhysicalDeviceVideoEncodeQualityLevelInfoKHR;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
   struct PhysicalDeviceVideoFormatInfoKHR
   {
     using NativeType = VkPhysicalDeviceVideoFormatInfoKHR;
@@ -93902,6 +94797,228 @@ namespace VULKAN_HPP_NAMESPACE
   using SamplerYcbcrConversionInfoKHR = SamplerYcbcrConversionInfo;
 
 #if defined( VK_USE_PLATFORM_SCREEN_QNX )
+  struct ScreenBufferFormatPropertiesQNX
+  {
+    using NativeType = VkScreenBufferFormatPropertiesQNX;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eScreenBufferFormatPropertiesQNX;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR ScreenBufferFormatPropertiesQNX(
+      VULKAN_HPP_NAMESPACE::Format                      format_                           = VULKAN_HPP_NAMESPACE::Format::eUndefined,
+      uint64_t                                          externalFormat_                   = {},
+      uint64_t                                          screenUsage_                      = {},
+      VULKAN_HPP_NAMESPACE::FormatFeatureFlags          formatFeatures_                   = {},
+      VULKAN_HPP_NAMESPACE::ComponentMapping            samplerYcbcrConversionComponents_ = {},
+      VULKAN_HPP_NAMESPACE::SamplerYcbcrModelConversion suggestedYcbcrModel_              = VULKAN_HPP_NAMESPACE::SamplerYcbcrModelConversion::eRgbIdentity,
+      VULKAN_HPP_NAMESPACE::SamplerYcbcrRange           suggestedYcbcrRange_              = VULKAN_HPP_NAMESPACE::SamplerYcbcrRange::eItuFull,
+      VULKAN_HPP_NAMESPACE::ChromaLocation              suggestedXChromaOffset_           = VULKAN_HPP_NAMESPACE::ChromaLocation::eCositedEven,
+      VULKAN_HPP_NAMESPACE::ChromaLocation              suggestedYChromaOffset_           = VULKAN_HPP_NAMESPACE::ChromaLocation::eCositedEven,
+      void *                                            pNext_                            = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , format( format_ )
+      , externalFormat( externalFormat_ )
+      , screenUsage( screenUsage_ )
+      , formatFeatures( formatFeatures_ )
+      , samplerYcbcrConversionComponents( samplerYcbcrConversionComponents_ )
+      , suggestedYcbcrModel( suggestedYcbcrModel_ )
+      , suggestedYcbcrRange( suggestedYcbcrRange_ )
+      , suggestedXChromaOffset( suggestedXChromaOffset_ )
+      , suggestedYChromaOffset( suggestedYChromaOffset_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR ScreenBufferFormatPropertiesQNX( ScreenBufferFormatPropertiesQNX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    ScreenBufferFormatPropertiesQNX( VkScreenBufferFormatPropertiesQNX const & rhs ) VULKAN_HPP_NOEXCEPT
+      : ScreenBufferFormatPropertiesQNX( *reinterpret_cast<ScreenBufferFormatPropertiesQNX const *>( &rhs ) )
+    {
+    }
+
+    ScreenBufferFormatPropertiesQNX & operator=( ScreenBufferFormatPropertiesQNX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    ScreenBufferFormatPropertiesQNX & operator=( VkScreenBufferFormatPropertiesQNX const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::ScreenBufferFormatPropertiesQNX const *>( &rhs );
+      return *this;
+    }
+
+    operator VkScreenBufferFormatPropertiesQNX const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkScreenBufferFormatPropertiesQNX *>( this );
+    }
+
+    operator VkScreenBufferFormatPropertiesQNX &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkScreenBufferFormatPropertiesQNX *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               void * const &,
+               VULKAN_HPP_NAMESPACE::Format const &,
+               uint64_t const &,
+               uint64_t const &,
+               VULKAN_HPP_NAMESPACE::FormatFeatureFlags const &,
+               VULKAN_HPP_NAMESPACE::ComponentMapping const &,
+               VULKAN_HPP_NAMESPACE::SamplerYcbcrModelConversion const &,
+               VULKAN_HPP_NAMESPACE::SamplerYcbcrRange const &,
+               VULKAN_HPP_NAMESPACE::ChromaLocation const &,
+               VULKAN_HPP_NAMESPACE::ChromaLocation const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType,
+                       pNext,
+                       format,
+                       externalFormat,
+                       screenUsage,
+                       formatFeatures,
+                       samplerYcbcrConversionComponents,
+                       suggestedYcbcrModel,
+                       suggestedYcbcrRange,
+                       suggestedXChromaOffset,
+                       suggestedYChromaOffset );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( ScreenBufferFormatPropertiesQNX const & ) const = default;
+#  else
+    bool operator==( ScreenBufferFormatPropertiesQNX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( format == rhs.format ) && ( externalFormat == rhs.externalFormat ) &&
+             ( screenUsage == rhs.screenUsage ) && ( formatFeatures == rhs.formatFeatures ) &&
+             ( samplerYcbcrConversionComponents == rhs.samplerYcbcrConversionComponents ) && ( suggestedYcbcrModel == rhs.suggestedYcbcrModel ) &&
+             ( suggestedYcbcrRange == rhs.suggestedYcbcrRange ) && ( suggestedXChromaOffset == rhs.suggestedXChromaOffset ) &&
+             ( suggestedYChromaOffset == rhs.suggestedYChromaOffset );
+#    endif
+    }
+
+    bool operator!=( ScreenBufferFormatPropertiesQNX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType               sType                            = StructureType::eScreenBufferFormatPropertiesQNX;
+    void *                                            pNext                            = {};
+    VULKAN_HPP_NAMESPACE::Format                      format                           = VULKAN_HPP_NAMESPACE::Format::eUndefined;
+    uint64_t                                          externalFormat                   = {};
+    uint64_t                                          screenUsage                      = {};
+    VULKAN_HPP_NAMESPACE::FormatFeatureFlags          formatFeatures                   = {};
+    VULKAN_HPP_NAMESPACE::ComponentMapping            samplerYcbcrConversionComponents = {};
+    VULKAN_HPP_NAMESPACE::SamplerYcbcrModelConversion suggestedYcbcrModel              = VULKAN_HPP_NAMESPACE::SamplerYcbcrModelConversion::eRgbIdentity;
+    VULKAN_HPP_NAMESPACE::SamplerYcbcrRange           suggestedYcbcrRange              = VULKAN_HPP_NAMESPACE::SamplerYcbcrRange::eItuFull;
+    VULKAN_HPP_NAMESPACE::ChromaLocation              suggestedXChromaOffset           = VULKAN_HPP_NAMESPACE::ChromaLocation::eCositedEven;
+    VULKAN_HPP_NAMESPACE::ChromaLocation              suggestedYChromaOffset           = VULKAN_HPP_NAMESPACE::ChromaLocation::eCositedEven;
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eScreenBufferFormatPropertiesQNX>
+  {
+    using Type = ScreenBufferFormatPropertiesQNX;
+  };
+#endif /*VK_USE_PLATFORM_SCREEN_QNX*/
+
+#if defined( VK_USE_PLATFORM_SCREEN_QNX )
+  struct ScreenBufferPropertiesQNX
+  {
+    using NativeType = VkScreenBufferPropertiesQNX;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eScreenBufferPropertiesQNX;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR ScreenBufferPropertiesQNX( VULKAN_HPP_NAMESPACE::DeviceSize allocationSize_ = {},
+                                                    uint32_t                         memoryTypeBits_ = {},
+                                                    void *                           pNext_          = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , allocationSize( allocationSize_ )
+      , memoryTypeBits( memoryTypeBits_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR ScreenBufferPropertiesQNX( ScreenBufferPropertiesQNX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    ScreenBufferPropertiesQNX( VkScreenBufferPropertiesQNX const & rhs ) VULKAN_HPP_NOEXCEPT
+      : ScreenBufferPropertiesQNX( *reinterpret_cast<ScreenBufferPropertiesQNX const *>( &rhs ) )
+    {
+    }
+
+    ScreenBufferPropertiesQNX & operator=( ScreenBufferPropertiesQNX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    ScreenBufferPropertiesQNX & operator=( VkScreenBufferPropertiesQNX const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::ScreenBufferPropertiesQNX const *>( &rhs );
+      return *this;
+    }
+
+    operator VkScreenBufferPropertiesQNX const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkScreenBufferPropertiesQNX *>( this );
+    }
+
+    operator VkScreenBufferPropertiesQNX &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkScreenBufferPropertiesQNX *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::DeviceSize const &, uint32_t const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, allocationSize, memoryTypeBits );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( ScreenBufferPropertiesQNX const & ) const = default;
+#  else
+    bool operator==( ScreenBufferPropertiesQNX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( allocationSize == rhs.allocationSize ) && ( memoryTypeBits == rhs.memoryTypeBits );
+#    endif
+    }
+
+    bool operator!=( ScreenBufferPropertiesQNX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType          = StructureType::eScreenBufferPropertiesQNX;
+    void *                              pNext          = {};
+    VULKAN_HPP_NAMESPACE::DeviceSize    allocationSize = {};
+    uint32_t                            memoryTypeBits = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eScreenBufferPropertiesQNX>
+  {
+    using Type = ScreenBufferPropertiesQNX;
+  };
+#endif /*VK_USE_PLATFORM_SCREEN_QNX*/
+
+#if defined( VK_USE_PLATFORM_SCREEN_QNX )
   struct ScreenSurfaceCreateInfoQNX
   {
     using NativeType = VkScreenSurfaceCreateInfoQNX;
@@ -104110,19 +105227,21 @@ namespace VULKAN_HPP_NAMESPACE
     static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeCapabilitiesKHR;
 
 #  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR VideoEncodeCapabilitiesKHR( VULKAN_HPP_NAMESPACE::VideoEncodeCapabilityFlagsKHR      flags_                        = {},
-                                                     VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagsKHR rateControlModes_             = {},
-                                                     uint32_t                                                 maxRateControlLayers_         = {},
-                                                     uint32_t                                                 maxQualityLevels_             = {},
-                                                     VULKAN_HPP_NAMESPACE::Extent2D                           inputImageDataFillAlignment_  = {},
-                                                     VULKAN_HPP_NAMESPACE::VideoEncodeFeedbackFlagsKHR        supportedEncodeFeedbackFlags_ = {},
+    VULKAN_HPP_CONSTEXPR VideoEncodeCapabilitiesKHR( VULKAN_HPP_NAMESPACE::VideoEncodeCapabilityFlagsKHR      flags_                         = {},
+                                                     VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagsKHR rateControlModes_              = {},
+                                                     uint32_t                                                 maxRateControlLayers_          = {},
+                                                     uint64_t                                                 maxBitrate_                    = {},
+                                                     uint32_t                                                 maxQualityLevels_              = {},
+                                                     VULKAN_HPP_NAMESPACE::Extent2D                           encodeInputPictureGranularity_ = {},
+                                                     VULKAN_HPP_NAMESPACE::VideoEncodeFeedbackFlagsKHR        supportedEncodeFeedbackFlags_  = {},
                                                      void *                                                   pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
       , flags( flags_ )
       , rateControlModes( rateControlModes_ )
       , maxRateControlLayers( maxRateControlLayers_ )
+      , maxBitrate( maxBitrate_ )
       , maxQualityLevels( maxQualityLevels_ )
-      , inputImageDataFillAlignment( inputImageDataFillAlignment_ )
+      , encodeInputPictureGranularity( encodeInputPictureGranularity_ )
       , supportedEncodeFeedbackFlags( supportedEncodeFeedbackFlags_ )
     {
     }
@@ -104162,14 +105281,22 @@ namespace VULKAN_HPP_NAMESPACE
                VULKAN_HPP_NAMESPACE::VideoEncodeCapabilityFlagsKHR const &,
                VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagsKHR const &,
                uint32_t const &,
+               uint64_t const &,
                uint32_t const &,
                VULKAN_HPP_NAMESPACE::Extent2D const &,
                VULKAN_HPP_NAMESPACE::VideoEncodeFeedbackFlagsKHR const &>
 #    endif
       reflect() const VULKAN_HPP_NOEXCEPT
     {
-      return std::tie(
-        sType, pNext, flags, rateControlModes, maxRateControlLayers, maxQualityLevels, inputImageDataFillAlignment, supportedEncodeFeedbackFlags );
+      return std::tie( sType,
+                       pNext,
+                       flags,
+                       rateControlModes,
+                       maxRateControlLayers,
+                       maxBitrate,
+                       maxQualityLevels,
+                       encodeInputPictureGranularity,
+                       supportedEncodeFeedbackFlags );
     }
 #  endif
 
@@ -104182,8 +105309,8 @@ namespace VULKAN_HPP_NAMESPACE
       return this->reflect() == rhs.reflect();
 #    else
       return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( flags == rhs.flags ) && ( rateControlModes == rhs.rateControlModes ) &&
-             ( maxRateControlLayers == rhs.maxRateControlLayers ) && ( maxQualityLevels == rhs.maxQualityLevels ) &&
-             ( inputImageDataFillAlignment == rhs.inputImageDataFillAlignment ) && ( supportedEncodeFeedbackFlags == rhs.supportedEncodeFeedbackFlags );
+             ( maxRateControlLayers == rhs.maxRateControlLayers ) && ( maxBitrate == rhs.maxBitrate ) && ( maxQualityLevels == rhs.maxQualityLevels ) &&
+             ( encodeInputPictureGranularity == rhs.encodeInputPictureGranularity ) && ( supportedEncodeFeedbackFlags == rhs.supportedEncodeFeedbackFlags );
 #    endif
     }
 
@@ -104194,14 +105321,15 @@ namespace VULKAN_HPP_NAMESPACE
 #  endif
 
   public:
-    VULKAN_HPP_NAMESPACE::StructureType                      sType                        = StructureType::eVideoEncodeCapabilitiesKHR;
-    void *                                                   pNext                        = {};
-    VULKAN_HPP_NAMESPACE::VideoEncodeCapabilityFlagsKHR      flags                        = {};
-    VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagsKHR rateControlModes             = {};
-    uint32_t                                                 maxRateControlLayers         = {};
-    uint32_t                                                 maxQualityLevels             = {};
-    VULKAN_HPP_NAMESPACE::Extent2D                           inputImageDataFillAlignment  = {};
-    VULKAN_HPP_NAMESPACE::VideoEncodeFeedbackFlagsKHR        supportedEncodeFeedbackFlags = {};
+    VULKAN_HPP_NAMESPACE::StructureType                      sType                         = StructureType::eVideoEncodeCapabilitiesKHR;
+    void *                                                   pNext                         = {};
+    VULKAN_HPP_NAMESPACE::VideoEncodeCapabilityFlagsKHR      flags                         = {};
+    VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagsKHR rateControlModes              = {};
+    uint32_t                                                 maxRateControlLayers          = {};
+    uint64_t                                                 maxBitrate                    = {};
+    uint32_t                                                 maxQualityLevels              = {};
+    VULKAN_HPP_NAMESPACE::Extent2D                           encodeInputPictureGranularity = {};
+    VULKAN_HPP_NAMESPACE::VideoEncodeFeedbackFlagsKHR        supportedEncodeFeedbackFlags  = {};
   };
 
   template <>
@@ -104220,26 +105348,34 @@ namespace VULKAN_HPP_NAMESPACE
     static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH264CapabilitiesEXT;
 
 #  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR VideoEncodeH264CapabilitiesEXT( VULKAN_HPP_NAMESPACE::VideoEncodeH264CapabilityFlagsEXT flags_                              = {},
-                                                         uint32_t                                                maxPPictureL0ReferenceCount_        = {},
-                                                         uint32_t                                                maxBPictureL0ReferenceCount_        = {},
-                                                         uint32_t                                                maxL1ReferenceCount_                = {},
-                                                         VULKAN_HPP_NAMESPACE::Bool32                            motionVectorsOverPicBoundariesFlag_ = {},
-                                                         uint32_t                                                maxBytesPerPicDenom_                = {},
-                                                         uint32_t                                                maxBitsPerMbDenom_                  = {},
-                                                         uint32_t                                                log2MaxMvLengthHorizontal_          = {},
-                                                         uint32_t                                                log2MaxMvLengthVertical_            = {},
+    VULKAN_HPP_CONSTEXPR VideoEncodeH264CapabilitiesEXT( VULKAN_HPP_NAMESPACE::VideoEncodeH264CapabilityFlagsEXT flags_                            = {},
+                                                         StdVideoH264LevelIdc                                    maxLevelIdc_                      = {},
+                                                         uint32_t                                                maxSliceCount_                    = {},
+                                                         uint32_t                                                maxPPictureL0ReferenceCount_      = {},
+                                                         uint32_t                                                maxBPictureL0ReferenceCount_      = {},
+                                                         uint32_t                                                maxL1ReferenceCount_              = {},
+                                                         uint32_t                                                maxTemporalLayerCount_            = {},
+                                                         VULKAN_HPP_NAMESPACE::Bool32                            expectDyadicTemporalLayerPattern_ = {},
+                                                         int32_t                                                 minQp_                            = {},
+                                                         int32_t                                                 maxQp_                            = {},
+                                                         VULKAN_HPP_NAMESPACE::Bool32                            prefersGopRemainingFrames_        = {},
+                                                         VULKAN_HPP_NAMESPACE::Bool32                            requiresGopRemainingFrames_       = {},
+                                                         VULKAN_HPP_NAMESPACE::VideoEncodeH264StdFlagsEXT        stdSyntaxFlags_                   = {},
                                                          void *                                                  pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
       , flags( flags_ )
+      , maxLevelIdc( maxLevelIdc_ )
+      , maxSliceCount( maxSliceCount_ )
       , maxPPictureL0ReferenceCount( maxPPictureL0ReferenceCount_ )
       , maxBPictureL0ReferenceCount( maxBPictureL0ReferenceCount_ )
       , maxL1ReferenceCount( maxL1ReferenceCount_ )
-      , motionVectorsOverPicBoundariesFlag( motionVectorsOverPicBoundariesFlag_ )
-      , maxBytesPerPicDenom( maxBytesPerPicDenom_ )
-      , maxBitsPerMbDenom( maxBitsPerMbDenom_ )
-      , log2MaxMvLengthHorizontal( log2MaxMvLengthHorizontal_ )
-      , log2MaxMvLengthVertical( log2MaxMvLengthVertical_ )
+      , maxTemporalLayerCount( maxTemporalLayerCount_ )
+      , expectDyadicTemporalLayerPattern( expectDyadicTemporalLayerPattern_ )
+      , minQp( minQp_ )
+      , maxQp( maxQp_ )
+      , prefersGopRemainingFrames( prefersGopRemainingFrames_ )
+      , requiresGopRemainingFrames( requiresGopRemainingFrames_ )
+      , stdSyntaxFlags( stdSyntaxFlags_ )
     {
     }
 
@@ -104276,65 +105412,109 @@ namespace VULKAN_HPP_NAMESPACE
     std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
                void * const &,
                VULKAN_HPP_NAMESPACE::VideoEncodeH264CapabilityFlagsEXT const &,
+               StdVideoH264LevelIdc const &,
+               uint32_t const &,
+               uint32_t const &,
                uint32_t const &,
                uint32_t const &,
                uint32_t const &,
                VULKAN_HPP_NAMESPACE::Bool32 const &,
-               uint32_t const &,
-               uint32_t const &,
-               uint32_t const &,
-               uint32_t const &>
+               int32_t const &,
+               int32_t const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::VideoEncodeH264StdFlagsEXT const &>
 #    endif
       reflect() const VULKAN_HPP_NOEXCEPT
     {
       return std::tie( sType,
                        pNext,
                        flags,
+                       maxLevelIdc,
+                       maxSliceCount,
                        maxPPictureL0ReferenceCount,
                        maxBPictureL0ReferenceCount,
                        maxL1ReferenceCount,
-                       motionVectorsOverPicBoundariesFlag,
-                       maxBytesPerPicDenom,
-                       maxBitsPerMbDenom,
-                       log2MaxMvLengthHorizontal,
-                       log2MaxMvLengthVertical );
+                       maxTemporalLayerCount,
+                       expectDyadicTemporalLayerPattern,
+                       minQp,
+                       maxQp,
+                       prefersGopRemainingFrames,
+                       requiresGopRemainingFrames,
+                       stdSyntaxFlags );
     }
 #  endif
 
 #  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
-    auto operator<=>( VideoEncodeH264CapabilitiesEXT const & ) const = default;
-#  else
+    std::strong_ordering operator<=>( VideoEncodeH264CapabilitiesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      if ( auto cmp = sType <=> rhs.sType; cmp != 0 )
+        return cmp;
+      if ( auto cmp = pNext <=> rhs.pNext; cmp != 0 )
+        return cmp;
+      if ( auto cmp = flags <=> rhs.flags; cmp != 0 )
+        return cmp;
+      if ( auto cmp = memcmp( &maxLevelIdc, &rhs.maxLevelIdc, sizeof( StdVideoH264LevelIdc ) ); cmp != 0 )
+        return ( cmp < 0 ) ? std::strong_ordering::less : std::strong_ordering::greater;
+      if ( auto cmp = maxSliceCount <=> rhs.maxSliceCount; cmp != 0 )
+        return cmp;
+      if ( auto cmp = maxPPictureL0ReferenceCount <=> rhs.maxPPictureL0ReferenceCount; cmp != 0 )
+        return cmp;
+      if ( auto cmp = maxBPictureL0ReferenceCount <=> rhs.maxBPictureL0ReferenceCount; cmp != 0 )
+        return cmp;
+      if ( auto cmp = maxL1ReferenceCount <=> rhs.maxL1ReferenceCount; cmp != 0 )
+        return cmp;
+      if ( auto cmp = maxTemporalLayerCount <=> rhs.maxTemporalLayerCount; cmp != 0 )
+        return cmp;
+      if ( auto cmp = expectDyadicTemporalLayerPattern <=> rhs.expectDyadicTemporalLayerPattern; cmp != 0 )
+        return cmp;
+      if ( auto cmp = minQp <=> rhs.minQp; cmp != 0 )
+        return cmp;
+      if ( auto cmp = maxQp <=> rhs.maxQp; cmp != 0 )
+        return cmp;
+      if ( auto cmp = prefersGopRemainingFrames <=> rhs.prefersGopRemainingFrames; cmp != 0 )
+        return cmp;
+      if ( auto cmp = requiresGopRemainingFrames <=> rhs.requiresGopRemainingFrames; cmp != 0 )
+        return cmp;
+      if ( auto cmp = stdSyntaxFlags <=> rhs.stdSyntaxFlags; cmp != 0 )
+        return cmp;
+
+      return std::strong_ordering::equivalent;
+    }
+#  endif
+
     bool operator==( VideoEncodeH264CapabilitiesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
     {
-#    if defined( VULKAN_HPP_USE_REFLECT )
-      return this->reflect() == rhs.reflect();
-#    else
-      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( flags == rhs.flags ) && ( maxPPictureL0ReferenceCount == rhs.maxPPictureL0ReferenceCount ) &&
-             ( maxBPictureL0ReferenceCount == rhs.maxBPictureL0ReferenceCount ) && ( maxL1ReferenceCount == rhs.maxL1ReferenceCount ) &&
-             ( motionVectorsOverPicBoundariesFlag == rhs.motionVectorsOverPicBoundariesFlag ) && ( maxBytesPerPicDenom == rhs.maxBytesPerPicDenom ) &&
-             ( maxBitsPerMbDenom == rhs.maxBitsPerMbDenom ) && ( log2MaxMvLengthHorizontal == rhs.log2MaxMvLengthHorizontal ) &&
-             ( log2MaxMvLengthVertical == rhs.log2MaxMvLengthVertical );
-#    endif
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( flags == rhs.flags ) &&
+             ( memcmp( &maxLevelIdc, &rhs.maxLevelIdc, sizeof( StdVideoH264LevelIdc ) ) == 0 ) && ( maxSliceCount == rhs.maxSliceCount ) &&
+             ( maxPPictureL0ReferenceCount == rhs.maxPPictureL0ReferenceCount ) && ( maxBPictureL0ReferenceCount == rhs.maxBPictureL0ReferenceCount ) &&
+             ( maxL1ReferenceCount == rhs.maxL1ReferenceCount ) && ( maxTemporalLayerCount == rhs.maxTemporalLayerCount ) &&
+             ( expectDyadicTemporalLayerPattern == rhs.expectDyadicTemporalLayerPattern ) && ( minQp == rhs.minQp ) && ( maxQp == rhs.maxQp ) &&
+             ( prefersGopRemainingFrames == rhs.prefersGopRemainingFrames ) && ( requiresGopRemainingFrames == rhs.requiresGopRemainingFrames ) &&
+             ( stdSyntaxFlags == rhs.stdSyntaxFlags );
     }
 
     bool operator!=( VideoEncodeH264CapabilitiesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
     {
       return !operator==( rhs );
     }
-#  endif
 
   public:
-    VULKAN_HPP_NAMESPACE::StructureType                     sType                              = StructureType::eVideoEncodeH264CapabilitiesEXT;
-    void *                                                  pNext                              = {};
-    VULKAN_HPP_NAMESPACE::VideoEncodeH264CapabilityFlagsEXT flags                              = {};
-    uint32_t                                                maxPPictureL0ReferenceCount        = {};
-    uint32_t                                                maxBPictureL0ReferenceCount        = {};
-    uint32_t                                                maxL1ReferenceCount                = {};
-    VULKAN_HPP_NAMESPACE::Bool32                            motionVectorsOverPicBoundariesFlag = {};
-    uint32_t                                                maxBytesPerPicDenom                = {};
-    uint32_t                                                maxBitsPerMbDenom                  = {};
-    uint32_t                                                log2MaxMvLengthHorizontal          = {};
-    uint32_t                                                log2MaxMvLengthVertical            = {};
+    VULKAN_HPP_NAMESPACE::StructureType                     sType                            = StructureType::eVideoEncodeH264CapabilitiesEXT;
+    void *                                                  pNext                            = {};
+    VULKAN_HPP_NAMESPACE::VideoEncodeH264CapabilityFlagsEXT flags                            = {};
+    StdVideoH264LevelIdc                                    maxLevelIdc                      = {};
+    uint32_t                                                maxSliceCount                    = {};
+    uint32_t                                                maxPPictureL0ReferenceCount      = {};
+    uint32_t                                                maxBPictureL0ReferenceCount      = {};
+    uint32_t                                                maxL1ReferenceCount              = {};
+    uint32_t                                                maxTemporalLayerCount            = {};
+    VULKAN_HPP_NAMESPACE::Bool32                            expectDyadicTemporalLayerPattern = {};
+    int32_t                                                 minQp                            = {};
+    int32_t                                                 maxQp                            = {};
+    VULKAN_HPP_NAMESPACE::Bool32                            prefersGopRemainingFrames        = {};
+    VULKAN_HPP_NAMESPACE::Bool32                            requiresGopRemainingFrames       = {};
+    VULKAN_HPP_NAMESPACE::VideoEncodeH264StdFlagsEXT        stdSyntaxFlags                   = {};
   };
 
   template <>
@@ -104541,6 +105721,139 @@ namespace VULKAN_HPP_NAMESPACE
 #endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
 #if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct VideoEncodeH264GopRemainingFrameInfoEXT
+  {
+    using NativeType = VkVideoEncodeH264GopRemainingFrameInfoEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH264GopRemainingFrameInfoEXT;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR VideoEncodeH264GopRemainingFrameInfoEXT( VULKAN_HPP_NAMESPACE::Bool32 useGopRemainingFrames_ = {},
+                                                                  uint32_t                     gopRemainingI_         = {},
+                                                                  uint32_t                     gopRemainingP_         = {},
+                                                                  uint32_t                     gopRemainingB_         = {},
+                                                                  const void *                 pNext_                 = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , useGopRemainingFrames( useGopRemainingFrames_ )
+      , gopRemainingI( gopRemainingI_ )
+      , gopRemainingP( gopRemainingP_ )
+      , gopRemainingB( gopRemainingB_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR VideoEncodeH264GopRemainingFrameInfoEXT( VideoEncodeH264GopRemainingFrameInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    VideoEncodeH264GopRemainingFrameInfoEXT( VkVideoEncodeH264GopRemainingFrameInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : VideoEncodeH264GopRemainingFrameInfoEXT( *reinterpret_cast<VideoEncodeH264GopRemainingFrameInfoEXT const *>( &rhs ) )
+    {
+    }
+
+    VideoEncodeH264GopRemainingFrameInfoEXT & operator=( VideoEncodeH264GopRemainingFrameInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    VideoEncodeH264GopRemainingFrameInfoEXT & operator=( VkVideoEncodeH264GopRemainingFrameInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeH264GopRemainingFrameInfoEXT const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264GopRemainingFrameInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264GopRemainingFrameInfoEXT &
+                            setUseGopRemainingFrames( VULKAN_HPP_NAMESPACE::Bool32 useGopRemainingFrames_ ) VULKAN_HPP_NOEXCEPT
+    {
+      useGopRemainingFrames = useGopRemainingFrames_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264GopRemainingFrameInfoEXT & setGopRemainingI( uint32_t gopRemainingI_ ) VULKAN_HPP_NOEXCEPT
+    {
+      gopRemainingI = gopRemainingI_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264GopRemainingFrameInfoEXT & setGopRemainingP( uint32_t gopRemainingP_ ) VULKAN_HPP_NOEXCEPT
+    {
+      gopRemainingP = gopRemainingP_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264GopRemainingFrameInfoEXT & setGopRemainingB( uint32_t gopRemainingB_ ) VULKAN_HPP_NOEXCEPT
+    {
+      gopRemainingB = gopRemainingB_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkVideoEncodeH264GopRemainingFrameInfoEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkVideoEncodeH264GopRemainingFrameInfoEXT *>( this );
+    }
+
+    operator VkVideoEncodeH264GopRemainingFrameInfoEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkVideoEncodeH264GopRemainingFrameInfoEXT *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               uint32_t const &,
+               uint32_t const &,
+               uint32_t const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, useGopRemainingFrames, gopRemainingI, gopRemainingP, gopRemainingB );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( VideoEncodeH264GopRemainingFrameInfoEXT const & ) const = default;
+#  else
+    bool operator==( VideoEncodeH264GopRemainingFrameInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( useGopRemainingFrames == rhs.useGopRemainingFrames ) &&
+             ( gopRemainingI == rhs.gopRemainingI ) && ( gopRemainingP == rhs.gopRemainingP ) && ( gopRemainingB == rhs.gopRemainingB );
+#    endif
+    }
+
+    bool operator!=( VideoEncodeH264GopRemainingFrameInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                 = StructureType::eVideoEncodeH264GopRemainingFrameInfoEXT;
+    const void *                        pNext                 = {};
+    VULKAN_HPP_NAMESPACE::Bool32        useGopRemainingFrames = {};
+    uint32_t                            gopRemainingI         = {};
+    uint32_t                            gopRemainingP         = {};
+    uint32_t                            gopRemainingB         = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eVideoEncodeH264GopRemainingFrameInfoEXT>
+  {
+    using Type = VideoEncodeH264GopRemainingFrameInfoEXT;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
   struct VideoEncodeH264NaluSliceInfoEXT
   {
     using NativeType = VkVideoEncodeH264NaluSliceInfoEXT;
@@ -104549,13 +105862,11 @@ namespace VULKAN_HPP_NAMESPACE
     static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH264NaluSliceInfoEXT;
 
 #  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR VideoEncodeH264NaluSliceInfoEXT( uint32_t                                     mbCount_                 = {},
-                                                          const StdVideoEncodeH264ReferenceListsInfo * pStdReferenceFinalLists_ = {},
-                                                          const StdVideoEncodeH264SliceHeader *        pStdSliceHeader_         = {},
-                                                          const void *                                 pNext_                   = nullptr ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR VideoEncodeH264NaluSliceInfoEXT( int32_t                               constantQp_      = {},
+                                                          const StdVideoEncodeH264SliceHeader * pStdSliceHeader_ = {},
+                                                          const void *                          pNext_           = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
-      , mbCount( mbCount_ )
-      , pStdReferenceFinalLists( pStdReferenceFinalLists_ )
+      , constantQp( constantQp_ )
       , pStdSliceHeader( pStdSliceHeader_ )
     {
     }
@@ -104583,16 +105894,9 @@ namespace VULKAN_HPP_NAMESPACE
       return *this;
     }
 
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264NaluSliceInfoEXT & setMbCount( uint32_t mbCount_ ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264NaluSliceInfoEXT & setConstantQp( int32_t constantQp_ ) VULKAN_HPP_NOEXCEPT
     {
-      mbCount = mbCount_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264NaluSliceInfoEXT &
-                            setPStdReferenceFinalLists( const StdVideoEncodeH264ReferenceListsInfo * pStdReferenceFinalLists_ ) VULKAN_HPP_NOEXCEPT
-    {
-      pStdReferenceFinalLists = pStdReferenceFinalLists_;
+      constantQp = constantQp_;
       return *this;
     }
 
@@ -104617,15 +105921,11 @@ namespace VULKAN_HPP_NAMESPACE
 #    if 14 <= VULKAN_HPP_CPP_VERSION
     auto
 #    else
-    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
-               const void * const &,
-               uint32_t const &,
-               const StdVideoEncodeH264ReferenceListsInfo * const &,
-               const StdVideoEncodeH264SliceHeader * const &>
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, int32_t const &, const StdVideoEncodeH264SliceHeader * const &>
 #    endif
       reflect() const VULKAN_HPP_NOEXCEPT
     {
-      return std::tie( sType, pNext, mbCount, pStdReferenceFinalLists, pStdSliceHeader );
+      return std::tie( sType, pNext, constantQp, pStdSliceHeader );
     }
 #  endif
 
@@ -104637,8 +105937,7 @@ namespace VULKAN_HPP_NAMESPACE
 #    if defined( VULKAN_HPP_USE_REFLECT )
       return this->reflect() == rhs.reflect();
 #    else
-      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( mbCount == rhs.mbCount ) && ( pStdReferenceFinalLists == rhs.pStdReferenceFinalLists ) &&
-             ( pStdSliceHeader == rhs.pStdSliceHeader );
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( constantQp == rhs.constantQp ) && ( pStdSliceHeader == rhs.pStdSliceHeader );
 #    endif
     }
 
@@ -104649,17 +105948,174 @@ namespace VULKAN_HPP_NAMESPACE
 #  endif
 
   public:
-    VULKAN_HPP_NAMESPACE::StructureType          sType                   = StructureType::eVideoEncodeH264NaluSliceInfoEXT;
-    const void *                                 pNext                   = {};
-    uint32_t                                     mbCount                 = {};
-    const StdVideoEncodeH264ReferenceListsInfo * pStdReferenceFinalLists = {};
-    const StdVideoEncodeH264SliceHeader *        pStdSliceHeader         = {};
+    VULKAN_HPP_NAMESPACE::StructureType   sType           = StructureType::eVideoEncodeH264NaluSliceInfoEXT;
+    const void *                          pNext           = {};
+    int32_t                               constantQp      = {};
+    const StdVideoEncodeH264SliceHeader * pStdSliceHeader = {};
   };
 
   template <>
   struct CppType<StructureType, StructureType::eVideoEncodeH264NaluSliceInfoEXT>
   {
     using Type = VideoEncodeH264NaluSliceInfoEXT;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct VideoEncodeH264PictureInfoEXT
+  {
+    using NativeType = VkVideoEncodeH264PictureInfoEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH264PictureInfoEXT;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR VideoEncodeH264PictureInfoEXT( uint32_t                                                      naluSliceEntryCount_ = {},
+                                                        const VULKAN_HPP_NAMESPACE::VideoEncodeH264NaluSliceInfoEXT * pNaluSliceEntries_   = {},
+                                                        const StdVideoEncodeH264PictureInfo *                         pStdPictureInfo_     = {},
+                                                        VULKAN_HPP_NAMESPACE::Bool32                                  generatePrefixNalu_  = {},
+                                                        const void *                                                  pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , naluSliceEntryCount( naluSliceEntryCount_ )
+      , pNaluSliceEntries( pNaluSliceEntries_ )
+      , pStdPictureInfo( pStdPictureInfo_ )
+      , generatePrefixNalu( generatePrefixNalu_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR VideoEncodeH264PictureInfoEXT( VideoEncodeH264PictureInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    VideoEncodeH264PictureInfoEXT( VkVideoEncodeH264PictureInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : VideoEncodeH264PictureInfoEXT( *reinterpret_cast<VideoEncodeH264PictureInfoEXT const *>( &rhs ) )
+    {
+    }
+
+#    if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    VideoEncodeH264PictureInfoEXT(
+      VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::VideoEncodeH264NaluSliceInfoEXT> const & naluSliceEntries_,
+      const StdVideoEncodeH264PictureInfo *                                                                              pStdPictureInfo_    = {},
+      VULKAN_HPP_NAMESPACE::Bool32                                                                                       generatePrefixNalu_ = {},
+      const void *                                                                                                       pNext_              = nullptr )
+      : pNext( pNext_ )
+      , naluSliceEntryCount( static_cast<uint32_t>( naluSliceEntries_.size() ) )
+      , pNaluSliceEntries( naluSliceEntries_.data() )
+      , pStdPictureInfo( pStdPictureInfo_ )
+      , generatePrefixNalu( generatePrefixNalu_ )
+    {
+    }
+#    endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    VideoEncodeH264PictureInfoEXT & operator=( VideoEncodeH264PictureInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    VideoEncodeH264PictureInfoEXT & operator=( VkVideoEncodeH264PictureInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeH264PictureInfoEXT const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264PictureInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264PictureInfoEXT & setNaluSliceEntryCount( uint32_t naluSliceEntryCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      naluSliceEntryCount = naluSliceEntryCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264PictureInfoEXT &
+                            setPNaluSliceEntries( const VULKAN_HPP_NAMESPACE::VideoEncodeH264NaluSliceInfoEXT * pNaluSliceEntries_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNaluSliceEntries = pNaluSliceEntries_;
+      return *this;
+    }
+
+#    if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    VideoEncodeH264PictureInfoEXT & setNaluSliceEntries(
+      VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::VideoEncodeH264NaluSliceInfoEXT> const & naluSliceEntries_ ) VULKAN_HPP_NOEXCEPT
+    {
+      naluSliceEntryCount = static_cast<uint32_t>( naluSliceEntries_.size() );
+      pNaluSliceEntries   = naluSliceEntries_.data();
+      return *this;
+    }
+#    endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264PictureInfoEXT & setPStdPictureInfo( const StdVideoEncodeH264PictureInfo * pStdPictureInfo_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pStdPictureInfo = pStdPictureInfo_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264PictureInfoEXT & setGeneratePrefixNalu( VULKAN_HPP_NAMESPACE::Bool32 generatePrefixNalu_ ) VULKAN_HPP_NOEXCEPT
+    {
+      generatePrefixNalu = generatePrefixNalu_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkVideoEncodeH264PictureInfoEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkVideoEncodeH264PictureInfoEXT *>( this );
+    }
+
+    operator VkVideoEncodeH264PictureInfoEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkVideoEncodeH264PictureInfoEXT *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               uint32_t const &,
+               const VULKAN_HPP_NAMESPACE::VideoEncodeH264NaluSliceInfoEXT * const &,
+               const StdVideoEncodeH264PictureInfo * const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, naluSliceEntryCount, pNaluSliceEntries, pStdPictureInfo, generatePrefixNalu );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( VideoEncodeH264PictureInfoEXT const & ) const = default;
+#  else
+    bool operator==( VideoEncodeH264PictureInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( naluSliceEntryCount == rhs.naluSliceEntryCount ) &&
+             ( pNaluSliceEntries == rhs.pNaluSliceEntries ) && ( pStdPictureInfo == rhs.pStdPictureInfo ) && ( generatePrefixNalu == rhs.generatePrefixNalu );
+#    endif
+    }
+
+    bool operator!=( VideoEncodeH264PictureInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType                           sType               = StructureType::eVideoEncodeH264PictureInfoEXT;
+    const void *                                                  pNext               = {};
+    uint32_t                                                      naluSliceEntryCount = {};
+    const VULKAN_HPP_NAMESPACE::VideoEncodeH264NaluSliceInfoEXT * pNaluSliceEntries   = {};
+    const StdVideoEncodeH264PictureInfo *                         pStdPictureInfo     = {};
+    VULKAN_HPP_NAMESPACE::Bool32                                  generatePrefixNalu  = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eVideoEncodeH264PictureInfoEXT>
+  {
+    using Type = VideoEncodeH264PictureInfoEXT;
   };
 #endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
@@ -104864,6 +106320,140 @@ namespace VULKAN_HPP_NAMESPACE
 #endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
 #if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct VideoEncodeH264QualityLevelPropertiesEXT
+  {
+    using NativeType = VkVideoEncodeH264QualityLevelPropertiesEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH264QualityLevelPropertiesEXT;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR VideoEncodeH264QualityLevelPropertiesEXT( VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControlFlagsEXT preferredRateControlFlags_ = {},
+                                                                   uint32_t                                                 preferredGopFrameCount_    = {},
+                                                                   uint32_t                                                 preferredIdrPeriod_        = {},
+                                                                   uint32_t                                   preferredConsecutiveBFrameCount_         = {},
+                                                                   uint32_t                                   preferredTemporalLayerCount_             = {},
+                                                                   VULKAN_HPP_NAMESPACE::VideoEncodeH264QpEXT preferredConstantQp_                     = {},
+                                                                   uint32_t                                   preferredMaxL0ReferenceCount_            = {},
+                                                                   uint32_t                                   preferredMaxL1ReferenceCount_            = {},
+                                                                   VULKAN_HPP_NAMESPACE::Bool32               preferredStdEntropyCodingModeFlag_       = {},
+                                                                   void *                                     pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , preferredRateControlFlags( preferredRateControlFlags_ )
+      , preferredGopFrameCount( preferredGopFrameCount_ )
+      , preferredIdrPeriod( preferredIdrPeriod_ )
+      , preferredConsecutiveBFrameCount( preferredConsecutiveBFrameCount_ )
+      , preferredTemporalLayerCount( preferredTemporalLayerCount_ )
+      , preferredConstantQp( preferredConstantQp_ )
+      , preferredMaxL0ReferenceCount( preferredMaxL0ReferenceCount_ )
+      , preferredMaxL1ReferenceCount( preferredMaxL1ReferenceCount_ )
+      , preferredStdEntropyCodingModeFlag( preferredStdEntropyCodingModeFlag_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR VideoEncodeH264QualityLevelPropertiesEXT( VideoEncodeH264QualityLevelPropertiesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    VideoEncodeH264QualityLevelPropertiesEXT( VkVideoEncodeH264QualityLevelPropertiesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : VideoEncodeH264QualityLevelPropertiesEXT( *reinterpret_cast<VideoEncodeH264QualityLevelPropertiesEXT const *>( &rhs ) )
+    {
+    }
+
+    VideoEncodeH264QualityLevelPropertiesEXT & operator=( VideoEncodeH264QualityLevelPropertiesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    VideoEncodeH264QualityLevelPropertiesEXT & operator=( VkVideoEncodeH264QualityLevelPropertiesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeH264QualityLevelPropertiesEXT const *>( &rhs );
+      return *this;
+    }
+
+    operator VkVideoEncodeH264QualityLevelPropertiesEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkVideoEncodeH264QualityLevelPropertiesEXT *>( this );
+    }
+
+    operator VkVideoEncodeH264QualityLevelPropertiesEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkVideoEncodeH264QualityLevelPropertiesEXT *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               void * const &,
+               VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControlFlagsEXT const &,
+               uint32_t const &,
+               uint32_t const &,
+               uint32_t const &,
+               uint32_t const &,
+               VULKAN_HPP_NAMESPACE::VideoEncodeH264QpEXT const &,
+               uint32_t const &,
+               uint32_t const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType,
+                       pNext,
+                       preferredRateControlFlags,
+                       preferredGopFrameCount,
+                       preferredIdrPeriod,
+                       preferredConsecutiveBFrameCount,
+                       preferredTemporalLayerCount,
+                       preferredConstantQp,
+                       preferredMaxL0ReferenceCount,
+                       preferredMaxL1ReferenceCount,
+                       preferredStdEntropyCodingModeFlag );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( VideoEncodeH264QualityLevelPropertiesEXT const & ) const = default;
+#  else
+    bool operator==( VideoEncodeH264QualityLevelPropertiesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( preferredRateControlFlags == rhs.preferredRateControlFlags ) &&
+             ( preferredGopFrameCount == rhs.preferredGopFrameCount ) && ( preferredIdrPeriod == rhs.preferredIdrPeriod ) &&
+             ( preferredConsecutiveBFrameCount == rhs.preferredConsecutiveBFrameCount ) && ( preferredTemporalLayerCount == rhs.preferredTemporalLayerCount ) &&
+             ( preferredConstantQp == rhs.preferredConstantQp ) && ( preferredMaxL0ReferenceCount == rhs.preferredMaxL0ReferenceCount ) &&
+             ( preferredMaxL1ReferenceCount == rhs.preferredMaxL1ReferenceCount ) &&
+             ( preferredStdEntropyCodingModeFlag == rhs.preferredStdEntropyCodingModeFlag );
+#    endif
+    }
+
+    bool operator!=( VideoEncodeH264QualityLevelPropertiesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType                      sType                             = StructureType::eVideoEncodeH264QualityLevelPropertiesEXT;
+    void *                                                   pNext                             = {};
+    VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControlFlagsEXT preferredRateControlFlags         = {};
+    uint32_t                                                 preferredGopFrameCount            = {};
+    uint32_t                                                 preferredIdrPeriod                = {};
+    uint32_t                                                 preferredConsecutiveBFrameCount   = {};
+    uint32_t                                                 preferredTemporalLayerCount       = {};
+    VULKAN_HPP_NAMESPACE::VideoEncodeH264QpEXT               preferredConstantQp               = {};
+    uint32_t                                                 preferredMaxL0ReferenceCount      = {};
+    uint32_t                                                 preferredMaxL1ReferenceCount      = {};
+    VULKAN_HPP_NAMESPACE::Bool32                             preferredStdEntropyCodingModeFlag = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eVideoEncodeH264QualityLevelPropertiesEXT>
+  {
+    using Type = VideoEncodeH264QualityLevelPropertiesEXT;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
   struct VideoEncodeH264RateControlInfoEXT
   {
     using NativeType = VkVideoEncodeH264RateControlInfoEXT;
@@ -104872,18 +106462,17 @@ namespace VULKAN_HPP_NAMESPACE
     static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH264RateControlInfoEXT;
 
 #  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR VideoEncodeH264RateControlInfoEXT( uint32_t                                                     gopFrameCount_          = {},
-                                                            uint32_t                                                     idrPeriod_              = {},
-                                                            uint32_t                                                     consecutiveBFrameCount_ = {},
-                                                            VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControlStructureEXT rateControlStructure_ =
-                                                              VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControlStructureEXT::eUnknown,
-                                                            uint32_t     temporalLayerCount_ = {},
-                                                            const void * pNext_              = nullptr ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR VideoEncodeH264RateControlInfoEXT( VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControlFlagsEXT flags_                  = {},
+                                                            uint32_t                                                 gopFrameCount_          = {},
+                                                            uint32_t                                                 idrPeriod_              = {},
+                                                            uint32_t                                                 consecutiveBFrameCount_ = {},
+                                                            uint32_t                                                 temporalLayerCount_     = {},
+                                                            const void *                                             pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
+      , flags( flags_ )
       , gopFrameCount( gopFrameCount_ )
       , idrPeriod( idrPeriod_ )
       , consecutiveBFrameCount( consecutiveBFrameCount_ )
-      , rateControlStructure( rateControlStructure_ )
       , temporalLayerCount( temporalLayerCount_ )
     {
     }
@@ -104911,6 +106500,12 @@ namespace VULKAN_HPP_NAMESPACE
       return *this;
     }
 
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264RateControlInfoEXT & setFlags( VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControlFlagsEXT flags_ ) VULKAN_HPP_NOEXCEPT
+    {
+      flags = flags_;
+      return *this;
+    }
+
     VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264RateControlInfoEXT & setGopFrameCount( uint32_t gopFrameCount_ ) VULKAN_HPP_NOEXCEPT
     {
       gopFrameCount = gopFrameCount_;
@@ -104926,13 +106521,6 @@ namespace VULKAN_HPP_NAMESPACE
     VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264RateControlInfoEXT & setConsecutiveBFrameCount( uint32_t consecutiveBFrameCount_ ) VULKAN_HPP_NOEXCEPT
     {
       consecutiveBFrameCount = consecutiveBFrameCount_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264RateControlInfoEXT &
-                            setRateControlStructure( VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControlStructureEXT rateControlStructure_ ) VULKAN_HPP_NOEXCEPT
-    {
-      rateControlStructure = rateControlStructure_;
       return *this;
     }
 
@@ -104959,15 +106547,15 @@ namespace VULKAN_HPP_NAMESPACE
 #    else
     std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
                const void * const &,
+               VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControlFlagsEXT const &,
                uint32_t const &,
                uint32_t const &,
                uint32_t const &,
-               VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControlStructureEXT const &,
                uint32_t const &>
 #    endif
       reflect() const VULKAN_HPP_NOEXCEPT
     {
-      return std::tie( sType, pNext, gopFrameCount, idrPeriod, consecutiveBFrameCount, rateControlStructure, temporalLayerCount );
+      return std::tie( sType, pNext, flags, gopFrameCount, idrPeriod, consecutiveBFrameCount, temporalLayerCount );
     }
 #  endif
 
@@ -104979,9 +106567,8 @@ namespace VULKAN_HPP_NAMESPACE
 #    if defined( VULKAN_HPP_USE_REFLECT )
       return this->reflect() == rhs.reflect();
 #    else
-      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( gopFrameCount == rhs.gopFrameCount ) && ( idrPeriod == rhs.idrPeriod ) &&
-             ( consecutiveBFrameCount == rhs.consecutiveBFrameCount ) && ( rateControlStructure == rhs.rateControlStructure ) &&
-             ( temporalLayerCount == rhs.temporalLayerCount );
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( flags == rhs.flags ) && ( gopFrameCount == rhs.gopFrameCount ) &&
+             ( idrPeriod == rhs.idrPeriod ) && ( consecutiveBFrameCount == rhs.consecutiveBFrameCount ) && ( temporalLayerCount == rhs.temporalLayerCount );
 #    endif
     }
 
@@ -104992,13 +106579,13 @@ namespace VULKAN_HPP_NAMESPACE
 #  endif
 
   public:
-    VULKAN_HPP_NAMESPACE::StructureType                          sType                  = StructureType::eVideoEncodeH264RateControlInfoEXT;
-    const void *                                                 pNext                  = {};
-    uint32_t                                                     gopFrameCount          = {};
-    uint32_t                                                     idrPeriod              = {};
-    uint32_t                                                     consecutiveBFrameCount = {};
-    VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControlStructureEXT rateControlStructure = VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControlStructureEXT::eUnknown;
-    uint32_t                                                     temporalLayerCount   = {};
+    VULKAN_HPP_NAMESPACE::StructureType                      sType                  = StructureType::eVideoEncodeH264RateControlInfoEXT;
+    const void *                                             pNext                  = {};
+    VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControlFlagsEXT flags                  = {};
+    uint32_t                                                 gopFrameCount          = {};
+    uint32_t                                                 idrPeriod              = {};
+    uint32_t                                                 consecutiveBFrameCount = {};
+    uint32_t                                                 temporalLayerCount     = {};
   };
 
   template <>
@@ -105017,10 +106604,7 @@ namespace VULKAN_HPP_NAMESPACE
     static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH264RateControlLayerInfoEXT;
 
 #  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR VideoEncodeH264RateControlLayerInfoEXT( uint32_t                                          temporalLayerId_ = {},
-                                                                 VULKAN_HPP_NAMESPACE::Bool32                      useInitialRcQp_  = {},
-                                                                 VULKAN_HPP_NAMESPACE::VideoEncodeH264QpEXT        initialRcQp_     = {},
-                                                                 VULKAN_HPP_NAMESPACE::Bool32                      useMinQp_        = {},
+    VULKAN_HPP_CONSTEXPR VideoEncodeH264RateControlLayerInfoEXT( VULKAN_HPP_NAMESPACE::Bool32                      useMinQp_        = {},
                                                                  VULKAN_HPP_NAMESPACE::VideoEncodeH264QpEXT        minQp_           = {},
                                                                  VULKAN_HPP_NAMESPACE::Bool32                      useMaxQp_        = {},
                                                                  VULKAN_HPP_NAMESPACE::VideoEncodeH264QpEXT        maxQp_           = {},
@@ -105028,9 +106612,6 @@ namespace VULKAN_HPP_NAMESPACE
                                                                  VULKAN_HPP_NAMESPACE::VideoEncodeH264FrameSizeEXT maxFrameSize_    = {},
                                                                  const void *                                      pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
-      , temporalLayerId( temporalLayerId_ )
-      , useInitialRcQp( useInitialRcQp_ )
-      , initialRcQp( initialRcQp_ )
       , useMinQp( useMinQp_ )
       , minQp( minQp_ )
       , useMaxQp( useMaxQp_ )
@@ -105060,25 +106641,6 @@ namespace VULKAN_HPP_NAMESPACE
     VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264RateControlLayerInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
     {
       pNext = pNext_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264RateControlLayerInfoEXT & setTemporalLayerId( uint32_t temporalLayerId_ ) VULKAN_HPP_NOEXCEPT
-    {
-      temporalLayerId = temporalLayerId_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264RateControlLayerInfoEXT & setUseInitialRcQp( VULKAN_HPP_NAMESPACE::Bool32 useInitialRcQp_ ) VULKAN_HPP_NOEXCEPT
-    {
-      useInitialRcQp = useInitialRcQp_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264RateControlLayerInfoEXT &
-                            setInitialRcQp( VULKAN_HPP_NAMESPACE::VideoEncodeH264QpEXT const & initialRcQp_ ) VULKAN_HPP_NOEXCEPT
-    {
-      initialRcQp = initialRcQp_;
       return *this;
     }
 
@@ -105136,9 +106698,6 @@ namespace VULKAN_HPP_NAMESPACE
 #    else
     std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
                const void * const &,
-               uint32_t const &,
-               VULKAN_HPP_NAMESPACE::Bool32 const &,
-               VULKAN_HPP_NAMESPACE::VideoEncodeH264QpEXT const &,
                VULKAN_HPP_NAMESPACE::Bool32 const &,
                VULKAN_HPP_NAMESPACE::VideoEncodeH264QpEXT const &,
                VULKAN_HPP_NAMESPACE::Bool32 const &,
@@ -105148,7 +106707,7 @@ namespace VULKAN_HPP_NAMESPACE
 #    endif
       reflect() const VULKAN_HPP_NOEXCEPT
     {
-      return std::tie( sType, pNext, temporalLayerId, useInitialRcQp, initialRcQp, useMinQp, minQp, useMaxQp, maxQp, useMaxFrameSize, maxFrameSize );
+      return std::tie( sType, pNext, useMinQp, minQp, useMaxQp, maxQp, useMaxFrameSize, maxFrameSize );
     }
 #  endif
 
@@ -105160,8 +106719,7 @@ namespace VULKAN_HPP_NAMESPACE
 #    if defined( VULKAN_HPP_USE_REFLECT )
       return this->reflect() == rhs.reflect();
 #    else
-      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( temporalLayerId == rhs.temporalLayerId ) && ( useInitialRcQp == rhs.useInitialRcQp ) &&
-             ( initialRcQp == rhs.initialRcQp ) && ( useMinQp == rhs.useMinQp ) && ( minQp == rhs.minQp ) && ( useMaxQp == rhs.useMaxQp ) &&
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( useMinQp == rhs.useMinQp ) && ( minQp == rhs.minQp ) && ( useMaxQp == rhs.useMaxQp ) &&
              ( maxQp == rhs.maxQp ) && ( useMaxFrameSize == rhs.useMaxFrameSize ) && ( maxFrameSize == rhs.maxFrameSize );
 #    endif
     }
@@ -105175,9 +106733,6 @@ namespace VULKAN_HPP_NAMESPACE
   public:
     VULKAN_HPP_NAMESPACE::StructureType               sType           = StructureType::eVideoEncodeH264RateControlLayerInfoEXT;
     const void *                                      pNext           = {};
-    uint32_t                                          temporalLayerId = {};
-    VULKAN_HPP_NAMESPACE::Bool32                      useInitialRcQp  = {};
-    VULKAN_HPP_NAMESPACE::VideoEncodeH264QpEXT        initialRcQp     = {};
     VULKAN_HPP_NAMESPACE::Bool32                      useMinQp        = {};
     VULKAN_HPP_NAMESPACE::VideoEncodeH264QpEXT        minQp           = {};
     VULKAN_HPP_NAMESPACE::Bool32                      useMaxQp        = {};
@@ -105190,6 +106745,123 @@ namespace VULKAN_HPP_NAMESPACE
   struct CppType<StructureType, StructureType::eVideoEncodeH264RateControlLayerInfoEXT>
   {
     using Type = VideoEncodeH264RateControlLayerInfoEXT;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct VideoEncodeH264SessionCreateInfoEXT
+  {
+    using NativeType = VkVideoEncodeH264SessionCreateInfoEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH264SessionCreateInfoEXT;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR VideoEncodeH264SessionCreateInfoEXT( VULKAN_HPP_NAMESPACE::Bool32 useMaxLevelIdc_ = {},
+                                                              StdVideoH264LevelIdc         maxLevelIdc_    = {},
+                                                              const void *                 pNext_          = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , useMaxLevelIdc( useMaxLevelIdc_ )
+      , maxLevelIdc( maxLevelIdc_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR VideoEncodeH264SessionCreateInfoEXT( VideoEncodeH264SessionCreateInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    VideoEncodeH264SessionCreateInfoEXT( VkVideoEncodeH264SessionCreateInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : VideoEncodeH264SessionCreateInfoEXT( *reinterpret_cast<VideoEncodeH264SessionCreateInfoEXT const *>( &rhs ) )
+    {
+    }
+
+    VideoEncodeH264SessionCreateInfoEXT & operator=( VideoEncodeH264SessionCreateInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    VideoEncodeH264SessionCreateInfoEXT & operator=( VkVideoEncodeH264SessionCreateInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeH264SessionCreateInfoEXT const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264SessionCreateInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264SessionCreateInfoEXT & setUseMaxLevelIdc( VULKAN_HPP_NAMESPACE::Bool32 useMaxLevelIdc_ ) VULKAN_HPP_NOEXCEPT
+    {
+      useMaxLevelIdc = useMaxLevelIdc_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264SessionCreateInfoEXT & setMaxLevelIdc( StdVideoH264LevelIdc maxLevelIdc_ ) VULKAN_HPP_NOEXCEPT
+    {
+      maxLevelIdc = maxLevelIdc_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkVideoEncodeH264SessionCreateInfoEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkVideoEncodeH264SessionCreateInfoEXT *>( this );
+    }
+
+    operator VkVideoEncodeH264SessionCreateInfoEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkVideoEncodeH264SessionCreateInfoEXT *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &, StdVideoH264LevelIdc const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, useMaxLevelIdc, maxLevelIdc );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    std::strong_ordering operator<=>( VideoEncodeH264SessionCreateInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      if ( auto cmp = sType <=> rhs.sType; cmp != 0 )
+        return cmp;
+      if ( auto cmp = pNext <=> rhs.pNext; cmp != 0 )
+        return cmp;
+      if ( auto cmp = useMaxLevelIdc <=> rhs.useMaxLevelIdc; cmp != 0 )
+        return cmp;
+      if ( auto cmp = memcmp( &maxLevelIdc, &rhs.maxLevelIdc, sizeof( StdVideoH264LevelIdc ) ); cmp != 0 )
+        return ( cmp < 0 ) ? std::strong_ordering::less : std::strong_ordering::greater;
+
+      return std::strong_ordering::equivalent;
+    }
+#  endif
+
+    bool operator==( VideoEncodeH264SessionCreateInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( useMaxLevelIdc == rhs.useMaxLevelIdc ) &&
+             ( memcmp( &maxLevelIdc, &rhs.maxLevelIdc, sizeof( StdVideoH264LevelIdc ) ) == 0 );
+    }
+
+    bool operator!=( VideoEncodeH264SessionCreateInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType          = StructureType::eVideoEncodeH264SessionCreateInfoEXT;
+    const void *                        pNext          = {};
+    VULKAN_HPP_NAMESPACE::Bool32        useMaxLevelIdc = {};
+    StdVideoH264LevelIdc                maxLevelIdc    = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eVideoEncodeH264SessionCreateInfoEXT>
+  {
+    using Type = VideoEncodeH264SessionCreateInfoEXT;
   };
 #endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
@@ -105484,110 +107156,173 @@ namespace VULKAN_HPP_NAMESPACE
 #endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
 #if defined( VK_ENABLE_BETA_EXTENSIONS )
-  struct VideoEncodeH264VclFrameInfoEXT
+  struct VideoEncodeH264SessionParametersFeedbackInfoEXT
   {
-    using NativeType = VkVideoEncodeH264VclFrameInfoEXT;
+    using NativeType = VkVideoEncodeH264SessionParametersFeedbackInfoEXT;
 
     static const bool                                  allowDuplicate = false;
-    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH264VclFrameInfoEXT;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH264SessionParametersFeedbackInfoEXT;
 
 #  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR VideoEncodeH264VclFrameInfoEXT( const StdVideoEncodeH264ReferenceListsInfo *                  pStdReferenceFinalLists_ = {},
-                                                         uint32_t                                                      naluSliceEntryCount_     = {},
-                                                         const VULKAN_HPP_NAMESPACE::VideoEncodeH264NaluSliceInfoEXT * pNaluSliceEntries_       = {},
-                                                         const StdVideoEncodeH264PictureInfo *                         pStdPictureInfo_         = {},
-                                                         const void *                                                  pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR VideoEncodeH264SessionParametersFeedbackInfoEXT( VULKAN_HPP_NAMESPACE::Bool32 hasStdSPSOverrides_ = {},
+                                                                          VULKAN_HPP_NAMESPACE::Bool32 hasStdPPSOverrides_ = {},
+                                                                          void *                       pNext_              = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
-      , pStdReferenceFinalLists( pStdReferenceFinalLists_ )
-      , naluSliceEntryCount( naluSliceEntryCount_ )
-      , pNaluSliceEntries( pNaluSliceEntries_ )
-      , pStdPictureInfo( pStdPictureInfo_ )
+      , hasStdSPSOverrides( hasStdSPSOverrides_ )
+      , hasStdPPSOverrides( hasStdPPSOverrides_ )
     {
     }
 
-    VULKAN_HPP_CONSTEXPR VideoEncodeH264VclFrameInfoEXT( VideoEncodeH264VclFrameInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+    VULKAN_HPP_CONSTEXPR
+      VideoEncodeH264SessionParametersFeedbackInfoEXT( VideoEncodeH264SessionParametersFeedbackInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
 
-    VideoEncodeH264VclFrameInfoEXT( VkVideoEncodeH264VclFrameInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
-      : VideoEncodeH264VclFrameInfoEXT( *reinterpret_cast<VideoEncodeH264VclFrameInfoEXT const *>( &rhs ) )
+    VideoEncodeH264SessionParametersFeedbackInfoEXT( VkVideoEncodeH264SessionParametersFeedbackInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : VideoEncodeH264SessionParametersFeedbackInfoEXT( *reinterpret_cast<VideoEncodeH264SessionParametersFeedbackInfoEXT const *>( &rhs ) )
     {
     }
 
-#    if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
-    VideoEncodeH264VclFrameInfoEXT(
-      const StdVideoEncodeH264ReferenceListsInfo *                                                                       pStdReferenceFinalLists_,
-      VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::VideoEncodeH264NaluSliceInfoEXT> const & naluSliceEntries_,
-      const StdVideoEncodeH264PictureInfo *                                                                              pStdPictureInfo_ = {},
-      const void *                                                                                                       pNext_           = nullptr )
-      : pNext( pNext_ )
-      , pStdReferenceFinalLists( pStdReferenceFinalLists_ )
-      , naluSliceEntryCount( static_cast<uint32_t>( naluSliceEntries_.size() ) )
-      , pNaluSliceEntries( naluSliceEntries_.data() )
-      , pStdPictureInfo( pStdPictureInfo_ )
-    {
-    }
-#    endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
-
-    VideoEncodeH264VclFrameInfoEXT & operator=( VideoEncodeH264VclFrameInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+    VideoEncodeH264SessionParametersFeedbackInfoEXT & operator=( VideoEncodeH264SessionParametersFeedbackInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
 #  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
 
-    VideoEncodeH264VclFrameInfoEXT & operator=( VkVideoEncodeH264VclFrameInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    VideoEncodeH264SessionParametersFeedbackInfoEXT & operator=( VkVideoEncodeH264SessionParametersFeedbackInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
     {
-      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeH264VclFrameInfoEXT const *>( &rhs );
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeH264SessionParametersFeedbackInfoEXT const *>( &rhs );
+      return *this;
+    }
+
+    operator VkVideoEncodeH264SessionParametersFeedbackInfoEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkVideoEncodeH264SessionParametersFeedbackInfoEXT *>( this );
+    }
+
+    operator VkVideoEncodeH264SessionParametersFeedbackInfoEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkVideoEncodeH264SessionParametersFeedbackInfoEXT *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, hasStdSPSOverrides, hasStdPPSOverrides );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( VideoEncodeH264SessionParametersFeedbackInfoEXT const & ) const = default;
+#  else
+    bool operator==( VideoEncodeH264SessionParametersFeedbackInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( hasStdSPSOverrides == rhs.hasStdSPSOverrides ) &&
+             ( hasStdPPSOverrides == rhs.hasStdPPSOverrides );
+#    endif
+    }
+
+    bool operator!=( VideoEncodeH264SessionParametersFeedbackInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType              = StructureType::eVideoEncodeH264SessionParametersFeedbackInfoEXT;
+    void *                              pNext              = {};
+    VULKAN_HPP_NAMESPACE::Bool32        hasStdSPSOverrides = {};
+    VULKAN_HPP_NAMESPACE::Bool32        hasStdPPSOverrides = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eVideoEncodeH264SessionParametersFeedbackInfoEXT>
+  {
+    using Type = VideoEncodeH264SessionParametersFeedbackInfoEXT;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct VideoEncodeH264SessionParametersGetInfoEXT
+  {
+    using NativeType = VkVideoEncodeH264SessionParametersGetInfoEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH264SessionParametersGetInfoEXT;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR VideoEncodeH264SessionParametersGetInfoEXT( VULKAN_HPP_NAMESPACE::Bool32 writeStdSPS_ = {},
+                                                                     VULKAN_HPP_NAMESPACE::Bool32 writeStdPPS_ = {},
+                                                                     uint32_t                     stdSPSId_    = {},
+                                                                     uint32_t                     stdPPSId_    = {},
+                                                                     const void *                 pNext_       = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , writeStdSPS( writeStdSPS_ )
+      , writeStdPPS( writeStdPPS_ )
+      , stdSPSId( stdSPSId_ )
+      , stdPPSId( stdPPSId_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR VideoEncodeH264SessionParametersGetInfoEXT( VideoEncodeH264SessionParametersGetInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    VideoEncodeH264SessionParametersGetInfoEXT( VkVideoEncodeH264SessionParametersGetInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : VideoEncodeH264SessionParametersGetInfoEXT( *reinterpret_cast<VideoEncodeH264SessionParametersGetInfoEXT const *>( &rhs ) )
+    {
+    }
+
+    VideoEncodeH264SessionParametersGetInfoEXT & operator=( VideoEncodeH264SessionParametersGetInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    VideoEncodeH264SessionParametersGetInfoEXT & operator=( VkVideoEncodeH264SessionParametersGetInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeH264SessionParametersGetInfoEXT const *>( &rhs );
       return *this;
     }
 
 #  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264VclFrameInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264SessionParametersGetInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
     {
       pNext = pNext_;
       return *this;
     }
 
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264VclFrameInfoEXT &
-                            setPStdReferenceFinalLists( const StdVideoEncodeH264ReferenceListsInfo * pStdReferenceFinalLists_ ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264SessionParametersGetInfoEXT & setWriteStdSPS( VULKAN_HPP_NAMESPACE::Bool32 writeStdSPS_ ) VULKAN_HPP_NOEXCEPT
     {
-      pStdReferenceFinalLists = pStdReferenceFinalLists_;
+      writeStdSPS = writeStdSPS_;
       return *this;
     }
 
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264VclFrameInfoEXT & setNaluSliceEntryCount( uint32_t naluSliceEntryCount_ ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264SessionParametersGetInfoEXT & setWriteStdPPS( VULKAN_HPP_NAMESPACE::Bool32 writeStdPPS_ ) VULKAN_HPP_NOEXCEPT
     {
-      naluSliceEntryCount = naluSliceEntryCount_;
+      writeStdPPS = writeStdPPS_;
       return *this;
     }
 
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264VclFrameInfoEXT &
-                            setPNaluSliceEntries( const VULKAN_HPP_NAMESPACE::VideoEncodeH264NaluSliceInfoEXT * pNaluSliceEntries_ ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264SessionParametersGetInfoEXT & setStdSPSId( uint32_t stdSPSId_ ) VULKAN_HPP_NOEXCEPT
     {
-      pNaluSliceEntries = pNaluSliceEntries_;
+      stdSPSId = stdSPSId_;
       return *this;
     }
 
-#    if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
-    VideoEncodeH264VclFrameInfoEXT & setNaluSliceEntries(
-      VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::VideoEncodeH264NaluSliceInfoEXT> const & naluSliceEntries_ ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264SessionParametersGetInfoEXT & setStdPPSId( uint32_t stdPPSId_ ) VULKAN_HPP_NOEXCEPT
     {
-      naluSliceEntryCount = static_cast<uint32_t>( naluSliceEntries_.size() );
-      pNaluSliceEntries   = naluSliceEntries_.data();
-      return *this;
-    }
-#    endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
-
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH264VclFrameInfoEXT & setPStdPictureInfo( const StdVideoEncodeH264PictureInfo * pStdPictureInfo_ ) VULKAN_HPP_NOEXCEPT
-    {
-      pStdPictureInfo = pStdPictureInfo_;
+      stdPPSId = stdPPSId_;
       return *this;
     }
 #  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
 
-    operator VkVideoEncodeH264VclFrameInfoEXT const &() const VULKAN_HPP_NOEXCEPT
+    operator VkVideoEncodeH264SessionParametersGetInfoEXT const &() const VULKAN_HPP_NOEXCEPT
     {
-      return *reinterpret_cast<const VkVideoEncodeH264VclFrameInfoEXT *>( this );
+      return *reinterpret_cast<const VkVideoEncodeH264SessionParametersGetInfoEXT *>( this );
     }
 
-    operator VkVideoEncodeH264VclFrameInfoEXT &() VULKAN_HPP_NOEXCEPT
+    operator VkVideoEncodeH264SessionParametersGetInfoEXT &() VULKAN_HPP_NOEXCEPT
     {
-      return *reinterpret_cast<VkVideoEncodeH264VclFrameInfoEXT *>( this );
+      return *reinterpret_cast<VkVideoEncodeH264SessionParametersGetInfoEXT *>( this );
     }
 
 #  if defined( VULKAN_HPP_USE_REFLECT )
@@ -105596,49 +107331,49 @@ namespace VULKAN_HPP_NAMESPACE
 #    else
     std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
                const void * const &,
-               const StdVideoEncodeH264ReferenceListsInfo * const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
                uint32_t const &,
-               const VULKAN_HPP_NAMESPACE::VideoEncodeH264NaluSliceInfoEXT * const &,
-               const StdVideoEncodeH264PictureInfo * const &>
+               uint32_t const &>
 #    endif
       reflect() const VULKAN_HPP_NOEXCEPT
     {
-      return std::tie( sType, pNext, pStdReferenceFinalLists, naluSliceEntryCount, pNaluSliceEntries, pStdPictureInfo );
+      return std::tie( sType, pNext, writeStdSPS, writeStdPPS, stdSPSId, stdPPSId );
     }
 #  endif
 
 #  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
-    auto operator<=>( VideoEncodeH264VclFrameInfoEXT const & ) const = default;
+    auto operator<=>( VideoEncodeH264SessionParametersGetInfoEXT const & ) const = default;
 #  else
-    bool operator==( VideoEncodeH264VclFrameInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    bool operator==( VideoEncodeH264SessionParametersGetInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
     {
 #    if defined( VULKAN_HPP_USE_REFLECT )
       return this->reflect() == rhs.reflect();
 #    else
-      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( pStdReferenceFinalLists == rhs.pStdReferenceFinalLists ) &&
-             ( naluSliceEntryCount == rhs.naluSliceEntryCount ) && ( pNaluSliceEntries == rhs.pNaluSliceEntries ) && ( pStdPictureInfo == rhs.pStdPictureInfo );
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( writeStdSPS == rhs.writeStdSPS ) && ( writeStdPPS == rhs.writeStdPPS ) &&
+             ( stdSPSId == rhs.stdSPSId ) && ( stdPPSId == rhs.stdPPSId );
 #    endif
     }
 
-    bool operator!=( VideoEncodeH264VclFrameInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    bool operator!=( VideoEncodeH264SessionParametersGetInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
     {
       return !operator==( rhs );
     }
 #  endif
 
   public:
-    VULKAN_HPP_NAMESPACE::StructureType                           sType                   = StructureType::eVideoEncodeH264VclFrameInfoEXT;
-    const void *                                                  pNext                   = {};
-    const StdVideoEncodeH264ReferenceListsInfo *                  pStdReferenceFinalLists = {};
-    uint32_t                                                      naluSliceEntryCount     = {};
-    const VULKAN_HPP_NAMESPACE::VideoEncodeH264NaluSliceInfoEXT * pNaluSliceEntries       = {};
-    const StdVideoEncodeH264PictureInfo *                         pStdPictureInfo         = {};
+    VULKAN_HPP_NAMESPACE::StructureType sType       = StructureType::eVideoEncodeH264SessionParametersGetInfoEXT;
+    const void *                        pNext       = {};
+    VULKAN_HPP_NAMESPACE::Bool32        writeStdSPS = {};
+    VULKAN_HPP_NAMESPACE::Bool32        writeStdPPS = {};
+    uint32_t                            stdSPSId    = {};
+    uint32_t                            stdPPSId    = {};
   };
 
   template <>
-  struct CppType<StructureType, StructureType::eVideoEncodeH264VclFrameInfoEXT>
+  struct CppType<StructureType, StructureType::eVideoEncodeH264SessionParametersGetInfoEXT>
   {
-    using Type = VideoEncodeH264VclFrameInfoEXT;
+    using Type = VideoEncodeH264SessionParametersGetInfoEXT;
   };
 #endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
@@ -105652,43 +107387,39 @@ namespace VULKAN_HPP_NAMESPACE
 
 #  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
     VULKAN_HPP_CONSTEXPR VideoEncodeH265CapabilitiesEXT( VULKAN_HPP_NAMESPACE::VideoEncodeH265CapabilityFlagsEXT         flags_                       = {},
+                                                         StdVideoH265LevelIdc                                            maxLevelIdc_                 = {},
+                                                         uint32_t                                                        maxSliceSegmentCount_        = {},
+                                                         VULKAN_HPP_NAMESPACE::Extent2D                                  maxTiles_                    = {},
                                                          VULKAN_HPP_NAMESPACE::VideoEncodeH265CtbSizeFlagsEXT            ctbSizes_                    = {},
                                                          VULKAN_HPP_NAMESPACE::VideoEncodeH265TransformBlockSizeFlagsEXT transformBlockSizes_         = {},
                                                          uint32_t                                                        maxPPictureL0ReferenceCount_ = {},
                                                          uint32_t                                                        maxBPictureL0ReferenceCount_ = {},
                                                          uint32_t                                                        maxL1ReferenceCount_         = {},
-                                                         uint32_t                                                        maxSubLayersCount_           = {},
-                                                         uint32_t minLog2MinLumaCodingBlockSizeMinus3_                                                = {},
-                                                         uint32_t maxLog2MinLumaCodingBlockSizeMinus3_                                                = {},
-                                                         uint32_t minLog2MinLumaTransformBlockSizeMinus2_                                             = {},
-                                                         uint32_t maxLog2MinLumaTransformBlockSizeMinus2_                                             = {},
-                                                         uint32_t minMaxTransformHierarchyDepthInter_                                                 = {},
-                                                         uint32_t maxMaxTransformHierarchyDepthInter_                                                 = {},
-                                                         uint32_t minMaxTransformHierarchyDepthIntra_                                                 = {},
-                                                         uint32_t maxMaxTransformHierarchyDepthIntra_                                                 = {},
-                                                         uint32_t maxDiffCuQpDeltaDepth_                                                              = {},
-                                                         uint32_t minMaxNumMergeCand_                                                                 = {},
-                                                         uint32_t maxMaxNumMergeCand_                                                                 = {},
-                                                         void *   pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+                                                         uint32_t                                                        maxSubLayerCount_            = {},
+                                                         VULKAN_HPP_NAMESPACE::Bool32                     expectDyadicTemporalSubLayerPattern_        = {},
+                                                         int32_t                                          minQp_                                      = {},
+                                                         int32_t                                          maxQp_                                      = {},
+                                                         VULKAN_HPP_NAMESPACE::Bool32                     prefersGopRemainingFrames_                  = {},
+                                                         VULKAN_HPP_NAMESPACE::Bool32                     requiresGopRemainingFrames_                 = {},
+                                                         VULKAN_HPP_NAMESPACE::VideoEncodeH265StdFlagsEXT stdSyntaxFlags_                             = {},
+                                                         void *                                           pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
       , flags( flags_ )
+      , maxLevelIdc( maxLevelIdc_ )
+      , maxSliceSegmentCount( maxSliceSegmentCount_ )
+      , maxTiles( maxTiles_ )
       , ctbSizes( ctbSizes_ )
       , transformBlockSizes( transformBlockSizes_ )
       , maxPPictureL0ReferenceCount( maxPPictureL0ReferenceCount_ )
       , maxBPictureL0ReferenceCount( maxBPictureL0ReferenceCount_ )
       , maxL1ReferenceCount( maxL1ReferenceCount_ )
-      , maxSubLayersCount( maxSubLayersCount_ )
-      , minLog2MinLumaCodingBlockSizeMinus3( minLog2MinLumaCodingBlockSizeMinus3_ )
-      , maxLog2MinLumaCodingBlockSizeMinus3( maxLog2MinLumaCodingBlockSizeMinus3_ )
-      , minLog2MinLumaTransformBlockSizeMinus2( minLog2MinLumaTransformBlockSizeMinus2_ )
-      , maxLog2MinLumaTransformBlockSizeMinus2( maxLog2MinLumaTransformBlockSizeMinus2_ )
-      , minMaxTransformHierarchyDepthInter( minMaxTransformHierarchyDepthInter_ )
-      , maxMaxTransformHierarchyDepthInter( maxMaxTransformHierarchyDepthInter_ )
-      , minMaxTransformHierarchyDepthIntra( minMaxTransformHierarchyDepthIntra_ )
-      , maxMaxTransformHierarchyDepthIntra( maxMaxTransformHierarchyDepthIntra_ )
-      , maxDiffCuQpDeltaDepth( maxDiffCuQpDeltaDepth_ )
-      , minMaxNumMergeCand( minMaxNumMergeCand_ )
-      , maxMaxNumMergeCand( maxMaxNumMergeCand_ )
+      , maxSubLayerCount( maxSubLayerCount_ )
+      , expectDyadicTemporalSubLayerPattern( expectDyadicTemporalSubLayerPattern_ )
+      , minQp( minQp_ )
+      , maxQp( maxQp_ )
+      , prefersGopRemainingFrames( prefersGopRemainingFrames_ )
+      , requiresGopRemainingFrames( requiresGopRemainingFrames_ )
+      , stdSyntaxFlags( stdSyntaxFlags_ )
     {
     }
 
@@ -105725,99 +107456,125 @@ namespace VULKAN_HPP_NAMESPACE
     std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
                void * const &,
                VULKAN_HPP_NAMESPACE::VideoEncodeH265CapabilityFlagsEXT const &,
+               StdVideoH265LevelIdc const &,
+               uint32_t const &,
+               VULKAN_HPP_NAMESPACE::Extent2D const &,
                VULKAN_HPP_NAMESPACE::VideoEncodeH265CtbSizeFlagsEXT const &,
                VULKAN_HPP_NAMESPACE::VideoEncodeH265TransformBlockSizeFlagsEXT const &,
                uint32_t const &,
                uint32_t const &,
                uint32_t const &,
                uint32_t const &,
-               uint32_t const &,
-               uint32_t const &,
-               uint32_t const &,
-               uint32_t const &,
-               uint32_t const &,
-               uint32_t const &,
-               uint32_t const &,
-               uint32_t const &,
-               uint32_t const &,
-               uint32_t const &,
-               uint32_t const &>
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               int32_t const &,
+               int32_t const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::VideoEncodeH265StdFlagsEXT const &>
 #    endif
       reflect() const VULKAN_HPP_NOEXCEPT
     {
       return std::tie( sType,
                        pNext,
                        flags,
+                       maxLevelIdc,
+                       maxSliceSegmentCount,
+                       maxTiles,
                        ctbSizes,
                        transformBlockSizes,
                        maxPPictureL0ReferenceCount,
                        maxBPictureL0ReferenceCount,
                        maxL1ReferenceCount,
-                       maxSubLayersCount,
-                       minLog2MinLumaCodingBlockSizeMinus3,
-                       maxLog2MinLumaCodingBlockSizeMinus3,
-                       minLog2MinLumaTransformBlockSizeMinus2,
-                       maxLog2MinLumaTransformBlockSizeMinus2,
-                       minMaxTransformHierarchyDepthInter,
-                       maxMaxTransformHierarchyDepthInter,
-                       minMaxTransformHierarchyDepthIntra,
-                       maxMaxTransformHierarchyDepthIntra,
-                       maxDiffCuQpDeltaDepth,
-                       minMaxNumMergeCand,
-                       maxMaxNumMergeCand );
+                       maxSubLayerCount,
+                       expectDyadicTemporalSubLayerPattern,
+                       minQp,
+                       maxQp,
+                       prefersGopRemainingFrames,
+                       requiresGopRemainingFrames,
+                       stdSyntaxFlags );
     }
 #  endif
 
 #  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
-    auto operator<=>( VideoEncodeH265CapabilitiesEXT const & ) const = default;
-#  else
+    std::strong_ordering operator<=>( VideoEncodeH265CapabilitiesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      if ( auto cmp = sType <=> rhs.sType; cmp != 0 )
+        return cmp;
+      if ( auto cmp = pNext <=> rhs.pNext; cmp != 0 )
+        return cmp;
+      if ( auto cmp = flags <=> rhs.flags; cmp != 0 )
+        return cmp;
+      if ( auto cmp = memcmp( &maxLevelIdc, &rhs.maxLevelIdc, sizeof( StdVideoH265LevelIdc ) ); cmp != 0 )
+        return ( cmp < 0 ) ? std::strong_ordering::less : std::strong_ordering::greater;
+      if ( auto cmp = maxSliceSegmentCount <=> rhs.maxSliceSegmentCount; cmp != 0 )
+        return cmp;
+      if ( auto cmp = maxTiles <=> rhs.maxTiles; cmp != 0 )
+        return cmp;
+      if ( auto cmp = ctbSizes <=> rhs.ctbSizes; cmp != 0 )
+        return cmp;
+      if ( auto cmp = transformBlockSizes <=> rhs.transformBlockSizes; cmp != 0 )
+        return cmp;
+      if ( auto cmp = maxPPictureL0ReferenceCount <=> rhs.maxPPictureL0ReferenceCount; cmp != 0 )
+        return cmp;
+      if ( auto cmp = maxBPictureL0ReferenceCount <=> rhs.maxBPictureL0ReferenceCount; cmp != 0 )
+        return cmp;
+      if ( auto cmp = maxL1ReferenceCount <=> rhs.maxL1ReferenceCount; cmp != 0 )
+        return cmp;
+      if ( auto cmp = maxSubLayerCount <=> rhs.maxSubLayerCount; cmp != 0 )
+        return cmp;
+      if ( auto cmp = expectDyadicTemporalSubLayerPattern <=> rhs.expectDyadicTemporalSubLayerPattern; cmp != 0 )
+        return cmp;
+      if ( auto cmp = minQp <=> rhs.minQp; cmp != 0 )
+        return cmp;
+      if ( auto cmp = maxQp <=> rhs.maxQp; cmp != 0 )
+        return cmp;
+      if ( auto cmp = prefersGopRemainingFrames <=> rhs.prefersGopRemainingFrames; cmp != 0 )
+        return cmp;
+      if ( auto cmp = requiresGopRemainingFrames <=> rhs.requiresGopRemainingFrames; cmp != 0 )
+        return cmp;
+      if ( auto cmp = stdSyntaxFlags <=> rhs.stdSyntaxFlags; cmp != 0 )
+        return cmp;
+
+      return std::strong_ordering::equivalent;
+    }
+#  endif
+
     bool operator==( VideoEncodeH265CapabilitiesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
     {
-#    if defined( VULKAN_HPP_USE_REFLECT )
-      return this->reflect() == rhs.reflect();
-#    else
-      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( flags == rhs.flags ) && ( ctbSizes == rhs.ctbSizes ) &&
-             ( transformBlockSizes == rhs.transformBlockSizes ) && ( maxPPictureL0ReferenceCount == rhs.maxPPictureL0ReferenceCount ) &&
-             ( maxBPictureL0ReferenceCount == rhs.maxBPictureL0ReferenceCount ) && ( maxL1ReferenceCount == rhs.maxL1ReferenceCount ) &&
-             ( maxSubLayersCount == rhs.maxSubLayersCount ) && ( minLog2MinLumaCodingBlockSizeMinus3 == rhs.minLog2MinLumaCodingBlockSizeMinus3 ) &&
-             ( maxLog2MinLumaCodingBlockSizeMinus3 == rhs.maxLog2MinLumaCodingBlockSizeMinus3 ) &&
-             ( minLog2MinLumaTransformBlockSizeMinus2 == rhs.minLog2MinLumaTransformBlockSizeMinus2 ) &&
-             ( maxLog2MinLumaTransformBlockSizeMinus2 == rhs.maxLog2MinLumaTransformBlockSizeMinus2 ) &&
-             ( minMaxTransformHierarchyDepthInter == rhs.minMaxTransformHierarchyDepthInter ) &&
-             ( maxMaxTransformHierarchyDepthInter == rhs.maxMaxTransformHierarchyDepthInter ) &&
-             ( minMaxTransformHierarchyDepthIntra == rhs.minMaxTransformHierarchyDepthIntra ) &&
-             ( maxMaxTransformHierarchyDepthIntra == rhs.maxMaxTransformHierarchyDepthIntra ) && ( maxDiffCuQpDeltaDepth == rhs.maxDiffCuQpDeltaDepth ) &&
-             ( minMaxNumMergeCand == rhs.minMaxNumMergeCand ) && ( maxMaxNumMergeCand == rhs.maxMaxNumMergeCand );
-#    endif
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( flags == rhs.flags ) &&
+             ( memcmp( &maxLevelIdc, &rhs.maxLevelIdc, sizeof( StdVideoH265LevelIdc ) ) == 0 ) && ( maxSliceSegmentCount == rhs.maxSliceSegmentCount ) &&
+             ( maxTiles == rhs.maxTiles ) && ( ctbSizes == rhs.ctbSizes ) && ( transformBlockSizes == rhs.transformBlockSizes ) &&
+             ( maxPPictureL0ReferenceCount == rhs.maxPPictureL0ReferenceCount ) && ( maxBPictureL0ReferenceCount == rhs.maxBPictureL0ReferenceCount ) &&
+             ( maxL1ReferenceCount == rhs.maxL1ReferenceCount ) && ( maxSubLayerCount == rhs.maxSubLayerCount ) &&
+             ( expectDyadicTemporalSubLayerPattern == rhs.expectDyadicTemporalSubLayerPattern ) && ( minQp == rhs.minQp ) && ( maxQp == rhs.maxQp ) &&
+             ( prefersGopRemainingFrames == rhs.prefersGopRemainingFrames ) && ( requiresGopRemainingFrames == rhs.requiresGopRemainingFrames ) &&
+             ( stdSyntaxFlags == rhs.stdSyntaxFlags );
     }
 
     bool operator!=( VideoEncodeH265CapabilitiesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
     {
       return !operator==( rhs );
     }
-#  endif
 
   public:
-    VULKAN_HPP_NAMESPACE::StructureType                             sType                                  = StructureType::eVideoEncodeH265CapabilitiesEXT;
-    void *                                                          pNext                                  = {};
-    VULKAN_HPP_NAMESPACE::VideoEncodeH265CapabilityFlagsEXT         flags                                  = {};
-    VULKAN_HPP_NAMESPACE::VideoEncodeH265CtbSizeFlagsEXT            ctbSizes                               = {};
-    VULKAN_HPP_NAMESPACE::VideoEncodeH265TransformBlockSizeFlagsEXT transformBlockSizes                    = {};
-    uint32_t                                                        maxPPictureL0ReferenceCount            = {};
-    uint32_t                                                        maxBPictureL0ReferenceCount            = {};
-    uint32_t                                                        maxL1ReferenceCount                    = {};
-    uint32_t                                                        maxSubLayersCount                      = {};
-    uint32_t                                                        minLog2MinLumaCodingBlockSizeMinus3    = {};
-    uint32_t                                                        maxLog2MinLumaCodingBlockSizeMinus3    = {};
-    uint32_t                                                        minLog2MinLumaTransformBlockSizeMinus2 = {};
-    uint32_t                                                        maxLog2MinLumaTransformBlockSizeMinus2 = {};
-    uint32_t                                                        minMaxTransformHierarchyDepthInter     = {};
-    uint32_t                                                        maxMaxTransformHierarchyDepthInter     = {};
-    uint32_t                                                        minMaxTransformHierarchyDepthIntra     = {};
-    uint32_t                                                        maxMaxTransformHierarchyDepthIntra     = {};
-    uint32_t                                                        maxDiffCuQpDeltaDepth                  = {};
-    uint32_t                                                        minMaxNumMergeCand                     = {};
-    uint32_t                                                        maxMaxNumMergeCand                     = {};
+    VULKAN_HPP_NAMESPACE::StructureType                             sType                               = StructureType::eVideoEncodeH265CapabilitiesEXT;
+    void *                                                          pNext                               = {};
+    VULKAN_HPP_NAMESPACE::VideoEncodeH265CapabilityFlagsEXT         flags                               = {};
+    StdVideoH265LevelIdc                                            maxLevelIdc                         = {};
+    uint32_t                                                        maxSliceSegmentCount                = {};
+    VULKAN_HPP_NAMESPACE::Extent2D                                  maxTiles                            = {};
+    VULKAN_HPP_NAMESPACE::VideoEncodeH265CtbSizeFlagsEXT            ctbSizes                            = {};
+    VULKAN_HPP_NAMESPACE::VideoEncodeH265TransformBlockSizeFlagsEXT transformBlockSizes                 = {};
+    uint32_t                                                        maxPPictureL0ReferenceCount         = {};
+    uint32_t                                                        maxBPictureL0ReferenceCount         = {};
+    uint32_t                                                        maxL1ReferenceCount                 = {};
+    uint32_t                                                        maxSubLayerCount                    = {};
+    VULKAN_HPP_NAMESPACE::Bool32                                    expectDyadicTemporalSubLayerPattern = {};
+    int32_t                                                         minQp                               = {};
+    int32_t                                                         maxQp                               = {};
+    VULKAN_HPP_NAMESPACE::Bool32                                    prefersGopRemainingFrames           = {};
+    VULKAN_HPP_NAMESPACE::Bool32                                    requiresGopRemainingFrames          = {};
+    VULKAN_HPP_NAMESPACE::VideoEncodeH265StdFlagsEXT                stdSyntaxFlags                      = {};
   };
 
   template <>
@@ -106024,6 +107781,139 @@ namespace VULKAN_HPP_NAMESPACE
 #endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
 #if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct VideoEncodeH265GopRemainingFrameInfoEXT
+  {
+    using NativeType = VkVideoEncodeH265GopRemainingFrameInfoEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH265GopRemainingFrameInfoEXT;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR VideoEncodeH265GopRemainingFrameInfoEXT( VULKAN_HPP_NAMESPACE::Bool32 useGopRemainingFrames_ = {},
+                                                                  uint32_t                     gopRemainingI_         = {},
+                                                                  uint32_t                     gopRemainingP_         = {},
+                                                                  uint32_t                     gopRemainingB_         = {},
+                                                                  const void *                 pNext_                 = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , useGopRemainingFrames( useGopRemainingFrames_ )
+      , gopRemainingI( gopRemainingI_ )
+      , gopRemainingP( gopRemainingP_ )
+      , gopRemainingB( gopRemainingB_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR VideoEncodeH265GopRemainingFrameInfoEXT( VideoEncodeH265GopRemainingFrameInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    VideoEncodeH265GopRemainingFrameInfoEXT( VkVideoEncodeH265GopRemainingFrameInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : VideoEncodeH265GopRemainingFrameInfoEXT( *reinterpret_cast<VideoEncodeH265GopRemainingFrameInfoEXT const *>( &rhs ) )
+    {
+    }
+
+    VideoEncodeH265GopRemainingFrameInfoEXT & operator=( VideoEncodeH265GopRemainingFrameInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    VideoEncodeH265GopRemainingFrameInfoEXT & operator=( VkVideoEncodeH265GopRemainingFrameInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeH265GopRemainingFrameInfoEXT const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265GopRemainingFrameInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265GopRemainingFrameInfoEXT &
+                            setUseGopRemainingFrames( VULKAN_HPP_NAMESPACE::Bool32 useGopRemainingFrames_ ) VULKAN_HPP_NOEXCEPT
+    {
+      useGopRemainingFrames = useGopRemainingFrames_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265GopRemainingFrameInfoEXT & setGopRemainingI( uint32_t gopRemainingI_ ) VULKAN_HPP_NOEXCEPT
+    {
+      gopRemainingI = gopRemainingI_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265GopRemainingFrameInfoEXT & setGopRemainingP( uint32_t gopRemainingP_ ) VULKAN_HPP_NOEXCEPT
+    {
+      gopRemainingP = gopRemainingP_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265GopRemainingFrameInfoEXT & setGopRemainingB( uint32_t gopRemainingB_ ) VULKAN_HPP_NOEXCEPT
+    {
+      gopRemainingB = gopRemainingB_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkVideoEncodeH265GopRemainingFrameInfoEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkVideoEncodeH265GopRemainingFrameInfoEXT *>( this );
+    }
+
+    operator VkVideoEncodeH265GopRemainingFrameInfoEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkVideoEncodeH265GopRemainingFrameInfoEXT *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               uint32_t const &,
+               uint32_t const &,
+               uint32_t const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, useGopRemainingFrames, gopRemainingI, gopRemainingP, gopRemainingB );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( VideoEncodeH265GopRemainingFrameInfoEXT const & ) const = default;
+#  else
+    bool operator==( VideoEncodeH265GopRemainingFrameInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( useGopRemainingFrames == rhs.useGopRemainingFrames ) &&
+             ( gopRemainingI == rhs.gopRemainingI ) && ( gopRemainingP == rhs.gopRemainingP ) && ( gopRemainingB == rhs.gopRemainingB );
+#    endif
+    }
+
+    bool operator!=( VideoEncodeH265GopRemainingFrameInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                 = StructureType::eVideoEncodeH265GopRemainingFrameInfoEXT;
+    const void *                        pNext                 = {};
+    VULKAN_HPP_NAMESPACE::Bool32        useGopRemainingFrames = {};
+    uint32_t                            gopRemainingI         = {};
+    uint32_t                            gopRemainingP         = {};
+    uint32_t                            gopRemainingB         = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eVideoEncodeH265GopRemainingFrameInfoEXT>
+  {
+    using Type = VideoEncodeH265GopRemainingFrameInfoEXT;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
   struct VideoEncodeH265NaluSliceSegmentInfoEXT
   {
     using NativeType = VkVideoEncodeH265NaluSliceSegmentInfoEXT;
@@ -106032,13 +107922,11 @@ namespace VULKAN_HPP_NAMESPACE
     static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH265NaluSliceSegmentInfoEXT;
 
 #  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR VideoEncodeH265NaluSliceSegmentInfoEXT( uint32_t                                     ctbCount_                = {},
-                                                                 const StdVideoEncodeH265ReferenceListsInfo * pStdReferenceFinalLists_ = {},
-                                                                 const StdVideoEncodeH265SliceSegmentHeader * pStdSliceSegmentHeader_  = {},
+    VULKAN_HPP_CONSTEXPR VideoEncodeH265NaluSliceSegmentInfoEXT( int32_t                                      constantQp_             = {},
+                                                                 const StdVideoEncodeH265SliceSegmentHeader * pStdSliceSegmentHeader_ = {},
                                                                  const void *                                 pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
-      , ctbCount( ctbCount_ )
-      , pStdReferenceFinalLists( pStdReferenceFinalLists_ )
+      , constantQp( constantQp_ )
       , pStdSliceSegmentHeader( pStdSliceSegmentHeader_ )
     {
     }
@@ -106066,16 +107954,9 @@ namespace VULKAN_HPP_NAMESPACE
       return *this;
     }
 
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265NaluSliceSegmentInfoEXT & setCtbCount( uint32_t ctbCount_ ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265NaluSliceSegmentInfoEXT & setConstantQp( int32_t constantQp_ ) VULKAN_HPP_NOEXCEPT
     {
-      ctbCount = ctbCount_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265NaluSliceSegmentInfoEXT &
-                            setPStdReferenceFinalLists( const StdVideoEncodeH265ReferenceListsInfo * pStdReferenceFinalLists_ ) VULKAN_HPP_NOEXCEPT
-    {
-      pStdReferenceFinalLists = pStdReferenceFinalLists_;
+      constantQp = constantQp_;
       return *this;
     }
 
@@ -106101,15 +107982,11 @@ namespace VULKAN_HPP_NAMESPACE
 #    if 14 <= VULKAN_HPP_CPP_VERSION
     auto
 #    else
-    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
-               const void * const &,
-               uint32_t const &,
-               const StdVideoEncodeH265ReferenceListsInfo * const &,
-               const StdVideoEncodeH265SliceSegmentHeader * const &>
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, int32_t const &, const StdVideoEncodeH265SliceSegmentHeader * const &>
 #    endif
       reflect() const VULKAN_HPP_NOEXCEPT
     {
-      return std::tie( sType, pNext, ctbCount, pStdReferenceFinalLists, pStdSliceSegmentHeader );
+      return std::tie( sType, pNext, constantQp, pStdSliceSegmentHeader );
     }
 #  endif
 
@@ -106121,8 +107998,7 @@ namespace VULKAN_HPP_NAMESPACE
 #    if defined( VULKAN_HPP_USE_REFLECT )
       return this->reflect() == rhs.reflect();
 #    else
-      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( ctbCount == rhs.ctbCount ) && ( pStdReferenceFinalLists == rhs.pStdReferenceFinalLists ) &&
-             ( pStdSliceSegmentHeader == rhs.pStdSliceSegmentHeader );
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( constantQp == rhs.constantQp ) && ( pStdSliceSegmentHeader == rhs.pStdSliceSegmentHeader );
 #    endif
     }
 
@@ -106133,17 +108009,163 @@ namespace VULKAN_HPP_NAMESPACE
 #  endif
 
   public:
-    VULKAN_HPP_NAMESPACE::StructureType          sType                   = StructureType::eVideoEncodeH265NaluSliceSegmentInfoEXT;
-    const void *                                 pNext                   = {};
-    uint32_t                                     ctbCount                = {};
-    const StdVideoEncodeH265ReferenceListsInfo * pStdReferenceFinalLists = {};
-    const StdVideoEncodeH265SliceSegmentHeader * pStdSliceSegmentHeader  = {};
+    VULKAN_HPP_NAMESPACE::StructureType          sType                  = StructureType::eVideoEncodeH265NaluSliceSegmentInfoEXT;
+    const void *                                 pNext                  = {};
+    int32_t                                      constantQp             = {};
+    const StdVideoEncodeH265SliceSegmentHeader * pStdSliceSegmentHeader = {};
   };
 
   template <>
   struct CppType<StructureType, StructureType::eVideoEncodeH265NaluSliceSegmentInfoEXT>
   {
     using Type = VideoEncodeH265NaluSliceSegmentInfoEXT;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct VideoEncodeH265PictureInfoEXT
+  {
+    using NativeType = VkVideoEncodeH265PictureInfoEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH265PictureInfoEXT;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR VideoEncodeH265PictureInfoEXT( uint32_t                                                             naluSliceSegmentEntryCount_ = {},
+                                                        const VULKAN_HPP_NAMESPACE::VideoEncodeH265NaluSliceSegmentInfoEXT * pNaluSliceSegmentEntries_   = {},
+                                                        const StdVideoEncodeH265PictureInfo *                                pStdPictureInfo_            = {},
+                                                        const void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , naluSliceSegmentEntryCount( naluSliceSegmentEntryCount_ )
+      , pNaluSliceSegmentEntries( pNaluSliceSegmentEntries_ )
+      , pStdPictureInfo( pStdPictureInfo_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR VideoEncodeH265PictureInfoEXT( VideoEncodeH265PictureInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    VideoEncodeH265PictureInfoEXT( VkVideoEncodeH265PictureInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : VideoEncodeH265PictureInfoEXT( *reinterpret_cast<VideoEncodeH265PictureInfoEXT const *>( &rhs ) )
+    {
+    }
+
+#    if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    VideoEncodeH265PictureInfoEXT(
+      VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::VideoEncodeH265NaluSliceSegmentInfoEXT> const & naluSliceSegmentEntries_,
+      const StdVideoEncodeH265PictureInfo *                                                                                     pStdPictureInfo_ = {},
+      const void *                                                                                                              pNext_           = nullptr )
+      : pNext( pNext_ )
+      , naluSliceSegmentEntryCount( static_cast<uint32_t>( naluSliceSegmentEntries_.size() ) )
+      , pNaluSliceSegmentEntries( naluSliceSegmentEntries_.data() )
+      , pStdPictureInfo( pStdPictureInfo_ )
+    {
+    }
+#    endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    VideoEncodeH265PictureInfoEXT & operator=( VideoEncodeH265PictureInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    VideoEncodeH265PictureInfoEXT & operator=( VkVideoEncodeH265PictureInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeH265PictureInfoEXT const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265PictureInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265PictureInfoEXT & setNaluSliceSegmentEntryCount( uint32_t naluSliceSegmentEntryCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      naluSliceSegmentEntryCount = naluSliceSegmentEntryCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265PictureInfoEXT &
+      setPNaluSliceSegmentEntries( const VULKAN_HPP_NAMESPACE::VideoEncodeH265NaluSliceSegmentInfoEXT * pNaluSliceSegmentEntries_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNaluSliceSegmentEntries = pNaluSliceSegmentEntries_;
+      return *this;
+    }
+
+#    if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    VideoEncodeH265PictureInfoEXT & setNaluSliceSegmentEntries(
+      VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::VideoEncodeH265NaluSliceSegmentInfoEXT> const & naluSliceSegmentEntries_ )
+      VULKAN_HPP_NOEXCEPT
+    {
+      naluSliceSegmentEntryCount = static_cast<uint32_t>( naluSliceSegmentEntries_.size() );
+      pNaluSliceSegmentEntries   = naluSliceSegmentEntries_.data();
+      return *this;
+    }
+#    endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265PictureInfoEXT & setPStdPictureInfo( const StdVideoEncodeH265PictureInfo * pStdPictureInfo_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pStdPictureInfo = pStdPictureInfo_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkVideoEncodeH265PictureInfoEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkVideoEncodeH265PictureInfoEXT *>( this );
+    }
+
+    operator VkVideoEncodeH265PictureInfoEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkVideoEncodeH265PictureInfoEXT *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               uint32_t const &,
+               const VULKAN_HPP_NAMESPACE::VideoEncodeH265NaluSliceSegmentInfoEXT * const &,
+               const StdVideoEncodeH265PictureInfo * const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, naluSliceSegmentEntryCount, pNaluSliceSegmentEntries, pStdPictureInfo );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( VideoEncodeH265PictureInfoEXT const & ) const = default;
+#  else
+    bool operator==( VideoEncodeH265PictureInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( naluSliceSegmentEntryCount == rhs.naluSliceSegmentEntryCount ) &&
+             ( pNaluSliceSegmentEntries == rhs.pNaluSliceSegmentEntries ) && ( pStdPictureInfo == rhs.pStdPictureInfo );
+#    endif
+    }
+
+    bool operator!=( VideoEncodeH265PictureInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType                                  sType                      = StructureType::eVideoEncodeH265PictureInfoEXT;
+    const void *                                                         pNext                      = {};
+    uint32_t                                                             naluSliceSegmentEntryCount = {};
+    const VULKAN_HPP_NAMESPACE::VideoEncodeH265NaluSliceSegmentInfoEXT * pNaluSliceSegmentEntries   = {};
+    const StdVideoEncodeH265PictureInfo *                                pStdPictureInfo            = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eVideoEncodeH265PictureInfoEXT>
+  {
+    using Type = VideoEncodeH265PictureInfoEXT;
   };
 #endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
@@ -106348,6 +108370,134 @@ namespace VULKAN_HPP_NAMESPACE
 #endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
 #if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct VideoEncodeH265QualityLevelPropertiesEXT
+  {
+    using NativeType = VkVideoEncodeH265QualityLevelPropertiesEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH265QualityLevelPropertiesEXT;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR VideoEncodeH265QualityLevelPropertiesEXT( VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControlFlagsEXT preferredRateControlFlags_ = {},
+                                                                   uint32_t                                                 preferredGopFrameCount_    = {},
+                                                                   uint32_t                                                 preferredIdrPeriod_        = {},
+                                                                   uint32_t                                   preferredConsecutiveBFrameCount_         = {},
+                                                                   uint32_t                                   preferredSubLayerCount_                  = {},
+                                                                   VULKAN_HPP_NAMESPACE::VideoEncodeH265QpEXT preferredConstantQp_                     = {},
+                                                                   uint32_t                                   preferredMaxL0ReferenceCount_            = {},
+                                                                   uint32_t                                   preferredMaxL1ReferenceCount_            = {},
+                                                                   void *                                     pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , preferredRateControlFlags( preferredRateControlFlags_ )
+      , preferredGopFrameCount( preferredGopFrameCount_ )
+      , preferredIdrPeriod( preferredIdrPeriod_ )
+      , preferredConsecutiveBFrameCount( preferredConsecutiveBFrameCount_ )
+      , preferredSubLayerCount( preferredSubLayerCount_ )
+      , preferredConstantQp( preferredConstantQp_ )
+      , preferredMaxL0ReferenceCount( preferredMaxL0ReferenceCount_ )
+      , preferredMaxL1ReferenceCount( preferredMaxL1ReferenceCount_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR VideoEncodeH265QualityLevelPropertiesEXT( VideoEncodeH265QualityLevelPropertiesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    VideoEncodeH265QualityLevelPropertiesEXT( VkVideoEncodeH265QualityLevelPropertiesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : VideoEncodeH265QualityLevelPropertiesEXT( *reinterpret_cast<VideoEncodeH265QualityLevelPropertiesEXT const *>( &rhs ) )
+    {
+    }
+
+    VideoEncodeH265QualityLevelPropertiesEXT & operator=( VideoEncodeH265QualityLevelPropertiesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    VideoEncodeH265QualityLevelPropertiesEXT & operator=( VkVideoEncodeH265QualityLevelPropertiesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeH265QualityLevelPropertiesEXT const *>( &rhs );
+      return *this;
+    }
+
+    operator VkVideoEncodeH265QualityLevelPropertiesEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkVideoEncodeH265QualityLevelPropertiesEXT *>( this );
+    }
+
+    operator VkVideoEncodeH265QualityLevelPropertiesEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkVideoEncodeH265QualityLevelPropertiesEXT *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               void * const &,
+               VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControlFlagsEXT const &,
+               uint32_t const &,
+               uint32_t const &,
+               uint32_t const &,
+               uint32_t const &,
+               VULKAN_HPP_NAMESPACE::VideoEncodeH265QpEXT const &,
+               uint32_t const &,
+               uint32_t const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType,
+                       pNext,
+                       preferredRateControlFlags,
+                       preferredGopFrameCount,
+                       preferredIdrPeriod,
+                       preferredConsecutiveBFrameCount,
+                       preferredSubLayerCount,
+                       preferredConstantQp,
+                       preferredMaxL0ReferenceCount,
+                       preferredMaxL1ReferenceCount );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( VideoEncodeH265QualityLevelPropertiesEXT const & ) const = default;
+#  else
+    bool operator==( VideoEncodeH265QualityLevelPropertiesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( preferredRateControlFlags == rhs.preferredRateControlFlags ) &&
+             ( preferredGopFrameCount == rhs.preferredGopFrameCount ) && ( preferredIdrPeriod == rhs.preferredIdrPeriod ) &&
+             ( preferredConsecutiveBFrameCount == rhs.preferredConsecutiveBFrameCount ) && ( preferredSubLayerCount == rhs.preferredSubLayerCount ) &&
+             ( preferredConstantQp == rhs.preferredConstantQp ) && ( preferredMaxL0ReferenceCount == rhs.preferredMaxL0ReferenceCount ) &&
+             ( preferredMaxL1ReferenceCount == rhs.preferredMaxL1ReferenceCount );
+#    endif
+    }
+
+    bool operator!=( VideoEncodeH265QualityLevelPropertiesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType                      sType                           = StructureType::eVideoEncodeH265QualityLevelPropertiesEXT;
+    void *                                                   pNext                           = {};
+    VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControlFlagsEXT preferredRateControlFlags       = {};
+    uint32_t                                                 preferredGopFrameCount          = {};
+    uint32_t                                                 preferredIdrPeriod              = {};
+    uint32_t                                                 preferredConsecutiveBFrameCount = {};
+    uint32_t                                                 preferredSubLayerCount          = {};
+    VULKAN_HPP_NAMESPACE::VideoEncodeH265QpEXT               preferredConstantQp             = {};
+    uint32_t                                                 preferredMaxL0ReferenceCount    = {};
+    uint32_t                                                 preferredMaxL1ReferenceCount    = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eVideoEncodeH265QualityLevelPropertiesEXT>
+  {
+    using Type = VideoEncodeH265QualityLevelPropertiesEXT;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
   struct VideoEncodeH265RateControlInfoEXT
   {
     using NativeType = VkVideoEncodeH265RateControlInfoEXT;
@@ -106356,18 +108506,17 @@ namespace VULKAN_HPP_NAMESPACE
     static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH265RateControlInfoEXT;
 
 #  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR VideoEncodeH265RateControlInfoEXT( uint32_t                                                     gopFrameCount_          = {},
-                                                            uint32_t                                                     idrPeriod_              = {},
-                                                            uint32_t                                                     consecutiveBFrameCount_ = {},
-                                                            VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControlStructureEXT rateControlStructure_ =
-                                                              VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControlStructureEXT::eUnknown,
-                                                            uint32_t     subLayerCount_ = {},
-                                                            const void * pNext_         = nullptr ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR VideoEncodeH265RateControlInfoEXT( VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControlFlagsEXT flags_                  = {},
+                                                            uint32_t                                                 gopFrameCount_          = {},
+                                                            uint32_t                                                 idrPeriod_              = {},
+                                                            uint32_t                                                 consecutiveBFrameCount_ = {},
+                                                            uint32_t                                                 subLayerCount_          = {},
+                                                            const void *                                             pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
+      , flags( flags_ )
       , gopFrameCount( gopFrameCount_ )
       , idrPeriod( idrPeriod_ )
       , consecutiveBFrameCount( consecutiveBFrameCount_ )
-      , rateControlStructure( rateControlStructure_ )
       , subLayerCount( subLayerCount_ )
     {
     }
@@ -106395,6 +108544,12 @@ namespace VULKAN_HPP_NAMESPACE
       return *this;
     }
 
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265RateControlInfoEXT & setFlags( VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControlFlagsEXT flags_ ) VULKAN_HPP_NOEXCEPT
+    {
+      flags = flags_;
+      return *this;
+    }
+
     VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265RateControlInfoEXT & setGopFrameCount( uint32_t gopFrameCount_ ) VULKAN_HPP_NOEXCEPT
     {
       gopFrameCount = gopFrameCount_;
@@ -106410,13 +108565,6 @@ namespace VULKAN_HPP_NAMESPACE
     VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265RateControlInfoEXT & setConsecutiveBFrameCount( uint32_t consecutiveBFrameCount_ ) VULKAN_HPP_NOEXCEPT
     {
       consecutiveBFrameCount = consecutiveBFrameCount_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265RateControlInfoEXT &
-                            setRateControlStructure( VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControlStructureEXT rateControlStructure_ ) VULKAN_HPP_NOEXCEPT
-    {
-      rateControlStructure = rateControlStructure_;
       return *this;
     }
 
@@ -106443,15 +108591,15 @@ namespace VULKAN_HPP_NAMESPACE
 #    else
     std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
                const void * const &,
+               VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControlFlagsEXT const &,
                uint32_t const &,
                uint32_t const &,
                uint32_t const &,
-               VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControlStructureEXT const &,
                uint32_t const &>
 #    endif
       reflect() const VULKAN_HPP_NOEXCEPT
     {
-      return std::tie( sType, pNext, gopFrameCount, idrPeriod, consecutiveBFrameCount, rateControlStructure, subLayerCount );
+      return std::tie( sType, pNext, flags, gopFrameCount, idrPeriod, consecutiveBFrameCount, subLayerCount );
     }
 #  endif
 
@@ -106463,9 +108611,8 @@ namespace VULKAN_HPP_NAMESPACE
 #    if defined( VULKAN_HPP_USE_REFLECT )
       return this->reflect() == rhs.reflect();
 #    else
-      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( gopFrameCount == rhs.gopFrameCount ) && ( idrPeriod == rhs.idrPeriod ) &&
-             ( consecutiveBFrameCount == rhs.consecutiveBFrameCount ) && ( rateControlStructure == rhs.rateControlStructure ) &&
-             ( subLayerCount == rhs.subLayerCount );
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( flags == rhs.flags ) && ( gopFrameCount == rhs.gopFrameCount ) &&
+             ( idrPeriod == rhs.idrPeriod ) && ( consecutiveBFrameCount == rhs.consecutiveBFrameCount ) && ( subLayerCount == rhs.subLayerCount );
 #    endif
     }
 
@@ -106476,13 +108623,13 @@ namespace VULKAN_HPP_NAMESPACE
 #  endif
 
   public:
-    VULKAN_HPP_NAMESPACE::StructureType                          sType                  = StructureType::eVideoEncodeH265RateControlInfoEXT;
-    const void *                                                 pNext                  = {};
-    uint32_t                                                     gopFrameCount          = {};
-    uint32_t                                                     idrPeriod              = {};
-    uint32_t                                                     consecutiveBFrameCount = {};
-    VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControlStructureEXT rateControlStructure = VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControlStructureEXT::eUnknown;
-    uint32_t                                                     subLayerCount        = {};
+    VULKAN_HPP_NAMESPACE::StructureType                      sType                  = StructureType::eVideoEncodeH265RateControlInfoEXT;
+    const void *                                             pNext                  = {};
+    VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControlFlagsEXT flags                  = {};
+    uint32_t                                                 gopFrameCount          = {};
+    uint32_t                                                 idrPeriod              = {};
+    uint32_t                                                 consecutiveBFrameCount = {};
+    uint32_t                                                 subLayerCount          = {};
   };
 
   template <>
@@ -106501,10 +108648,7 @@ namespace VULKAN_HPP_NAMESPACE
     static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH265RateControlLayerInfoEXT;
 
 #  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR VideoEncodeH265RateControlLayerInfoEXT( uint32_t                                          temporalId_      = {},
-                                                                 VULKAN_HPP_NAMESPACE::Bool32                      useInitialRcQp_  = {},
-                                                                 VULKAN_HPP_NAMESPACE::VideoEncodeH265QpEXT        initialRcQp_     = {},
-                                                                 VULKAN_HPP_NAMESPACE::Bool32                      useMinQp_        = {},
+    VULKAN_HPP_CONSTEXPR VideoEncodeH265RateControlLayerInfoEXT( VULKAN_HPP_NAMESPACE::Bool32                      useMinQp_        = {},
                                                                  VULKAN_HPP_NAMESPACE::VideoEncodeH265QpEXT        minQp_           = {},
                                                                  VULKAN_HPP_NAMESPACE::Bool32                      useMaxQp_        = {},
                                                                  VULKAN_HPP_NAMESPACE::VideoEncodeH265QpEXT        maxQp_           = {},
@@ -106512,9 +108656,6 @@ namespace VULKAN_HPP_NAMESPACE
                                                                  VULKAN_HPP_NAMESPACE::VideoEncodeH265FrameSizeEXT maxFrameSize_    = {},
                                                                  const void *                                      pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
-      , temporalId( temporalId_ )
-      , useInitialRcQp( useInitialRcQp_ )
-      , initialRcQp( initialRcQp_ )
       , useMinQp( useMinQp_ )
       , minQp( minQp_ )
       , useMaxQp( useMaxQp_ )
@@ -106544,25 +108685,6 @@ namespace VULKAN_HPP_NAMESPACE
     VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265RateControlLayerInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
     {
       pNext = pNext_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265RateControlLayerInfoEXT & setTemporalId( uint32_t temporalId_ ) VULKAN_HPP_NOEXCEPT
-    {
-      temporalId = temporalId_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265RateControlLayerInfoEXT & setUseInitialRcQp( VULKAN_HPP_NAMESPACE::Bool32 useInitialRcQp_ ) VULKAN_HPP_NOEXCEPT
-    {
-      useInitialRcQp = useInitialRcQp_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265RateControlLayerInfoEXT &
-                            setInitialRcQp( VULKAN_HPP_NAMESPACE::VideoEncodeH265QpEXT const & initialRcQp_ ) VULKAN_HPP_NOEXCEPT
-    {
-      initialRcQp = initialRcQp_;
       return *this;
     }
 
@@ -106620,9 +108742,6 @@ namespace VULKAN_HPP_NAMESPACE
 #    else
     std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
                const void * const &,
-               uint32_t const &,
-               VULKAN_HPP_NAMESPACE::Bool32 const &,
-               VULKAN_HPP_NAMESPACE::VideoEncodeH265QpEXT const &,
                VULKAN_HPP_NAMESPACE::Bool32 const &,
                VULKAN_HPP_NAMESPACE::VideoEncodeH265QpEXT const &,
                VULKAN_HPP_NAMESPACE::Bool32 const &,
@@ -106632,7 +108751,7 @@ namespace VULKAN_HPP_NAMESPACE
 #    endif
       reflect() const VULKAN_HPP_NOEXCEPT
     {
-      return std::tie( sType, pNext, temporalId, useInitialRcQp, initialRcQp, useMinQp, minQp, useMaxQp, maxQp, useMaxFrameSize, maxFrameSize );
+      return std::tie( sType, pNext, useMinQp, minQp, useMaxQp, maxQp, useMaxFrameSize, maxFrameSize );
     }
 #  endif
 
@@ -106644,8 +108763,7 @@ namespace VULKAN_HPP_NAMESPACE
 #    if defined( VULKAN_HPP_USE_REFLECT )
       return this->reflect() == rhs.reflect();
 #    else
-      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( temporalId == rhs.temporalId ) && ( useInitialRcQp == rhs.useInitialRcQp ) &&
-             ( initialRcQp == rhs.initialRcQp ) && ( useMinQp == rhs.useMinQp ) && ( minQp == rhs.minQp ) && ( useMaxQp == rhs.useMaxQp ) &&
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( useMinQp == rhs.useMinQp ) && ( minQp == rhs.minQp ) && ( useMaxQp == rhs.useMaxQp ) &&
              ( maxQp == rhs.maxQp ) && ( useMaxFrameSize == rhs.useMaxFrameSize ) && ( maxFrameSize == rhs.maxFrameSize );
 #    endif
     }
@@ -106659,9 +108777,6 @@ namespace VULKAN_HPP_NAMESPACE
   public:
     VULKAN_HPP_NAMESPACE::StructureType               sType           = StructureType::eVideoEncodeH265RateControlLayerInfoEXT;
     const void *                                      pNext           = {};
-    uint32_t                                          temporalId      = {};
-    VULKAN_HPP_NAMESPACE::Bool32                      useInitialRcQp  = {};
-    VULKAN_HPP_NAMESPACE::VideoEncodeH265QpEXT        initialRcQp     = {};
     VULKAN_HPP_NAMESPACE::Bool32                      useMinQp        = {};
     VULKAN_HPP_NAMESPACE::VideoEncodeH265QpEXT        minQp           = {};
     VULKAN_HPP_NAMESPACE::Bool32                      useMaxQp        = {};
@@ -106674,6 +108789,123 @@ namespace VULKAN_HPP_NAMESPACE
   struct CppType<StructureType, StructureType::eVideoEncodeH265RateControlLayerInfoEXT>
   {
     using Type = VideoEncodeH265RateControlLayerInfoEXT;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct VideoEncodeH265SessionCreateInfoEXT
+  {
+    using NativeType = VkVideoEncodeH265SessionCreateInfoEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH265SessionCreateInfoEXT;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR VideoEncodeH265SessionCreateInfoEXT( VULKAN_HPP_NAMESPACE::Bool32 useMaxLevelIdc_ = {},
+                                                              StdVideoH265LevelIdc         maxLevelIdc_    = {},
+                                                              const void *                 pNext_          = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , useMaxLevelIdc( useMaxLevelIdc_ )
+      , maxLevelIdc( maxLevelIdc_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR VideoEncodeH265SessionCreateInfoEXT( VideoEncodeH265SessionCreateInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    VideoEncodeH265SessionCreateInfoEXT( VkVideoEncodeH265SessionCreateInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : VideoEncodeH265SessionCreateInfoEXT( *reinterpret_cast<VideoEncodeH265SessionCreateInfoEXT const *>( &rhs ) )
+    {
+    }
+
+    VideoEncodeH265SessionCreateInfoEXT & operator=( VideoEncodeH265SessionCreateInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    VideoEncodeH265SessionCreateInfoEXT & operator=( VkVideoEncodeH265SessionCreateInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeH265SessionCreateInfoEXT const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265SessionCreateInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265SessionCreateInfoEXT & setUseMaxLevelIdc( VULKAN_HPP_NAMESPACE::Bool32 useMaxLevelIdc_ ) VULKAN_HPP_NOEXCEPT
+    {
+      useMaxLevelIdc = useMaxLevelIdc_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265SessionCreateInfoEXT & setMaxLevelIdc( StdVideoH265LevelIdc maxLevelIdc_ ) VULKAN_HPP_NOEXCEPT
+    {
+      maxLevelIdc = maxLevelIdc_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkVideoEncodeH265SessionCreateInfoEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkVideoEncodeH265SessionCreateInfoEXT *>( this );
+    }
+
+    operator VkVideoEncodeH265SessionCreateInfoEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkVideoEncodeH265SessionCreateInfoEXT *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &, StdVideoH265LevelIdc const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, useMaxLevelIdc, maxLevelIdc );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    std::strong_ordering operator<=>( VideoEncodeH265SessionCreateInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      if ( auto cmp = sType <=> rhs.sType; cmp != 0 )
+        return cmp;
+      if ( auto cmp = pNext <=> rhs.pNext; cmp != 0 )
+        return cmp;
+      if ( auto cmp = useMaxLevelIdc <=> rhs.useMaxLevelIdc; cmp != 0 )
+        return cmp;
+      if ( auto cmp = memcmp( &maxLevelIdc, &rhs.maxLevelIdc, sizeof( StdVideoH265LevelIdc ) ); cmp != 0 )
+        return ( cmp < 0 ) ? std::strong_ordering::less : std::strong_ordering::greater;
+
+      return std::strong_ordering::equivalent;
+    }
+#  endif
+
+    bool operator==( VideoEncodeH265SessionCreateInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( useMaxLevelIdc == rhs.useMaxLevelIdc ) &&
+             ( memcmp( &maxLevelIdc, &rhs.maxLevelIdc, sizeof( StdVideoH265LevelIdc ) ) == 0 );
+    }
+
+    bool operator!=( VideoEncodeH265SessionCreateInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType          = StructureType::eVideoEncodeH265SessionCreateInfoEXT;
+    const void *                        pNext          = {};
+    VULKAN_HPP_NAMESPACE::Bool32        useMaxLevelIdc = {};
+    StdVideoH265LevelIdc                maxLevelIdc    = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eVideoEncodeH265SessionCreateInfoEXT>
+  {
+    using Type = VideoEncodeH265SessionCreateInfoEXT;
   };
 #endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
@@ -107011,111 +109243,196 @@ namespace VULKAN_HPP_NAMESPACE
 #endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
 #if defined( VK_ENABLE_BETA_EXTENSIONS )
-  struct VideoEncodeH265VclFrameInfoEXT
+  struct VideoEncodeH265SessionParametersFeedbackInfoEXT
   {
-    using NativeType = VkVideoEncodeH265VclFrameInfoEXT;
+    using NativeType = VkVideoEncodeH265SessionParametersFeedbackInfoEXT;
 
     static const bool                                  allowDuplicate = false;
-    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH265VclFrameInfoEXT;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH265SessionParametersFeedbackInfoEXT;
 
 #  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR VideoEncodeH265VclFrameInfoEXT( const StdVideoEncodeH265ReferenceListsInfo *                         pStdReferenceFinalLists_    = {},
-                                                         uint32_t                                                             naluSliceSegmentEntryCount_ = {},
-                                                         const VULKAN_HPP_NAMESPACE::VideoEncodeH265NaluSliceSegmentInfoEXT * pNaluSliceSegmentEntries_   = {},
-                                                         const StdVideoEncodeH265PictureInfo *                                pStdPictureInfo_            = {},
-                                                         const void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR VideoEncodeH265SessionParametersFeedbackInfoEXT( VULKAN_HPP_NAMESPACE::Bool32 hasStdVPSOverrides_ = {},
+                                                                          VULKAN_HPP_NAMESPACE::Bool32 hasStdSPSOverrides_ = {},
+                                                                          VULKAN_HPP_NAMESPACE::Bool32 hasStdPPSOverrides_ = {},
+                                                                          void *                       pNext_              = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
-      , pStdReferenceFinalLists( pStdReferenceFinalLists_ )
-      , naluSliceSegmentEntryCount( naluSliceSegmentEntryCount_ )
-      , pNaluSliceSegmentEntries( pNaluSliceSegmentEntries_ )
-      , pStdPictureInfo( pStdPictureInfo_ )
+      , hasStdVPSOverrides( hasStdVPSOverrides_ )
+      , hasStdSPSOverrides( hasStdSPSOverrides_ )
+      , hasStdPPSOverrides( hasStdPPSOverrides_ )
     {
     }
 
-    VULKAN_HPP_CONSTEXPR VideoEncodeH265VclFrameInfoEXT( VideoEncodeH265VclFrameInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+    VULKAN_HPP_CONSTEXPR
+      VideoEncodeH265SessionParametersFeedbackInfoEXT( VideoEncodeH265SessionParametersFeedbackInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
 
-    VideoEncodeH265VclFrameInfoEXT( VkVideoEncodeH265VclFrameInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
-      : VideoEncodeH265VclFrameInfoEXT( *reinterpret_cast<VideoEncodeH265VclFrameInfoEXT const *>( &rhs ) )
+    VideoEncodeH265SessionParametersFeedbackInfoEXT( VkVideoEncodeH265SessionParametersFeedbackInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : VideoEncodeH265SessionParametersFeedbackInfoEXT( *reinterpret_cast<VideoEncodeH265SessionParametersFeedbackInfoEXT const *>( &rhs ) )
     {
     }
 
-#    if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
-    VideoEncodeH265VclFrameInfoEXT(
-      const StdVideoEncodeH265ReferenceListsInfo *                                                                              pStdReferenceFinalLists_,
-      VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::VideoEncodeH265NaluSliceSegmentInfoEXT> const & naluSliceSegmentEntries_,
-      const StdVideoEncodeH265PictureInfo *                                                                                     pStdPictureInfo_ = {},
-      const void *                                                                                                              pNext_           = nullptr )
-      : pNext( pNext_ )
-      , pStdReferenceFinalLists( pStdReferenceFinalLists_ )
-      , naluSliceSegmentEntryCount( static_cast<uint32_t>( naluSliceSegmentEntries_.size() ) )
-      , pNaluSliceSegmentEntries( naluSliceSegmentEntries_.data() )
-      , pStdPictureInfo( pStdPictureInfo_ )
-    {
-    }
-#    endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
-
-    VideoEncodeH265VclFrameInfoEXT & operator=( VideoEncodeH265VclFrameInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+    VideoEncodeH265SessionParametersFeedbackInfoEXT & operator=( VideoEncodeH265SessionParametersFeedbackInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
 #  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
 
-    VideoEncodeH265VclFrameInfoEXT & operator=( VkVideoEncodeH265VclFrameInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    VideoEncodeH265SessionParametersFeedbackInfoEXT & operator=( VkVideoEncodeH265SessionParametersFeedbackInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
     {
-      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeH265VclFrameInfoEXT const *>( &rhs );
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeH265SessionParametersFeedbackInfoEXT const *>( &rhs );
+      return *this;
+    }
+
+    operator VkVideoEncodeH265SessionParametersFeedbackInfoEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkVideoEncodeH265SessionParametersFeedbackInfoEXT *>( this );
+    }
+
+    operator VkVideoEncodeH265SessionParametersFeedbackInfoEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkVideoEncodeH265SessionParametersFeedbackInfoEXT *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               void * const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, hasStdVPSOverrides, hasStdSPSOverrides, hasStdPPSOverrides );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( VideoEncodeH265SessionParametersFeedbackInfoEXT const & ) const = default;
+#  else
+    bool operator==( VideoEncodeH265SessionParametersFeedbackInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( hasStdVPSOverrides == rhs.hasStdVPSOverrides ) &&
+             ( hasStdSPSOverrides == rhs.hasStdSPSOverrides ) && ( hasStdPPSOverrides == rhs.hasStdPPSOverrides );
+#    endif
+    }
+
+    bool operator!=( VideoEncodeH265SessionParametersFeedbackInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType              = StructureType::eVideoEncodeH265SessionParametersFeedbackInfoEXT;
+    void *                              pNext              = {};
+    VULKAN_HPP_NAMESPACE::Bool32        hasStdVPSOverrides = {};
+    VULKAN_HPP_NAMESPACE::Bool32        hasStdSPSOverrides = {};
+    VULKAN_HPP_NAMESPACE::Bool32        hasStdPPSOverrides = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eVideoEncodeH265SessionParametersFeedbackInfoEXT>
+  {
+    using Type = VideoEncodeH265SessionParametersFeedbackInfoEXT;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct VideoEncodeH265SessionParametersGetInfoEXT
+  {
+    using NativeType = VkVideoEncodeH265SessionParametersGetInfoEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeH265SessionParametersGetInfoEXT;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR VideoEncodeH265SessionParametersGetInfoEXT( VULKAN_HPP_NAMESPACE::Bool32 writeStdVPS_ = {},
+                                                                     VULKAN_HPP_NAMESPACE::Bool32 writeStdSPS_ = {},
+                                                                     VULKAN_HPP_NAMESPACE::Bool32 writeStdPPS_ = {},
+                                                                     uint32_t                     stdVPSId_    = {},
+                                                                     uint32_t                     stdSPSId_    = {},
+                                                                     uint32_t                     stdPPSId_    = {},
+                                                                     const void *                 pNext_       = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , writeStdVPS( writeStdVPS_ )
+      , writeStdSPS( writeStdSPS_ )
+      , writeStdPPS( writeStdPPS_ )
+      , stdVPSId( stdVPSId_ )
+      , stdSPSId( stdSPSId_ )
+      , stdPPSId( stdPPSId_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR VideoEncodeH265SessionParametersGetInfoEXT( VideoEncodeH265SessionParametersGetInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    VideoEncodeH265SessionParametersGetInfoEXT( VkVideoEncodeH265SessionParametersGetInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : VideoEncodeH265SessionParametersGetInfoEXT( *reinterpret_cast<VideoEncodeH265SessionParametersGetInfoEXT const *>( &rhs ) )
+    {
+    }
+
+    VideoEncodeH265SessionParametersGetInfoEXT & operator=( VideoEncodeH265SessionParametersGetInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    VideoEncodeH265SessionParametersGetInfoEXT & operator=( VkVideoEncodeH265SessionParametersGetInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeH265SessionParametersGetInfoEXT const *>( &rhs );
       return *this;
     }
 
 #  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265VclFrameInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265SessionParametersGetInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
     {
       pNext = pNext_;
       return *this;
     }
 
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265VclFrameInfoEXT &
-                            setPStdReferenceFinalLists( const StdVideoEncodeH265ReferenceListsInfo * pStdReferenceFinalLists_ ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265SessionParametersGetInfoEXT & setWriteStdVPS( VULKAN_HPP_NAMESPACE::Bool32 writeStdVPS_ ) VULKAN_HPP_NOEXCEPT
     {
-      pStdReferenceFinalLists = pStdReferenceFinalLists_;
+      writeStdVPS = writeStdVPS_;
       return *this;
     }
 
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265VclFrameInfoEXT & setNaluSliceSegmentEntryCount( uint32_t naluSliceSegmentEntryCount_ ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265SessionParametersGetInfoEXT & setWriteStdSPS( VULKAN_HPP_NAMESPACE::Bool32 writeStdSPS_ ) VULKAN_HPP_NOEXCEPT
     {
-      naluSliceSegmentEntryCount = naluSliceSegmentEntryCount_;
+      writeStdSPS = writeStdSPS_;
       return *this;
     }
 
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265VclFrameInfoEXT &
-      setPNaluSliceSegmentEntries( const VULKAN_HPP_NAMESPACE::VideoEncodeH265NaluSliceSegmentInfoEXT * pNaluSliceSegmentEntries_ ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265SessionParametersGetInfoEXT & setWriteStdPPS( VULKAN_HPP_NAMESPACE::Bool32 writeStdPPS_ ) VULKAN_HPP_NOEXCEPT
     {
-      pNaluSliceSegmentEntries = pNaluSliceSegmentEntries_;
+      writeStdPPS = writeStdPPS_;
       return *this;
     }
 
-#    if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
-    VideoEncodeH265VclFrameInfoEXT & setNaluSliceSegmentEntries(
-      VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::VideoEncodeH265NaluSliceSegmentInfoEXT> const & naluSliceSegmentEntries_ )
-      VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265SessionParametersGetInfoEXT & setStdVPSId( uint32_t stdVPSId_ ) VULKAN_HPP_NOEXCEPT
     {
-      naluSliceSegmentEntryCount = static_cast<uint32_t>( naluSliceSegmentEntries_.size() );
-      pNaluSliceSegmentEntries   = naluSliceSegmentEntries_.data();
+      stdVPSId = stdVPSId_;
       return *this;
     }
-#    endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
 
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265VclFrameInfoEXT & setPStdPictureInfo( const StdVideoEncodeH265PictureInfo * pStdPictureInfo_ ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265SessionParametersGetInfoEXT & setStdSPSId( uint32_t stdSPSId_ ) VULKAN_HPP_NOEXCEPT
     {
-      pStdPictureInfo = pStdPictureInfo_;
+      stdSPSId = stdSPSId_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeH265SessionParametersGetInfoEXT & setStdPPSId( uint32_t stdPPSId_ ) VULKAN_HPP_NOEXCEPT
+    {
+      stdPPSId = stdPPSId_;
       return *this;
     }
 #  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
 
-    operator VkVideoEncodeH265VclFrameInfoEXT const &() const VULKAN_HPP_NOEXCEPT
+    operator VkVideoEncodeH265SessionParametersGetInfoEXT const &() const VULKAN_HPP_NOEXCEPT
     {
-      return *reinterpret_cast<const VkVideoEncodeH265VclFrameInfoEXT *>( this );
+      return *reinterpret_cast<const VkVideoEncodeH265SessionParametersGetInfoEXT *>( this );
     }
 
-    operator VkVideoEncodeH265VclFrameInfoEXT &() VULKAN_HPP_NOEXCEPT
+    operator VkVideoEncodeH265SessionParametersGetInfoEXT &() VULKAN_HPP_NOEXCEPT
     {
-      return *reinterpret_cast<VkVideoEncodeH265VclFrameInfoEXT *>( this );
+      return *reinterpret_cast<VkVideoEncodeH265SessionParametersGetInfoEXT *>( this );
     }
 
 #  if defined( VULKAN_HPP_USE_REFLECT )
@@ -107124,50 +109441,53 @@ namespace VULKAN_HPP_NAMESPACE
 #    else
     std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
                const void * const &,
-               const StdVideoEncodeH265ReferenceListsInfo * const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
                uint32_t const &,
-               const VULKAN_HPP_NAMESPACE::VideoEncodeH265NaluSliceSegmentInfoEXT * const &,
-               const StdVideoEncodeH265PictureInfo * const &>
+               uint32_t const &,
+               uint32_t const &>
 #    endif
       reflect() const VULKAN_HPP_NOEXCEPT
     {
-      return std::tie( sType, pNext, pStdReferenceFinalLists, naluSliceSegmentEntryCount, pNaluSliceSegmentEntries, pStdPictureInfo );
+      return std::tie( sType, pNext, writeStdVPS, writeStdSPS, writeStdPPS, stdVPSId, stdSPSId, stdPPSId );
     }
 #  endif
 
 #  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
-    auto operator<=>( VideoEncodeH265VclFrameInfoEXT const & ) const = default;
+    auto operator<=>( VideoEncodeH265SessionParametersGetInfoEXT const & ) const = default;
 #  else
-    bool operator==( VideoEncodeH265VclFrameInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    bool operator==( VideoEncodeH265SessionParametersGetInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
     {
 #    if defined( VULKAN_HPP_USE_REFLECT )
       return this->reflect() == rhs.reflect();
 #    else
-      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( pStdReferenceFinalLists == rhs.pStdReferenceFinalLists ) &&
-             ( naluSliceSegmentEntryCount == rhs.naluSliceSegmentEntryCount ) && ( pNaluSliceSegmentEntries == rhs.pNaluSliceSegmentEntries ) &&
-             ( pStdPictureInfo == rhs.pStdPictureInfo );
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( writeStdVPS == rhs.writeStdVPS ) && ( writeStdSPS == rhs.writeStdSPS ) &&
+             ( writeStdPPS == rhs.writeStdPPS ) && ( stdVPSId == rhs.stdVPSId ) && ( stdSPSId == rhs.stdSPSId ) && ( stdPPSId == rhs.stdPPSId );
 #    endif
     }
 
-    bool operator!=( VideoEncodeH265VclFrameInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    bool operator!=( VideoEncodeH265SessionParametersGetInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
     {
       return !operator==( rhs );
     }
 #  endif
 
   public:
-    VULKAN_HPP_NAMESPACE::StructureType                                  sType                      = StructureType::eVideoEncodeH265VclFrameInfoEXT;
-    const void *                                                         pNext                      = {};
-    const StdVideoEncodeH265ReferenceListsInfo *                         pStdReferenceFinalLists    = {};
-    uint32_t                                                             naluSliceSegmentEntryCount = {};
-    const VULKAN_HPP_NAMESPACE::VideoEncodeH265NaluSliceSegmentInfoEXT * pNaluSliceSegmentEntries   = {};
-    const StdVideoEncodeH265PictureInfo *                                pStdPictureInfo            = {};
+    VULKAN_HPP_NAMESPACE::StructureType sType       = StructureType::eVideoEncodeH265SessionParametersGetInfoEXT;
+    const void *                        pNext       = {};
+    VULKAN_HPP_NAMESPACE::Bool32        writeStdVPS = {};
+    VULKAN_HPP_NAMESPACE::Bool32        writeStdSPS = {};
+    VULKAN_HPP_NAMESPACE::Bool32        writeStdPPS = {};
+    uint32_t                            stdVPSId    = {};
+    uint32_t                            stdSPSId    = {};
+    uint32_t                            stdPPSId    = {};
   };
 
   template <>
-  struct CppType<StructureType, StructureType::eVideoEncodeH265VclFrameInfoEXT>
+  struct CppType<StructureType, StructureType::eVideoEncodeH265SessionParametersGetInfoEXT>
   {
-    using Type = VideoEncodeH265VclFrameInfoEXT;
+    using Type = VideoEncodeH265SessionParametersGetInfoEXT;
   };
 #endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
@@ -107181,7 +109501,6 @@ namespace VULKAN_HPP_NAMESPACE
 
 #  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
     VULKAN_HPP_CONSTEXPR VideoEncodeInfoKHR( VULKAN_HPP_NAMESPACE::VideoEncodeFlagsKHR               flags_                           = {},
-                                             uint32_t                                                qualityLevel_                    = {},
                                              VULKAN_HPP_NAMESPACE::Buffer                            dstBuffer_                       = {},
                                              VULKAN_HPP_NAMESPACE::DeviceSize                        dstBufferOffset_                 = {},
                                              VULKAN_HPP_NAMESPACE::DeviceSize                        dstBufferRange_                  = {},
@@ -107193,7 +109512,6 @@ namespace VULKAN_HPP_NAMESPACE
                                              const void *                                            pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
       , flags( flags_ )
-      , qualityLevel( qualityLevel_ )
       , dstBuffer( dstBuffer_ )
       , dstBufferOffset( dstBufferOffset_ )
       , dstBufferRange( dstBufferRange_ )
@@ -107211,7 +109529,6 @@ namespace VULKAN_HPP_NAMESPACE
 
 #    if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
     VideoEncodeInfoKHR( VULKAN_HPP_NAMESPACE::VideoEncodeFlagsKHR                                                                    flags_,
-                        uint32_t                                                                                                     qualityLevel_,
                         VULKAN_HPP_NAMESPACE::Buffer                                                                                 dstBuffer_,
                         VULKAN_HPP_NAMESPACE::DeviceSize                                                                             dstBufferOffset_,
                         VULKAN_HPP_NAMESPACE::DeviceSize                                                                             dstBufferRange_,
@@ -107222,7 +109539,6 @@ namespace VULKAN_HPP_NAMESPACE
                         const void * pNext_                           = nullptr )
       : pNext( pNext_ )
       , flags( flags_ )
-      , qualityLevel( qualityLevel_ )
       , dstBuffer( dstBuffer_ )
       , dstBufferOffset( dstBufferOffset_ )
       , dstBufferRange( dstBufferRange_ )
@@ -107254,12 +109570,6 @@ namespace VULKAN_HPP_NAMESPACE
     VULKAN_HPP_CONSTEXPR_14 VideoEncodeInfoKHR & setFlags( VULKAN_HPP_NAMESPACE::VideoEncodeFlagsKHR flags_ ) VULKAN_HPP_NOEXCEPT
     {
       flags = flags_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeInfoKHR & setQualityLevel( uint32_t qualityLevel_ ) VULKAN_HPP_NOEXCEPT
-    {
-      qualityLevel = qualityLevel_;
       return *this;
     }
 
@@ -107342,7 +109652,6 @@ namespace VULKAN_HPP_NAMESPACE
     std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
                const void * const &,
                VULKAN_HPP_NAMESPACE::VideoEncodeFlagsKHR const &,
-               uint32_t const &,
                VULKAN_HPP_NAMESPACE::Buffer const &,
                VULKAN_HPP_NAMESPACE::DeviceSize const &,
                VULKAN_HPP_NAMESPACE::DeviceSize const &,
@@ -107357,7 +109666,6 @@ namespace VULKAN_HPP_NAMESPACE
       return std::tie( sType,
                        pNext,
                        flags,
-                       qualityLevel,
                        dstBuffer,
                        dstBufferOffset,
                        dstBufferRange,
@@ -107377,11 +109685,10 @@ namespace VULKAN_HPP_NAMESPACE
 #    if defined( VULKAN_HPP_USE_REFLECT )
       return this->reflect() == rhs.reflect();
 #    else
-      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( flags == rhs.flags ) && ( qualityLevel == rhs.qualityLevel ) &&
-             ( dstBuffer == rhs.dstBuffer ) && ( dstBufferOffset == rhs.dstBufferOffset ) && ( dstBufferRange == rhs.dstBufferRange ) &&
-             ( srcPictureResource == rhs.srcPictureResource ) && ( pSetupReferenceSlot == rhs.pSetupReferenceSlot ) &&
-             ( referenceSlotCount == rhs.referenceSlotCount ) && ( pReferenceSlots == rhs.pReferenceSlots ) &&
-             ( precedingExternallyEncodedBytes == rhs.precedingExternallyEncodedBytes );
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( flags == rhs.flags ) && ( dstBuffer == rhs.dstBuffer ) &&
+             ( dstBufferOffset == rhs.dstBufferOffset ) && ( dstBufferRange == rhs.dstBufferRange ) && ( srcPictureResource == rhs.srcPictureResource ) &&
+             ( pSetupReferenceSlot == rhs.pSetupReferenceSlot ) && ( referenceSlotCount == rhs.referenceSlotCount ) &&
+             ( pReferenceSlots == rhs.pReferenceSlots ) && ( precedingExternallyEncodedBytes == rhs.precedingExternallyEncodedBytes );
 #    endif
     }
 
@@ -107395,7 +109702,6 @@ namespace VULKAN_HPP_NAMESPACE
     VULKAN_HPP_NAMESPACE::StructureType                     sType                           = StructureType::eVideoEncodeInfoKHR;
     const void *                                            pNext                           = {};
     VULKAN_HPP_NAMESPACE::VideoEncodeFlagsKHR               flags                           = {};
-    uint32_t                                                qualityLevel                    = {};
     VULKAN_HPP_NAMESPACE::Buffer                            dstBuffer                       = {};
     VULKAN_HPP_NAMESPACE::DeviceSize                        dstBufferOffset                 = {};
     VULKAN_HPP_NAMESPACE::DeviceSize                        dstBufferRange                  = {};
@@ -107414,6 +109720,196 @@ namespace VULKAN_HPP_NAMESPACE
 #endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
 #if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct VideoEncodeQualityLevelInfoKHR
+  {
+    using NativeType = VkVideoEncodeQualityLevelInfoKHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeQualityLevelInfoKHR;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR VideoEncodeQualityLevelInfoKHR( uint32_t qualityLevel_ = {}, const void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , qualityLevel( qualityLevel_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR VideoEncodeQualityLevelInfoKHR( VideoEncodeQualityLevelInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    VideoEncodeQualityLevelInfoKHR( VkVideoEncodeQualityLevelInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : VideoEncodeQualityLevelInfoKHR( *reinterpret_cast<VideoEncodeQualityLevelInfoKHR const *>( &rhs ) )
+    {
+    }
+
+    VideoEncodeQualityLevelInfoKHR & operator=( VideoEncodeQualityLevelInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    VideoEncodeQualityLevelInfoKHR & operator=( VkVideoEncodeQualityLevelInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeQualityLevelInfoKHR const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeQualityLevelInfoKHR & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeQualityLevelInfoKHR & setQualityLevel( uint32_t qualityLevel_ ) VULKAN_HPP_NOEXCEPT
+    {
+      qualityLevel = qualityLevel_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkVideoEncodeQualityLevelInfoKHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkVideoEncodeQualityLevelInfoKHR *>( this );
+    }
+
+    operator VkVideoEncodeQualityLevelInfoKHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkVideoEncodeQualityLevelInfoKHR *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, uint32_t const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, qualityLevel );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( VideoEncodeQualityLevelInfoKHR const & ) const = default;
+#  else
+    bool operator==( VideoEncodeQualityLevelInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( qualityLevel == rhs.qualityLevel );
+#    endif
+    }
+
+    bool operator!=( VideoEncodeQualityLevelInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType        = StructureType::eVideoEncodeQualityLevelInfoKHR;
+    const void *                        pNext        = {};
+    uint32_t                            qualityLevel = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eVideoEncodeQualityLevelInfoKHR>
+  {
+    using Type = VideoEncodeQualityLevelInfoKHR;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct VideoEncodeQualityLevelPropertiesKHR
+  {
+    using NativeType = VkVideoEncodeQualityLevelPropertiesKHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeQualityLevelPropertiesKHR;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR VideoEncodeQualityLevelPropertiesKHR( VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagBitsKHR preferredRateControlMode_ =
+                                                                 VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagBitsKHR::eDefault,
+                                                               uint32_t preferredRateControlLayerCount_ = {},
+                                                               void *   pNext_                          = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , preferredRateControlMode( preferredRateControlMode_ )
+      , preferredRateControlLayerCount( preferredRateControlLayerCount_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR VideoEncodeQualityLevelPropertiesKHR( VideoEncodeQualityLevelPropertiesKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    VideoEncodeQualityLevelPropertiesKHR( VkVideoEncodeQualityLevelPropertiesKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : VideoEncodeQualityLevelPropertiesKHR( *reinterpret_cast<VideoEncodeQualityLevelPropertiesKHR const *>( &rhs ) )
+    {
+    }
+
+    VideoEncodeQualityLevelPropertiesKHR & operator=( VideoEncodeQualityLevelPropertiesKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    VideoEncodeQualityLevelPropertiesKHR & operator=( VkVideoEncodeQualityLevelPropertiesKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeQualityLevelPropertiesKHR const *>( &rhs );
+      return *this;
+    }
+
+    operator VkVideoEncodeQualityLevelPropertiesKHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkVideoEncodeQualityLevelPropertiesKHR *>( this );
+    }
+
+    operator VkVideoEncodeQualityLevelPropertiesKHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkVideoEncodeQualityLevelPropertiesKHR *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::
+      tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagBitsKHR const &, uint32_t const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, preferredRateControlMode, preferredRateControlLayerCount );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( VideoEncodeQualityLevelPropertiesKHR const & ) const = default;
+#  else
+    bool operator==( VideoEncodeQualityLevelPropertiesKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( preferredRateControlMode == rhs.preferredRateControlMode ) &&
+             ( preferredRateControlLayerCount == rhs.preferredRateControlLayerCount );
+#    endif
+    }
+
+    bool operator!=( VideoEncodeQualityLevelPropertiesKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType                         sType = StructureType::eVideoEncodeQualityLevelPropertiesKHR;
+    void *                                                      pNext = {};
+    VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagBitsKHR preferredRateControlMode =
+      VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagBitsKHR::eDefault;
+    uint32_t preferredRateControlLayerCount = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eVideoEncodeQualityLevelPropertiesKHR>
+  {
+    using Type = VideoEncodeQualityLevelPropertiesKHR;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
   struct VideoEncodeRateControlLayerInfoKHR
   {
     using NativeType = VkVideoEncodeRateControlLayerInfoKHR;
@@ -107422,20 +109918,16 @@ namespace VULKAN_HPP_NAMESPACE
     static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeRateControlLayerInfoKHR;
 
 #  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR VideoEncodeRateControlLayerInfoKHR( uint64_t     averageBitrate_               = {},
-                                                             uint64_t     maxBitrate_                   = {},
-                                                             uint32_t     frameRateNumerator_           = {},
-                                                             uint32_t     frameRateDenominator_         = {},
-                                                             uint32_t     virtualBufferSizeInMs_        = {},
-                                                             uint32_t     initialVirtualBufferSizeInMs_ = {},
-                                                             const void * pNext_                        = nullptr ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR VideoEncodeRateControlLayerInfoKHR( uint64_t     averageBitrate_       = {},
+                                                             uint64_t     maxBitrate_           = {},
+                                                             uint32_t     frameRateNumerator_   = {},
+                                                             uint32_t     frameRateDenominator_ = {},
+                                                             const void * pNext_                = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
       , averageBitrate( averageBitrate_ )
       , maxBitrate( maxBitrate_ )
       , frameRateNumerator( frameRateNumerator_ )
       , frameRateDenominator( frameRateDenominator_ )
-      , virtualBufferSizeInMs( virtualBufferSizeInMs_ )
-      , initialVirtualBufferSizeInMs( initialVirtualBufferSizeInMs_ )
     {
     }
 
@@ -107485,18 +109977,6 @@ namespace VULKAN_HPP_NAMESPACE
       frameRateDenominator = frameRateDenominator_;
       return *this;
     }
-
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeRateControlLayerInfoKHR & setVirtualBufferSizeInMs( uint32_t virtualBufferSizeInMs_ ) VULKAN_HPP_NOEXCEPT
-    {
-      virtualBufferSizeInMs = virtualBufferSizeInMs_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 VideoEncodeRateControlLayerInfoKHR & setInitialVirtualBufferSizeInMs( uint32_t initialVirtualBufferSizeInMs_ ) VULKAN_HPP_NOEXCEPT
-    {
-      initialVirtualBufferSizeInMs = initialVirtualBufferSizeInMs_;
-      return *this;
-    }
 #  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
 
     operator VkVideoEncodeRateControlLayerInfoKHR const &() const VULKAN_HPP_NOEXCEPT
@@ -107513,19 +109993,11 @@ namespace VULKAN_HPP_NAMESPACE
 #    if 14 <= VULKAN_HPP_CPP_VERSION
     auto
 #    else
-    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
-               const void * const &,
-               uint64_t const &,
-               uint64_t const &,
-               uint32_t const &,
-               uint32_t const &,
-               uint32_t const &,
-               uint32_t const &>
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, uint64_t const &, uint64_t const &, uint32_t const &, uint32_t const &>
 #    endif
       reflect() const VULKAN_HPP_NOEXCEPT
     {
-      return std::tie(
-        sType, pNext, averageBitrate, maxBitrate, frameRateNumerator, frameRateDenominator, virtualBufferSizeInMs, initialVirtualBufferSizeInMs );
+      return std::tie( sType, pNext, averageBitrate, maxBitrate, frameRateNumerator, frameRateDenominator );
     }
 #  endif
 
@@ -107538,8 +110010,7 @@ namespace VULKAN_HPP_NAMESPACE
       return this->reflect() == rhs.reflect();
 #    else
       return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( averageBitrate == rhs.averageBitrate ) && ( maxBitrate == rhs.maxBitrate ) &&
-             ( frameRateNumerator == rhs.frameRateNumerator ) && ( frameRateDenominator == rhs.frameRateDenominator ) &&
-             ( virtualBufferSizeInMs == rhs.virtualBufferSizeInMs ) && ( initialVirtualBufferSizeInMs == rhs.initialVirtualBufferSizeInMs );
+             ( frameRateNumerator == rhs.frameRateNumerator ) && ( frameRateDenominator == rhs.frameRateDenominator );
 #    endif
     }
 
@@ -107550,14 +110021,12 @@ namespace VULKAN_HPP_NAMESPACE
 #  endif
 
   public:
-    VULKAN_HPP_NAMESPACE::StructureType sType                        = StructureType::eVideoEncodeRateControlLayerInfoKHR;
-    const void *                        pNext                        = {};
-    uint64_t                            averageBitrate               = {};
-    uint64_t                            maxBitrate                   = {};
-    uint32_t                            frameRateNumerator           = {};
-    uint32_t                            frameRateDenominator         = {};
-    uint32_t                            virtualBufferSizeInMs        = {};
-    uint32_t                            initialVirtualBufferSizeInMs = {};
+    VULKAN_HPP_NAMESPACE::StructureType sType                = StructureType::eVideoEncodeRateControlLayerInfoKHR;
+    const void *                        pNext                = {};
+    uint64_t                            averageBitrate       = {};
+    uint64_t                            maxBitrate           = {};
+    uint32_t                            frameRateNumerator   = {};
+    uint32_t                            frameRateDenominator = {};
   };
 
   template <>
@@ -107581,12 +110050,16 @@ namespace VULKAN_HPP_NAMESPACE
       VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagBitsKHR      rateControlMode_ = VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagBitsKHR::eDefault,
       uint32_t                                                         layerCount_      = {},
       const VULKAN_HPP_NAMESPACE::VideoEncodeRateControlLayerInfoKHR * pLayers_         = {},
-      const void *                                                     pNext_           = nullptr ) VULKAN_HPP_NOEXCEPT
+      uint32_t                                                         virtualBufferSizeInMs_        = {},
+      uint32_t                                                         initialVirtualBufferSizeInMs_ = {},
+      const void *                                                     pNext_                        = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
       , flags( flags_ )
       , rateControlMode( rateControlMode_ )
       , layerCount( layerCount_ )
       , pLayers( pLayers_ )
+      , virtualBufferSizeInMs( virtualBufferSizeInMs_ )
+      , initialVirtualBufferSizeInMs( initialVirtualBufferSizeInMs_ )
     {
     }
 
@@ -107602,8 +110075,16 @@ namespace VULKAN_HPP_NAMESPACE
       VULKAN_HPP_NAMESPACE::VideoEncodeRateControlFlagsKHR                                                                  flags_,
       VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagBitsKHR                                                           rateControlMode_,
       VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::VideoEncodeRateControlLayerInfoKHR> const & layers_,
+      uint32_t                                                                                                              virtualBufferSizeInMs_        = {},
+      uint32_t                                                                                                              initialVirtualBufferSizeInMs_ = {},
       const void *                                                                                                          pNext_ = nullptr )
-      : pNext( pNext_ ), flags( flags_ ), rateControlMode( rateControlMode_ ), layerCount( static_cast<uint32_t>( layers_.size() ) ), pLayers( layers_.data() )
+      : pNext( pNext_ )
+      , flags( flags_ )
+      , rateControlMode( rateControlMode_ )
+      , layerCount( static_cast<uint32_t>( layers_.size() ) )
+      , pLayers( layers_.data() )
+      , virtualBufferSizeInMs( virtualBufferSizeInMs_ )
+      , initialVirtualBufferSizeInMs( initialVirtualBufferSizeInMs_ )
     {
     }
 #    endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
@@ -107659,7 +110140,19 @@ namespace VULKAN_HPP_NAMESPACE
       return *this;
     }
 #    endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
-#  endif   /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeRateControlInfoKHR & setVirtualBufferSizeInMs( uint32_t virtualBufferSizeInMs_ ) VULKAN_HPP_NOEXCEPT
+    {
+      virtualBufferSizeInMs = virtualBufferSizeInMs_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeRateControlInfoKHR & setInitialVirtualBufferSizeInMs( uint32_t initialVirtualBufferSizeInMs_ ) VULKAN_HPP_NOEXCEPT
+    {
+      initialVirtualBufferSizeInMs = initialVirtualBufferSizeInMs_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
 
     operator VkVideoEncodeRateControlInfoKHR const &() const VULKAN_HPP_NOEXCEPT
     {
@@ -107680,11 +110173,13 @@ namespace VULKAN_HPP_NAMESPACE
                VULKAN_HPP_NAMESPACE::VideoEncodeRateControlFlagsKHR const &,
                VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagBitsKHR const &,
                uint32_t const &,
-               const VULKAN_HPP_NAMESPACE::VideoEncodeRateControlLayerInfoKHR * const &>
+               const VULKAN_HPP_NAMESPACE::VideoEncodeRateControlLayerInfoKHR * const &,
+               uint32_t const &,
+               uint32_t const &>
 #    endif
       reflect() const VULKAN_HPP_NOEXCEPT
     {
-      return std::tie( sType, pNext, flags, rateControlMode, layerCount, pLayers );
+      return std::tie( sType, pNext, flags, rateControlMode, layerCount, pLayers, virtualBufferSizeInMs, initialVirtualBufferSizeInMs );
     }
 #  endif
 
@@ -107697,7 +110192,8 @@ namespace VULKAN_HPP_NAMESPACE
       return this->reflect() == rhs.reflect();
 #    else
       return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( flags == rhs.flags ) && ( rateControlMode == rhs.rateControlMode ) &&
-             ( layerCount == rhs.layerCount ) && ( pLayers == rhs.pLayers );
+             ( layerCount == rhs.layerCount ) && ( pLayers == rhs.pLayers ) && ( virtualBufferSizeInMs == rhs.virtualBufferSizeInMs ) &&
+             ( initialVirtualBufferSizeInMs == rhs.initialVirtualBufferSizeInMs );
 #    endif
     }
 
@@ -107714,12 +110210,199 @@ namespace VULKAN_HPP_NAMESPACE
     VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagBitsKHR      rateControlMode = VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagBitsKHR::eDefault;
     uint32_t                                                         layerCount      = {};
     const VULKAN_HPP_NAMESPACE::VideoEncodeRateControlLayerInfoKHR * pLayers         = {};
+    uint32_t                                                         virtualBufferSizeInMs        = {};
+    uint32_t                                                         initialVirtualBufferSizeInMs = {};
   };
 
   template <>
   struct CppType<StructureType, StructureType::eVideoEncodeRateControlInfoKHR>
   {
     using Type = VideoEncodeRateControlInfoKHR;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct VideoEncodeSessionParametersFeedbackInfoKHR
+  {
+    using NativeType = VkVideoEncodeSessionParametersFeedbackInfoKHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeSessionParametersFeedbackInfoKHR;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR VideoEncodeSessionParametersFeedbackInfoKHR( VULKAN_HPP_NAMESPACE::Bool32 hasOverrides_ = {},
+                                                                      void *                       pNext_        = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , hasOverrides( hasOverrides_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR VideoEncodeSessionParametersFeedbackInfoKHR( VideoEncodeSessionParametersFeedbackInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    VideoEncodeSessionParametersFeedbackInfoKHR( VkVideoEncodeSessionParametersFeedbackInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : VideoEncodeSessionParametersFeedbackInfoKHR( *reinterpret_cast<VideoEncodeSessionParametersFeedbackInfoKHR const *>( &rhs ) )
+    {
+    }
+
+    VideoEncodeSessionParametersFeedbackInfoKHR & operator=( VideoEncodeSessionParametersFeedbackInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    VideoEncodeSessionParametersFeedbackInfoKHR & operator=( VkVideoEncodeSessionParametersFeedbackInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeSessionParametersFeedbackInfoKHR const *>( &rhs );
+      return *this;
+    }
+
+    operator VkVideoEncodeSessionParametersFeedbackInfoKHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkVideoEncodeSessionParametersFeedbackInfoKHR *>( this );
+    }
+
+    operator VkVideoEncodeSessionParametersFeedbackInfoKHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkVideoEncodeSessionParametersFeedbackInfoKHR *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, hasOverrides );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( VideoEncodeSessionParametersFeedbackInfoKHR const & ) const = default;
+#  else
+    bool operator==( VideoEncodeSessionParametersFeedbackInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( hasOverrides == rhs.hasOverrides );
+#    endif
+    }
+
+    bool operator!=( VideoEncodeSessionParametersFeedbackInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType        = StructureType::eVideoEncodeSessionParametersFeedbackInfoKHR;
+    void *                              pNext        = {};
+    VULKAN_HPP_NAMESPACE::Bool32        hasOverrides = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eVideoEncodeSessionParametersFeedbackInfoKHR>
+  {
+    using Type = VideoEncodeSessionParametersFeedbackInfoKHR;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct VideoEncodeSessionParametersGetInfoKHR
+  {
+    using NativeType = VkVideoEncodeSessionParametersGetInfoKHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoEncodeSessionParametersGetInfoKHR;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR VideoEncodeSessionParametersGetInfoKHR( VULKAN_HPP_NAMESPACE::VideoSessionParametersKHR videoSessionParameters_ = {},
+                                                                 const void *                                    pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , videoSessionParameters( videoSessionParameters_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR VideoEncodeSessionParametersGetInfoKHR( VideoEncodeSessionParametersGetInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    VideoEncodeSessionParametersGetInfoKHR( VkVideoEncodeSessionParametersGetInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : VideoEncodeSessionParametersGetInfoKHR( *reinterpret_cast<VideoEncodeSessionParametersGetInfoKHR const *>( &rhs ) )
+    {
+    }
+
+    VideoEncodeSessionParametersGetInfoKHR & operator=( VideoEncodeSessionParametersGetInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    VideoEncodeSessionParametersGetInfoKHR & operator=( VkVideoEncodeSessionParametersGetInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoEncodeSessionParametersGetInfoKHR const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeSessionParametersGetInfoKHR & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 VideoEncodeSessionParametersGetInfoKHR &
+                            setVideoSessionParameters( VULKAN_HPP_NAMESPACE::VideoSessionParametersKHR videoSessionParameters_ ) VULKAN_HPP_NOEXCEPT
+    {
+      videoSessionParameters = videoSessionParameters_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkVideoEncodeSessionParametersGetInfoKHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkVideoEncodeSessionParametersGetInfoKHR *>( this );
+    }
+
+    operator VkVideoEncodeSessionParametersGetInfoKHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkVideoEncodeSessionParametersGetInfoKHR *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, VULKAN_HPP_NAMESPACE::VideoSessionParametersKHR const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, videoSessionParameters );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( VideoEncodeSessionParametersGetInfoKHR const & ) const = default;
+#  else
+    bool operator==( VideoEncodeSessionParametersGetInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( videoSessionParameters == rhs.videoSessionParameters );
+#    endif
+    }
+
+    bool operator!=( VideoEncodeSessionParametersGetInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType             sType                  = StructureType::eVideoEncodeSessionParametersGetInfoKHR;
+    const void *                                    pNext                  = {};
+    VULKAN_HPP_NAMESPACE::VideoSessionParametersKHR videoSessionParameters = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eVideoEncodeSessionParametersGetInfoKHR>
+  {
+    using Type = VideoEncodeSessionParametersGetInfoKHR;
   };
 #endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
@@ -108048,138 +110731,6 @@ namespace VULKAN_HPP_NAMESPACE
   struct CppType<StructureType, StructureType::eVideoFormatPropertiesKHR>
   {
     using Type = VideoFormatPropertiesKHR;
-  };
-
-  struct VideoProfileInfoKHR
-  {
-    using NativeType = VkVideoProfileInfoKHR;
-
-    static const bool                                  allowDuplicate = false;
-    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eVideoProfileInfoKHR;
-
-#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR VideoProfileInfoKHR(
-      VULKAN_HPP_NAMESPACE::VideoCodecOperationFlagBitsKHR videoCodecOperation_ = VULKAN_HPP_NAMESPACE::VideoCodecOperationFlagBitsKHR::eNone,
-      VULKAN_HPP_NAMESPACE::VideoChromaSubsamplingFlagsKHR chromaSubsampling_   = {},
-      VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagsKHR lumaBitDepth_        = {},
-      VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagsKHR chromaBitDepth_      = {},
-      const void *                                         pNext_               = nullptr ) VULKAN_HPP_NOEXCEPT
-      : pNext( pNext_ )
-      , videoCodecOperation( videoCodecOperation_ )
-      , chromaSubsampling( chromaSubsampling_ )
-      , lumaBitDepth( lumaBitDepth_ )
-      , chromaBitDepth( chromaBitDepth_ )
-    {
-    }
-
-    VULKAN_HPP_CONSTEXPR VideoProfileInfoKHR( VideoProfileInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
-
-    VideoProfileInfoKHR( VkVideoProfileInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT : VideoProfileInfoKHR( *reinterpret_cast<VideoProfileInfoKHR const *>( &rhs ) )
-    {
-    }
-
-    VideoProfileInfoKHR & operator=( VideoProfileInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
-#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
-
-    VideoProfileInfoKHR & operator=( VkVideoProfileInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
-    {
-      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::VideoProfileInfoKHR const *>( &rhs );
-      return *this;
-    }
-
-#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
-    VULKAN_HPP_CONSTEXPR_14 VideoProfileInfoKHR & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
-    {
-      pNext = pNext_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 VideoProfileInfoKHR &
-                            setVideoCodecOperation( VULKAN_HPP_NAMESPACE::VideoCodecOperationFlagBitsKHR videoCodecOperation_ ) VULKAN_HPP_NOEXCEPT
-    {
-      videoCodecOperation = videoCodecOperation_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 VideoProfileInfoKHR &
-                            setChromaSubsampling( VULKAN_HPP_NAMESPACE::VideoChromaSubsamplingFlagsKHR chromaSubsampling_ ) VULKAN_HPP_NOEXCEPT
-    {
-      chromaSubsampling = chromaSubsampling_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 VideoProfileInfoKHR & setLumaBitDepth( VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagsKHR lumaBitDepth_ ) VULKAN_HPP_NOEXCEPT
-    {
-      lumaBitDepth = lumaBitDepth_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 VideoProfileInfoKHR & setChromaBitDepth( VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagsKHR chromaBitDepth_ ) VULKAN_HPP_NOEXCEPT
-    {
-      chromaBitDepth = chromaBitDepth_;
-      return *this;
-    }
-#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
-
-    operator VkVideoProfileInfoKHR const &() const VULKAN_HPP_NOEXCEPT
-    {
-      return *reinterpret_cast<const VkVideoProfileInfoKHR *>( this );
-    }
-
-    operator VkVideoProfileInfoKHR &() VULKAN_HPP_NOEXCEPT
-    {
-      return *reinterpret_cast<VkVideoProfileInfoKHR *>( this );
-    }
-
-#if defined( VULKAN_HPP_USE_REFLECT )
-#  if 14 <= VULKAN_HPP_CPP_VERSION
-    auto
-#  else
-    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
-               const void * const &,
-               VULKAN_HPP_NAMESPACE::VideoCodecOperationFlagBitsKHR const &,
-               VULKAN_HPP_NAMESPACE::VideoChromaSubsamplingFlagsKHR const &,
-               VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagsKHR const &,
-               VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagsKHR const &>
-#  endif
-      reflect() const VULKAN_HPP_NOEXCEPT
-    {
-      return std::tie( sType, pNext, videoCodecOperation, chromaSubsampling, lumaBitDepth, chromaBitDepth );
-    }
-#endif
-
-#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
-    auto operator<=>( VideoProfileInfoKHR const & ) const = default;
-#else
-    bool operator==( VideoProfileInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
-    {
-#  if defined( VULKAN_HPP_USE_REFLECT )
-      return this->reflect() == rhs.reflect();
-#  else
-      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( videoCodecOperation == rhs.videoCodecOperation ) &&
-             ( chromaSubsampling == rhs.chromaSubsampling ) && ( lumaBitDepth == rhs.lumaBitDepth ) && ( chromaBitDepth == rhs.chromaBitDepth );
-#  endif
-    }
-
-    bool operator!=( VideoProfileInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
-    {
-      return !operator==( rhs );
-    }
-#endif
-
-  public:
-    VULKAN_HPP_NAMESPACE::StructureType                  sType               = StructureType::eVideoProfileInfoKHR;
-    const void *                                         pNext               = {};
-    VULKAN_HPP_NAMESPACE::VideoCodecOperationFlagBitsKHR videoCodecOperation = VULKAN_HPP_NAMESPACE::VideoCodecOperationFlagBitsKHR::eNone;
-    VULKAN_HPP_NAMESPACE::VideoChromaSubsamplingFlagsKHR chromaSubsampling   = {};
-    VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagsKHR lumaBitDepth        = {};
-    VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagsKHR chromaBitDepth      = {};
-  };
-
-  template <>
-  struct CppType<StructureType, StructureType::eVideoProfileInfoKHR>
-  {
-    using Type = VideoProfileInfoKHR;
   };
 
   struct VideoProfileListInfoKHR
