@@ -15659,6 +15659,188 @@ namespace VULKAN_HPP_NAMESPACE
   };
   using ConformanceVersionKHR = ConformanceVersion;
 
+  struct CooperativeMatrixPropertiesKHR
+  {
+    using NativeType = VkCooperativeMatrixPropertiesKHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eCooperativeMatrixPropertiesKHR;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR CooperativeMatrixPropertiesKHR( uint32_t                               MSize_      = {},
+                                                         uint32_t                               NSize_      = {},
+                                                         uint32_t                               KSize_      = {},
+                                                         VULKAN_HPP_NAMESPACE::ComponentTypeKHR AType_      = VULKAN_HPP_NAMESPACE::ComponentTypeKHR::eFloat16,
+                                                         VULKAN_HPP_NAMESPACE::ComponentTypeKHR BType_      = VULKAN_HPP_NAMESPACE::ComponentTypeKHR::eFloat16,
+                                                         VULKAN_HPP_NAMESPACE::ComponentTypeKHR CType_      = VULKAN_HPP_NAMESPACE::ComponentTypeKHR::eFloat16,
+                                                         VULKAN_HPP_NAMESPACE::ComponentTypeKHR ResultType_ = VULKAN_HPP_NAMESPACE::ComponentTypeKHR::eFloat16,
+                                                         VULKAN_HPP_NAMESPACE::Bool32           saturatingAccumulation_ = {},
+                                                         VULKAN_HPP_NAMESPACE::ScopeKHR         scope_ = VULKAN_HPP_NAMESPACE::ScopeKHR::eDevice,
+                                                         void *                                 pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , MSize( MSize_ )
+      , NSize( NSize_ )
+      , KSize( KSize_ )
+      , AType( AType_ )
+      , BType( BType_ )
+      , CType( CType_ )
+      , ResultType( ResultType_ )
+      , saturatingAccumulation( saturatingAccumulation_ )
+      , scope( scope_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR CooperativeMatrixPropertiesKHR( CooperativeMatrixPropertiesKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    CooperativeMatrixPropertiesKHR( VkCooperativeMatrixPropertiesKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : CooperativeMatrixPropertiesKHR( *reinterpret_cast<CooperativeMatrixPropertiesKHR const *>( &rhs ) )
+    {
+    }
+
+    CooperativeMatrixPropertiesKHR & operator=( CooperativeMatrixPropertiesKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    CooperativeMatrixPropertiesKHR & operator=( VkCooperativeMatrixPropertiesKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::CooperativeMatrixPropertiesKHR const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 CooperativeMatrixPropertiesKHR & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CooperativeMatrixPropertiesKHR & setMSize( uint32_t MSize_ ) VULKAN_HPP_NOEXCEPT
+    {
+      MSize = MSize_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CooperativeMatrixPropertiesKHR & setNSize( uint32_t NSize_ ) VULKAN_HPP_NOEXCEPT
+    {
+      NSize = NSize_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CooperativeMatrixPropertiesKHR & setKSize( uint32_t KSize_ ) VULKAN_HPP_NOEXCEPT
+    {
+      KSize = KSize_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CooperativeMatrixPropertiesKHR & setAType( VULKAN_HPP_NAMESPACE::ComponentTypeKHR AType_ ) VULKAN_HPP_NOEXCEPT
+    {
+      AType = AType_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CooperativeMatrixPropertiesKHR & setBType( VULKAN_HPP_NAMESPACE::ComponentTypeKHR BType_ ) VULKAN_HPP_NOEXCEPT
+    {
+      BType = BType_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CooperativeMatrixPropertiesKHR & setCType( VULKAN_HPP_NAMESPACE::ComponentTypeKHR CType_ ) VULKAN_HPP_NOEXCEPT
+    {
+      CType = CType_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CooperativeMatrixPropertiesKHR & setResultType( VULKAN_HPP_NAMESPACE::ComponentTypeKHR ResultType_ ) VULKAN_HPP_NOEXCEPT
+    {
+      ResultType = ResultType_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CooperativeMatrixPropertiesKHR &
+                            setSaturatingAccumulation( VULKAN_HPP_NAMESPACE::Bool32 saturatingAccumulation_ ) VULKAN_HPP_NOEXCEPT
+    {
+      saturatingAccumulation = saturatingAccumulation_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CooperativeMatrixPropertiesKHR & setScope( VULKAN_HPP_NAMESPACE::ScopeKHR scope_ ) VULKAN_HPP_NOEXCEPT
+    {
+      scope = scope_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkCooperativeMatrixPropertiesKHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkCooperativeMatrixPropertiesKHR *>( this );
+    }
+
+    operator VkCooperativeMatrixPropertiesKHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkCooperativeMatrixPropertiesKHR *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               void * const &,
+               uint32_t const &,
+               uint32_t const &,
+               uint32_t const &,
+               VULKAN_HPP_NAMESPACE::ComponentTypeKHR const &,
+               VULKAN_HPP_NAMESPACE::ComponentTypeKHR const &,
+               VULKAN_HPP_NAMESPACE::ComponentTypeKHR const &,
+               VULKAN_HPP_NAMESPACE::ComponentTypeKHR const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::ScopeKHR const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, MSize, NSize, KSize, AType, BType, CType, ResultType, saturatingAccumulation, scope );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( CooperativeMatrixPropertiesKHR const & ) const = default;
+#else
+    bool operator==( CooperativeMatrixPropertiesKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( MSize == rhs.MSize ) && ( NSize == rhs.NSize ) && ( KSize == rhs.KSize ) &&
+             ( AType == rhs.AType ) && ( BType == rhs.BType ) && ( CType == rhs.CType ) && ( ResultType == rhs.ResultType ) &&
+             ( saturatingAccumulation == rhs.saturatingAccumulation ) && ( scope == rhs.scope );
+#  endif
+    }
+
+    bool operator!=( CooperativeMatrixPropertiesKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType    sType                  = StructureType::eCooperativeMatrixPropertiesKHR;
+    void *                                 pNext                  = {};
+    uint32_t                               MSize                  = {};
+    uint32_t                               NSize                  = {};
+    uint32_t                               KSize                  = {};
+    VULKAN_HPP_NAMESPACE::ComponentTypeKHR AType                  = VULKAN_HPP_NAMESPACE::ComponentTypeKHR::eFloat16;
+    VULKAN_HPP_NAMESPACE::ComponentTypeKHR BType                  = VULKAN_HPP_NAMESPACE::ComponentTypeKHR::eFloat16;
+    VULKAN_HPP_NAMESPACE::ComponentTypeKHR CType                  = VULKAN_HPP_NAMESPACE::ComponentTypeKHR::eFloat16;
+    VULKAN_HPP_NAMESPACE::ComponentTypeKHR ResultType             = VULKAN_HPP_NAMESPACE::ComponentTypeKHR::eFloat16;
+    VULKAN_HPP_NAMESPACE::Bool32           saturatingAccumulation = {};
+    VULKAN_HPP_NAMESPACE::ScopeKHR         scope                  = VULKAN_HPP_NAMESPACE::ScopeKHR::eDevice;
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eCooperativeMatrixPropertiesKHR>
+  {
+    using Type = CooperativeMatrixPropertiesKHR;
+  };
+
   struct CooperativeMatrixPropertiesNV
   {
     using NativeType = VkCooperativeMatrixPropertiesNV;
@@ -53606,6 +53788,115 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PhysicalDeviceConservativeRasterizationPropertiesEXT;
   };
 
+  struct PhysicalDeviceCooperativeMatrixFeaturesKHR
+  {
+    using NativeType = VkPhysicalDeviceCooperativeMatrixFeaturesKHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceCooperativeMatrixFeaturesKHR;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceCooperativeMatrixFeaturesKHR( VULKAN_HPP_NAMESPACE::Bool32 cooperativeMatrix_                   = {},
+                                                                     VULKAN_HPP_NAMESPACE::Bool32 cooperativeMatrixRobustBufferAccess_ = {},
+                                                                     void *                       pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , cooperativeMatrix( cooperativeMatrix_ )
+      , cooperativeMatrixRobustBufferAccess( cooperativeMatrixRobustBufferAccess_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceCooperativeMatrixFeaturesKHR( PhysicalDeviceCooperativeMatrixFeaturesKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceCooperativeMatrixFeaturesKHR( VkPhysicalDeviceCooperativeMatrixFeaturesKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceCooperativeMatrixFeaturesKHR( *reinterpret_cast<PhysicalDeviceCooperativeMatrixFeaturesKHR const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceCooperativeMatrixFeaturesKHR & operator=( PhysicalDeviceCooperativeMatrixFeaturesKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceCooperativeMatrixFeaturesKHR & operator=( VkPhysicalDeviceCooperativeMatrixFeaturesKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceCooperativeMatrixFeaturesKHR const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceCooperativeMatrixFeaturesKHR & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceCooperativeMatrixFeaturesKHR &
+                            setCooperativeMatrix( VULKAN_HPP_NAMESPACE::Bool32 cooperativeMatrix_ ) VULKAN_HPP_NOEXCEPT
+    {
+      cooperativeMatrix = cooperativeMatrix_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceCooperativeMatrixFeaturesKHR &
+                            setCooperativeMatrixRobustBufferAccess( VULKAN_HPP_NAMESPACE::Bool32 cooperativeMatrixRobustBufferAccess_ ) VULKAN_HPP_NOEXCEPT
+    {
+      cooperativeMatrixRobustBufferAccess = cooperativeMatrixRobustBufferAccess_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceCooperativeMatrixFeaturesKHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceCooperativeMatrixFeaturesKHR *>( this );
+    }
+
+    operator VkPhysicalDeviceCooperativeMatrixFeaturesKHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceCooperativeMatrixFeaturesKHR *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, cooperativeMatrix, cooperativeMatrixRobustBufferAccess );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceCooperativeMatrixFeaturesKHR const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceCooperativeMatrixFeaturesKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( cooperativeMatrix == rhs.cooperativeMatrix ) &&
+             ( cooperativeMatrixRobustBufferAccess == rhs.cooperativeMatrixRobustBufferAccess );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceCooperativeMatrixFeaturesKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                               = StructureType::ePhysicalDeviceCooperativeMatrixFeaturesKHR;
+    void *                              pNext                               = {};
+    VULKAN_HPP_NAMESPACE::Bool32        cooperativeMatrix                   = {};
+    VULKAN_HPP_NAMESPACE::Bool32        cooperativeMatrixRobustBufferAccess = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceCooperativeMatrixFeaturesKHR>
+  {
+    using Type = PhysicalDeviceCooperativeMatrixFeaturesKHR;
+  };
+
   struct PhysicalDeviceCooperativeMatrixFeaturesNV
   {
     using NativeType = VkPhysicalDeviceCooperativeMatrixFeaturesNV;
@@ -53713,6 +54004,89 @@ namespace VULKAN_HPP_NAMESPACE
   struct CppType<StructureType, StructureType::ePhysicalDeviceCooperativeMatrixFeaturesNV>
   {
     using Type = PhysicalDeviceCooperativeMatrixFeaturesNV;
+  };
+
+  struct PhysicalDeviceCooperativeMatrixPropertiesKHR
+  {
+    using NativeType = VkPhysicalDeviceCooperativeMatrixPropertiesKHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceCooperativeMatrixPropertiesKHR;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceCooperativeMatrixPropertiesKHR( VULKAN_HPP_NAMESPACE::ShaderStageFlags cooperativeMatrixSupportedStages_ = {},
+                                                                       void *                                 pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , cooperativeMatrixSupportedStages( cooperativeMatrixSupportedStages_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceCooperativeMatrixPropertiesKHR( PhysicalDeviceCooperativeMatrixPropertiesKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceCooperativeMatrixPropertiesKHR( VkPhysicalDeviceCooperativeMatrixPropertiesKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceCooperativeMatrixPropertiesKHR( *reinterpret_cast<PhysicalDeviceCooperativeMatrixPropertiesKHR const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceCooperativeMatrixPropertiesKHR & operator=( PhysicalDeviceCooperativeMatrixPropertiesKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceCooperativeMatrixPropertiesKHR & operator=( VkPhysicalDeviceCooperativeMatrixPropertiesKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceCooperativeMatrixPropertiesKHR const *>( &rhs );
+      return *this;
+    }
+
+    operator VkPhysicalDeviceCooperativeMatrixPropertiesKHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceCooperativeMatrixPropertiesKHR *>( this );
+    }
+
+    operator VkPhysicalDeviceCooperativeMatrixPropertiesKHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceCooperativeMatrixPropertiesKHR *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::ShaderStageFlags const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, cooperativeMatrixSupportedStages );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceCooperativeMatrixPropertiesKHR const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceCooperativeMatrixPropertiesKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( cooperativeMatrixSupportedStages == rhs.cooperativeMatrixSupportedStages );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceCooperativeMatrixPropertiesKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType    sType                            = StructureType::ePhysicalDeviceCooperativeMatrixPropertiesKHR;
+    void *                                 pNext                            = {};
+    VULKAN_HPP_NAMESPACE::ShaderStageFlags cooperativeMatrixSupportedStages = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceCooperativeMatrixPropertiesKHR>
+  {
+    using Type = PhysicalDeviceCooperativeMatrixPropertiesKHR;
   };
 
   struct PhysicalDeviceCooperativeMatrixPropertiesNV
