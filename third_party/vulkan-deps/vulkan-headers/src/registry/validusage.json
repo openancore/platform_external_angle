@@ -1,9 +1,9 @@
 {
   "version info": {
     "schema version": 2,
-    "api version": "1.3.255",
-    "comment": "from git branch: github-main commit: 012db30fd16929f9fd30dfbc2a7c86e048d64015",
-    "date": "2023-06-23 11:41:13Z"
+    "api version": "1.3.256",
+    "comment": "from git branch: github-main commit: 3dae5d7fbf332970ae0a97d5ab05ae5db93e62f0",
+    "date": "2023-06-30 12:46:10Z"
   },
   "validation": {
     "vkGetInstanceProcAddr": {
@@ -1638,7 +1638,7 @@
         },
         {
           "vuid": "VUID-VkSemaphoreSubmitInfo-stageMask-04957",
-          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:stageMask <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI</code>"
+          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:stageMask <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI</code>"
         },
         {
           "vuid": "VUID-VkSemaphoreSubmitInfo-stageMask-04995",
@@ -3810,7 +3810,7 @@
         },
         {
           "vuid": "VUID-vkCmdResetEvent2-stageMask-04957",
-          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:stageMask <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI</code>"
+          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:stageMask <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI</code>"
         },
         {
           "vuid": "VUID-vkCmdResetEvent2-stageMask-04995",
@@ -4530,7 +4530,7 @@
         },
         {
           "vuid": "VUID-VkMemoryBarrier2-srcStageMask-04957",
-          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:srcStageMask <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI</code>"
+          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:srcStageMask <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI</code>"
         },
         {
           "vuid": "VUID-VkMemoryBarrier2-srcStageMask-04995",
@@ -4554,7 +4554,7 @@
         },
         {
           "vuid": "VUID-VkMemoryBarrier2-srcAccessMask-03903",
-          "text": " If pname:srcAccessMask includes <code>VK_ACCESS_2_INPUT_ATTACHMENT_READ_BIT</code>, pname:srcStageMask <strong class=\"purple\">must</strong> include <code>VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT</code>, <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI</code>, <code>VK_PIPELINE_STAGE_2_ALL_GRAPHICS_BIT</code>, or <code>VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT</code>"
+          "text": " If pname:srcAccessMask includes <code>VK_ACCESS_2_INPUT_ATTACHMENT_READ_BIT</code>, pname:srcStageMask <strong class=\"purple\">must</strong> include <code>VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT</code>, <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI</code>, <code>VK_PIPELINE_STAGE_2_ALL_GRAPHICS_BIT</code>, or <code>VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT</code>"
         },
         {
           "vuid": "VUID-VkMemoryBarrier2-srcAccessMask-03904",
@@ -4738,7 +4738,7 @@
         },
         {
           "vuid": "VUID-VkMemoryBarrier2-dstStageMask-04957",
-          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:dstStageMask <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI</code>"
+          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:dstStageMask <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI</code>"
         },
         {
           "vuid": "VUID-VkMemoryBarrier2-dstStageMask-04995",
@@ -4762,7 +4762,7 @@
         },
         {
           "vuid": "VUID-VkMemoryBarrier2-dstAccessMask-03903",
-          "text": " If pname:dstAccessMask includes <code>VK_ACCESS_2_INPUT_ATTACHMENT_READ_BIT</code>, pname:dstStageMask <strong class=\"purple\">must</strong> include <code>VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT</code>, <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI</code>, <code>VK_PIPELINE_STAGE_2_ALL_GRAPHICS_BIT</code>, or <code>VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT</code>"
+          "text": " If pname:dstAccessMask includes <code>VK_ACCESS_2_INPUT_ATTACHMENT_READ_BIT</code>, pname:dstStageMask <strong class=\"purple\">must</strong> include <code>VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT</code>, <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI</code>, <code>VK_PIPELINE_STAGE_2_ALL_GRAPHICS_BIT</code>, or <code>VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT</code>"
         },
         {
           "vuid": "VUID-VkMemoryBarrier2-dstAccessMask-03904",
@@ -4990,7 +4990,7 @@
         },
         {
           "vuid": "VUID-VkBufferMemoryBarrier2-srcStageMask-04957",
-          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:srcStageMask <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI</code>"
+          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:srcStageMask <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI</code>"
         },
         {
           "vuid": "VUID-VkBufferMemoryBarrier2-srcStageMask-04995",
@@ -5014,7 +5014,7 @@
         },
         {
           "vuid": "VUID-VkBufferMemoryBarrier2-srcAccessMask-03903",
-          "text": " If pname:srcAccessMask includes <code>VK_ACCESS_2_INPUT_ATTACHMENT_READ_BIT</code>, pname:srcStageMask <strong class=\"purple\">must</strong> include <code>VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT</code>, <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI</code>, <code>VK_PIPELINE_STAGE_2_ALL_GRAPHICS_BIT</code>, or <code>VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT</code>"
+          "text": " If pname:srcAccessMask includes <code>VK_ACCESS_2_INPUT_ATTACHMENT_READ_BIT</code>, pname:srcStageMask <strong class=\"purple\">must</strong> include <code>VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT</code>, <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI</code>, <code>VK_PIPELINE_STAGE_2_ALL_GRAPHICS_BIT</code>, or <code>VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT</code>"
         },
         {
           "vuid": "VUID-VkBufferMemoryBarrier2-srcAccessMask-03904",
@@ -5198,7 +5198,7 @@
         },
         {
           "vuid": "VUID-VkBufferMemoryBarrier2-dstStageMask-04957",
-          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:dstStageMask <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI</code>"
+          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:dstStageMask <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI</code>"
         },
         {
           "vuid": "VUID-VkBufferMemoryBarrier2-dstStageMask-04995",
@@ -5222,7 +5222,7 @@
         },
         {
           "vuid": "VUID-VkBufferMemoryBarrier2-dstAccessMask-03903",
-          "text": " If pname:dstAccessMask includes <code>VK_ACCESS_2_INPUT_ATTACHMENT_READ_BIT</code>, pname:dstStageMask <strong class=\"purple\">must</strong> include <code>VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT</code>, <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI</code>, <code>VK_PIPELINE_STAGE_2_ALL_GRAPHICS_BIT</code>, or <code>VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT</code>"
+          "text": " If pname:dstAccessMask includes <code>VK_ACCESS_2_INPUT_ATTACHMENT_READ_BIT</code>, pname:dstStageMask <strong class=\"purple\">must</strong> include <code>VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT</code>, <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI</code>, <code>VK_PIPELINE_STAGE_2_ALL_GRAPHICS_BIT</code>, or <code>VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT</code>"
         },
         {
           "vuid": "VUID-VkBufferMemoryBarrier2-dstAccessMask-03904",
@@ -5526,7 +5526,7 @@
         },
         {
           "vuid": "VUID-VkImageMemoryBarrier2-srcStageMask-04957",
-          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:srcStageMask <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI</code>"
+          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:srcStageMask <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI</code>"
         },
         {
           "vuid": "VUID-VkImageMemoryBarrier2-srcStageMask-04995",
@@ -5550,7 +5550,7 @@
         },
         {
           "vuid": "VUID-VkImageMemoryBarrier2-srcAccessMask-03903",
-          "text": " If pname:srcAccessMask includes <code>VK_ACCESS_2_INPUT_ATTACHMENT_READ_BIT</code>, pname:srcStageMask <strong class=\"purple\">must</strong> include <code>VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT</code>, <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI</code>, <code>VK_PIPELINE_STAGE_2_ALL_GRAPHICS_BIT</code>, or <code>VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT</code>"
+          "text": " If pname:srcAccessMask includes <code>VK_ACCESS_2_INPUT_ATTACHMENT_READ_BIT</code>, pname:srcStageMask <strong class=\"purple\">must</strong> include <code>VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT</code>, <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI</code>, <code>VK_PIPELINE_STAGE_2_ALL_GRAPHICS_BIT</code>, or <code>VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT</code>"
         },
         {
           "vuid": "VUID-VkImageMemoryBarrier2-srcAccessMask-03904",
@@ -5734,7 +5734,7 @@
         },
         {
           "vuid": "VUID-VkImageMemoryBarrier2-dstStageMask-04957",
-          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:dstStageMask <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI</code>"
+          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:dstStageMask <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI</code>"
         },
         {
           "vuid": "VUID-VkImageMemoryBarrier2-dstStageMask-04995",
@@ -5758,7 +5758,7 @@
         },
         {
           "vuid": "VUID-VkImageMemoryBarrier2-dstAccessMask-03903",
-          "text": " If pname:dstAccessMask includes <code>VK_ACCESS_2_INPUT_ATTACHMENT_READ_BIT</code>, pname:dstStageMask <strong class=\"purple\">must</strong> include <code>VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT</code>, <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI</code>, <code>VK_PIPELINE_STAGE_2_ALL_GRAPHICS_BIT</code>, or <code>VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT</code>"
+          "text": " If pname:dstAccessMask includes <code>VK_ACCESS_2_INPUT_ATTACHMENT_READ_BIT</code>, pname:dstStageMask <strong class=\"purple\">must</strong> include <code>VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT</code>, <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI</code>, <code>VK_PIPELINE_STAGE_2_ALL_GRAPHICS_BIT</code>, or <code>VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT</code>"
         },
         {
           "vuid": "VUID-VkImageMemoryBarrier2-dstAccessMask-03904",
@@ -9997,8 +9997,8 @@
           "text": " If the <a href=\"#features-fragmentDensityMap\"><code>fragmentDensityMap</code></a> feature is not enabled, <code>flags</code> <strong class=\"purple\">must</strong> not include <code>VK_SHADER_CREATE_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT</code>"
         },
         {
-          "vuid": "VUID-VkShaderCreateInfoEXT-flags-08413",
-          "text": " If <code>stage</code> is not <code>VK_SHADER_STAGE_COMPUTE_BIT</code>, <code>flags</code> <strong class=\"purple\">must</strong> not include <code>VK_SHADER_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT_EXT</code> or <code>VK_SHADER_CREATE_REQUIRE_FULL_SUBGROUPS_BIT_EXT</code>"
+          "vuid": "VUID-VkShaderCreateInfoEXT-flags-08992",
+          "text": " If <code>flags</code> includes <code>VK_SHADER_CREATE_REQUIRE_FULL_SUBGROUPS_BIT_EXT</code>, <code>stage</code> <strong class=\"purple\">must</strong> be one of <code>VK_SHADER_STAGE_MESH_BIT_EXT</code>, <code>VK_SHADER_STAGE_TASK_BIT_EXT</code>, or <code>VK_SHADER_STAGE_COMPUTE_BIT</code>"
         },
         {
           "vuid": "VUID-VkShaderCreateInfoEXT-flags-08485",
@@ -11081,6 +11081,10 @@
           "text": " If <code>flags</code> has the <code>VK_PIPELINE_SHADER_STAGE_CREATE_REQUIRE_FULL_SUBGROUPS_BIT</code> flag set, the <a href=\"#features-computeFullSubgroups\"><code>computeFullSubgroups</code></a> feature <strong class=\"purple\">must</strong> be enabled"
         },
         {
+          "vuid": "VUID-VkPipelineShaderStageCreateInfo-flags-08988",
+          "text": " If <code>flags</code> includes <code>VK_PIPELINE_SHADER_STAGE_CREATE_REQUIRE_FULL_SUBGROUPS_BIT</code>, <code>stage</code> <strong class=\"purple\">must</strong> be one of <code>VK_SHADER_STAGE_MESH_BIT_EXT</code>, <code>VK_SHADER_STAGE_TASK_BIT_EXT</code>, or <code>VK_SHADER_STAGE_COMPUTE_BIT</code>"
+        },
+        {
           "vuid": "VUID-VkPipelineShaderStageCreateInfo-pNext-02754",
           "text": " If a <a href=\"#VkPipelineShaderStageRequiredSubgroupSizeCreateInfo\">VkPipelineShaderStageRequiredSubgroupSizeCreateInfo</a> structure is included in the <code>pNext</code> chain, <code>flags</code> <strong class=\"purple\">must</strong> not have the <code>VK_PIPELINE_SHADER_STAGE_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT</code> flag set"
         },
@@ -11105,7 +11109,7 @@
           "text": " If <code>flags</code> has the <code>VK_PIPELINE_SHADER_STAGE_CREATE_REQUIRE_FULL_SUBGROUPS_BIT</code> flag set and <code>flags</code> does not have the <code>VK_PIPELINE_SHADER_STAGE_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT</code> flag set and no <a href=\"#VkPipelineShaderStageRequiredSubgroupSizeCreateInfo\">VkPipelineShaderStageRequiredSubgroupSizeCreateInfo</a> structure is included in the <code>pNext</code> chain, the local workgroup size in the X dimension of the pipeline <strong class=\"purple\">must</strong> be a multiple of <a href=\"#limits-subgroup-size\"><code>subgroupSize</code></a>"
         },
         {
-          "vuid": "VUID-VkPipelineShaderStageCreateInfo-flags-",
+          "vuid": "VUID-VkPipelineShaderStageCreateInfo-module-08987",
           "text": " If <code>module</code> uses the <code>OpTypeCooperativeMatrixKHR</code> instruction with a <code>Scope</code> equal to <code>Subgroup</code>, then the local workgroup size in the X dimension of the pipeline <strong class=\"purple\">must</strong> be a multiple of <a href=\"#limits-subgroup-size\"><code>subgroupSize</code></a>."
         },
         {
@@ -13585,6 +13589,10 @@
           "text": " <code>headerVersion</code> <strong class=\"purple\">must</strong> be <code>VK_PIPELINE_CACHE_HEADER_VERSION_ONE</code>"
         },
         {
+          "vuid": "VUID-VkPipelineCacheHeaderVersionOne-headerSize-08990",
+          "text": " <code>headerSize</code> <strong class=\"purple\">must</strong> not exceed the size of the pipeline cache"
+        },
+        {
           "vuid": "VUID-VkPipelineCacheHeaderVersionOne-headerVersion-parameter",
           "text": " <code>headerVersion</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkPipelineCacheHeaderVersion\">VkPipelineCacheHeaderVersion</a> value"
         }
@@ -14967,6 +14975,10 @@
         {
           "vuid": "VUID-VkImportMemoryHostPointerInfoEXT-handleType-parameter",
           "text": " <code>handleType</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkExternalMemoryHandleTypeFlagBits\">VkExternalMemoryHandleTypeFlagBits</a> value"
+        },
+        {
+          "vuid": "VUID-VkImportMemoryHostPointerInfoEXT-pHostPointer-parameter",
+          "text": " <code>pHostPointer</code> <strong class=\"purple\">must</strong> be a pointer value"
         }
       ]
     },
@@ -14995,6 +15007,10 @@
         {
           "vuid": "VUID-vkGetMemoryHostPointerPropertiesEXT-handleType-parameter",
           "text": " <code>handleType</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkExternalMemoryHandleTypeFlagBits\">VkExternalMemoryHandleTypeFlagBits</a> value"
+        },
+        {
+          "vuid": "VUID-vkGetMemoryHostPointerPropertiesEXT-pHostPointer-parameter",
+          "text": " <code>pHostPointer</code> <strong class=\"purple\">must</strong> be a pointer value"
         },
         {
           "vuid": "VUID-vkGetMemoryHostPointerPropertiesEXT-pMemoryHostPointerProperties-parameter",
@@ -17042,7 +17058,11 @@
         },
         {
           "vuid": "VUID-VkImageDrmFormatModifierExplicitCreateInfoEXT-pPlaneLayouts-parameter",
-          "text": " If <code>drmFormatModifierPlaneCount</code> is not <code>0</code>, <code>pPlaneLayouts</code> <strong class=\"purple\">must</strong> be a valid pointer to an array of <code>drmFormatModifierPlaneCount</code> <a href=\"#VkSubresourceLayout\">VkSubresourceLayout</a> structures"
+          "text": " <code>pPlaneLayouts</code> <strong class=\"purple\">must</strong> be a valid pointer to an array of <code>drmFormatModifierPlaneCount</code> <a href=\"#VkSubresourceLayout\">VkSubresourceLayout</a> structures"
+        },
+        {
+          "vuid": "VUID-VkImageDrmFormatModifierExplicitCreateInfoEXT-drmFormatModifierPlaneCount-arraylength",
+          "text": " <code>drmFormatModifierPlaneCount</code> <strong class=\"purple\">must</strong> be greater than <code>0</code>"
         }
       ]
     },
@@ -25270,7 +25290,7 @@
         },
         {
           "vuid": "VUID-vkCmdResetQueryPool-commandBuffer-cmdpool",
-          "text": " The <code>VkCommandPool</code> that <code>commandBuffer</code> was allocated from <strong class=\"purple\">must</strong> support graphics, compute, decode, encode, or opticalflow operations"
+          "text": " The <code>VkCommandPool</code> that <code>commandBuffer</code> was allocated from <strong class=\"purple\">must</strong> support graphics, compute, decode, encode, or optical flow operations"
         },
         {
           "vuid": "VUID-vkCmdResetQueryPool-renderpass",
@@ -25986,7 +26006,7 @@
         },
         {
           "vuid": "VUID-vkCmdWriteTimestamp2-stage-04957",
-          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:stage <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI</code>"
+          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:stage <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI</code>"
         },
         {
           "vuid": "VUID-vkCmdWriteTimestamp2-stage-04995",
@@ -26146,7 +26166,7 @@
         },
         {
           "vuid": "VUID-vkCmdWriteTimestamp-commandBuffer-cmdpool",
-          "text": " The <code>VkCommandPool</code> that <code>commandBuffer</code> was allocated from <strong class=\"purple\">must</strong> support transfer, graphics, compute, decode, encode, or opticalflow operations"
+          "text": " The <code>VkCommandPool</code> that <code>commandBuffer</code> was allocated from <strong class=\"purple\">must</strong> support transfer, graphics, compute, decode, encode, or optical flow operations"
         },
         {
           "vuid": "VUID-vkCmdWriteTimestamp-commonparent",
@@ -30186,7 +30206,7 @@
         },
         {
           "vuid": "VUID-vkCmdWriteBufferMarker2AMD-stage-04957",
-          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:stage <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI</code>"
+          "text": " If the <a href=\"#features-subpassShading\"><code>subpassShading</code></a> feature is not enabled, pname:stage <strong class=\"purple\">must</strong> not contain <code>VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI</code>"
         },
         {
           "vuid": "VUID-vkCmdWriteBufferMarker2AMD-stage-04995",
@@ -30390,7 +30410,7 @@
       "core": [
         {
           "vuid": "VUID-vkCmdSetPrimitiveRestartEnable-None-08970",
-          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:"
+          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:<div class=\"ulist\">\n<ul>\n<li>\n<p>the <a href=\"#features-extendedDynamicState2\"><code>extendedDynamicState2</code></a>\nfeature is enabled</p>\n</li>\n<li>\n<p>the <a href=\"#features-shaderObject\"><code>shaderObject</code></a> feature is enabled</p>\n</li>\n<li>\n<p>the value of <a href=\"#VkApplicationInfo\">VkApplicationInfo</a>::<code>apiVersion</code> used to create\nthe <a href=\"#VkInstance\">VkInstance</a> parent of <code>commandBuffer</code> is greater than or\nequal to Version 1.3</p>\n</li>\n</ul>\n</div>"
         },
         {
           "vuid": "VUID-vkCmdSetPrimitiveRestartEnable-commandBuffer-parameter",
@@ -30414,7 +30434,7 @@
       "core": [
         {
           "vuid": "VUID-vkCmdSetPrimitiveTopology-None-08971",
-          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:"
+          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:<div class=\"ulist\">\n<ul>\n<li>\n<p>the <a href=\"#features-extendedDynamicState\"><code>extendedDynamicState</code></a>\nfeature is enabled</p>\n</li>\n<li>\n<p>the <a href=\"#features-shaderObject\"><code>shaderObject</code></a> feature is enabled</p>\n</li>\n<li>\n<p>the value of <a href=\"#VkApplicationInfo\">VkApplicationInfo</a>::<code>apiVersion</code> used to create\nthe <a href=\"#VkInstance\">VkInstance</a> parent of <code>commandBuffer</code> is greater than or\nequal to Version 1.3</p>\n</li>\n</ul>\n</div>"
         },
         {
           "vuid": "VUID-vkCmdSetPrimitiveTopology-commandBuffer-parameter",
@@ -30550,7 +30570,7 @@
         },
         {
           "vuid": "VUID-vkCmdDraw-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDraw-None-08601",
@@ -31842,7 +31862,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndexed-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDrawIndexed-None-08601",
@@ -33142,7 +33162,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMultiEXT-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDrawMultiEXT-None-08601",
@@ -34450,7 +34470,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMultiIndexedEXT-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDrawMultiIndexedEXT-None-08601",
@@ -35770,7 +35790,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndirect-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDrawIndirect-None-08601",
@@ -37106,7 +37126,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectCount-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectCount-None-08601",
@@ -38454,7 +38474,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirect-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirect-None-08601",
@@ -39798,7 +39818,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirectCount-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirectCount-None-08601",
@@ -41154,7 +41174,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectByteCountEXT-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectByteCountEXT-None-08601",
@@ -42566,7 +42586,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksNV-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksNV-None-08601",
@@ -43790,7 +43810,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectNV-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectNV-None-08601",
@@ -45062,7 +45082,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountNV-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountNV-None-08601",
@@ -46350,7 +46370,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksEXT-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksEXT-None-08601",
@@ -47602,7 +47622,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectEXT-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectEXT-None-08601",
@@ -48902,7 +48922,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountEXT-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountEXT-None-08601",
@@ -50190,7 +50210,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawClusterHUAWEI-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDrawClusterHUAWEI-None-08601",
@@ -51426,7 +51446,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawClusterIndirectHUAWEI-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDrawClusterIndirectHUAWEI-None-08601",
@@ -53654,7 +53674,7 @@
       "core": [
         {
           "vuid": "VUID-vkCmdSetViewportWithCount-None-08971",
-          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:"
+          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:<div class=\"ulist\">\n<ul>\n<li>\n<p>the <a href=\"#features-extendedDynamicState\"><code>extendedDynamicState</code></a>\nfeature is enabled</p>\n</li>\n<li>\n<p>the <a href=\"#features-shaderObject\"><code>shaderObject</code></a> feature is enabled</p>\n</li>\n<li>\n<p>the value of <a href=\"#VkApplicationInfo\">VkApplicationInfo</a>::<code>apiVersion</code> used to create\nthe <a href=\"#VkInstance\">VkInstance</a> parent of <code>commandBuffer</code> is greater than or\nequal to Version 1.3</p>\n</li>\n</ul>\n</div>"
         },
         {
           "vuid": "VUID-vkCmdSetViewportWithCount-viewportCount-03394",
@@ -53698,7 +53718,7 @@
       "core": [
         {
           "vuid": "VUID-vkCmdSetScissorWithCount-None-08971",
-          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:"
+          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:<div class=\"ulist\">\n<ul>\n<li>\n<p>the <a href=\"#features-extendedDynamicState\"><code>extendedDynamicState</code></a>\nfeature is enabled</p>\n</li>\n<li>\n<p>the <a href=\"#features-shaderObject\"><code>shaderObject</code></a> feature is enabled</p>\n</li>\n<li>\n<p>the value of <a href=\"#VkApplicationInfo\">VkApplicationInfo</a>::<code>apiVersion</code> used to create\nthe <a href=\"#VkInstance\">VkInstance</a> parent of <code>commandBuffer</code> is greater than or\nequal to Version 1.3</p>\n</li>\n</ul>\n</div>"
         },
         {
           "vuid": "VUID-vkCmdSetScissorWithCount-scissorCount-03397",
@@ -53954,7 +53974,7 @@
       "core": [
         {
           "vuid": "VUID-vkCmdSetRasterizerDiscardEnable-None-08970",
-          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:"
+          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:<div class=\"ulist\">\n<ul>\n<li>\n<p>the <a href=\"#features-extendedDynamicState2\"><code>extendedDynamicState2</code></a>\nfeature is enabled</p>\n</li>\n<li>\n<p>the <a href=\"#features-shaderObject\"><code>shaderObject</code></a> feature is enabled</p>\n</li>\n<li>\n<p>the value of <a href=\"#VkApplicationInfo\">VkApplicationInfo</a>::<code>apiVersion</code> used to create\nthe <a href=\"#VkInstance\">VkInstance</a> parent of <code>commandBuffer</code> is greater than or\nequal to Version 1.3</p>\n</li>\n</ul>\n</div>"
         },
         {
           "vuid": "VUID-vkCmdSetRasterizerDiscardEnable-commandBuffer-parameter",
@@ -54766,7 +54786,7 @@
       "core": [
         {
           "vuid": "VUID-vkCmdSetFrontFace-None-08971",
-          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:"
+          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:<div class=\"ulist\">\n<ul>\n<li>\n<p>the <a href=\"#features-extendedDynamicState\"><code>extendedDynamicState</code></a>\nfeature is enabled</p>\n</li>\n<li>\n<p>the <a href=\"#features-shaderObject\"><code>shaderObject</code></a> feature is enabled</p>\n</li>\n<li>\n<p>the value of <a href=\"#VkApplicationInfo\">VkApplicationInfo</a>::<code>apiVersion</code> used to create\nthe <a href=\"#VkInstance\">VkInstance</a> parent of <code>commandBuffer</code> is greater than or\nequal to Version 1.3</p>\n</li>\n</ul>\n</div>"
         },
         {
           "vuid": "VUID-vkCmdSetFrontFace-commandBuffer-parameter",
@@ -54794,7 +54814,7 @@
       "core": [
         {
           "vuid": "VUID-vkCmdSetCullMode-None-08971",
-          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:"
+          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:<div class=\"ulist\">\n<ul>\n<li>\n<p>the <a href=\"#features-extendedDynamicState\"><code>extendedDynamicState</code></a>\nfeature is enabled</p>\n</li>\n<li>\n<p>the <a href=\"#features-shaderObject\"><code>shaderObject</code></a> feature is enabled</p>\n</li>\n<li>\n<p>the value of <a href=\"#VkApplicationInfo\">VkApplicationInfo</a>::<code>apiVersion</code> used to create\nthe <a href=\"#VkInstance\">VkInstance</a> parent of <code>commandBuffer</code> is greater than or\nequal to Version 1.3</p>\n</li>\n</ul>\n</div>"
         },
         {
           "vuid": "VUID-vkCmdSetCullMode-commandBuffer-parameter",
@@ -54858,7 +54878,7 @@
       "core": [
         {
           "vuid": "VUID-vkCmdSetDepthBiasEnable-None-08970",
-          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:"
+          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:<div class=\"ulist\">\n<ul>\n<li>\n<p>the <a href=\"#features-extendedDynamicState2\"><code>extendedDynamicState2</code></a>\nfeature is enabled</p>\n</li>\n<li>\n<p>the <a href=\"#features-shaderObject\"><code>shaderObject</code></a> feature is enabled</p>\n</li>\n<li>\n<p>the value of <a href=\"#VkApplicationInfo\">VkApplicationInfo</a>::<code>apiVersion</code> used to create\nthe <a href=\"#VkInstance\">VkInstance</a> parent of <code>commandBuffer</code> is greater than or\nequal to Version 1.3</p>\n</li>\n</ul>\n</div>"
         },
         {
           "vuid": "VUID-vkCmdSetDepthBiasEnable-commandBuffer-parameter",
@@ -55462,7 +55482,7 @@
       "core": [
         {
           "vuid": "VUID-vkCmdSetDepthBoundsTestEnable-None-08971",
-          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:"
+          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:<div class=\"ulist\">\n<ul>\n<li>\n<p>the <a href=\"#features-extendedDynamicState\"><code>extendedDynamicState</code></a>\nfeature is enabled</p>\n</li>\n<li>\n<p>the <a href=\"#features-shaderObject\"><code>shaderObject</code></a> feature is enabled</p>\n</li>\n<li>\n<p>the value of <a href=\"#VkApplicationInfo\">VkApplicationInfo</a>::<code>apiVersion</code> used to create\nthe <a href=\"#VkInstance\">VkInstance</a> parent of <code>commandBuffer</code> is greater than or\nequal to Version 1.3</p>\n</li>\n</ul>\n</div>"
         },
         {
           "vuid": "VUID-vkCmdSetDepthBoundsTestEnable-commandBuffer-parameter",
@@ -55514,7 +55534,7 @@
       "core": [
         {
           "vuid": "VUID-vkCmdSetStencilTestEnable-None-08971",
-          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:"
+          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:<div class=\"ulist\">\n<ul>\n<li>\n<p>the <a href=\"#features-extendedDynamicState\"><code>extendedDynamicState</code></a>\nfeature is enabled</p>\n</li>\n<li>\n<p>the <a href=\"#features-shaderObject\"><code>shaderObject</code></a> feature is enabled</p>\n</li>\n<li>\n<p>the value of <a href=\"#VkApplicationInfo\">VkApplicationInfo</a>::<code>apiVersion</code> used to create\nthe <a href=\"#VkInstance\">VkInstance</a> parent of <code>commandBuffer</code> is greater than or\nequal to Version 1.3</p>\n</li>\n</ul>\n</div>"
         },
         {
           "vuid": "VUID-vkCmdSetStencilTestEnable-commandBuffer-parameter",
@@ -55538,7 +55558,7 @@
       "core": [
         {
           "vuid": "VUID-vkCmdSetStencilOp-None-08971",
-          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:"
+          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:<div class=\"ulist\">\n<ul>\n<li>\n<p>the <a href=\"#features-extendedDynamicState\"><code>extendedDynamicState</code></a>\nfeature is enabled</p>\n</li>\n<li>\n<p>the <a href=\"#features-shaderObject\"><code>shaderObject</code></a> feature is enabled</p>\n</li>\n<li>\n<p>the value of <a href=\"#VkApplicationInfo\">VkApplicationInfo</a>::<code>apiVersion</code> used to create\nthe <a href=\"#VkInstance\">VkInstance</a> parent of <code>commandBuffer</code> is greater than or\nequal to Version 1.3</p>\n</li>\n</ul>\n</div>"
         },
         {
           "vuid": "VUID-vkCmdSetStencilOp-commandBuffer-parameter",
@@ -55690,7 +55710,7 @@
       "core": [
         {
           "vuid": "VUID-vkCmdSetDepthTestEnable-None-08971",
-          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:"
+          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:<div class=\"ulist\">\n<ul>\n<li>\n<p>the <a href=\"#features-extendedDynamicState\"><code>extendedDynamicState</code></a>\nfeature is enabled</p>\n</li>\n<li>\n<p>the <a href=\"#features-shaderObject\"><code>shaderObject</code></a> feature is enabled</p>\n</li>\n<li>\n<p>the value of <a href=\"#VkApplicationInfo\">VkApplicationInfo</a>::<code>apiVersion</code> used to create\nthe <a href=\"#VkInstance\">VkInstance</a> parent of <code>commandBuffer</code> is greater than or\nequal to Version 1.3</p>\n</li>\n</ul>\n</div>"
         },
         {
           "vuid": "VUID-vkCmdSetDepthTestEnable-commandBuffer-parameter",
@@ -55714,7 +55734,7 @@
       "core": [
         {
           "vuid": "VUID-vkCmdSetDepthCompareOp-None-08971",
-          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:"
+          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:<div class=\"ulist\">\n<ul>\n<li>\n<p>the <a href=\"#features-extendedDynamicState\"><code>extendedDynamicState</code></a>\nfeature is enabled</p>\n</li>\n<li>\n<p>the <a href=\"#features-shaderObject\"><code>shaderObject</code></a> feature is enabled</p>\n</li>\n<li>\n<p>the value of <a href=\"#VkApplicationInfo\">VkApplicationInfo</a>::<code>apiVersion</code> used to create\nthe <a href=\"#VkInstance\">VkInstance</a> parent of <code>commandBuffer</code> is greater than or\nequal to Version 1.3</p>\n</li>\n</ul>\n</div>"
         },
         {
           "vuid": "VUID-vkCmdSetDepthCompareOp-commandBuffer-parameter",
@@ -55742,7 +55762,7 @@
       "core": [
         {
           "vuid": "VUID-vkCmdSetDepthWriteEnable-None-08971",
-          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:"
+          "text": " At least one of the following <strong class=\"purple\">must</strong> be true:<div class=\"ulist\">\n<ul>\n<li>\n<p>the <a href=\"#features-extendedDynamicState\"><code>extendedDynamicState</code></a>\nfeature is enabled</p>\n</li>\n<li>\n<p>the <a href=\"#features-shaderObject\"><code>shaderObject</code></a> feature is enabled</p>\n</li>\n<li>\n<p>the value of <a href=\"#VkApplicationInfo\">VkApplicationInfo</a>::<code>apiVersion</code> used to create\nthe <a href=\"#VkInstance\">VkInstance</a> parent of <code>commandBuffer</code> is greater than or\nequal to Version 1.3</p>\n</li>\n</ul>\n</div>"
         },
         {
           "vuid": "VUID-vkCmdSetDepthWriteEnable-commandBuffer-parameter",
@@ -56602,7 +56622,7 @@
         },
         {
           "vuid": "VUID-vkCmdDispatch-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDispatch-None-08601",
@@ -56870,7 +56890,7 @@
         },
         {
           "vuid": "VUID-vkCmdDispatchIndirect-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDispatchIndirect-None-08601",
@@ -57158,7 +57178,7 @@
         },
         {
           "vuid": "VUID-vkCmdDispatchBase-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdDispatchBase-None-08601",
@@ -57442,7 +57462,7 @@
         },
         {
           "vuid": "VUID-vkCmdSubpassShadingHUAWEI-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdSubpassShadingHUAWEI-None-08601",
@@ -58018,7 +58038,7 @@
         },
         {
           "vuid": "VUID-vkCmdExecuteGeneratedCommandsNV-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdExecuteGeneratedCommandsNV-None-08601",
@@ -65958,7 +65978,7 @@
         },
         {
           "vuid": "VUID-vkCmdTraceRaysNV-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdTraceRaysNV-None-08601",
@@ -66318,7 +66338,7 @@
         },
         {
           "vuid": "VUID-vkCmdTraceRaysKHR-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdTraceRaysKHR-None-08601",
@@ -66701,8 +66721,8 @@
           "text": " Each element in the invocation mask image <strong class=\"purple\">must</strong> have the value <code>0</code> or <code>1</code>. The value 1 means the invocation is active"
         },
         {
-          "vuid": "VUID-vkCmdBindInvocationMaskHUAWEI-width-04983",
-          "text": " <code>width</code> in <a href=\"#vkCmdTraceRaysKHR\">vkCmdTraceRaysKHR</a> should be 1"
+          "vuid": "VUID-vkCmdBindInvocationMaskHUAWEI-depth-04983",
+          "text": " <code>depth</code> in <a href=\"#vkCmdTraceRaysKHR\">vkCmdTraceRaysKHR</a> <strong class=\"purple\">must</strong> be 1"
         },
         {
           "vuid": "VUID-vkCmdBindInvocationMaskHUAWEI-commandBuffer-parameter",
@@ -66794,7 +66814,7 @@
         },
         {
           "vuid": "VUID-vkCmdTraceRaysIndirectKHR-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdTraceRaysIndirectKHR-None-08601",
@@ -67218,7 +67238,7 @@
         },
         {
           "vuid": "VUID-vkCmdTraceRaysIndirect2KHR-None-08600",
-          "text": " For each set <em>n</em> that is statically used <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
+          "text": " For each set <em>n</em> that is statically used by <a href=\"#shaders-binding\">a bound shader</a>, a descriptor set <strong class=\"purple\">must</strong> have been bound to <em>n</em> at the same pipeline bind point, with a <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> that is compatible for set <em>n</em>, with the <a href=\"#VkPipelineLayout\">VkPipelineLayout</a> or <a href=\"#VkDescriptorSetLayout\">VkDescriptorSetLayout</a> array that was used to create the current <a href=\"#VkPipeline\">VkPipeline</a> or <a href=\"#VkShaderEXT\">VkShaderEXT</a>, as described in <a href=\"#descriptorsets-compatibility\">Pipeline Layout Compatibility</a>"
         },
         {
           "vuid": "VUID-vkCmdTraceRaysIndirect2KHR-None-08601",
@@ -70134,7 +70154,7 @@
         },
         {
           "vuid": "VUID-vkCmdOpticalFlowExecuteNV-commandBuffer-cmdpool",
-          "text": " The <code>VkCommandPool</code> that <code>commandBuffer</code> was allocated from <strong class=\"purple\">must</strong> support opticalflow operations"
+          "text": " The <code>VkCommandPool</code> that <code>commandBuffer</code> was allocated from <strong class=\"purple\">must</strong> support optical flow operations"
         },
         {
           "vuid": "VUID-vkCmdOpticalFlowExecuteNV-renderpass",
@@ -74249,51 +74269,51 @@
           "text": " <code>OpTypeCooperativeMatrixNV</code> and <code>OpCooperativeMatrix*</code> instructions <strong class=\"purple\">must</strong> not be used in shader stages not included in <a href=\"#VkPhysicalDeviceCooperativeMatrixPropertiesNV\">VkPhysicalDeviceCooperativeMatrixPropertiesNV</a>::<code>cooperativeMatrixSupportedStages</code>"
         },
         {
-          "vuid": "VUID-RuntimeSpirv-OpTypeCooperativeMatrixKHR-",
+          "vuid": "VUID-RuntimeSpirv-OpTypeCooperativeMatrixKHR-08974",
           "text": " For <code>OpTypeCooperativeMatrixKHR</code>, the component type, scope, number of rows, and number of columns <strong class=\"purple\">must</strong> match one of the matrices in any of the supported <a href=\"#VkCooperativeMatrixPropertiesKHR\">VkCooperativeMatrixPropertiesKHR</a>."
         },
         {
-          "vuid": "VUID-RuntimeSpirv-OpCooperativeMatrixMulAddKHR-",
+          "vuid": "VUID-RuntimeSpirv-MSize-08975",
           "text": " For <code>OpCooperativeMatrixMulAddKHR</code>, the type of <code>A</code> <strong class=\"purple\">must</strong> have <a href=\"#VkCooperativeMatrixPropertiesKHR\">VkCooperativeMatrixPropertiesKHR</a>::<code>MSize</code> rows and <a href=\"#VkCooperativeMatrixPropertiesKHR\">VkCooperativeMatrixPropertiesKHR</a>::<code>KSize</code> columns and have a component type that matches <a href=\"#VkCooperativeMatrixPropertiesKHR\">VkCooperativeMatrixPropertiesKHR</a>::<code>AType</code>."
         },
         {
-          "vuid": "VUID-RuntimeSpirv-OpCooperativeMatrixMulAddKHR-",
+          "vuid": "VUID-RuntimeSpirv-OpCooperativeMatrixMulAddKHR-08976",
           "text": " For <code>OpCooperativeMatrixMulAddKHR</code>, when the component type of <code>A</code> is a signed integer type, the <code>MatrixASignedComponents</code> cooperative matrix operand <strong class=\"purple\">must</strong> be present."
         },
         {
-          "vuid": "VUID-RuntimeSpirv-OpCooperativeMatrixMulAddKHR-",
+          "vuid": "VUID-RuntimeSpirv-KSize-08977",
           "text": " For <code>OpCooperativeMatrixMulAddKHR</code>, the type of <code>B</code> <strong class=\"purple\">must</strong> have <a href=\"#VkCooperativeMatrixPropertiesKHR\">VkCooperativeMatrixPropertiesKHR</a>::<code>KSize</code> rows and <a href=\"#VkCooperativeMatrixPropertiesKHR\">VkCooperativeMatrixPropertiesKHR</a>::<code>NSize</code> columns and have a component type that matches <a href=\"#VkCooperativeMatrixPropertiesKHR\">VkCooperativeMatrixPropertiesKHR</a>::<code>BType</code>."
         },
         {
-          "vuid": "VUID-RuntimeSpirv-OpCooperativeMatrixMulAddKHR-",
+          "vuid": "VUID-RuntimeSpirv-OpCooperativeMatrixMulAddKHR-08978",
           "text": " For <code>OpCooperativeMatrixMulAddKHR</code>, when the component type of <code>B</code> is a signed integer type, the <code>MatrixBSignedComponents</code> cooperative matrix operand <strong class=\"purple\">must</strong> be present."
         },
         {
-          "vuid": "VUID-RuntimeSpirv-OpCooperativeMatrixMulAddKHR-",
+          "vuid": "VUID-RuntimeSpirv-MSize-08979",
           "text": " For <code>OpCooperativeMatrixMulAddKHR</code>, the type of <code>C</code> <strong class=\"purple\">must</strong> have <a href=\"#VkCooperativeMatrixPropertiesKHR\">VkCooperativeMatrixPropertiesKHR</a>::<code>MSize</code> rows and <a href=\"#VkCooperativeMatrixPropertiesKHR\">VkCooperativeMatrixPropertiesKHR</a>::<code>NSize</code> columns and have a component type that matches <a href=\"#VkCooperativeMatrixPropertiesKHR\">VkCooperativeMatrixPropertiesKHR</a>::<code>CType</code>."
         },
         {
-          "vuid": "VUID-RuntimeSpirv-OpCooperativeMatrixMulAddKHR-",
+          "vuid": "VUID-RuntimeSpirv-OpCooperativeMatrixMulAddKHR-08980",
           "text": " For <code>OpCooperativeMatrixMulAddKHR</code>, when the component type of <code>C</code> is a signed integer type, the <code>MatrixCSignedComponents</code> cooperative matrix operand <strong class=\"purple\">must</strong> be present."
         },
         {
-          "vuid": "VUID-RuntimeSpirv-OpCooperativeMatrixMulAddKHR-",
+          "vuid": "VUID-RuntimeSpirv-MSize-08981",
           "text": " For <code>OpCooperativeMatrixMulAddKHR</code>, the type of <code>Result</code> <strong class=\"purple\">must</strong> have <a href=\"#VkCooperativeMatrixPropertiesKHR\">VkCooperativeMatrixPropertiesKHR</a>::<code>MSize</code> rows and <a href=\"#VkCooperativeMatrixPropertiesKHR\">VkCooperativeMatrixPropertiesKHR</a>::<code>NSize</code> columns and have a component type that matches <a href=\"#VkCooperativeMatrixPropertiesKHR\">VkCooperativeMatrixPropertiesKHR</a>::<code>ResultType</code>."
         },
         {
-          "vuid": "VUID-RuntimeSpirv-OpCooperativeMatrixMulAddKHR-",
+          "vuid": "VUID-RuntimeSpirv-OpCooperativeMatrixMulAddKHR-08982",
           "text": " For <code>OpCooperativeMatrixMulAddKHR</code>, when the component type of <code>Result</code> is a signed integer type, the <code>MatrixResultSignedComponents</code> cooperative matrix operand <strong class=\"purple\">must</strong> be present."
         },
         {
-          "vuid": "VUID-RuntimeSpirv-OpCooperativeMatrixMulAddKHR-",
+          "vuid": "VUID-RuntimeSpirv-saturatingAccumulation-08983",
           "text": " For <code>OpCooperativeMatrixMulAddKHR</code>, the <code>SaturatingAccumulation</code> cooperative matrix operand <strong class=\"purple\">must</strong> be present if and only if <a href=\"#VkCooperativeMatrixPropertiesKHR\">VkCooperativeMatrixPropertiesKHR</a>::<code>saturatingAccumulation</code> is <code>VK_TRUE</code>."
         },
         {
-          "vuid": "VUID-RuntimeSpirv-OpCooperativeMatrixMulAddKHR-",
+          "vuid": "VUID-RuntimeSpirv-scope-08984",
           "text": " For <code>OpCooperativeMatrixMulAddKHR</code>, the type of <code>A</code>, <code>B</code>, <code>C</code>, and <code>Result</code> <strong class=\"purple\">must</strong> all have a scope of <code>scope</code>."
         },
         {
-          "vuid": "VUID-RuntimeSpirv-OpTypeCooperativeMatrixKHR-",
+          "vuid": "VUID-RuntimeSpirv-cooperativeMatrixSupportedStages-08985",
           "text": " <code>OpTypeCooperativeMatrixKHR</code> and <code>OpCooperativeMatrix*</code> instructions <strong class=\"purple\">must</strong> not be used in shader stages not included in <a href=\"#VkPhysicalDeviceCooperativeMatrixPropertiesKHR\">VkPhysicalDeviceCooperativeMatrixPropertiesKHR</a>::<code>cooperativeMatrixSupportedStages</code>."
         },
         {
@@ -74413,7 +74433,7 @@
           "text": " The sum of size in bytes for variables and <a href=\"#workgroup-padding\">padding</a> in the <code>TaskPayloadWorkgroupEXT</code> or <code>Workgroup</code> {StorageClass} in the <code>TaskEXT</code> {ExecutionModel} <strong class=\"purple\">must</strong> be less than or equal to <a href=\"#limits-maxTaskPayloadAndSharedMemorySize\"><code>maxTaskPayloadAndSharedMemorySize</code></a>"
         },
         {
-          "vuid": "VUID-RuntimeSpirv-OpCooperativeMatrixLoadKHR-",
+          "vuid": "VUID-RuntimeSpirv-OpCooperativeMatrixLoadKHR-08986",
           "text": " For <code>OpCooperativeMatrixLoadKHR</code> and <code>OpCooperativeMatrixStoreKHR</code> instructions, the <code>Pointer</code> and <code>Stride</code> operands <strong class=\"purple\">must</strong> be aligned to at least the lesser of 16 bytes or the natural alignment of a row or column (depending on <code>ColumnMajor</code>) of the matrix (where the natural alignment is the number of columns/rows multiplied by the component size)."
         },
         {
