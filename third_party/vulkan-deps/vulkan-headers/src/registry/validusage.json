@@ -1,9 +1,9 @@
 {
   "version info": {
     "schema version": 2,
-    "api version": "1.3.256",
-    "comment": "from git branch: github-main commit: 3dae5d7fbf332970ae0a97d5ab05ae5db93e62f0",
-    "date": "2023-06-30 12:46:10Z"
+    "api version": "1.3.257",
+    "comment": "from git branch: github-main commit: 2b7d9c9f65cde43580573a677490c3c7d099c09f",
+    "date": "2023-07-07 12:31:11Z"
   },
   "validation": {
     "vkGetInstanceProcAddr": {
@@ -422,7 +422,7 @@
         },
         {
           "vuid": "VUID-VkQueueFamilyGlobalPriorityPropertiesKHR-priorities-parameter",
-          "text": " Any given element of <code>priorities</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkQueueGlobalPriorityKHR\">VkQueueGlobalPriorityKHR</a> value"
+          "text": " Each element of <code>priorities</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkQueueGlobalPriorityKHR\">VkQueueGlobalPriorityKHR</a> value"
         }
       ]
     },
@@ -6445,6 +6445,14 @@
           "text": " If none of the <code><a href=\"#VK_AMD_mixed_attachment_samples\">VK_AMD_mixed_attachment_samples</a></code> extension, the <code><a href=\"#VK_NV_framebuffer_mixed_samples\">VK_NV_framebuffer_mixed_samples</a></code> extension, or the <a href=\"#features-multisampledRenderToSingleSampled\"><code>multisampledRenderToSingleSampled</code></a> feature are enabled, <code>imageView</code> members of <code>pDepthAttachment</code>, <code>pStencilAttachment</code>, and elements of <code>pColorAttachments</code> that are not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a> <strong class=\"purple\">must</strong> have been created with the same <code>sampleCount</code>"
         },
         {
+          "vuid": "VUID-VkRenderingInfo-None-08994",
+          "text": " If <a href=\"#VkDeviceGroupRenderPassBeginInfo\">VkDeviceGroupRenderPassBeginInfo</a>::<code>deviceRenderAreaCount</code> is 0, <code>renderArea.extent.width</code> <strong class=\"purple\">must</strong> be greater than 0"
+        },
+        {
+          "vuid": "VUID-VkRenderingInfo-None-08995",
+          "text": " If <a href=\"#VkDeviceGroupRenderPassBeginInfo\">VkDeviceGroupRenderPassBeginInfo</a>::<code>deviceRenderAreaCount</code> is 0, <code>renderArea.extent.height</code> <strong class=\"purple\">must</strong> be greater than 0"
+        },
+        {
           "vuid": "VUID-VkRenderingInfo-imageView-06858",
           "text": " If <a href=\"#subpass-multisampledrendertosinglesampled\">multisampled-render-to-single-sampled</a> is enabled, then all attachments referenced by <code>imageView</code> members of <code>pDepthAttachment</code>, <code>pStencilAttachment</code>, and elements of <code>pColorAttachments</code> that are not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a> <strong class=\"purple\">must</strong> have a sample count that is either <code>VK_SAMPLE_COUNT_1_BIT</code> or equal to <a href=\"#VkMultisampledRenderToSingleSampledInfoEXT\">VkMultisampledRenderToSingleSampledInfoEXT</a>::<code>rasterizationSamples</code>"
         },
@@ -7786,11 +7794,11 @@
         },
         {
           "vuid": "VUID-VkRenderPassCreateInfo2-attachment-03050",
-          "text": " If the <code>attachment</code> member of any element of <code>pInputAttachments</code>, <code>pColorAttachments</code>, <code>pResolveAttachments</code> or <code>pDepthStencilAttachment</code>, or the attachment indexed by any element of <code>pPreserveAttachments</code> in any given element of <code>pSubpasses</code> is bound to a range of a <code>VkDeviceMemory</code> object that overlaps with any other attachment in any subpass (including the same subpass), the <code>VkAttachmentDescription2</code> structures describing them <strong class=\"purple\">must</strong> include <code>VK_ATTACHMENT_DESCRIPTION_MAY_ALIAS_BIT</code> in <code>flags</code>"
+          "text": " If the <code>attachment</code> member of any element of <code>pInputAttachments</code>, <code>pColorAttachments</code>, <code>pResolveAttachments</code> or <code>pDepthStencilAttachment</code>, or the attachment indexed by any element of <code>pPreserveAttachments</code> in any element of <code>pSubpasses</code> is bound to a range of a <code>VkDeviceMemory</code> object that overlaps with any other attachment in any subpass (including the same subpass), the <code>VkAttachmentDescription2</code> structures describing them <strong class=\"purple\">must</strong> include <code>VK_ATTACHMENT_DESCRIPTION_MAY_ALIAS_BIT</code> in <code>flags</code>"
         },
         {
           "vuid": "VUID-VkRenderPassCreateInfo2-attachment-03051",
-          "text": " If the <code>attachment</code> member of any element of <code>pInputAttachments</code>, <code>pColorAttachments</code>, <code>pResolveAttachments</code> or <code>pDepthStencilAttachment</code>, or any element of <code>pPreserveAttachments</code> in any given element of <code>pSubpasses</code> is not <code>VK_ATTACHMENT_UNUSED</code>, then it <strong class=\"purple\">must</strong> be less than <code>attachmentCount</code>"
+          "text": " If the <code>attachment</code> member of any element of <code>pInputAttachments</code>, <code>pColorAttachments</code>, <code>pResolveAttachments</code> or <code>pDepthStencilAttachment</code>, or any element of <code>pPreserveAttachments</code> in any element of <code>pSubpasses</code> is not <code>VK_ATTACHMENT_UNUSED</code>, then it <strong class=\"purple\">must</strong> be less than <code>attachmentCount</code>"
         },
         {
           "vuid": "VUID-VkRenderPassCreateInfo2-fragmentDensityMapAttachment-06472",
@@ -8202,7 +8210,7 @@
         },
         {
           "vuid": "VUID-VkSubpassDescription2-pResolveAttachments-03068",
-          "text": " Any given element of <code>pResolveAttachments</code> <strong class=\"purple\">must</strong> have the same <a href=\"#VkFormat\">VkFormat</a> as its corresponding color attachment"
+          "text": " Each element of <code>pResolveAttachments</code> <strong class=\"purple\">must</strong> have the same <a href=\"#VkFormat\">VkFormat</a> as its corresponding color attachment"
         },
         {
           "vuid": "VUID-VkSubpassDescription2-multisampledRenderToSingleSampled-06869",
@@ -8258,7 +8266,7 @@
         },
         {
           "vuid": "VUID-VkSubpassDescription2-pPreserveAttachments-03074",
-          "text": " Any given element of <code>pPreserveAttachments</code> <strong class=\"purple\">must</strong> not also be an element of any other member of the subpass description"
+          "text": " Each element of <code>pPreserveAttachments</code> <strong class=\"purple\">must</strong> not also be an element of any other member of the subpass description"
         },
         {
           "vuid": "VUID-VkSubpassDescription2-layout-02528",
@@ -9269,6 +9277,14 @@
           "text": " <code>renderPass</code> <strong class=\"purple\">must</strong> be <a href=\"#renderpass-compatibility\">compatible</a> with the <code>renderPass</code> member of the <a href=\"#VkFramebufferCreateInfo\">VkFramebufferCreateInfo</a> structure specified when creating <code>framebuffer</code>"
         },
         {
+          "vuid": "VUID-VkRenderPassBeginInfo-None-08996",
+          "text": " If <a href=\"#VkDeviceGroupRenderPassBeginInfo\">VkDeviceGroupRenderPassBeginInfo</a>::<code>deviceRenderAreaCount</code> is 0, <code>renderArea.extent.width</code> <strong class=\"purple\">must</strong> be greater than 0"
+        },
+        {
+          "vuid": "VUID-VkRenderPassBeginInfo-None-08997",
+          "text": " If <a href=\"#VkDeviceGroupRenderPassBeginInfo\">VkDeviceGroupRenderPassBeginInfo</a>::<code>deviceRenderAreaCount</code> is 0, <code>renderArea.extent.height</code> <strong class=\"purple\">must</strong> be greater than 0"
+        },
+        {
           "vuid": "VUID-VkRenderPassBeginInfo-pNext-02850",
           "text": " If the <code>pNext</code> chain does not contain <a href=\"#VkDeviceGroupRenderPassBeginInfo\">VkDeviceGroupRenderPassBeginInfo</a> or its <code>deviceRenderAreaCount</code> member is equal to 0, <code>renderArea.offset.x</code> <strong class=\"purple\">must</strong> be greater than or equal to 0"
         },
@@ -9487,6 +9503,14 @@
         {
           "vuid": "VUID-VkDeviceGroupRenderPassBeginInfo-offset-06169",
           "text": " The sum of the <code>offset.y</code> and <code>extent.height</code> members of any element of <code>pDeviceRenderAreas</code> <strong class=\"purple\">must</strong> be less than or equal to <a href=\"#limits-maxFramebufferHeight\"><code>maxFramebufferHeight</code></a>"
+        },
+        {
+          "vuid": "VUID-VkDeviceGroupRenderPassBeginInfo-extent-08998",
+          "text": " The <code>extent.width</code> member of any element of <code>pDeviceRenderAreas</code> <strong class=\"purple\">must</strong> be greater than 0"
+        },
+        {
+          "vuid": "VUID-VkDeviceGroupRenderPassBeginInfo-extent-08999",
+          "text": " The <code>extent.height</code> member of any element of <code>pDeviceRenderAreas</code> <strong class=\"purple\">must</strong> be greater than 0"
         },
         {
           "vuid": "VUID-VkDeviceGroupRenderPassBeginInfo-sType-sType",
@@ -10590,54 +10614,6 @@
         }
       ]
     },
-    "vkGetPhysicalDeviceCooperativeMatrixPropertiesNV": {
-      "core": [
-        {
-          "vuid": "VUID-vkGetPhysicalDeviceCooperativeMatrixPropertiesNV-physicalDevice-parameter",
-          "text": " <code>physicalDevice</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkPhysicalDevice\">VkPhysicalDevice</a> handle"
-        },
-        {
-          "vuid": "VUID-vkGetPhysicalDeviceCooperativeMatrixPropertiesNV-pPropertyCount-parameter",
-          "text": " <code>pPropertyCount</code> <strong class=\"purple\">must</strong> be a valid pointer to a <code>uint32_t</code> value"
-        },
-        {
-          "vuid": "VUID-vkGetPhysicalDeviceCooperativeMatrixPropertiesNV-pProperties-parameter",
-          "text": " If the value referenced by <code>pPropertyCount</code> is not <code>0</code>, and <code>pProperties</code> is not <code>NULL</code>, <code>pProperties</code> <strong class=\"purple\">must</strong> be a valid pointer to an array of <code>pPropertyCount</code> <a href=\"#VkCooperativeMatrixPropertiesNV\">VkCooperativeMatrixPropertiesNV</a> structures"
-        }
-      ]
-    },
-    "VkCooperativeMatrixPropertiesNV": {
-      "core": [
-        {
-          "vuid": "VUID-VkCooperativeMatrixPropertiesNV-sType-sType",
-          "text": " <code>sType</code> <strong class=\"purple\">must</strong> be <code>VK_STRUCTURE_TYPE_COOPERATIVE_MATRIX_PROPERTIES_NV</code>"
-        },
-        {
-          "vuid": "VUID-VkCooperativeMatrixPropertiesNV-pNext-pNext",
-          "text": " <code>pNext</code> <strong class=\"purple\">must</strong> be <code>NULL</code>"
-        },
-        {
-          "vuid": "VUID-VkCooperativeMatrixPropertiesNV-AType-parameter",
-          "text": " <code>AType</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkComponentTypeNV\">VkComponentTypeNV</a> value"
-        },
-        {
-          "vuid": "VUID-VkCooperativeMatrixPropertiesNV-BType-parameter",
-          "text": " <code>BType</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkComponentTypeNV\">VkComponentTypeNV</a> value"
-        },
-        {
-          "vuid": "VUID-VkCooperativeMatrixPropertiesNV-CType-parameter",
-          "text": " <code>CType</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkComponentTypeNV\">VkComponentTypeNV</a> value"
-        },
-        {
-          "vuid": "VUID-VkCooperativeMatrixPropertiesNV-DType-parameter",
-          "text": " <code>DType</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkComponentTypeNV\">VkComponentTypeNV</a> value"
-        },
-        {
-          "vuid": "VUID-VkCooperativeMatrixPropertiesNV-scope-parameter",
-          "text": " <code>scope</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkScopeNV\">VkScopeNV</a> value"
-        }
-      ]
-    },
     "vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR": {
       "core": [
         {
@@ -10651,6 +10627,22 @@
         {
           "vuid": "VUID-vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR-pProperties-parameter",
           "text": " If the value referenced by <code>pPropertyCount</code> is not <code>0</code>, and <code>pProperties</code> is not <code>NULL</code>, <code>pProperties</code> <strong class=\"purple\">must</strong> be a valid pointer to an array of <code>pPropertyCount</code> <a href=\"#VkCooperativeMatrixPropertiesKHR\">VkCooperativeMatrixPropertiesKHR</a> structures"
+        }
+      ]
+    },
+    "vkGetPhysicalDeviceCooperativeMatrixPropertiesNV": {
+      "core": [
+        {
+          "vuid": "VUID-vkGetPhysicalDeviceCooperativeMatrixPropertiesNV-physicalDevice-parameter",
+          "text": " <code>physicalDevice</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkPhysicalDevice\">VkPhysicalDevice</a> handle"
+        },
+        {
+          "vuid": "VUID-vkGetPhysicalDeviceCooperativeMatrixPropertiesNV-pPropertyCount-parameter",
+          "text": " <code>pPropertyCount</code> <strong class=\"purple\">must</strong> be a valid pointer to a <code>uint32_t</code> value"
+        },
+        {
+          "vuid": "VUID-vkGetPhysicalDeviceCooperativeMatrixPropertiesNV-pProperties-parameter",
+          "text": " If the value referenced by <code>pPropertyCount</code> is not <code>0</code>, and <code>pProperties</code> is not <code>NULL</code>, <code>pProperties</code> <strong class=\"purple\">must</strong> be a valid pointer to an array of <code>pPropertyCount</code> <a href=\"#VkCooperativeMatrixPropertiesNV\">VkCooperativeMatrixPropertiesNV</a> structures"
         }
       ]
     },
@@ -10683,6 +10675,38 @@
         {
           "vuid": "VUID-VkCooperativeMatrixPropertiesKHR-scope-parameter",
           "text": " <code>scope</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkScopeKHR\">VkScopeKHR</a> value"
+        }
+      ]
+    },
+    "VkCooperativeMatrixPropertiesNV": {
+      "core": [
+        {
+          "vuid": "VUID-VkCooperativeMatrixPropertiesNV-sType-sType",
+          "text": " <code>sType</code> <strong class=\"purple\">must</strong> be <code>VK_STRUCTURE_TYPE_COOPERATIVE_MATRIX_PROPERTIES_NV</code>"
+        },
+        {
+          "vuid": "VUID-VkCooperativeMatrixPropertiesNV-pNext-pNext",
+          "text": " <code>pNext</code> <strong class=\"purple\">must</strong> be <code>NULL</code>"
+        },
+        {
+          "vuid": "VUID-VkCooperativeMatrixPropertiesNV-AType-parameter",
+          "text": " <code>AType</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkComponentTypeNV\">VkComponentTypeNV</a> value"
+        },
+        {
+          "vuid": "VUID-VkCooperativeMatrixPropertiesNV-BType-parameter",
+          "text": " <code>BType</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkComponentTypeNV\">VkComponentTypeNV</a> value"
+        },
+        {
+          "vuid": "VUID-VkCooperativeMatrixPropertiesNV-CType-parameter",
+          "text": " <code>CType</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkComponentTypeNV\">VkComponentTypeNV</a> value"
+        },
+        {
+          "vuid": "VUID-VkCooperativeMatrixPropertiesNV-DType-parameter",
+          "text": " <code>DType</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkComponentTypeNV\">VkComponentTypeNV</a> value"
+        },
+        {
+          "vuid": "VUID-VkCooperativeMatrixPropertiesNV-scope-parameter",
+          "text": " <code>scope</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkScopeNV\">VkScopeNV</a> value"
         }
       ]
     },
@@ -11094,7 +11118,7 @@
         },
         {
           "vuid": "VUID-VkPipelineShaderStageCreateInfo-pNext-02756",
-          "text": " If a <a href=\"#VkPipelineShaderStageRequiredSubgroupSizeCreateInfo\">VkPipelineShaderStageRequiredSubgroupSizeCreateInfo</a> structure is included in the <code>pNext</code> chain and <code>stage</code> is <code>VK_SHADER_STAGE_COMPUTE_BIT</code>, the local workgroup size of the shader <strong class=\"purple\">must</strong> be less than or equal to the product of <a href=\"#VkPipelineShaderStageRequiredSubgroupSizeCreateInfo\">VkPipelineShaderStageRequiredSubgroupSizeCreateInfo</a>::<code>requiredSubgroupSize</code> and <a href=\"#limits-maxComputeWorkgroupSubgroups\"><code>maxComputeWorkgroupSubgroups</code></a>"
+          "text": "     If a <a href=\"#VkPipelineShaderStageRequiredSubgroupSizeCreateInfo\">VkPipelineShaderStageRequiredSubgroupSizeCreateInfo</a> structure     is included in the <code>pNext</code> chain and <code>stage</code> is     <code>VK_SHADER_STAGE_COMPUTE_BIT</code>, <code>VK_SHADER_STAGE_MESH_BIT_EXT</code>, or <code>VK_SHADER_STAGE_TASK_BIT_EXT</code>,     the local workgroup size of the shader <strong class=\"purple\">must</strong> be less than or equal to     the product of     <a href=\"#VkPipelineShaderStageRequiredSubgroupSizeCreateInfo\">VkPipelineShaderStageRequiredSubgroupSizeCreateInfo</a>::<code>requiredSubgroupSize</code>     and <a href=\"#limits-maxComputeWorkgroupSubgroups\"><code>maxComputeWorkgroupSubgroups</code></a>"
         },
         {
           "vuid": "VUID-VkPipelineShaderStageCreateInfo-pNext-02757",
@@ -17438,11 +17462,11 @@
         },
         {
           "vuid": "VUID-VkImageViewCreateInfo-image-02724",
-          "text": " If <code>image</code> is a 3D image created with <code>VK_IMAGE_CREATE_2D_ARRAY_COMPATIBLE_BIT</code> set, and <code>viewType</code> is <code>VK_IMAGE_VIEW_TYPE_2D</code> or <code>VK_IMAGE_VIEW_TYPE_2D_ARRAY</code>, <code>subresourceRange.baseArrayLayer</code> <strong class=\"purple\">must</strong> be less than the depth computed from <code>baseMipLevel</code> and <code>extent.depth</code> specified in <a href=\"#VkImageCreateInfo\">VkImageCreateInfo</a> when <code>image</code> was created, according to the formula defined in <a href=\"#resources-image-miplevel-sizing\">Image Miplevel Sizing</a>"
+          "text": " If <code>image</code> is a 3D image created with <code>VK_IMAGE_CREATE_2D_ARRAY_COMPATIBLE_BIT</code> set, and <code>viewType</code> is <code>VK_IMAGE_VIEW_TYPE_2D</code> or <code>VK_IMAGE_VIEW_TYPE_2D_ARRAY</code>, <code>subresourceRange.baseArrayLayer</code> <strong class=\"purple\">must</strong> be less than the depth computed from <code>baseMipLevel</code> and <code>extent.depth</code> specified in <a href=\"#VkImageCreateInfo\">VkImageCreateInfo</a> when <code>image</code> was created, according to the formula defined in <a href=\"#resources-image-mip-level-sizing\">Image Mip Level Sizing</a>"
         },
         {
           "vuid": "VUID-VkImageViewCreateInfo-subresourceRange-02725",
-          "text": " If <code>subresourceRange.layerCount</code> is not <code>VK_REMAINING_ARRAY_LAYERS</code>, <code>image</code> is a 3D image created with <code>VK_IMAGE_CREATE_2D_ARRAY_COMPATIBLE_BIT</code> set, and <code>viewType</code> is <code>VK_IMAGE_VIEW_TYPE_2D</code> or <code>VK_IMAGE_VIEW_TYPE_2D_ARRAY</code>, <code>subresourceRange.layerCount</code> <strong class=\"purple\">must</strong> be non-zero and <span class=\"eq\"><code>subresourceRange.baseArrayLayer</code> &#43; <code>subresourceRange.layerCount</code></span> <strong class=\"purple\">must</strong> be less than or equal to the depth computed from <code>baseMipLevel</code> and <code>extent.depth</code> specified in <a href=\"#VkImageCreateInfo\">VkImageCreateInfo</a> when <code>image</code> was created, according to the formula defined in <a href=\"#resources-image-miplevel-sizing\">Image Miplevel Sizing</a>"
+          "text": " If <code>subresourceRange.layerCount</code> is not <code>VK_REMAINING_ARRAY_LAYERS</code>, <code>image</code> is a 3D image created with <code>VK_IMAGE_CREATE_2D_ARRAY_COMPATIBLE_BIT</code> set, and <code>viewType</code> is <code>VK_IMAGE_VIEW_TYPE_2D</code> or <code>VK_IMAGE_VIEW_TYPE_2D_ARRAY</code>, <code>subresourceRange.layerCount</code> <strong class=\"purple\">must</strong> be non-zero and <span class=\"eq\"><code>subresourceRange.baseArrayLayer</code> &#43; <code>subresourceRange.layerCount</code></span> <strong class=\"purple\">must</strong> be less than or equal to the depth computed from <code>baseMipLevel</code> and <code>extent.depth</code> specified in <a href=\"#VkImageCreateInfo\">VkImageCreateInfo</a> when <code>image</code> was created, according to the formula defined in <a href=\"#resources-image-mip-level-sizing\">Image Mip Level Sizing</a>"
         },
         {
           "vuid": "VUID-VkImageViewCreateInfo-image-01761",
@@ -17742,11 +17766,11 @@
       "core": [
         {
           "vuid": "VUID-VkImageViewSlicedCreateInfoEXT-sliceOffset-07867",
-          "text": " <code>sliceOffset</code> <strong class=\"purple\">must</strong> be less than the effective view depth as specified in <a href=\"#resources-image-miplevel-sizing\">Image Miplevel Sizing</a>"
+          "text": " <code>sliceOffset</code> <strong class=\"purple\">must</strong> be less than the effective view depth as specified in <a href=\"#resources-image-mip-level-sizing\">Image Mip Level Sizing</a>"
         },
         {
           "vuid": "VUID-VkImageViewSlicedCreateInfoEXT-sliceCount-07868",
-          "text": " If <code>sliceCount</code> is not <code>VK_REMAINING_3D_SLICES_EXT</code>, it <strong class=\"purple\">must</strong> be be non-zero and <span class=\"eq\"><code>sliceOffset</code> &#43; <code>sliceCount</code></span> <strong class=\"purple\">must</strong> be less than or equal to the effective view depth as specified in <a href=\"#resources-image-miplevel-sizing\">Image Miplevel Sizing</a>"
+          "text": " If <code>sliceCount</code> is not <code>VK_REMAINING_3D_SLICES_EXT</code>, it <strong class=\"purple\">must</strong> be be non-zero and <span class=\"eq\"><code>sliceOffset</code> &#43; <code>sliceCount</code></span> <strong class=\"purple\">must</strong> be less than or equal to the effective view depth as specified in <a href=\"#resources-image-mip-level-sizing\">Image Mip Level Sizing</a>"
         },
         {
           "vuid": "VUID-VkImageViewSlicedCreateInfoEXT-image-07869",
@@ -21666,7 +21690,7 @@
         },
         {
           "vuid": "VUID-VkWriteDescriptorSet-descriptorType-06450",
-          "text": " If <code>descriptorType</code> is <code>VK_DESCRIPTOR_TYPE_INPUT_ATTACHMENT</code>, the <code>imageView</code> member of each element of <code>pImageInfo</code> <strong class=\"purple\">must</strong> have either been created without a <a href=\"#VkImageViewMinLodCreateInfoEXT\">VkImageViewMinLodCreateInfoEXT</a> present in the <code>pNext</code> chain or with a <a href=\"#VkImageViewMinLodCreateInfoEXT\">VkImageViewMinLodCreateInfoEXT</a>::<code>minLod</code> of <code>0.0</code>"
+          "text": " If <code>descriptorType</code> is <code>VK_DESCRIPTOR_TYPE_INPUT_ATTACHMENT</code>, the <code>imageView</code> member of each element of <code>pImageInfo</code> <strong class=\"purple\">must</strong> have either been created without a <a href=\"#VkImageViewMinLodCreateInfoEXT\">VkImageViewMinLodCreateInfoEXT</a> included in the <code>pNext</code> chain or with a <a href=\"#VkImageViewMinLodCreateInfoEXT\">VkImageViewMinLodCreateInfoEXT</a>::<code>minLod</code> of <code>0.0</code>"
         },
         {
           "vuid": "VUID-VkWriteDescriptorSet-descriptorType-06942",
@@ -25801,12 +25825,16 @@
           "text": " If <code>VK_QUERY_RESULT_64_BIT</code> is set in <code>flags</code> then <code>pData</code> and <code>stride</code> <strong class=\"purple\">must</strong> be multiples of <code>8</code>"
         },
         {
+          "vuid": "VUID-vkGetQueryPoolResults-stride-08993",
+          "text": "     If <code>VK_QUERY_RESULT_WITH_AVAILABILITY_BIT</code> is set, <code>stride</code>     <strong class=\"purple\">must</strong> be large enough to contain the unsigned integer representing     availability or status     in addition to the query result."
+        },
+        {
           "vuid": "VUID-vkGetQueryPoolResults-queryType-03229",
           "text": " If the <code>queryType</code> used to create <code>queryPool</code> was <code>VK_QUERY_TYPE_PERFORMANCE_QUERY_KHR</code>, then <code>pData</code> and <code>stride</code> <strong class=\"purple\">must</strong> be multiples of the size of <a href=\"#VkPerformanceCounterResultKHR\">VkPerformanceCounterResultKHR</a>"
         },
         {
           "vuid": "VUID-vkGetQueryPoolResults-queryType-04519",
-          "text": " If the <code>queryType</code> used to create <code>queryPool</code> was <code>VK_QUERY_TYPE_PERFORMANCE_QUERY_KHR</code>, then <code>stride</code> <strong class=\"purple\">must</strong> be large enough to contain <code>VkQueryPoolPerformanceCreateInfoKHR</code>::<code>counterIndexCount</code> used to create <code>queryPool</code> times the size of <a href=\"#VkPerformanceCounterResultKHR\">VkPerformanceCounterResultKHR</a>"
+          "text": " If the <code>queryType</code> used to create <code>queryPool</code> was <code>VK_QUERY_TYPE_PERFORMANCE_QUERY_KHR</code>, then <code>stride</code> <strong class=\"purple\">must</strong> be large enough to contain the <a href=\"#VkQueryPoolPerformanceCreateInfoKHR\">VkQueryPoolPerformanceCreateInfoKHR</a>::<code>counterIndexCount</code> used to create <code>queryPool</code> times the size of <a href=\"#VkPerformanceCounterResultKHR\">VkPerformanceCounterResultKHR</a>"
         },
         {
           "vuid": "VUID-vkGetQueryPoolResults-firstQuery-00816",
@@ -30761,12 +30789,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdDraw-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdDraw-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDraw-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDraw-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDraw-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdDraw-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdDraw-None-06886",
@@ -30802,11 +30842,11 @@
         },
         {
           "vuid": "VUID-vkCmdDraw-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDraw-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDraw-None-07835",
@@ -32053,12 +32093,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdDrawIndexed-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdDrawIndexed-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndexed-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndexed-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndexed-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndexed-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdDrawIndexed-None-06886",
@@ -32094,11 +32146,11 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndexed-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndexed-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndexed-None-07835",
@@ -33353,12 +33405,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdDrawMultiEXT-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdDrawMultiEXT-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMultiEXT-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMultiEXT-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMultiEXT-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdDrawMultiEXT-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdDrawMultiEXT-None-06886",
@@ -33394,11 +33458,11 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMultiEXT-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawMultiEXT-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawMultiEXT-None-07835",
@@ -34661,12 +34725,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdDrawMultiIndexedEXT-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdDrawMultiIndexedEXT-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMultiIndexedEXT-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMultiIndexedEXT-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMultiIndexedEXT-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdDrawMultiIndexedEXT-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdDrawMultiIndexedEXT-None-06886",
@@ -34702,11 +34778,11 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMultiIndexedEXT-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawMultiIndexedEXT-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawMultiIndexedEXT-None-07835",
@@ -35981,12 +36057,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdDrawIndirect-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdDrawIndirect-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndirect-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndirect-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndirect-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndirect-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdDrawIndirect-None-06886",
@@ -36022,11 +36110,11 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndirect-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndirect-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndirect-None-07835",
@@ -37317,12 +37405,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdDrawIndirectCount-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdDrawIndirectCount-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndirectCount-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndirectCount-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndirectCount-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectCount-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectCount-None-06886",
@@ -37358,11 +37458,11 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectCount-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectCount-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectCount-None-07835",
@@ -38665,12 +38765,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdDrawIndexedIndirect-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdDrawIndexedIndirect-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndexedIndirect-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndexedIndirect-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndexedIndirect-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirect-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirect-None-06886",
@@ -38706,11 +38818,11 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirect-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirect-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirect-None-07835",
@@ -40009,12 +40121,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdDrawIndexedIndirectCount-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdDrawIndexedIndirectCount-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndexedIndirectCount-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndexedIndirectCount-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndexedIndirectCount-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirectCount-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirectCount-None-06886",
@@ -40050,11 +40174,11 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirectCount-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirectCount-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirectCount-None-07835",
@@ -41365,12 +41489,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdDrawIndirectByteCountEXT-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdDrawIndirectByteCountEXT-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndirectByteCountEXT-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndirectByteCountEXT-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawIndirectByteCountEXT-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectByteCountEXT-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectByteCountEXT-None-06886",
@@ -41406,11 +41542,11 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectByteCountEXT-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectByteCountEXT-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectByteCountEXT-None-07835",
@@ -42777,12 +42913,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdDrawMeshTasksNV-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdDrawMeshTasksNV-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksNV-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksNV-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksNV-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksNV-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksNV-None-06886",
@@ -42818,11 +42966,11 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksNV-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksNV-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksNV-None-07835",
@@ -44001,12 +44149,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdDrawMeshTasksIndirectNV-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdDrawMeshTasksIndirectNV-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksIndirectNV-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksIndirectNV-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksIndirectNV-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectNV-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectNV-None-06886",
@@ -44042,11 +44202,11 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectNV-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectNV-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectNV-None-07835",
@@ -45273,12 +45433,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountNV-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountNV-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountNV-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountNV-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountNV-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountNV-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountNV-None-06886",
@@ -45314,11 +45486,11 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountNV-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountNV-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountNV-None-07835",
@@ -46561,12 +46733,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdDrawMeshTasksEXT-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdDrawMeshTasksEXT-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksEXT-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksEXT-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksEXT-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksEXT-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksEXT-None-06886",
@@ -46602,11 +46786,11 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksEXT-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksEXT-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksEXT-None-07835",
@@ -47813,12 +47997,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdDrawMeshTasksIndirectEXT-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdDrawMeshTasksIndirectEXT-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksIndirectEXT-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksIndirectEXT-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksIndirectEXT-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectEXT-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectEXT-None-06886",
@@ -47854,11 +48050,11 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectEXT-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectEXT-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectEXT-None-07835",
@@ -49113,12 +49309,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountEXT-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountEXT-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountEXT-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountEXT-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountEXT-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountEXT-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountEXT-None-06886",
@@ -49154,11 +49362,11 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountEXT-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountEXT-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountEXT-None-07835",
@@ -50401,12 +50609,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdDrawClusterHUAWEI-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdDrawClusterHUAWEI-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawClusterHUAWEI-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawClusterHUAWEI-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawClusterHUAWEI-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdDrawClusterHUAWEI-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdDrawClusterHUAWEI-None-06886",
@@ -50442,11 +50662,11 @@
         },
         {
           "vuid": "VUID-vkCmdDrawClusterHUAWEI-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawClusterHUAWEI-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawClusterHUAWEI-None-07835",
@@ -51637,12 +51857,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdDrawClusterIndirectHUAWEI-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdDrawClusterIndirectHUAWEI-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawClusterIndirectHUAWEI-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawClusterIndirectHUAWEI-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdDrawClusterIndirectHUAWEI-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdDrawClusterIndirectHUAWEI-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdDrawClusterIndirectHUAWEI-None-06886",
@@ -51678,11 +51910,11 @@
         },
         {
           "vuid": "VUID-vkCmdDrawClusterIndirectHUAWEI-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawClusterIndirectHUAWEI-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdDrawClusterIndirectHUAWEI-None-07835",
@@ -54274,7 +54506,7 @@
         },
         {
           "vuid": "VUID-vkCmdSetFragmentShadingRateKHR-combinerOps-parameter",
-          "text": " Any given element of <code>combinerOps</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkFragmentShadingRateCombinerOpKHR\">VkFragmentShadingRateCombinerOpKHR</a> value"
+          "text": " Each element of <code>combinerOps</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkFragmentShadingRateCombinerOpKHR\">VkFragmentShadingRateCombinerOpKHR</a> value"
         },
         {
           "vuid": "VUID-vkCmdSetFragmentShadingRateKHR-commandBuffer-recording",
@@ -54342,7 +54574,7 @@
         },
         {
           "vuid": "VUID-vkCmdSetFragmentShadingRateEnumNV-combinerOps-parameter",
-          "text": " Any given element of <code>combinerOps</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkFragmentShadingRateCombinerOpKHR\">VkFragmentShadingRateCombinerOpKHR</a> value"
+          "text": " Each element of <code>combinerOps</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkFragmentShadingRateCombinerOpKHR\">VkFragmentShadingRateCombinerOpKHR</a> value"
         },
         {
           "vuid": "VUID-vkCmdSetFragmentShadingRateEnumNV-commandBuffer-recording",
@@ -58229,12 +58461,24 @@
           "text": " Memory backing image subresources used as attachments in the current render pass <strong class=\"purple\">must</strong> not be written in any way other than as an attachment by this command"
         },
         {
-          "vuid": "VUID-vkCmdExecuteGeneratedCommandsNV-None-08753",
-          "text": " If any recorded command in the current subpass writes to an image subresource as an attachment, this command <strong class=\"purple\">must</strong> not read from the memory backing that image subresource in any other way than as an attachment or as a sampled or storage image per the rules defined for <a href=\"#renderpass-feedbackloop\">feedback loops</a>"
+          "vuid": "VUID-vkCmdExecuteGeneratedCommandsNV-None-09000",
+          "text": " If a color attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe <code>VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code> is\nset on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_COLOR_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdExecuteGeneratedCommandsNV-None-09001",
+          "text": " If a depth attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdExecuteGeneratedCommandsNV-None-09002",
+          "text": " If a stencil attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it is not in the <code>VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT</code> image layout, and either:<div class=\"ulist\">\n<ul>\n<li>\n<p>\nthe\n<code>VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT</code>\nis set on the currently bound pipeline\nor</p>\n</li>\n<li>\n<p>the last call to <a href=\"#vkCmdSetAttachmentFeedbackLoopEnableEXT\">vkCmdSetAttachmentFeedbackLoopEnableEXT</a> included\n<code>VK_IMAGE_ASPECT_STENCIL_BIT</code> and</p>\n<div class=\"ulist\">\n<ul>\n<li>\n<p>there is no currently bound graphics pipeline or</p>\n</li>\n<li>\n<p>the currently bound graphics pipeline was created with\n  <code>VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT</code>\nit <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment by this\ncommand</p>\n</li>\n</ul>\n</div>\n</li>\n</ul>\n</div>"
+        },
+        {
+          "vuid": "VUID-vkCmdExecuteGeneratedCommandsNV-None-09003",
+          "text": " If an attachment is written by any prior command in this subpass or by the load, store, or resolve operations for this subpass, it <strong class=\"purple\">must</strong> not be accessed in any way other than as an attachment, storage image, or sampled image by this command"
         },
         {
           "vuid": "VUID-vkCmdExecuteGeneratedCommandsNV-None-06539",
-          "text": " If any recorded command in the current subpass will read from an image subresource used as an attachment in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
+          "text": " If any previously recorded command in the current subpass accessed an image subresource used as an attachment in this subpass in any way other than as an attachment, this command <strong class=\"purple\">must</strong> not write to that image subresource as an attachment"
         },
         {
           "vuid": "VUID-vkCmdExecuteGeneratedCommandsNV-None-06886",
@@ -58270,11 +58514,11 @@
         },
         {
           "vuid": "VUID-vkCmdExecuteGeneratedCommandsNV-None-07834",
-          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If the bound graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_DEPTH_BIAS</code> dynamic state enabled then <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdExecuteGeneratedCommandsNV-None-08620",
-          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
+          "text": " If a shader object is bound to any graphics stage, and the most recent call to <a href=\"#vkCmdSetDepthBiasEnable\">vkCmdSetDepthBiasEnable</a> in the current command buffer set <code>depthBiasEnable</code> to <code>VK_TRUE</code>, <a href=\"#vkCmdSetDepthBias\">vkCmdSetDepthBias</a> or <a href=\"#vkCmdSetDepthBias2EXT\">vkCmdSetDepthBias2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this drawing command"
         },
         {
           "vuid": "VUID-vkCmdExecuteGeneratedCommandsNV-None-07835",
@@ -73710,15 +73954,15 @@
         },
         {
           "vuid": "VUID-StandaloneSpirv-Location-04917",
-          "text": " If a <a href=\"#interfaces-iointerfaces-user\">user-defined variables</a> points to a <code>Block</code> decorated <code>OpTypeStruct</code>, then the <code>OpVariable</code> <strong class=\"purple\">must</strong> have a <code>Location</code> decoration"
+          "text": " If a <a href=\"#interfaces-iointerfaces-user\">user-defined variable</a> is a pointer to a <code>Block</code> decorated <code>OpTypeStruct</code>, then the <code>OpVariable</code> <strong class=\"purple\">must</strong> have a <code>Location</code> decoration"
         },
         {
           "vuid": "VUID-StandaloneSpirv-Location-04918",
-          "text": " If a <a href=\"#interfaces-iointerfaces-user\">user-defined variable</a> has a <code>Location</code> decoration, and the variable points to a <code>OpTypeStruct</code>, then the members of that structure <strong class=\"purple\">must</strong> not have <code>Location</code> decorations"
+          "text": " If a <a href=\"#interfaces-iointerfaces-user\">user-defined variable</a> has a <code>Location</code> decoration, and the variable is a pointer to a <code>OpTypeStruct</code>, then the members of that structure <strong class=\"purple\">must</strong> not have <code>Location</code> decorations"
         },
         {
           "vuid": "VUID-StandaloneSpirv-Location-04919",
-          "text": " If a <a href=\"#interfaces-iointerfaces-user\">user-defined variable</a> does not have a <code>Location</code> decoration, and the variable points to a <code>Block</code> decorated <code>OpTypeStruct</code>, then each member of the struct <strong class=\"purple\">must</strong> have a <code>Location</code> decoration"
+          "text": " If a <a href=\"#interfaces-iointerfaces-user\">user-defined variable</a> does not have a <code>Location</code> decoration, and the variable is a pointer to a <code>Block</code> decorated <code>OpTypeStruct</code>, then each member of the struct <strong class=\"purple\">must</strong> have a <code>Location</code> decoration"
         },
         {
           "vuid": "VUID-StandaloneSpirv-Component-04920",
@@ -74042,7 +74286,7 @@
         },
         {
           "vuid": "VUID-StandaloneSpirv-Pointer-08973",
-          "text": " The {StorageClass} of the <code>Pointer</code> operand to <code>OpCooperativeMatrixLoadKHR</code> or <code>OpCooperativeMatrixStoreKHR</code> <strong class=\"purple\">must</strong> be limited to <code>Workgroup</code>, <code>CrossWorkgroup</code>, <code>StorageBuffer</code>, or <code>PhysicalStorageBuffer</code>."
+          "text": " The {StorageClass} of the <code>Pointer</code> operand to <code>OpCooperativeMatrixLoadKHR</code> or <code>OpCooperativeMatrixStoreKHR</code> <strong class=\"purple\">must</strong> be limited to <code>Workgroup</code>, <code>StorageBuffer</code>, or <code>PhysicalStorageBuffer</code>."
         }
       ]
     },
