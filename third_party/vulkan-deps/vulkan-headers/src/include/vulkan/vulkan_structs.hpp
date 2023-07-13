@@ -15852,11 +15852,11 @@ namespace VULKAN_HPP_NAMESPACE
     VULKAN_HPP_CONSTEXPR CooperativeMatrixPropertiesNV( uint32_t                              MSize_ = {},
                                                         uint32_t                              NSize_ = {},
                                                         uint32_t                              KSize_ = {},
-                                                        VULKAN_HPP_NAMESPACE::ComponentTypeNV AType_ = VULKAN_HPP_NAMESPACE::ComponentTypeNV::eFloat16,
-                                                        VULKAN_HPP_NAMESPACE::ComponentTypeNV BType_ = VULKAN_HPP_NAMESPACE::ComponentTypeNV::eFloat16,
-                                                        VULKAN_HPP_NAMESPACE::ComponentTypeNV CType_ = VULKAN_HPP_NAMESPACE::ComponentTypeNV::eFloat16,
-                                                        VULKAN_HPP_NAMESPACE::ComponentTypeNV DType_ = VULKAN_HPP_NAMESPACE::ComponentTypeNV::eFloat16,
-                                                        VULKAN_HPP_NAMESPACE::ScopeNV         scope_ = VULKAN_HPP_NAMESPACE::ScopeNV::eDevice,
+                                                        VULKAN_HPP_NAMESPACE::ComponentTypeNV AType_ = {},
+                                                        VULKAN_HPP_NAMESPACE::ComponentTypeNV BType_ = {},
+                                                        VULKAN_HPP_NAMESPACE::ComponentTypeNV CType_ = {},
+                                                        VULKAN_HPP_NAMESPACE::ComponentTypeNV DType_ = {},
+                                                        VULKAN_HPP_NAMESPACE::ScopeNV         scope_ = {},
                                                         void *                                pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
       , MSize( MSize_ )
@@ -15998,11 +15998,11 @@ namespace VULKAN_HPP_NAMESPACE
     uint32_t                              MSize = {};
     uint32_t                              NSize = {};
     uint32_t                              KSize = {};
-    VULKAN_HPP_NAMESPACE::ComponentTypeNV AType = VULKAN_HPP_NAMESPACE::ComponentTypeNV::eFloat16;
-    VULKAN_HPP_NAMESPACE::ComponentTypeNV BType = VULKAN_HPP_NAMESPACE::ComponentTypeNV::eFloat16;
-    VULKAN_HPP_NAMESPACE::ComponentTypeNV CType = VULKAN_HPP_NAMESPACE::ComponentTypeNV::eFloat16;
-    VULKAN_HPP_NAMESPACE::ComponentTypeNV DType = VULKAN_HPP_NAMESPACE::ComponentTypeNV::eFloat16;
-    VULKAN_HPP_NAMESPACE::ScopeNV         scope = VULKAN_HPP_NAMESPACE::ScopeNV::eDevice;
+    VULKAN_HPP_NAMESPACE::ComponentTypeNV AType = {};
+    VULKAN_HPP_NAMESPACE::ComponentTypeNV BType = {};
+    VULKAN_HPP_NAMESPACE::ComponentTypeNV CType = {};
+    VULKAN_HPP_NAMESPACE::ComponentTypeNV DType = {};
+    VULKAN_HPP_NAMESPACE::ScopeNV         scope = {};
   };
 
   template <>
