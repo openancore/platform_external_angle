@@ -8173,6 +8173,84 @@ namespace VULKAN_HPP_NAMESPACE
     VULKAN_HPP_NAMESPACE::IndexType     indexType     = VULKAN_HPP_NAMESPACE::IndexType::eUint16;
   };
 
+  struct BindPipelineIndirectCommandNV
+  {
+    using NativeType = VkBindPipelineIndirectCommandNV;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR BindPipelineIndirectCommandNV( VULKAN_HPP_NAMESPACE::DeviceAddress pipelineAddress_ = {} ) VULKAN_HPP_NOEXCEPT
+      : pipelineAddress( pipelineAddress_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR BindPipelineIndirectCommandNV( BindPipelineIndirectCommandNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    BindPipelineIndirectCommandNV( VkBindPipelineIndirectCommandNV const & rhs ) VULKAN_HPP_NOEXCEPT
+      : BindPipelineIndirectCommandNV( *reinterpret_cast<BindPipelineIndirectCommandNV const *>( &rhs ) )
+    {
+    }
+
+    BindPipelineIndirectCommandNV & operator=( BindPipelineIndirectCommandNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    BindPipelineIndirectCommandNV & operator=( VkBindPipelineIndirectCommandNV const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::BindPipelineIndirectCommandNV const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 BindPipelineIndirectCommandNV & setPipelineAddress( VULKAN_HPP_NAMESPACE::DeviceAddress pipelineAddress_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pipelineAddress = pipelineAddress_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkBindPipelineIndirectCommandNV const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkBindPipelineIndirectCommandNV *>( this );
+    }
+
+    operator VkBindPipelineIndirectCommandNV &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkBindPipelineIndirectCommandNV *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::DeviceAddress const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( pipelineAddress );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( BindPipelineIndirectCommandNV const & ) const = default;
+#else
+    bool operator==( BindPipelineIndirectCommandNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( pipelineAddress == rhs.pipelineAddress );
+#  endif
+    }
+
+    bool operator!=( BindPipelineIndirectCommandNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::DeviceAddress pipelineAddress = {};
+  };
+
   struct BindShaderGroupIndirectCommandNV
   {
     using NativeType = VkBindShaderGroupIndirectCommandNV;
@@ -15440,6 +15518,127 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = ComputePipelineCreateInfo;
   };
 
+  struct ComputePipelineIndirectBufferInfoNV
+  {
+    using NativeType = VkComputePipelineIndirectBufferInfoNV;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eComputePipelineIndirectBufferInfoNV;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR ComputePipelineIndirectBufferInfoNV( VULKAN_HPP_NAMESPACE::DeviceAddress deviceAddress_                      = {},
+                                                              VULKAN_HPP_NAMESPACE::DeviceSize    size_                               = {},
+                                                              VULKAN_HPP_NAMESPACE::DeviceAddress pipelineDeviceAddressCaptureReplay_ = {},
+                                                              const void *                        pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , deviceAddress( deviceAddress_ )
+      , size( size_ )
+      , pipelineDeviceAddressCaptureReplay( pipelineDeviceAddressCaptureReplay_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR ComputePipelineIndirectBufferInfoNV( ComputePipelineIndirectBufferInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    ComputePipelineIndirectBufferInfoNV( VkComputePipelineIndirectBufferInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT
+      : ComputePipelineIndirectBufferInfoNV( *reinterpret_cast<ComputePipelineIndirectBufferInfoNV const *>( &rhs ) )
+    {
+    }
+
+    ComputePipelineIndirectBufferInfoNV & operator=( ComputePipelineIndirectBufferInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    ComputePipelineIndirectBufferInfoNV & operator=( VkComputePipelineIndirectBufferInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::ComputePipelineIndirectBufferInfoNV const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 ComputePipelineIndirectBufferInfoNV & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ComputePipelineIndirectBufferInfoNV & setDeviceAddress( VULKAN_HPP_NAMESPACE::DeviceAddress deviceAddress_ ) VULKAN_HPP_NOEXCEPT
+    {
+      deviceAddress = deviceAddress_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ComputePipelineIndirectBufferInfoNV & setSize( VULKAN_HPP_NAMESPACE::DeviceSize size_ ) VULKAN_HPP_NOEXCEPT
+    {
+      size = size_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ComputePipelineIndirectBufferInfoNV &
+                            setPipelineDeviceAddressCaptureReplay( VULKAN_HPP_NAMESPACE::DeviceAddress pipelineDeviceAddressCaptureReplay_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pipelineDeviceAddressCaptureReplay = pipelineDeviceAddressCaptureReplay_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkComputePipelineIndirectBufferInfoNV const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkComputePipelineIndirectBufferInfoNV *>( this );
+    }
+
+    operator VkComputePipelineIndirectBufferInfoNV &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkComputePipelineIndirectBufferInfoNV *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               VULKAN_HPP_NAMESPACE::DeviceAddress const &,
+               VULKAN_HPP_NAMESPACE::DeviceSize const &,
+               VULKAN_HPP_NAMESPACE::DeviceAddress const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, deviceAddress, size, pipelineDeviceAddressCaptureReplay );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( ComputePipelineIndirectBufferInfoNV const & ) const = default;
+#else
+    bool operator==( ComputePipelineIndirectBufferInfoNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( deviceAddress == rhs.deviceAddress ) && ( size == rhs.size ) &&
+             ( pipelineDeviceAddressCaptureReplay == rhs.pipelineDeviceAddressCaptureReplay );
+#  endif
+    }
+
+    bool operator!=( ComputePipelineIndirectBufferInfoNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                              = StructureType::eComputePipelineIndirectBufferInfoNV;
+    const void *                        pNext                              = {};
+    VULKAN_HPP_NAMESPACE::DeviceAddress deviceAddress                      = {};
+    VULKAN_HPP_NAMESPACE::DeviceSize    size                               = {};
+    VULKAN_HPP_NAMESPACE::DeviceAddress pipelineDeviceAddressCaptureReplay = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eComputePipelineIndirectBufferInfoNV>
+  {
+    using Type = ComputePipelineIndirectBufferInfoNV;
+  };
+
   struct ConditionalRenderingBeginInfoEXT
   {
     using NativeType = VkConditionalRenderingBeginInfoEXT;
@@ -17284,6 +17483,515 @@ namespace VULKAN_HPP_NAMESPACE
   };
   using CopyImageToBufferInfo2KHR = CopyImageToBufferInfo2;
 
+  struct CopyImageToImageInfoEXT
+  {
+    using NativeType = VkCopyImageToImageInfoEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eCopyImageToImageInfoEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR CopyImageToImageInfoEXT( VULKAN_HPP_NAMESPACE::HostImageCopyFlagsEXT flags_          = {},
+                                                  VULKAN_HPP_NAMESPACE::Image                 srcImage_       = {},
+                                                  VULKAN_HPP_NAMESPACE::ImageLayout           srcImageLayout_ = VULKAN_HPP_NAMESPACE::ImageLayout::eUndefined,
+                                                  VULKAN_HPP_NAMESPACE::Image                 dstImage_       = {},
+                                                  VULKAN_HPP_NAMESPACE::ImageLayout           dstImageLayout_ = VULKAN_HPP_NAMESPACE::ImageLayout::eUndefined,
+                                                  uint32_t                                    regionCount_    = {},
+                                                  const VULKAN_HPP_NAMESPACE::ImageCopy2 *    pRegions_       = {},
+                                                  const void *                                pNext_          = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , flags( flags_ )
+      , srcImage( srcImage_ )
+      , srcImageLayout( srcImageLayout_ )
+      , dstImage( dstImage_ )
+      , dstImageLayout( dstImageLayout_ )
+      , regionCount( regionCount_ )
+      , pRegions( pRegions_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR CopyImageToImageInfoEXT( CopyImageToImageInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    CopyImageToImageInfoEXT( VkCopyImageToImageInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : CopyImageToImageInfoEXT( *reinterpret_cast<CopyImageToImageInfoEXT const *>( &rhs ) )
+    {
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    CopyImageToImageInfoEXT( VULKAN_HPP_NAMESPACE::HostImageCopyFlagsEXT                                                   flags_,
+                             VULKAN_HPP_NAMESPACE::Image                                                                   srcImage_,
+                             VULKAN_HPP_NAMESPACE::ImageLayout                                                             srcImageLayout_,
+                             VULKAN_HPP_NAMESPACE::Image                                                                   dstImage_,
+                             VULKAN_HPP_NAMESPACE::ImageLayout                                                             dstImageLayout_,
+                             VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::ImageCopy2> const & regions_,
+                             const void *                                                                                  pNext_ = nullptr )
+      : pNext( pNext_ )
+      , flags( flags_ )
+      , srcImage( srcImage_ )
+      , srcImageLayout( srcImageLayout_ )
+      , dstImage( dstImage_ )
+      , dstImageLayout( dstImageLayout_ )
+      , regionCount( static_cast<uint32_t>( regions_.size() ) )
+      , pRegions( regions_.data() )
+    {
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    CopyImageToImageInfoEXT & operator=( CopyImageToImageInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    CopyImageToImageInfoEXT & operator=( VkCopyImageToImageInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::CopyImageToImageInfoEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 CopyImageToImageInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CopyImageToImageInfoEXT & setFlags( VULKAN_HPP_NAMESPACE::HostImageCopyFlagsEXT flags_ ) VULKAN_HPP_NOEXCEPT
+    {
+      flags = flags_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CopyImageToImageInfoEXT & setSrcImage( VULKAN_HPP_NAMESPACE::Image srcImage_ ) VULKAN_HPP_NOEXCEPT
+    {
+      srcImage = srcImage_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CopyImageToImageInfoEXT & setSrcImageLayout( VULKAN_HPP_NAMESPACE::ImageLayout srcImageLayout_ ) VULKAN_HPP_NOEXCEPT
+    {
+      srcImageLayout = srcImageLayout_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CopyImageToImageInfoEXT & setDstImage( VULKAN_HPP_NAMESPACE::Image dstImage_ ) VULKAN_HPP_NOEXCEPT
+    {
+      dstImage = dstImage_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CopyImageToImageInfoEXT & setDstImageLayout( VULKAN_HPP_NAMESPACE::ImageLayout dstImageLayout_ ) VULKAN_HPP_NOEXCEPT
+    {
+      dstImageLayout = dstImageLayout_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CopyImageToImageInfoEXT & setRegionCount( uint32_t regionCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      regionCount = regionCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CopyImageToImageInfoEXT & setPRegions( const VULKAN_HPP_NAMESPACE::ImageCopy2 * pRegions_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pRegions = pRegions_;
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    CopyImageToImageInfoEXT &
+      setRegions( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::ImageCopy2> const & regions_ ) VULKAN_HPP_NOEXCEPT
+    {
+      regionCount = static_cast<uint32_t>( regions_.size() );
+      pRegions    = regions_.data();
+      return *this;
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+#endif   /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkCopyImageToImageInfoEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkCopyImageToImageInfoEXT *>( this );
+    }
+
+    operator VkCopyImageToImageInfoEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkCopyImageToImageInfoEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               VULKAN_HPP_NAMESPACE::HostImageCopyFlagsEXT const &,
+               VULKAN_HPP_NAMESPACE::Image const &,
+               VULKAN_HPP_NAMESPACE::ImageLayout const &,
+               VULKAN_HPP_NAMESPACE::Image const &,
+               VULKAN_HPP_NAMESPACE::ImageLayout const &,
+               uint32_t const &,
+               const VULKAN_HPP_NAMESPACE::ImageCopy2 * const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, flags, srcImage, srcImageLayout, dstImage, dstImageLayout, regionCount, pRegions );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( CopyImageToImageInfoEXT const & ) const = default;
+#else
+    bool operator==( CopyImageToImageInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( flags == rhs.flags ) && ( srcImage == rhs.srcImage ) &&
+             ( srcImageLayout == rhs.srcImageLayout ) && ( dstImage == rhs.dstImage ) && ( dstImageLayout == rhs.dstImageLayout ) &&
+             ( regionCount == rhs.regionCount ) && ( pRegions == rhs.pRegions );
+#  endif
+    }
+
+    bool operator!=( CopyImageToImageInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType         sType          = StructureType::eCopyImageToImageInfoEXT;
+    const void *                                pNext          = {};
+    VULKAN_HPP_NAMESPACE::HostImageCopyFlagsEXT flags          = {};
+    VULKAN_HPP_NAMESPACE::Image                 srcImage       = {};
+    VULKAN_HPP_NAMESPACE::ImageLayout           srcImageLayout = VULKAN_HPP_NAMESPACE::ImageLayout::eUndefined;
+    VULKAN_HPP_NAMESPACE::Image                 dstImage       = {};
+    VULKAN_HPP_NAMESPACE::ImageLayout           dstImageLayout = VULKAN_HPP_NAMESPACE::ImageLayout::eUndefined;
+    uint32_t                                    regionCount    = {};
+    const VULKAN_HPP_NAMESPACE::ImageCopy2 *    pRegions       = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eCopyImageToImageInfoEXT>
+  {
+    using Type = CopyImageToImageInfoEXT;
+  };
+
+  struct ImageToMemoryCopyEXT
+  {
+    using NativeType = VkImageToMemoryCopyEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eImageToMemoryCopyEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR ImageToMemoryCopyEXT( void *                                       pHostPointer_      = {},
+                                               uint32_t                                     memoryRowLength_   = {},
+                                               uint32_t                                     memoryImageHeight_ = {},
+                                               VULKAN_HPP_NAMESPACE::ImageSubresourceLayers imageSubresource_  = {},
+                                               VULKAN_HPP_NAMESPACE::Offset3D               imageOffset_       = {},
+                                               VULKAN_HPP_NAMESPACE::Extent3D               imageExtent_       = {},
+                                               const void *                                 pNext_             = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , pHostPointer( pHostPointer_ )
+      , memoryRowLength( memoryRowLength_ )
+      , memoryImageHeight( memoryImageHeight_ )
+      , imageSubresource( imageSubresource_ )
+      , imageOffset( imageOffset_ )
+      , imageExtent( imageExtent_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR ImageToMemoryCopyEXT( ImageToMemoryCopyEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    ImageToMemoryCopyEXT( VkImageToMemoryCopyEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : ImageToMemoryCopyEXT( *reinterpret_cast<ImageToMemoryCopyEXT const *>( &rhs ) )
+    {
+    }
+
+    ImageToMemoryCopyEXT & operator=( ImageToMemoryCopyEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    ImageToMemoryCopyEXT & operator=( VkImageToMemoryCopyEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::ImageToMemoryCopyEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 ImageToMemoryCopyEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ImageToMemoryCopyEXT & setPHostPointer( void * pHostPointer_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pHostPointer = pHostPointer_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ImageToMemoryCopyEXT & setMemoryRowLength( uint32_t memoryRowLength_ ) VULKAN_HPP_NOEXCEPT
+    {
+      memoryRowLength = memoryRowLength_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ImageToMemoryCopyEXT & setMemoryImageHeight( uint32_t memoryImageHeight_ ) VULKAN_HPP_NOEXCEPT
+    {
+      memoryImageHeight = memoryImageHeight_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ImageToMemoryCopyEXT &
+                            setImageSubresource( VULKAN_HPP_NAMESPACE::ImageSubresourceLayers const & imageSubresource_ ) VULKAN_HPP_NOEXCEPT
+    {
+      imageSubresource = imageSubresource_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ImageToMemoryCopyEXT & setImageOffset( VULKAN_HPP_NAMESPACE::Offset3D const & imageOffset_ ) VULKAN_HPP_NOEXCEPT
+    {
+      imageOffset = imageOffset_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ImageToMemoryCopyEXT & setImageExtent( VULKAN_HPP_NAMESPACE::Extent3D const & imageExtent_ ) VULKAN_HPP_NOEXCEPT
+    {
+      imageExtent = imageExtent_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkImageToMemoryCopyEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkImageToMemoryCopyEXT *>( this );
+    }
+
+    operator VkImageToMemoryCopyEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkImageToMemoryCopyEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               void * const &,
+               uint32_t const &,
+               uint32_t const &,
+               VULKAN_HPP_NAMESPACE::ImageSubresourceLayers const &,
+               VULKAN_HPP_NAMESPACE::Offset3D const &,
+               VULKAN_HPP_NAMESPACE::Extent3D const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, pHostPointer, memoryRowLength, memoryImageHeight, imageSubresource, imageOffset, imageExtent );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( ImageToMemoryCopyEXT const & ) const = default;
+#else
+    bool operator==( ImageToMemoryCopyEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( pHostPointer == rhs.pHostPointer ) && ( memoryRowLength == rhs.memoryRowLength ) &&
+             ( memoryImageHeight == rhs.memoryImageHeight ) && ( imageSubresource == rhs.imageSubresource ) && ( imageOffset == rhs.imageOffset ) &&
+             ( imageExtent == rhs.imageExtent );
+#  endif
+    }
+
+    bool operator!=( ImageToMemoryCopyEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType          sType             = StructureType::eImageToMemoryCopyEXT;
+    const void *                                 pNext             = {};
+    void *                                       pHostPointer      = {};
+    uint32_t                                     memoryRowLength   = {};
+    uint32_t                                     memoryImageHeight = {};
+    VULKAN_HPP_NAMESPACE::ImageSubresourceLayers imageSubresource  = {};
+    VULKAN_HPP_NAMESPACE::Offset3D               imageOffset       = {};
+    VULKAN_HPP_NAMESPACE::Extent3D               imageExtent       = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eImageToMemoryCopyEXT>
+  {
+    using Type = ImageToMemoryCopyEXT;
+  };
+
+  struct CopyImageToMemoryInfoEXT
+  {
+    using NativeType = VkCopyImageToMemoryInfoEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eCopyImageToMemoryInfoEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR CopyImageToMemoryInfoEXT( VULKAN_HPP_NAMESPACE::HostImageCopyFlagsEXT flags_           = {},
+                                                   VULKAN_HPP_NAMESPACE::Image                 srcImage_        = {},
+                                                   VULKAN_HPP_NAMESPACE::ImageLayout           srcImageLayout_  = VULKAN_HPP_NAMESPACE::ImageLayout::eUndefined,
+                                                   uint32_t                                    regionCount_     = {},
+                                                   const VULKAN_HPP_NAMESPACE::ImageToMemoryCopyEXT * pRegions_ = {},
+                                                   const void *                                       pNext_    = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , flags( flags_ )
+      , srcImage( srcImage_ )
+      , srcImageLayout( srcImageLayout_ )
+      , regionCount( regionCount_ )
+      , pRegions( pRegions_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR CopyImageToMemoryInfoEXT( CopyImageToMemoryInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    CopyImageToMemoryInfoEXT( VkCopyImageToMemoryInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : CopyImageToMemoryInfoEXT( *reinterpret_cast<CopyImageToMemoryInfoEXT const *>( &rhs ) )
+    {
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    CopyImageToMemoryInfoEXT( VULKAN_HPP_NAMESPACE::HostImageCopyFlagsEXT                                                             flags_,
+                              VULKAN_HPP_NAMESPACE::Image                                                                             srcImage_,
+                              VULKAN_HPP_NAMESPACE::ImageLayout                                                                       srcImageLayout_,
+                              VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::ImageToMemoryCopyEXT> const & regions_,
+                              const void *                                                                                            pNext_ = nullptr )
+      : pNext( pNext_ )
+      , flags( flags_ )
+      , srcImage( srcImage_ )
+      , srcImageLayout( srcImageLayout_ )
+      , regionCount( static_cast<uint32_t>( regions_.size() ) )
+      , pRegions( regions_.data() )
+    {
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    CopyImageToMemoryInfoEXT & operator=( CopyImageToMemoryInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    CopyImageToMemoryInfoEXT & operator=( VkCopyImageToMemoryInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::CopyImageToMemoryInfoEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 CopyImageToMemoryInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CopyImageToMemoryInfoEXT & setFlags( VULKAN_HPP_NAMESPACE::HostImageCopyFlagsEXT flags_ ) VULKAN_HPP_NOEXCEPT
+    {
+      flags = flags_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CopyImageToMemoryInfoEXT & setSrcImage( VULKAN_HPP_NAMESPACE::Image srcImage_ ) VULKAN_HPP_NOEXCEPT
+    {
+      srcImage = srcImage_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CopyImageToMemoryInfoEXT & setSrcImageLayout( VULKAN_HPP_NAMESPACE::ImageLayout srcImageLayout_ ) VULKAN_HPP_NOEXCEPT
+    {
+      srcImageLayout = srcImageLayout_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CopyImageToMemoryInfoEXT & setRegionCount( uint32_t regionCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      regionCount = regionCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CopyImageToMemoryInfoEXT & setPRegions( const VULKAN_HPP_NAMESPACE::ImageToMemoryCopyEXT * pRegions_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pRegions = pRegions_;
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    CopyImageToMemoryInfoEXT &
+      setRegions( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::ImageToMemoryCopyEXT> const & regions_ ) VULKAN_HPP_NOEXCEPT
+    {
+      regionCount = static_cast<uint32_t>( regions_.size() );
+      pRegions    = regions_.data();
+      return *this;
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+#endif   /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkCopyImageToMemoryInfoEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkCopyImageToMemoryInfoEXT *>( this );
+    }
+
+    operator VkCopyImageToMemoryInfoEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkCopyImageToMemoryInfoEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               VULKAN_HPP_NAMESPACE::HostImageCopyFlagsEXT const &,
+               VULKAN_HPP_NAMESPACE::Image const &,
+               VULKAN_HPP_NAMESPACE::ImageLayout const &,
+               uint32_t const &,
+               const VULKAN_HPP_NAMESPACE::ImageToMemoryCopyEXT * const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, flags, srcImage, srcImageLayout, regionCount, pRegions );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( CopyImageToMemoryInfoEXT const & ) const = default;
+#else
+    bool operator==( CopyImageToMemoryInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( flags == rhs.flags ) && ( srcImage == rhs.srcImage ) &&
+             ( srcImageLayout == rhs.srcImageLayout ) && ( regionCount == rhs.regionCount ) && ( pRegions == rhs.pRegions );
+#  endif
+    }
+
+    bool operator!=( CopyImageToMemoryInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType                sType          = StructureType::eCopyImageToMemoryInfoEXT;
+    const void *                                       pNext          = {};
+    VULKAN_HPP_NAMESPACE::HostImageCopyFlagsEXT        flags          = {};
+    VULKAN_HPP_NAMESPACE::Image                        srcImage       = {};
+    VULKAN_HPP_NAMESPACE::ImageLayout                  srcImageLayout = VULKAN_HPP_NAMESPACE::ImageLayout::eUndefined;
+    uint32_t                                           regionCount    = {};
+    const VULKAN_HPP_NAMESPACE::ImageToMemoryCopyEXT * pRegions       = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eCopyImageToMemoryInfoEXT>
+  {
+    using Type = CopyImageToMemoryInfoEXT;
+  };
+
   struct CopyMemoryIndirectCommandNV
   {
     using NativeType = VkCopyMemoryIndirectCommandNV;
@@ -17612,6 +18320,324 @@ namespace VULKAN_HPP_NAMESPACE
     VULKAN_HPP_NAMESPACE::ImageSubresourceLayers imageSubresource  = {};
     VULKAN_HPP_NAMESPACE::Offset3D               imageOffset       = {};
     VULKAN_HPP_NAMESPACE::Extent3D               imageExtent       = {};
+  };
+
+  struct MemoryToImageCopyEXT
+  {
+    using NativeType = VkMemoryToImageCopyEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eMemoryToImageCopyEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR MemoryToImageCopyEXT( const void *                                 pHostPointer_      = {},
+                                               uint32_t                                     memoryRowLength_   = {},
+                                               uint32_t                                     memoryImageHeight_ = {},
+                                               VULKAN_HPP_NAMESPACE::ImageSubresourceLayers imageSubresource_  = {},
+                                               VULKAN_HPP_NAMESPACE::Offset3D               imageOffset_       = {},
+                                               VULKAN_HPP_NAMESPACE::Extent3D               imageExtent_       = {},
+                                               const void *                                 pNext_             = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , pHostPointer( pHostPointer_ )
+      , memoryRowLength( memoryRowLength_ )
+      , memoryImageHeight( memoryImageHeight_ )
+      , imageSubresource( imageSubresource_ )
+      , imageOffset( imageOffset_ )
+      , imageExtent( imageExtent_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR MemoryToImageCopyEXT( MemoryToImageCopyEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    MemoryToImageCopyEXT( VkMemoryToImageCopyEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : MemoryToImageCopyEXT( *reinterpret_cast<MemoryToImageCopyEXT const *>( &rhs ) )
+    {
+    }
+
+    MemoryToImageCopyEXT & operator=( MemoryToImageCopyEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    MemoryToImageCopyEXT & operator=( VkMemoryToImageCopyEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::MemoryToImageCopyEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 MemoryToImageCopyEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 MemoryToImageCopyEXT & setPHostPointer( const void * pHostPointer_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pHostPointer = pHostPointer_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 MemoryToImageCopyEXT & setMemoryRowLength( uint32_t memoryRowLength_ ) VULKAN_HPP_NOEXCEPT
+    {
+      memoryRowLength = memoryRowLength_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 MemoryToImageCopyEXT & setMemoryImageHeight( uint32_t memoryImageHeight_ ) VULKAN_HPP_NOEXCEPT
+    {
+      memoryImageHeight = memoryImageHeight_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 MemoryToImageCopyEXT &
+                            setImageSubresource( VULKAN_HPP_NAMESPACE::ImageSubresourceLayers const & imageSubresource_ ) VULKAN_HPP_NOEXCEPT
+    {
+      imageSubresource = imageSubresource_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 MemoryToImageCopyEXT & setImageOffset( VULKAN_HPP_NAMESPACE::Offset3D const & imageOffset_ ) VULKAN_HPP_NOEXCEPT
+    {
+      imageOffset = imageOffset_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 MemoryToImageCopyEXT & setImageExtent( VULKAN_HPP_NAMESPACE::Extent3D const & imageExtent_ ) VULKAN_HPP_NOEXCEPT
+    {
+      imageExtent = imageExtent_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkMemoryToImageCopyEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkMemoryToImageCopyEXT *>( this );
+    }
+
+    operator VkMemoryToImageCopyEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkMemoryToImageCopyEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               const void * const &,
+               uint32_t const &,
+               uint32_t const &,
+               VULKAN_HPP_NAMESPACE::ImageSubresourceLayers const &,
+               VULKAN_HPP_NAMESPACE::Offset3D const &,
+               VULKAN_HPP_NAMESPACE::Extent3D const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, pHostPointer, memoryRowLength, memoryImageHeight, imageSubresource, imageOffset, imageExtent );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( MemoryToImageCopyEXT const & ) const = default;
+#else
+    bool operator==( MemoryToImageCopyEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( pHostPointer == rhs.pHostPointer ) && ( memoryRowLength == rhs.memoryRowLength ) &&
+             ( memoryImageHeight == rhs.memoryImageHeight ) && ( imageSubresource == rhs.imageSubresource ) && ( imageOffset == rhs.imageOffset ) &&
+             ( imageExtent == rhs.imageExtent );
+#  endif
+    }
+
+    bool operator!=( MemoryToImageCopyEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType          sType             = StructureType::eMemoryToImageCopyEXT;
+    const void *                                 pNext             = {};
+    const void *                                 pHostPointer      = {};
+    uint32_t                                     memoryRowLength   = {};
+    uint32_t                                     memoryImageHeight = {};
+    VULKAN_HPP_NAMESPACE::ImageSubresourceLayers imageSubresource  = {};
+    VULKAN_HPP_NAMESPACE::Offset3D               imageOffset       = {};
+    VULKAN_HPP_NAMESPACE::Extent3D               imageExtent       = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eMemoryToImageCopyEXT>
+  {
+    using Type = MemoryToImageCopyEXT;
+  };
+
+  struct CopyMemoryToImageInfoEXT
+  {
+    using NativeType = VkCopyMemoryToImageInfoEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eCopyMemoryToImageInfoEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR CopyMemoryToImageInfoEXT( VULKAN_HPP_NAMESPACE::HostImageCopyFlagsEXT flags_           = {},
+                                                   VULKAN_HPP_NAMESPACE::Image                 dstImage_        = {},
+                                                   VULKAN_HPP_NAMESPACE::ImageLayout           dstImageLayout_  = VULKAN_HPP_NAMESPACE::ImageLayout::eUndefined,
+                                                   uint32_t                                    regionCount_     = {},
+                                                   const VULKAN_HPP_NAMESPACE::MemoryToImageCopyEXT * pRegions_ = {},
+                                                   const void *                                       pNext_    = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , flags( flags_ )
+      , dstImage( dstImage_ )
+      , dstImageLayout( dstImageLayout_ )
+      , regionCount( regionCount_ )
+      , pRegions( pRegions_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR CopyMemoryToImageInfoEXT( CopyMemoryToImageInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    CopyMemoryToImageInfoEXT( VkCopyMemoryToImageInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : CopyMemoryToImageInfoEXT( *reinterpret_cast<CopyMemoryToImageInfoEXT const *>( &rhs ) )
+    {
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    CopyMemoryToImageInfoEXT( VULKAN_HPP_NAMESPACE::HostImageCopyFlagsEXT                                                             flags_,
+                              VULKAN_HPP_NAMESPACE::Image                                                                             dstImage_,
+                              VULKAN_HPP_NAMESPACE::ImageLayout                                                                       dstImageLayout_,
+                              VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::MemoryToImageCopyEXT> const & regions_,
+                              const void *                                                                                            pNext_ = nullptr )
+      : pNext( pNext_ )
+      , flags( flags_ )
+      , dstImage( dstImage_ )
+      , dstImageLayout( dstImageLayout_ )
+      , regionCount( static_cast<uint32_t>( regions_.size() ) )
+      , pRegions( regions_.data() )
+    {
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    CopyMemoryToImageInfoEXT & operator=( CopyMemoryToImageInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    CopyMemoryToImageInfoEXT & operator=( VkCopyMemoryToImageInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::CopyMemoryToImageInfoEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 CopyMemoryToImageInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CopyMemoryToImageInfoEXT & setFlags( VULKAN_HPP_NAMESPACE::HostImageCopyFlagsEXT flags_ ) VULKAN_HPP_NOEXCEPT
+    {
+      flags = flags_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CopyMemoryToImageInfoEXT & setDstImage( VULKAN_HPP_NAMESPACE::Image dstImage_ ) VULKAN_HPP_NOEXCEPT
+    {
+      dstImage = dstImage_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CopyMemoryToImageInfoEXT & setDstImageLayout( VULKAN_HPP_NAMESPACE::ImageLayout dstImageLayout_ ) VULKAN_HPP_NOEXCEPT
+    {
+      dstImageLayout = dstImageLayout_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CopyMemoryToImageInfoEXT & setRegionCount( uint32_t regionCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      regionCount = regionCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CopyMemoryToImageInfoEXT & setPRegions( const VULKAN_HPP_NAMESPACE::MemoryToImageCopyEXT * pRegions_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pRegions = pRegions_;
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    CopyMemoryToImageInfoEXT &
+      setRegions( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::MemoryToImageCopyEXT> const & regions_ ) VULKAN_HPP_NOEXCEPT
+    {
+      regionCount = static_cast<uint32_t>( regions_.size() );
+      pRegions    = regions_.data();
+      return *this;
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+#endif   /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkCopyMemoryToImageInfoEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkCopyMemoryToImageInfoEXT *>( this );
+    }
+
+    operator VkCopyMemoryToImageInfoEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkCopyMemoryToImageInfoEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               VULKAN_HPP_NAMESPACE::HostImageCopyFlagsEXT const &,
+               VULKAN_HPP_NAMESPACE::Image const &,
+               VULKAN_HPP_NAMESPACE::ImageLayout const &,
+               uint32_t const &,
+               const VULKAN_HPP_NAMESPACE::MemoryToImageCopyEXT * const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, flags, dstImage, dstImageLayout, regionCount, pRegions );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( CopyMemoryToImageInfoEXT const & ) const = default;
+#else
+    bool operator==( CopyMemoryToImageInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( flags == rhs.flags ) && ( dstImage == rhs.dstImage ) &&
+             ( dstImageLayout == rhs.dstImageLayout ) && ( regionCount == rhs.regionCount ) && ( pRegions == rhs.pRegions );
+#  endif
+    }
+
+    bool operator!=( CopyMemoryToImageInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType                sType          = StructureType::eCopyMemoryToImageInfoEXT;
+    const void *                                       pNext          = {};
+    VULKAN_HPP_NAMESPACE::HostImageCopyFlagsEXT        flags          = {};
+    VULKAN_HPP_NAMESPACE::Image                        dstImage       = {};
+    VULKAN_HPP_NAMESPACE::ImageLayout                  dstImageLayout = VULKAN_HPP_NAMESPACE::ImageLayout::eUndefined;
+    uint32_t                                           regionCount    = {};
+    const VULKAN_HPP_NAMESPACE::MemoryToImageCopyEXT * pRegions       = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eCopyMemoryToImageInfoEXT>
+  {
+    using Type = CopyMemoryToImageInfoEXT;
   };
 
   struct CopyMemoryToMicromapInfoEXT
@@ -38861,6 +39887,224 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = HeadlessSurfaceCreateInfoEXT;
   };
 
+  struct HostImageCopyDevicePerformanceQueryEXT
+  {
+    using NativeType = VkHostImageCopyDevicePerformanceQueryEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eHostImageCopyDevicePerformanceQueryEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR HostImageCopyDevicePerformanceQueryEXT( VULKAN_HPP_NAMESPACE::Bool32 optimalDeviceAccess_   = {},
+                                                                 VULKAN_HPP_NAMESPACE::Bool32 identicalMemoryLayout_ = {},
+                                                                 void *                       pNext_                 = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , optimalDeviceAccess( optimalDeviceAccess_ )
+      , identicalMemoryLayout( identicalMemoryLayout_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR HostImageCopyDevicePerformanceQueryEXT( HostImageCopyDevicePerformanceQueryEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    HostImageCopyDevicePerformanceQueryEXT( VkHostImageCopyDevicePerformanceQueryEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : HostImageCopyDevicePerformanceQueryEXT( *reinterpret_cast<HostImageCopyDevicePerformanceQueryEXT const *>( &rhs ) )
+    {
+    }
+
+    HostImageCopyDevicePerformanceQueryEXT & operator=( HostImageCopyDevicePerformanceQueryEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    HostImageCopyDevicePerformanceQueryEXT & operator=( VkHostImageCopyDevicePerformanceQueryEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::HostImageCopyDevicePerformanceQueryEXT const *>( &rhs );
+      return *this;
+    }
+
+    operator VkHostImageCopyDevicePerformanceQueryEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkHostImageCopyDevicePerformanceQueryEXT *>( this );
+    }
+
+    operator VkHostImageCopyDevicePerformanceQueryEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkHostImageCopyDevicePerformanceQueryEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, optimalDeviceAccess, identicalMemoryLayout );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( HostImageCopyDevicePerformanceQueryEXT const & ) const = default;
+#else
+    bool operator==( HostImageCopyDevicePerformanceQueryEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( optimalDeviceAccess == rhs.optimalDeviceAccess ) &&
+             ( identicalMemoryLayout == rhs.identicalMemoryLayout );
+#  endif
+    }
+
+    bool operator!=( HostImageCopyDevicePerformanceQueryEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                 = StructureType::eHostImageCopyDevicePerformanceQueryEXT;
+    void *                              pNext                 = {};
+    VULKAN_HPP_NAMESPACE::Bool32        optimalDeviceAccess   = {};
+    VULKAN_HPP_NAMESPACE::Bool32        identicalMemoryLayout = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eHostImageCopyDevicePerformanceQueryEXT>
+  {
+    using Type = HostImageCopyDevicePerformanceQueryEXT;
+  };
+
+  struct HostImageLayoutTransitionInfoEXT
+  {
+    using NativeType = VkHostImageLayoutTransitionInfoEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eHostImageLayoutTransitionInfoEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR HostImageLayoutTransitionInfoEXT( VULKAN_HPP_NAMESPACE::Image       image_     = {},
+                                                           VULKAN_HPP_NAMESPACE::ImageLayout oldLayout_ = VULKAN_HPP_NAMESPACE::ImageLayout::eUndefined,
+                                                           VULKAN_HPP_NAMESPACE::ImageLayout newLayout_ = VULKAN_HPP_NAMESPACE::ImageLayout::eUndefined,
+                                                           VULKAN_HPP_NAMESPACE::ImageSubresourceRange subresourceRange_ = {},
+                                                           const void *                                pNext_            = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , image( image_ )
+      , oldLayout( oldLayout_ )
+      , newLayout( newLayout_ )
+      , subresourceRange( subresourceRange_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR HostImageLayoutTransitionInfoEXT( HostImageLayoutTransitionInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    HostImageLayoutTransitionInfoEXT( VkHostImageLayoutTransitionInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : HostImageLayoutTransitionInfoEXT( *reinterpret_cast<HostImageLayoutTransitionInfoEXT const *>( &rhs ) )
+    {
+    }
+
+    HostImageLayoutTransitionInfoEXT & operator=( HostImageLayoutTransitionInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    HostImageLayoutTransitionInfoEXT & operator=( VkHostImageLayoutTransitionInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::HostImageLayoutTransitionInfoEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 HostImageLayoutTransitionInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 HostImageLayoutTransitionInfoEXT & setImage( VULKAN_HPP_NAMESPACE::Image image_ ) VULKAN_HPP_NOEXCEPT
+    {
+      image = image_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 HostImageLayoutTransitionInfoEXT & setOldLayout( VULKAN_HPP_NAMESPACE::ImageLayout oldLayout_ ) VULKAN_HPP_NOEXCEPT
+    {
+      oldLayout = oldLayout_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 HostImageLayoutTransitionInfoEXT & setNewLayout( VULKAN_HPP_NAMESPACE::ImageLayout newLayout_ ) VULKAN_HPP_NOEXCEPT
+    {
+      newLayout = newLayout_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 HostImageLayoutTransitionInfoEXT &
+                            setSubresourceRange( VULKAN_HPP_NAMESPACE::ImageSubresourceRange const & subresourceRange_ ) VULKAN_HPP_NOEXCEPT
+    {
+      subresourceRange = subresourceRange_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkHostImageLayoutTransitionInfoEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkHostImageLayoutTransitionInfoEXT *>( this );
+    }
+
+    operator VkHostImageLayoutTransitionInfoEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkHostImageLayoutTransitionInfoEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               VULKAN_HPP_NAMESPACE::Image const &,
+               VULKAN_HPP_NAMESPACE::ImageLayout const &,
+               VULKAN_HPP_NAMESPACE::ImageLayout const &,
+               VULKAN_HPP_NAMESPACE::ImageSubresourceRange const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, image, oldLayout, newLayout, subresourceRange );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( HostImageLayoutTransitionInfoEXT const & ) const = default;
+#else
+    bool operator==( HostImageLayoutTransitionInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( image == rhs.image ) && ( oldLayout == rhs.oldLayout ) && ( newLayout == rhs.newLayout ) &&
+             ( subresourceRange == rhs.subresourceRange );
+#  endif
+    }
+
+    bool operator!=( HostImageLayoutTransitionInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType         sType            = StructureType::eHostImageLayoutTransitionInfoEXT;
+    const void *                                pNext            = {};
+    VULKAN_HPP_NAMESPACE::Image                 image            = {};
+    VULKAN_HPP_NAMESPACE::ImageLayout           oldLayout        = VULKAN_HPP_NAMESPACE::ImageLayout::eUndefined;
+    VULKAN_HPP_NAMESPACE::ImageLayout           newLayout        = VULKAN_HPP_NAMESPACE::ImageLayout::eUndefined;
+    VULKAN_HPP_NAMESPACE::ImageSubresourceRange subresourceRange = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eHostImageLayoutTransitionInfoEXT>
+  {
+    using Type = HostImageLayoutTransitionInfoEXT;
+  };
+
 #if defined( VK_USE_PLATFORM_IOS_MVK )
   struct IOSSurfaceCreateInfoMVK
   {
@@ -56538,6 +57782,133 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PhysicalDeviceDescriptorSetHostMappingFeaturesVALVE;
   };
 
+  struct PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV
+  {
+    using NativeType = VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV( VULKAN_HPP_NAMESPACE::Bool32 deviceGeneratedCompute_              = {},
+                                                                                 VULKAN_HPP_NAMESPACE::Bool32 deviceGeneratedComputePipelines_     = {},
+                                                                                 VULKAN_HPP_NAMESPACE::Bool32 deviceGeneratedComputeCaptureReplay_ = {},
+                                                                                 void *                       pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , deviceGeneratedCompute( deviceGeneratedCompute_ )
+      , deviceGeneratedComputePipelines( deviceGeneratedComputePipelines_ )
+      , deviceGeneratedComputeCaptureReplay( deviceGeneratedComputeCaptureReplay_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV( PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV const & rhs )
+      VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV( VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV( *reinterpret_cast<PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV &
+      operator=( PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV &
+      operator=( VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV &
+                            setDeviceGeneratedCompute( VULKAN_HPP_NAMESPACE::Bool32 deviceGeneratedCompute_ ) VULKAN_HPP_NOEXCEPT
+    {
+      deviceGeneratedCompute = deviceGeneratedCompute_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV &
+                            setDeviceGeneratedComputePipelines( VULKAN_HPP_NAMESPACE::Bool32 deviceGeneratedComputePipelines_ ) VULKAN_HPP_NOEXCEPT
+    {
+      deviceGeneratedComputePipelines = deviceGeneratedComputePipelines_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV &
+                            setDeviceGeneratedComputeCaptureReplay( VULKAN_HPP_NAMESPACE::Bool32 deviceGeneratedComputeCaptureReplay_ ) VULKAN_HPP_NOEXCEPT
+    {
+      deviceGeneratedComputeCaptureReplay = deviceGeneratedComputeCaptureReplay_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV *>( this );
+    }
+
+    operator VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               void * const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, deviceGeneratedCompute, deviceGeneratedComputePipelines, deviceGeneratedComputeCaptureReplay );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( deviceGeneratedCompute == rhs.deviceGeneratedCompute ) &&
+             ( deviceGeneratedComputePipelines == rhs.deviceGeneratedComputePipelines ) &&
+             ( deviceGeneratedComputeCaptureReplay == rhs.deviceGeneratedComputeCaptureReplay );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                               = StructureType::ePhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV;
+    void *                              pNext                               = {};
+    VULKAN_HPP_NAMESPACE::Bool32        deviceGeneratedCompute              = {};
+    VULKAN_HPP_NAMESPACE::Bool32        deviceGeneratedComputePipelines     = {};
+    VULKAN_HPP_NAMESPACE::Bool32        deviceGeneratedComputeCaptureReplay = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV>
+  {
+    using Type = PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV;
+  };
+
   struct PhysicalDeviceDeviceGeneratedCommandsFeaturesNV
   {
     using NativeType = VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNV;
@@ -61590,6 +62961,295 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PhysicalDeviceGroupProperties;
   };
   using PhysicalDeviceGroupPropertiesKHR = PhysicalDeviceGroupProperties;
+
+  struct PhysicalDeviceHostImageCopyFeaturesEXT
+  {
+    using NativeType = VkPhysicalDeviceHostImageCopyFeaturesEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceHostImageCopyFeaturesEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceHostImageCopyFeaturesEXT( VULKAN_HPP_NAMESPACE::Bool32 hostImageCopy_ = {}, void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , hostImageCopy( hostImageCopy_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceHostImageCopyFeaturesEXT( PhysicalDeviceHostImageCopyFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceHostImageCopyFeaturesEXT( VkPhysicalDeviceHostImageCopyFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceHostImageCopyFeaturesEXT( *reinterpret_cast<PhysicalDeviceHostImageCopyFeaturesEXT const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceHostImageCopyFeaturesEXT & operator=( PhysicalDeviceHostImageCopyFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceHostImageCopyFeaturesEXT & operator=( VkPhysicalDeviceHostImageCopyFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceHostImageCopyFeaturesEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceHostImageCopyFeaturesEXT & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceHostImageCopyFeaturesEXT & setHostImageCopy( VULKAN_HPP_NAMESPACE::Bool32 hostImageCopy_ ) VULKAN_HPP_NOEXCEPT
+    {
+      hostImageCopy = hostImageCopy_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceHostImageCopyFeaturesEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceHostImageCopyFeaturesEXT *>( this );
+    }
+
+    operator VkPhysicalDeviceHostImageCopyFeaturesEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceHostImageCopyFeaturesEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, hostImageCopy );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceHostImageCopyFeaturesEXT const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceHostImageCopyFeaturesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( hostImageCopy == rhs.hostImageCopy );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceHostImageCopyFeaturesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType         = StructureType::ePhysicalDeviceHostImageCopyFeaturesEXT;
+    void *                              pNext         = {};
+    VULKAN_HPP_NAMESPACE::Bool32        hostImageCopy = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceHostImageCopyFeaturesEXT>
+  {
+    using Type = PhysicalDeviceHostImageCopyFeaturesEXT;
+  };
+
+  struct PhysicalDeviceHostImageCopyPropertiesEXT
+  {
+    using NativeType = VkPhysicalDeviceHostImageCopyPropertiesEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceHostImageCopyPropertiesEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceHostImageCopyPropertiesEXT( uint32_t                                  copySrcLayoutCount_              = {},
+                                                                      VULKAN_HPP_NAMESPACE::ImageLayout *       pCopySrcLayouts_                 = {},
+                                                                      uint32_t                                  copyDstLayoutCount_              = {},
+                                                                      VULKAN_HPP_NAMESPACE::ImageLayout *       pCopyDstLayouts_                 = {},
+                                                                      std::array<uint8_t, VK_UUID_SIZE> const & optimalTilingLayoutUUID_         = {},
+                                                                      VULKAN_HPP_NAMESPACE::Bool32              identicalMemoryTypeRequirements_ = {},
+                                                                      void *                                    pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , copySrcLayoutCount( copySrcLayoutCount_ )
+      , pCopySrcLayouts( pCopySrcLayouts_ )
+      , copyDstLayoutCount( copyDstLayoutCount_ )
+      , pCopyDstLayouts( pCopyDstLayouts_ )
+      , optimalTilingLayoutUUID( optimalTilingLayoutUUID_ )
+      , identicalMemoryTypeRequirements( identicalMemoryTypeRequirements_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceHostImageCopyPropertiesEXT( PhysicalDeviceHostImageCopyPropertiesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceHostImageCopyPropertiesEXT( VkPhysicalDeviceHostImageCopyPropertiesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceHostImageCopyPropertiesEXT( *reinterpret_cast<PhysicalDeviceHostImageCopyPropertiesEXT const *>( &rhs ) )
+    {
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    PhysicalDeviceHostImageCopyPropertiesEXT( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<VULKAN_HPP_NAMESPACE::ImageLayout> const & copySrcLayouts_,
+                                              VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<VULKAN_HPP_NAMESPACE::ImageLayout> const & copyDstLayouts_ = {},
+                                              std::array<uint8_t, VK_UUID_SIZE> const & optimalTilingLayoutUUID_                                       = {},
+                                              VULKAN_HPP_NAMESPACE::Bool32              identicalMemoryTypeRequirements_                               = {},
+                                              void *                                    pNext_ = nullptr )
+      : pNext( pNext_ )
+      , copySrcLayoutCount( static_cast<uint32_t>( copySrcLayouts_.size() ) )
+      , pCopySrcLayouts( copySrcLayouts_.data() )
+      , copyDstLayoutCount( static_cast<uint32_t>( copyDstLayouts_.size() ) )
+      , pCopyDstLayouts( copyDstLayouts_.data() )
+      , optimalTilingLayoutUUID( optimalTilingLayoutUUID_ )
+      , identicalMemoryTypeRequirements( identicalMemoryTypeRequirements_ )
+    {
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    PhysicalDeviceHostImageCopyPropertiesEXT & operator=( PhysicalDeviceHostImageCopyPropertiesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceHostImageCopyPropertiesEXT & operator=( VkPhysicalDeviceHostImageCopyPropertiesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceHostImageCopyPropertiesEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceHostImageCopyPropertiesEXT & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceHostImageCopyPropertiesEXT & setCopySrcLayoutCount( uint32_t copySrcLayoutCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      copySrcLayoutCount = copySrcLayoutCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceHostImageCopyPropertiesEXT &
+                            setPCopySrcLayouts( VULKAN_HPP_NAMESPACE::ImageLayout * pCopySrcLayouts_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pCopySrcLayouts = pCopySrcLayouts_;
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    PhysicalDeviceHostImageCopyPropertiesEXT &
+      setCopySrcLayouts( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<VULKAN_HPP_NAMESPACE::ImageLayout> const & copySrcLayouts_ ) VULKAN_HPP_NOEXCEPT
+    {
+      copySrcLayoutCount = static_cast<uint32_t>( copySrcLayouts_.size() );
+      pCopySrcLayouts    = copySrcLayouts_.data();
+      return *this;
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceHostImageCopyPropertiesEXT & setCopyDstLayoutCount( uint32_t copyDstLayoutCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      copyDstLayoutCount = copyDstLayoutCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceHostImageCopyPropertiesEXT &
+                            setPCopyDstLayouts( VULKAN_HPP_NAMESPACE::ImageLayout * pCopyDstLayouts_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pCopyDstLayouts = pCopyDstLayouts_;
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    PhysicalDeviceHostImageCopyPropertiesEXT &
+      setCopyDstLayouts( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<VULKAN_HPP_NAMESPACE::ImageLayout> const & copyDstLayouts_ ) VULKAN_HPP_NOEXCEPT
+    {
+      copyDstLayoutCount = static_cast<uint32_t>( copyDstLayouts_.size() );
+      pCopyDstLayouts    = copyDstLayouts_.data();
+      return *this;
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceHostImageCopyPropertiesEXT &
+                            setOptimalTilingLayoutUUID( std::array<uint8_t, VK_UUID_SIZE> optimalTilingLayoutUUID_ ) VULKAN_HPP_NOEXCEPT
+    {
+      optimalTilingLayoutUUID = optimalTilingLayoutUUID_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceHostImageCopyPropertiesEXT &
+                            setIdenticalMemoryTypeRequirements( VULKAN_HPP_NAMESPACE::Bool32 identicalMemoryTypeRequirements_ ) VULKAN_HPP_NOEXCEPT
+    {
+      identicalMemoryTypeRequirements = identicalMemoryTypeRequirements_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceHostImageCopyPropertiesEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceHostImageCopyPropertiesEXT *>( this );
+    }
+
+    operator VkPhysicalDeviceHostImageCopyPropertiesEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceHostImageCopyPropertiesEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               void * const &,
+               uint32_t const &,
+               VULKAN_HPP_NAMESPACE::ImageLayout * const &,
+               uint32_t const &,
+               VULKAN_HPP_NAMESPACE::ImageLayout * const &,
+               VULKAN_HPP_NAMESPACE::ArrayWrapper1D<uint8_t, VK_UUID_SIZE> const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie(
+        sType, pNext, copySrcLayoutCount, pCopySrcLayouts, copyDstLayoutCount, pCopyDstLayouts, optimalTilingLayoutUUID, identicalMemoryTypeRequirements );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceHostImageCopyPropertiesEXT const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceHostImageCopyPropertiesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( copySrcLayoutCount == rhs.copySrcLayoutCount ) &&
+             ( pCopySrcLayouts == rhs.pCopySrcLayouts ) && ( copyDstLayoutCount == rhs.copyDstLayoutCount ) && ( pCopyDstLayouts == rhs.pCopyDstLayouts ) &&
+             ( optimalTilingLayoutUUID == rhs.optimalTilingLayoutUUID ) && ( identicalMemoryTypeRequirements == rhs.identicalMemoryTypeRequirements );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceHostImageCopyPropertiesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType                         sType                           = StructureType::ePhysicalDeviceHostImageCopyPropertiesEXT;
+    void *                                                      pNext                           = {};
+    uint32_t                                                    copySrcLayoutCount              = {};
+    VULKAN_HPP_NAMESPACE::ImageLayout *                         pCopySrcLayouts                 = {};
+    uint32_t                                                    copyDstLayoutCount              = {};
+    VULKAN_HPP_NAMESPACE::ImageLayout *                         pCopyDstLayouts                 = {};
+    VULKAN_HPP_NAMESPACE::ArrayWrapper1D<uint8_t, VK_UUID_SIZE> optimalTilingLayoutUUID         = {};
+    VULKAN_HPP_NAMESPACE::Bool32                                identicalMemoryTypeRequirements = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceHostImageCopyPropertiesEXT>
+  {
+    using Type = PhysicalDeviceHostImageCopyPropertiesEXT;
+  };
 
   struct PhysicalDeviceHostQueryResetFeatures
   {
@@ -83667,6 +85327,117 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PipelineFragmentShadingRateStateCreateInfoKHR;
   };
 
+  struct PipelineIndirectDeviceAddressInfoNV
+  {
+    using NativeType = VkPipelineIndirectDeviceAddressInfoNV;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePipelineIndirectDeviceAddressInfoNV;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR
+      PipelineIndirectDeviceAddressInfoNV( VULKAN_HPP_NAMESPACE::PipelineBindPoint pipelineBindPoint_ = VULKAN_HPP_NAMESPACE::PipelineBindPoint::eGraphics,
+                                           VULKAN_HPP_NAMESPACE::Pipeline          pipeline_          = {},
+                                           const void *                            pNext_             = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , pipelineBindPoint( pipelineBindPoint_ )
+      , pipeline( pipeline_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PipelineIndirectDeviceAddressInfoNV( PipelineIndirectDeviceAddressInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PipelineIndirectDeviceAddressInfoNV( VkPipelineIndirectDeviceAddressInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PipelineIndirectDeviceAddressInfoNV( *reinterpret_cast<PipelineIndirectDeviceAddressInfoNV const *>( &rhs ) )
+    {
+    }
+
+    PipelineIndirectDeviceAddressInfoNV & operator=( PipelineIndirectDeviceAddressInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PipelineIndirectDeviceAddressInfoNV & operator=( VkPipelineIndirectDeviceAddressInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PipelineIndirectDeviceAddressInfoNV const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PipelineIndirectDeviceAddressInfoNV & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PipelineIndirectDeviceAddressInfoNV &
+                            setPipelineBindPoint( VULKAN_HPP_NAMESPACE::PipelineBindPoint pipelineBindPoint_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pipelineBindPoint = pipelineBindPoint_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PipelineIndirectDeviceAddressInfoNV & setPipeline( VULKAN_HPP_NAMESPACE::Pipeline pipeline_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pipeline = pipeline_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPipelineIndirectDeviceAddressInfoNV const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPipelineIndirectDeviceAddressInfoNV *>( this );
+    }
+
+    operator VkPipelineIndirectDeviceAddressInfoNV &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPipelineIndirectDeviceAddressInfoNV *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               VULKAN_HPP_NAMESPACE::PipelineBindPoint const &,
+               VULKAN_HPP_NAMESPACE::Pipeline const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, pipelineBindPoint, pipeline );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PipelineIndirectDeviceAddressInfoNV const & ) const = default;
+#else
+    bool operator==( PipelineIndirectDeviceAddressInfoNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( pipelineBindPoint == rhs.pipelineBindPoint ) && ( pipeline == rhs.pipeline );
+#  endif
+    }
+
+    bool operator!=( PipelineIndirectDeviceAddressInfoNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType     sType             = StructureType::ePipelineIndirectDeviceAddressInfoNV;
+    const void *                            pNext             = {};
+    VULKAN_HPP_NAMESPACE::PipelineBindPoint pipelineBindPoint = VULKAN_HPP_NAMESPACE::PipelineBindPoint::eGraphics;
+    VULKAN_HPP_NAMESPACE::Pipeline          pipeline          = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePipelineIndirectDeviceAddressInfoNV>
+  {
+    using Type = PipelineIndirectDeviceAddressInfoNV;
+  };
+
   struct PipelineInfoKHR
   {
     using NativeType = VkPipelineInfoKHR;
@@ -99022,6 +100793,88 @@ namespace VULKAN_HPP_NAMESPACE
   struct CppType<StructureType, StructureType::eSubpassShadingPipelineCreateInfoHUAWEI>
   {
     using Type = SubpassShadingPipelineCreateInfoHUAWEI;
+  };
+
+  struct SubresourceHostMemcpySizeEXT
+  {
+    using NativeType = VkSubresourceHostMemcpySizeEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eSubresourceHostMemcpySizeEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR SubresourceHostMemcpySizeEXT( VULKAN_HPP_NAMESPACE::DeviceSize size_ = {}, void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , size( size_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR SubresourceHostMemcpySizeEXT( SubresourceHostMemcpySizeEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    SubresourceHostMemcpySizeEXT( VkSubresourceHostMemcpySizeEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : SubresourceHostMemcpySizeEXT( *reinterpret_cast<SubresourceHostMemcpySizeEXT const *>( &rhs ) )
+    {
+    }
+
+    SubresourceHostMemcpySizeEXT & operator=( SubresourceHostMemcpySizeEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    SubresourceHostMemcpySizeEXT & operator=( VkSubresourceHostMemcpySizeEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::SubresourceHostMemcpySizeEXT const *>( &rhs );
+      return *this;
+    }
+
+    operator VkSubresourceHostMemcpySizeEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkSubresourceHostMemcpySizeEXT *>( this );
+    }
+
+    operator VkSubresourceHostMemcpySizeEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkSubresourceHostMemcpySizeEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::DeviceSize const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, size );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( SubresourceHostMemcpySizeEXT const & ) const = default;
+#else
+    bool operator==( SubresourceHostMemcpySizeEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( size == rhs.size );
+#  endif
+    }
+
+    bool operator!=( SubresourceHostMemcpySizeEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType = StructureType::eSubresourceHostMemcpySizeEXT;
+    void *                              pNext = {};
+    VULKAN_HPP_NAMESPACE::DeviceSize    size  = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eSubresourceHostMemcpySizeEXT>
+  {
+    using Type = SubresourceHostMemcpySizeEXT;
   };
 
   struct SubresourceLayout2EXT
