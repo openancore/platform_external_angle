@@ -12512,6 +12512,103 @@ namespace VULKAN_HPP_NAMESPACE
   };
   using BufferOpaqueCaptureAddressCreateInfoKHR = BufferOpaqueCaptureAddressCreateInfo;
 
+  struct BufferUsageFlags2CreateInfoKHR
+  {
+    using NativeType = VkBufferUsageFlags2CreateInfoKHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eBufferUsageFlags2CreateInfoKHR;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR BufferUsageFlags2CreateInfoKHR( VULKAN_HPP_NAMESPACE::BufferUsageFlags2KHR usage_ = {},
+                                                         const void *                               pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , usage( usage_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR BufferUsageFlags2CreateInfoKHR( BufferUsageFlags2CreateInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    BufferUsageFlags2CreateInfoKHR( VkBufferUsageFlags2CreateInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : BufferUsageFlags2CreateInfoKHR( *reinterpret_cast<BufferUsageFlags2CreateInfoKHR const *>( &rhs ) )
+    {
+    }
+
+    BufferUsageFlags2CreateInfoKHR & operator=( BufferUsageFlags2CreateInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    BufferUsageFlags2CreateInfoKHR & operator=( VkBufferUsageFlags2CreateInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::BufferUsageFlags2CreateInfoKHR const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 BufferUsageFlags2CreateInfoKHR & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 BufferUsageFlags2CreateInfoKHR & setUsage( VULKAN_HPP_NAMESPACE::BufferUsageFlags2KHR usage_ ) VULKAN_HPP_NOEXCEPT
+    {
+      usage = usage_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkBufferUsageFlags2CreateInfoKHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkBufferUsageFlags2CreateInfoKHR *>( this );
+    }
+
+    operator VkBufferUsageFlags2CreateInfoKHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkBufferUsageFlags2CreateInfoKHR *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, VULKAN_HPP_NAMESPACE::BufferUsageFlags2KHR const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, usage );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( BufferUsageFlags2CreateInfoKHR const & ) const = default;
+#else
+    bool operator==( BufferUsageFlags2CreateInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( usage == rhs.usage );
+#  endif
+    }
+
+    bool operator!=( BufferUsageFlags2CreateInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType        sType = StructureType::eBufferUsageFlags2CreateInfoKHR;
+    const void *                               pNext = {};
+    VULKAN_HPP_NAMESPACE::BufferUsageFlags2KHR usage = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eBufferUsageFlags2CreateInfoKHR>
+  {
+    using Type = BufferUsageFlags2CreateInfoKHR;
+  };
+
   struct BufferViewCreateInfo
   {
     using NativeType = VkBufferViewCreateInfo;
@@ -28425,6 +28522,213 @@ namespace VULKAN_HPP_NAMESPACE
   };
   using DeviceImageMemoryRequirementsKHR = DeviceImageMemoryRequirements;
 
+  struct ImageSubresource2KHR
+  {
+    using NativeType = VkImageSubresource2KHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eImageSubresource2KHR;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR ImageSubresource2KHR( VULKAN_HPP_NAMESPACE::ImageSubresource imageSubresource_ = {}, void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , imageSubresource( imageSubresource_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR ImageSubresource2KHR( ImageSubresource2KHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    ImageSubresource2KHR( VkImageSubresource2KHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : ImageSubresource2KHR( *reinterpret_cast<ImageSubresource2KHR const *>( &rhs ) )
+    {
+    }
+
+    ImageSubresource2KHR & operator=( ImageSubresource2KHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    ImageSubresource2KHR & operator=( VkImageSubresource2KHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::ImageSubresource2KHR const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 ImageSubresource2KHR & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ImageSubresource2KHR & setImageSubresource( VULKAN_HPP_NAMESPACE::ImageSubresource const & imageSubresource_ ) VULKAN_HPP_NOEXCEPT
+    {
+      imageSubresource = imageSubresource_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkImageSubresource2KHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkImageSubresource2KHR *>( this );
+    }
+
+    operator VkImageSubresource2KHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkImageSubresource2KHR *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::ImageSubresource const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, imageSubresource );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( ImageSubresource2KHR const & ) const = default;
+#else
+    bool operator==( ImageSubresource2KHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( imageSubresource == rhs.imageSubresource );
+#  endif
+    }
+
+    bool operator!=( ImageSubresource2KHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType    sType            = StructureType::eImageSubresource2KHR;
+    void *                                 pNext            = {};
+    VULKAN_HPP_NAMESPACE::ImageSubresource imageSubresource = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eImageSubresource2KHR>
+  {
+    using Type = ImageSubresource2KHR;
+  };
+  using ImageSubresource2EXT = ImageSubresource2KHR;
+
+  struct DeviceImageSubresourceInfoKHR
+  {
+    using NativeType = VkDeviceImageSubresourceInfoKHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eDeviceImageSubresourceInfoKHR;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR DeviceImageSubresourceInfoKHR( const VULKAN_HPP_NAMESPACE::ImageCreateInfo *      pCreateInfo_  = {},
+                                                        const VULKAN_HPP_NAMESPACE::ImageSubresource2KHR * pSubresource_ = {},
+                                                        const void *                                       pNext_        = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , pCreateInfo( pCreateInfo_ )
+      , pSubresource( pSubresource_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR DeviceImageSubresourceInfoKHR( DeviceImageSubresourceInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    DeviceImageSubresourceInfoKHR( VkDeviceImageSubresourceInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : DeviceImageSubresourceInfoKHR( *reinterpret_cast<DeviceImageSubresourceInfoKHR const *>( &rhs ) )
+    {
+    }
+
+    DeviceImageSubresourceInfoKHR & operator=( DeviceImageSubresourceInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    DeviceImageSubresourceInfoKHR & operator=( VkDeviceImageSubresourceInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::DeviceImageSubresourceInfoKHR const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 DeviceImageSubresourceInfoKHR & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 DeviceImageSubresourceInfoKHR & setPCreateInfo( const VULKAN_HPP_NAMESPACE::ImageCreateInfo * pCreateInfo_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pCreateInfo = pCreateInfo_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 DeviceImageSubresourceInfoKHR &
+                            setPSubresource( const VULKAN_HPP_NAMESPACE::ImageSubresource2KHR * pSubresource_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pSubresource = pSubresource_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkDeviceImageSubresourceInfoKHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkDeviceImageSubresourceInfoKHR *>( this );
+    }
+
+    operator VkDeviceImageSubresourceInfoKHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkDeviceImageSubresourceInfoKHR *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               const VULKAN_HPP_NAMESPACE::ImageCreateInfo * const &,
+               const VULKAN_HPP_NAMESPACE::ImageSubresource2KHR * const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, pCreateInfo, pSubresource );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( DeviceImageSubresourceInfoKHR const & ) const = default;
+#else
+    bool operator==( DeviceImageSubresourceInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( pCreateInfo == rhs.pCreateInfo ) && ( pSubresource == rhs.pSubresource );
+#  endif
+    }
+
+    bool operator!=( DeviceImageSubresourceInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType                sType        = StructureType::eDeviceImageSubresourceInfoKHR;
+    const void *                                       pNext        = {};
+    const VULKAN_HPP_NAMESPACE::ImageCreateInfo *      pCreateInfo  = {};
+    const VULKAN_HPP_NAMESPACE::ImageSubresource2KHR * pSubresource = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eDeviceImageSubresourceInfoKHR>
+  {
+    using Type = DeviceImageSubresourceInfoKHR;
+  };
+
   struct DeviceMemoryOpaqueCaptureAddressInfo
   {
     using NativeType = VkDeviceMemoryOpaqueCaptureAddressInfo;
@@ -28732,6 +29036,51 @@ namespace VULKAN_HPP_NAMESPACE
   {
     using Type = DeviceMemoryReportCallbackDataEXT;
   };
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  union DeviceOrHostAddressConstAMDX
+  {
+    using NativeType = VkDeviceOrHostAddressConstAMDX;
+#  if !defined( VULKAN_HPP_NO_UNION_CONSTRUCTORS )
+
+    VULKAN_HPP_CONSTEXPR_14 DeviceOrHostAddressConstAMDX( VULKAN_HPP_NAMESPACE::DeviceAddress deviceAddress_ = {} ) : deviceAddress( deviceAddress_ ) {}
+
+    VULKAN_HPP_CONSTEXPR_14 DeviceOrHostAddressConstAMDX( const void * hostAddress_ ) : hostAddress( hostAddress_ ) {}
+#  endif /*VULKAN_HPP_NO_UNION_CONSTRUCTORS*/
+
+#  if !defined( VULKAN_HPP_NO_UNION_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 DeviceOrHostAddressConstAMDX & setDeviceAddress( VULKAN_HPP_NAMESPACE::DeviceAddress deviceAddress_ ) VULKAN_HPP_NOEXCEPT
+    {
+      deviceAddress = deviceAddress_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 DeviceOrHostAddressConstAMDX & setHostAddress( const void * hostAddress_ ) VULKAN_HPP_NOEXCEPT
+    {
+      hostAddress = hostAddress_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_UNION_SETTERS*/
+
+    operator VkDeviceOrHostAddressConstAMDX const &() const
+    {
+      return *reinterpret_cast<const VkDeviceOrHostAddressConstAMDX *>( this );
+    }
+
+    operator VkDeviceOrHostAddressConstAMDX &()
+    {
+      return *reinterpret_cast<VkDeviceOrHostAddressConstAMDX *>( this );
+    }
+
+#  ifdef VULKAN_HPP_HAS_UNRESTRICTED_UNIONS
+    VULKAN_HPP_NAMESPACE::DeviceAddress deviceAddress;
+    const void *                        hostAddress;
+#  else
+    VkDeviceAddress deviceAddress;
+    const void *    hostAddress;
+#  endif /*VULKAN_HPP_HAS_UNRESTRICTED_UNIONS*/
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
   struct DevicePrivateDataCreateInfo
   {
@@ -29409,6 +29758,175 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = DirectFBSurfaceCreateInfoEXT;
   };
 #endif /*VK_USE_PLATFORM_DIRECTFB_EXT*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct DispatchGraphCountInfoAMDX
+  {
+    using NativeType = VkDispatchGraphCountInfoAMDX;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR_14 DispatchGraphCountInfoAMDX( uint32_t                                           count_  = {},
+                                                        VULKAN_HPP_NAMESPACE::DeviceOrHostAddressConstAMDX infos_  = {},
+                                                        uint64_t                                           stride_ = {} ) VULKAN_HPP_NOEXCEPT
+      : count( count_ )
+      , infos( infos_ )
+      , stride( stride_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 DispatchGraphCountInfoAMDX( DispatchGraphCountInfoAMDX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    DispatchGraphCountInfoAMDX( VkDispatchGraphCountInfoAMDX const & rhs ) VULKAN_HPP_NOEXCEPT
+      : DispatchGraphCountInfoAMDX( *reinterpret_cast<DispatchGraphCountInfoAMDX const *>( &rhs ) )
+    {
+    }
+
+    DispatchGraphCountInfoAMDX & operator=( DispatchGraphCountInfoAMDX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    DispatchGraphCountInfoAMDX & operator=( VkDispatchGraphCountInfoAMDX const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::DispatchGraphCountInfoAMDX const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 DispatchGraphCountInfoAMDX & setCount( uint32_t count_ ) VULKAN_HPP_NOEXCEPT
+    {
+      count = count_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 DispatchGraphCountInfoAMDX & setInfos( VULKAN_HPP_NAMESPACE::DeviceOrHostAddressConstAMDX const & infos_ ) VULKAN_HPP_NOEXCEPT
+    {
+      infos = infos_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 DispatchGraphCountInfoAMDX & setStride( uint64_t stride_ ) VULKAN_HPP_NOEXCEPT
+    {
+      stride = stride_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkDispatchGraphCountInfoAMDX const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkDispatchGraphCountInfoAMDX *>( this );
+    }
+
+    operator VkDispatchGraphCountInfoAMDX &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkDispatchGraphCountInfoAMDX *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<uint32_t const &, VULKAN_HPP_NAMESPACE::DeviceOrHostAddressConstAMDX const &, uint64_t const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( count, infos, stride );
+    }
+#  endif
+
+  public:
+    uint32_t                                           count  = {};
+    VULKAN_HPP_NAMESPACE::DeviceOrHostAddressConstAMDX infos  = {};
+    uint64_t                                           stride = {};
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct DispatchGraphInfoAMDX
+  {
+    using NativeType = VkDispatchGraphInfoAMDX;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR_14 DispatchGraphInfoAMDX( uint32_t                                           nodeIndex_     = {},
+                                                   uint32_t                                           payloadCount_  = {},
+                                                   VULKAN_HPP_NAMESPACE::DeviceOrHostAddressConstAMDX payloads_      = {},
+                                                   uint64_t                                           payloadStride_ = {} ) VULKAN_HPP_NOEXCEPT
+      : nodeIndex( nodeIndex_ )
+      , payloadCount( payloadCount_ )
+      , payloads( payloads_ )
+      , payloadStride( payloadStride_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 DispatchGraphInfoAMDX( DispatchGraphInfoAMDX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    DispatchGraphInfoAMDX( VkDispatchGraphInfoAMDX const & rhs ) VULKAN_HPP_NOEXCEPT
+      : DispatchGraphInfoAMDX( *reinterpret_cast<DispatchGraphInfoAMDX const *>( &rhs ) )
+    {
+    }
+
+    DispatchGraphInfoAMDX & operator=( DispatchGraphInfoAMDX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    DispatchGraphInfoAMDX & operator=( VkDispatchGraphInfoAMDX const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::DispatchGraphInfoAMDX const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 DispatchGraphInfoAMDX & setNodeIndex( uint32_t nodeIndex_ ) VULKAN_HPP_NOEXCEPT
+    {
+      nodeIndex = nodeIndex_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 DispatchGraphInfoAMDX & setPayloadCount( uint32_t payloadCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      payloadCount = payloadCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 DispatchGraphInfoAMDX & setPayloads( VULKAN_HPP_NAMESPACE::DeviceOrHostAddressConstAMDX const & payloads_ ) VULKAN_HPP_NOEXCEPT
+    {
+      payloads = payloads_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 DispatchGraphInfoAMDX & setPayloadStride( uint64_t payloadStride_ ) VULKAN_HPP_NOEXCEPT
+    {
+      payloadStride = payloadStride_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkDispatchGraphInfoAMDX const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkDispatchGraphInfoAMDX *>( this );
+    }
+
+    operator VkDispatchGraphInfoAMDX &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkDispatchGraphInfoAMDX *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<uint32_t const &, uint32_t const &, VULKAN_HPP_NAMESPACE::DeviceOrHostAddressConstAMDX const &, uint64_t const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( nodeIndex, payloadCount, payloads, payloadStride );
+    }
+#  endif
+
+  public:
+    uint32_t                                           nodeIndex     = {};
+    uint32_t                                           payloadCount  = {};
+    VULKAN_HPP_NAMESPACE::DeviceOrHostAddressConstAMDX payloads      = {};
+    uint64_t                                           payloadStride = {};
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
   struct DispatchIndirectCommand
   {
@@ -31908,6 +32426,425 @@ namespace VULKAN_HPP_NAMESPACE
   {
     using Type = EventCreateInfo;
   };
+
+  struct PipelineLibraryCreateInfoKHR
+  {
+    using NativeType = VkPipelineLibraryCreateInfoKHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePipelineLibraryCreateInfoKHR;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PipelineLibraryCreateInfoKHR( uint32_t                               libraryCount_ = {},
+                                                       const VULKAN_HPP_NAMESPACE::Pipeline * pLibraries_   = {},
+                                                       const void *                           pNext_        = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , libraryCount( libraryCount_ )
+      , pLibraries( pLibraries_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PipelineLibraryCreateInfoKHR( PipelineLibraryCreateInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PipelineLibraryCreateInfoKHR( VkPipelineLibraryCreateInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PipelineLibraryCreateInfoKHR( *reinterpret_cast<PipelineLibraryCreateInfoKHR const *>( &rhs ) )
+    {
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    PipelineLibraryCreateInfoKHR( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::Pipeline> const & libraries_,
+                                  const void *                                                                                pNext_ = nullptr )
+      : pNext( pNext_ ), libraryCount( static_cast<uint32_t>( libraries_.size() ) ), pLibraries( libraries_.data() )
+    {
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    PipelineLibraryCreateInfoKHR & operator=( PipelineLibraryCreateInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PipelineLibraryCreateInfoKHR & operator=( VkPipelineLibraryCreateInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PipelineLibraryCreateInfoKHR const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PipelineLibraryCreateInfoKHR & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PipelineLibraryCreateInfoKHR & setLibraryCount( uint32_t libraryCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      libraryCount = libraryCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PipelineLibraryCreateInfoKHR & setPLibraries( const VULKAN_HPP_NAMESPACE::Pipeline * pLibraries_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pLibraries = pLibraries_;
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    PipelineLibraryCreateInfoKHR &
+      setLibraries( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::Pipeline> const & libraries_ ) VULKAN_HPP_NOEXCEPT
+    {
+      libraryCount = static_cast<uint32_t>( libraries_.size() );
+      pLibraries   = libraries_.data();
+      return *this;
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+#endif   /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPipelineLibraryCreateInfoKHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPipelineLibraryCreateInfoKHR *>( this );
+    }
+
+    operator VkPipelineLibraryCreateInfoKHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPipelineLibraryCreateInfoKHR *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, uint32_t const &, const VULKAN_HPP_NAMESPACE::Pipeline * const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, libraryCount, pLibraries );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PipelineLibraryCreateInfoKHR const & ) const = default;
+#else
+    bool operator==( PipelineLibraryCreateInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( libraryCount == rhs.libraryCount ) && ( pLibraries == rhs.pLibraries );
+#  endif
+    }
+
+    bool operator!=( PipelineLibraryCreateInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType    sType        = StructureType::ePipelineLibraryCreateInfoKHR;
+    const void *                           pNext        = {};
+    uint32_t                               libraryCount = {};
+    const VULKAN_HPP_NAMESPACE::Pipeline * pLibraries   = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePipelineLibraryCreateInfoKHR>
+  {
+    using Type = PipelineLibraryCreateInfoKHR;
+  };
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct ExecutionGraphPipelineCreateInfoAMDX
+  {
+    using NativeType = VkExecutionGraphPipelineCreateInfoAMDX;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eExecutionGraphPipelineCreateInfoAMDX;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR ExecutionGraphPipelineCreateInfoAMDX( VULKAN_HPP_NAMESPACE::PipelineCreateFlags                   flags_              = {},
+                                                               uint32_t                                                    stageCount_         = {},
+                                                               const VULKAN_HPP_NAMESPACE::PipelineShaderStageCreateInfo * pStages_            = {},
+                                                               const VULKAN_HPP_NAMESPACE::PipelineLibraryCreateInfoKHR *  pLibraryInfo_       = {},
+                                                               VULKAN_HPP_NAMESPACE::PipelineLayout                        layout_             = {},
+                                                               VULKAN_HPP_NAMESPACE::Pipeline                              basePipelineHandle_ = {},
+                                                               int32_t                                                     basePipelineIndex_  = {},
+                                                               const void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , flags( flags_ )
+      , stageCount( stageCount_ )
+      , pStages( pStages_ )
+      , pLibraryInfo( pLibraryInfo_ )
+      , layout( layout_ )
+      , basePipelineHandle( basePipelineHandle_ )
+      , basePipelineIndex( basePipelineIndex_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR ExecutionGraphPipelineCreateInfoAMDX( ExecutionGraphPipelineCreateInfoAMDX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    ExecutionGraphPipelineCreateInfoAMDX( VkExecutionGraphPipelineCreateInfoAMDX const & rhs ) VULKAN_HPP_NOEXCEPT
+      : ExecutionGraphPipelineCreateInfoAMDX( *reinterpret_cast<ExecutionGraphPipelineCreateInfoAMDX const *>( &rhs ) )
+    {
+    }
+
+#    if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    ExecutionGraphPipelineCreateInfoAMDX(
+      VULKAN_HPP_NAMESPACE::PipelineCreateFlags                                                                        flags_,
+      VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::PipelineShaderStageCreateInfo> const & stages_,
+      const VULKAN_HPP_NAMESPACE::PipelineLibraryCreateInfoKHR *                                                       pLibraryInfo_       = {},
+      VULKAN_HPP_NAMESPACE::PipelineLayout                                                                             layout_             = {},
+      VULKAN_HPP_NAMESPACE::Pipeline                                                                                   basePipelineHandle_ = {},
+      int32_t                                                                                                          basePipelineIndex_  = {},
+      const void *                                                                                                     pNext_              = nullptr )
+      : pNext( pNext_ )
+      , flags( flags_ )
+      , stageCount( static_cast<uint32_t>( stages_.size() ) )
+      , pStages( stages_.data() )
+      , pLibraryInfo( pLibraryInfo_ )
+      , layout( layout_ )
+      , basePipelineHandle( basePipelineHandle_ )
+      , basePipelineIndex( basePipelineIndex_ )
+    {
+    }
+#    endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    ExecutionGraphPipelineCreateInfoAMDX & operator=( ExecutionGraphPipelineCreateInfoAMDX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    ExecutionGraphPipelineCreateInfoAMDX & operator=( VkExecutionGraphPipelineCreateInfoAMDX const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::ExecutionGraphPipelineCreateInfoAMDX const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 ExecutionGraphPipelineCreateInfoAMDX & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ExecutionGraphPipelineCreateInfoAMDX & setFlags( VULKAN_HPP_NAMESPACE::PipelineCreateFlags flags_ ) VULKAN_HPP_NOEXCEPT
+    {
+      flags = flags_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ExecutionGraphPipelineCreateInfoAMDX & setStageCount( uint32_t stageCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      stageCount = stageCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ExecutionGraphPipelineCreateInfoAMDX &
+                            setPStages( const VULKAN_HPP_NAMESPACE::PipelineShaderStageCreateInfo * pStages_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pStages = pStages_;
+      return *this;
+    }
+
+#    if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    ExecutionGraphPipelineCreateInfoAMDX &
+      setStages( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::PipelineShaderStageCreateInfo> const & stages_ ) VULKAN_HPP_NOEXCEPT
+    {
+      stageCount = static_cast<uint32_t>( stages_.size() );
+      pStages    = stages_.data();
+      return *this;
+    }
+#    endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    VULKAN_HPP_CONSTEXPR_14 ExecutionGraphPipelineCreateInfoAMDX &
+                            setPLibraryInfo( const VULKAN_HPP_NAMESPACE::PipelineLibraryCreateInfoKHR * pLibraryInfo_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pLibraryInfo = pLibraryInfo_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ExecutionGraphPipelineCreateInfoAMDX & setLayout( VULKAN_HPP_NAMESPACE::PipelineLayout layout_ ) VULKAN_HPP_NOEXCEPT
+    {
+      layout = layout_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ExecutionGraphPipelineCreateInfoAMDX &
+                            setBasePipelineHandle( VULKAN_HPP_NAMESPACE::Pipeline basePipelineHandle_ ) VULKAN_HPP_NOEXCEPT
+    {
+      basePipelineHandle = basePipelineHandle_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ExecutionGraphPipelineCreateInfoAMDX & setBasePipelineIndex( int32_t basePipelineIndex_ ) VULKAN_HPP_NOEXCEPT
+    {
+      basePipelineIndex = basePipelineIndex_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkExecutionGraphPipelineCreateInfoAMDX const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkExecutionGraphPipelineCreateInfoAMDX *>( this );
+    }
+
+    operator VkExecutionGraphPipelineCreateInfoAMDX &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkExecutionGraphPipelineCreateInfoAMDX *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               VULKAN_HPP_NAMESPACE::PipelineCreateFlags const &,
+               uint32_t const &,
+               const VULKAN_HPP_NAMESPACE::PipelineShaderStageCreateInfo * const &,
+               const VULKAN_HPP_NAMESPACE::PipelineLibraryCreateInfoKHR * const &,
+               VULKAN_HPP_NAMESPACE::PipelineLayout const &,
+               VULKAN_HPP_NAMESPACE::Pipeline const &,
+               int32_t const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, flags, stageCount, pStages, pLibraryInfo, layout, basePipelineHandle, basePipelineIndex );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( ExecutionGraphPipelineCreateInfoAMDX const & ) const = default;
+#  else
+    bool operator==( ExecutionGraphPipelineCreateInfoAMDX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( flags == rhs.flags ) && ( stageCount == rhs.stageCount ) && ( pStages == rhs.pStages ) &&
+             ( pLibraryInfo == rhs.pLibraryInfo ) && ( layout == rhs.layout ) && ( basePipelineHandle == rhs.basePipelineHandle ) &&
+             ( basePipelineIndex == rhs.basePipelineIndex );
+#    endif
+    }
+
+    bool operator!=( ExecutionGraphPipelineCreateInfoAMDX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType                         sType              = StructureType::eExecutionGraphPipelineCreateInfoAMDX;
+    const void *                                                pNext              = {};
+    VULKAN_HPP_NAMESPACE::PipelineCreateFlags                   flags              = {};
+    uint32_t                                                    stageCount         = {};
+    const VULKAN_HPP_NAMESPACE::PipelineShaderStageCreateInfo * pStages            = {};
+    const VULKAN_HPP_NAMESPACE::PipelineLibraryCreateInfoKHR *  pLibraryInfo       = {};
+    VULKAN_HPP_NAMESPACE::PipelineLayout                        layout             = {};
+    VULKAN_HPP_NAMESPACE::Pipeline                              basePipelineHandle = {};
+    int32_t                                                     basePipelineIndex  = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eExecutionGraphPipelineCreateInfoAMDX>
+  {
+    using Type = ExecutionGraphPipelineCreateInfoAMDX;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct ExecutionGraphPipelineScratchSizeAMDX
+  {
+    using NativeType = VkExecutionGraphPipelineScratchSizeAMDX;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eExecutionGraphPipelineScratchSizeAMDX;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR ExecutionGraphPipelineScratchSizeAMDX( VULKAN_HPP_NAMESPACE::DeviceSize size_ = {}, void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , size( size_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR ExecutionGraphPipelineScratchSizeAMDX( ExecutionGraphPipelineScratchSizeAMDX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    ExecutionGraphPipelineScratchSizeAMDX( VkExecutionGraphPipelineScratchSizeAMDX const & rhs ) VULKAN_HPP_NOEXCEPT
+      : ExecutionGraphPipelineScratchSizeAMDX( *reinterpret_cast<ExecutionGraphPipelineScratchSizeAMDX const *>( &rhs ) )
+    {
+    }
+
+    ExecutionGraphPipelineScratchSizeAMDX & operator=( ExecutionGraphPipelineScratchSizeAMDX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    ExecutionGraphPipelineScratchSizeAMDX & operator=( VkExecutionGraphPipelineScratchSizeAMDX const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::ExecutionGraphPipelineScratchSizeAMDX const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 ExecutionGraphPipelineScratchSizeAMDX & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 ExecutionGraphPipelineScratchSizeAMDX & setSize( VULKAN_HPP_NAMESPACE::DeviceSize size_ ) VULKAN_HPP_NOEXCEPT
+    {
+      size = size_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkExecutionGraphPipelineScratchSizeAMDX const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkExecutionGraphPipelineScratchSizeAMDX *>( this );
+    }
+
+    operator VkExecutionGraphPipelineScratchSizeAMDX &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkExecutionGraphPipelineScratchSizeAMDX *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::DeviceSize const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, size );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( ExecutionGraphPipelineScratchSizeAMDX const & ) const = default;
+#  else
+    bool operator==( ExecutionGraphPipelineScratchSizeAMDX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( size == rhs.size );
+#    endif
+    }
+
+    bool operator!=( ExecutionGraphPipelineScratchSizeAMDX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType = StructureType::eExecutionGraphPipelineScratchSizeAMDX;
+    void *                              pNext = {};
+    VULKAN_HPP_NAMESPACE::DeviceSize    size  = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eExecutionGraphPipelineScratchSizeAMDX>
+  {
+    using Type = ExecutionGraphPipelineScratchSizeAMDX;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
   struct ExportFenceCreateInfo
   {
@@ -39119,7 +40056,7 @@ namespace VULKAN_HPP_NAMESPACE
 
 #if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
     VULKAN_HPP_CONSTEXPR GraphicsPipelineLibraryCreateInfoEXT( VULKAN_HPP_NAMESPACE::GraphicsPipelineLibraryFlagsEXT flags_ = {},
-                                                               void *                                                pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+                                                               const void *                                          pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
       , flags( flags_ )
     {
@@ -39142,7 +40079,7 @@ namespace VULKAN_HPP_NAMESPACE
     }
 
 #if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
-    VULKAN_HPP_CONSTEXPR_14 GraphicsPipelineLibraryCreateInfoEXT & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR_14 GraphicsPipelineLibraryCreateInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
     {
       pNext = pNext_;
       return *this;
@@ -39169,7 +40106,7 @@ namespace VULKAN_HPP_NAMESPACE
 #  if 14 <= VULKAN_HPP_CPP_VERSION
     auto
 #  else
-    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::GraphicsPipelineLibraryFlagsEXT const &>
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, VULKAN_HPP_NAMESPACE::GraphicsPipelineLibraryFlagsEXT const &>
 #  endif
       reflect() const VULKAN_HPP_NOEXCEPT
     {
@@ -39197,7 +40134,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   public:
     VULKAN_HPP_NAMESPACE::StructureType                   sType = StructureType::eGraphicsPipelineLibraryCreateInfoEXT;
-    void *                                                pNext = {};
+    const void *                                          pNext = {};
     VULKAN_HPP_NAMESPACE::GraphicsPipelineLibraryFlagsEXT flags = {};
   };
 
@@ -42718,102 +43655,6 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = ImageStencilUsageCreateInfo;
   };
   using ImageStencilUsageCreateInfoEXT = ImageStencilUsageCreateInfo;
-
-  struct ImageSubresource2EXT
-  {
-    using NativeType = VkImageSubresource2EXT;
-
-    static const bool                                  allowDuplicate = false;
-    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eImageSubresource2EXT;
-
-#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR ImageSubresource2EXT( VULKAN_HPP_NAMESPACE::ImageSubresource imageSubresource_ = {}, void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
-      : pNext( pNext_ )
-      , imageSubresource( imageSubresource_ )
-    {
-    }
-
-    VULKAN_HPP_CONSTEXPR ImageSubresource2EXT( ImageSubresource2EXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
-
-    ImageSubresource2EXT( VkImageSubresource2EXT const & rhs ) VULKAN_HPP_NOEXCEPT
-      : ImageSubresource2EXT( *reinterpret_cast<ImageSubresource2EXT const *>( &rhs ) )
-    {
-    }
-
-    ImageSubresource2EXT & operator=( ImageSubresource2EXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
-#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
-
-    ImageSubresource2EXT & operator=( VkImageSubresource2EXT const & rhs ) VULKAN_HPP_NOEXCEPT
-    {
-      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::ImageSubresource2EXT const *>( &rhs );
-      return *this;
-    }
-
-#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
-    VULKAN_HPP_CONSTEXPR_14 ImageSubresource2EXT & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
-    {
-      pNext = pNext_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 ImageSubresource2EXT & setImageSubresource( VULKAN_HPP_NAMESPACE::ImageSubresource const & imageSubresource_ ) VULKAN_HPP_NOEXCEPT
-    {
-      imageSubresource = imageSubresource_;
-      return *this;
-    }
-#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
-
-    operator VkImageSubresource2EXT const &() const VULKAN_HPP_NOEXCEPT
-    {
-      return *reinterpret_cast<const VkImageSubresource2EXT *>( this );
-    }
-
-    operator VkImageSubresource2EXT &() VULKAN_HPP_NOEXCEPT
-    {
-      return *reinterpret_cast<VkImageSubresource2EXT *>( this );
-    }
-
-#if defined( VULKAN_HPP_USE_REFLECT )
-#  if 14 <= VULKAN_HPP_CPP_VERSION
-    auto
-#  else
-    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::ImageSubresource const &>
-#  endif
-      reflect() const VULKAN_HPP_NOEXCEPT
-    {
-      return std::tie( sType, pNext, imageSubresource );
-    }
-#endif
-
-#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
-    auto operator<=>( ImageSubresource2EXT const & ) const = default;
-#else
-    bool operator==( ImageSubresource2EXT const & rhs ) const VULKAN_HPP_NOEXCEPT
-    {
-#  if defined( VULKAN_HPP_USE_REFLECT )
-      return this->reflect() == rhs.reflect();
-#  else
-      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( imageSubresource == rhs.imageSubresource );
-#  endif
-    }
-
-    bool operator!=( ImageSubresource2EXT const & rhs ) const VULKAN_HPP_NOEXCEPT
-    {
-      return !operator==( rhs );
-    }
-#endif
-
-  public:
-    VULKAN_HPP_NAMESPACE::StructureType    sType            = StructureType::eImageSubresource2EXT;
-    void *                                 pNext            = {};
-    VULKAN_HPP_NAMESPACE::ImageSubresource imageSubresource = {};
-  };
-
-  template <>
-  struct CppType<StructureType, StructureType::eImageSubresource2EXT>
-  {
-    using Type = ImageSubresource2EXT;
-  };
 
   struct ImageSwapchainCreateInfoKHR
   {
@@ -66640,6 +67481,219 @@ namespace VULKAN_HPP_NAMESPACE
   };
   using PhysicalDeviceMaintenance4PropertiesKHR = PhysicalDeviceMaintenance4Properties;
 
+  struct PhysicalDeviceMaintenance5FeaturesKHR
+  {
+    using NativeType = VkPhysicalDeviceMaintenance5FeaturesKHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceMaintenance5FeaturesKHR;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceMaintenance5FeaturesKHR( VULKAN_HPP_NAMESPACE::Bool32 maintenance5_ = {}, void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , maintenance5( maintenance5_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceMaintenance5FeaturesKHR( PhysicalDeviceMaintenance5FeaturesKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceMaintenance5FeaturesKHR( VkPhysicalDeviceMaintenance5FeaturesKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceMaintenance5FeaturesKHR( *reinterpret_cast<PhysicalDeviceMaintenance5FeaturesKHR const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceMaintenance5FeaturesKHR & operator=( PhysicalDeviceMaintenance5FeaturesKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceMaintenance5FeaturesKHR & operator=( VkPhysicalDeviceMaintenance5FeaturesKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceMaintenance5FeaturesKHR const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceMaintenance5FeaturesKHR & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceMaintenance5FeaturesKHR & setMaintenance5( VULKAN_HPP_NAMESPACE::Bool32 maintenance5_ ) VULKAN_HPP_NOEXCEPT
+    {
+      maintenance5 = maintenance5_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceMaintenance5FeaturesKHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceMaintenance5FeaturesKHR *>( this );
+    }
+
+    operator VkPhysicalDeviceMaintenance5FeaturesKHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceMaintenance5FeaturesKHR *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, maintenance5 );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceMaintenance5FeaturesKHR const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceMaintenance5FeaturesKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( maintenance5 == rhs.maintenance5 );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceMaintenance5FeaturesKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType        = StructureType::ePhysicalDeviceMaintenance5FeaturesKHR;
+    void *                              pNext        = {};
+    VULKAN_HPP_NAMESPACE::Bool32        maintenance5 = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceMaintenance5FeaturesKHR>
+  {
+    using Type = PhysicalDeviceMaintenance5FeaturesKHR;
+  };
+
+  struct PhysicalDeviceMaintenance5PropertiesKHR
+  {
+    using NativeType = VkPhysicalDeviceMaintenance5PropertiesKHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceMaintenance5PropertiesKHR;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceMaintenance5PropertiesKHR( VULKAN_HPP_NAMESPACE::Bool32 earlyFragmentMultisampleCoverageAfterSampleCounting_ = {},
+                                                                  VULKAN_HPP_NAMESPACE::Bool32 earlyFragmentSampleMaskTestBeforeSampleCounting_     = {},
+                                                                  VULKAN_HPP_NAMESPACE::Bool32 depthStencilSwizzleOneSupport_                       = {},
+                                                                  VULKAN_HPP_NAMESPACE::Bool32 polygonModePointSize_                                = {},
+                                                                  VULKAN_HPP_NAMESPACE::Bool32 nonStrictSinglePixelWideLinesUseParallelogram_       = {},
+                                                                  VULKAN_HPP_NAMESPACE::Bool32 nonStrictWideLinesUseParallelogram_                  = {},
+                                                                  void *                       pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , earlyFragmentMultisampleCoverageAfterSampleCounting( earlyFragmentMultisampleCoverageAfterSampleCounting_ )
+      , earlyFragmentSampleMaskTestBeforeSampleCounting( earlyFragmentSampleMaskTestBeforeSampleCounting_ )
+      , depthStencilSwizzleOneSupport( depthStencilSwizzleOneSupport_ )
+      , polygonModePointSize( polygonModePointSize_ )
+      , nonStrictSinglePixelWideLinesUseParallelogram( nonStrictSinglePixelWideLinesUseParallelogram_ )
+      , nonStrictWideLinesUseParallelogram( nonStrictWideLinesUseParallelogram_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceMaintenance5PropertiesKHR( PhysicalDeviceMaintenance5PropertiesKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceMaintenance5PropertiesKHR( VkPhysicalDeviceMaintenance5PropertiesKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceMaintenance5PropertiesKHR( *reinterpret_cast<PhysicalDeviceMaintenance5PropertiesKHR const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceMaintenance5PropertiesKHR & operator=( PhysicalDeviceMaintenance5PropertiesKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceMaintenance5PropertiesKHR & operator=( VkPhysicalDeviceMaintenance5PropertiesKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceMaintenance5PropertiesKHR const *>( &rhs );
+      return *this;
+    }
+
+    operator VkPhysicalDeviceMaintenance5PropertiesKHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceMaintenance5PropertiesKHR *>( this );
+    }
+
+    operator VkPhysicalDeviceMaintenance5PropertiesKHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceMaintenance5PropertiesKHR *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               void * const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType,
+                       pNext,
+                       earlyFragmentMultisampleCoverageAfterSampleCounting,
+                       earlyFragmentSampleMaskTestBeforeSampleCounting,
+                       depthStencilSwizzleOneSupport,
+                       polygonModePointSize,
+                       nonStrictSinglePixelWideLinesUseParallelogram,
+                       nonStrictWideLinesUseParallelogram );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceMaintenance5PropertiesKHR const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceMaintenance5PropertiesKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) &&
+             ( earlyFragmentMultisampleCoverageAfterSampleCounting == rhs.earlyFragmentMultisampleCoverageAfterSampleCounting ) &&
+             ( earlyFragmentSampleMaskTestBeforeSampleCounting == rhs.earlyFragmentSampleMaskTestBeforeSampleCounting ) &&
+             ( depthStencilSwizzleOneSupport == rhs.depthStencilSwizzleOneSupport ) && ( polygonModePointSize == rhs.polygonModePointSize ) &&
+             ( nonStrictSinglePixelWideLinesUseParallelogram == rhs.nonStrictSinglePixelWideLinesUseParallelogram ) &&
+             ( nonStrictWideLinesUseParallelogram == rhs.nonStrictWideLinesUseParallelogram );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceMaintenance5PropertiesKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                                               = StructureType::ePhysicalDeviceMaintenance5PropertiesKHR;
+    void *                              pNext                                               = {};
+    VULKAN_HPP_NAMESPACE::Bool32        earlyFragmentMultisampleCoverageAfterSampleCounting = {};
+    VULKAN_HPP_NAMESPACE::Bool32        earlyFragmentSampleMaskTestBeforeSampleCounting     = {};
+    VULKAN_HPP_NAMESPACE::Bool32        depthStencilSwizzleOneSupport                       = {};
+    VULKAN_HPP_NAMESPACE::Bool32        polygonModePointSize                                = {};
+    VULKAN_HPP_NAMESPACE::Bool32        nonStrictSinglePixelWideLinesUseParallelogram       = {};
+    VULKAN_HPP_NAMESPACE::Bool32        nonStrictWideLinesUseParallelogram                  = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceMaintenance5PropertiesKHR>
+  {
+    using Type = PhysicalDeviceMaintenance5PropertiesKHR;
+  };
+
   struct PhysicalDeviceMemoryBudgetPropertiesEXT
   {
     using NativeType = VkPhysicalDeviceMemoryBudgetPropertiesEXT;
@@ -75719,6 +76773,260 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD;
   };
 
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct PhysicalDeviceShaderEnqueueFeaturesAMDX
+  {
+    using NativeType = VkPhysicalDeviceShaderEnqueueFeaturesAMDX;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceShaderEnqueueFeaturesAMDX;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceShaderEnqueueFeaturesAMDX( VULKAN_HPP_NAMESPACE::Bool32 shaderEnqueue_ = {},
+                                                                  void *                       pNext_         = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , shaderEnqueue( shaderEnqueue_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceShaderEnqueueFeaturesAMDX( PhysicalDeviceShaderEnqueueFeaturesAMDX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceShaderEnqueueFeaturesAMDX( VkPhysicalDeviceShaderEnqueueFeaturesAMDX const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceShaderEnqueueFeaturesAMDX( *reinterpret_cast<PhysicalDeviceShaderEnqueueFeaturesAMDX const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceShaderEnqueueFeaturesAMDX & operator=( PhysicalDeviceShaderEnqueueFeaturesAMDX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceShaderEnqueueFeaturesAMDX & operator=( VkPhysicalDeviceShaderEnqueueFeaturesAMDX const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceShaderEnqueueFeaturesAMDX const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceShaderEnqueueFeaturesAMDX & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceShaderEnqueueFeaturesAMDX & setShaderEnqueue( VULKAN_HPP_NAMESPACE::Bool32 shaderEnqueue_ ) VULKAN_HPP_NOEXCEPT
+    {
+      shaderEnqueue = shaderEnqueue_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceShaderEnqueueFeaturesAMDX const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceShaderEnqueueFeaturesAMDX *>( this );
+    }
+
+    operator VkPhysicalDeviceShaderEnqueueFeaturesAMDX &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceShaderEnqueueFeaturesAMDX *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, shaderEnqueue );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceShaderEnqueueFeaturesAMDX const & ) const = default;
+#  else
+    bool operator==( PhysicalDeviceShaderEnqueueFeaturesAMDX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( shaderEnqueue == rhs.shaderEnqueue );
+#    endif
+    }
+
+    bool operator!=( PhysicalDeviceShaderEnqueueFeaturesAMDX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType         = StructureType::ePhysicalDeviceShaderEnqueueFeaturesAMDX;
+    void *                              pNext         = {};
+    VULKAN_HPP_NAMESPACE::Bool32        shaderEnqueue = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceShaderEnqueueFeaturesAMDX>
+  {
+    using Type = PhysicalDeviceShaderEnqueueFeaturesAMDX;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct PhysicalDeviceShaderEnqueuePropertiesAMDX
+  {
+    using NativeType = VkPhysicalDeviceShaderEnqueuePropertiesAMDX;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceShaderEnqueuePropertiesAMDX;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceShaderEnqueuePropertiesAMDX( uint32_t maxExecutionGraphDepth_                 = {},
+                                                                    uint32_t maxExecutionGraphShaderOutputNodes_     = {},
+                                                                    uint32_t maxExecutionGraphShaderPayloadSize_     = {},
+                                                                    uint32_t maxExecutionGraphShaderPayloadCount_    = {},
+                                                                    uint32_t executionGraphDispatchAddressAlignment_ = {},
+                                                                    void *   pNext_                                  = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , maxExecutionGraphDepth( maxExecutionGraphDepth_ )
+      , maxExecutionGraphShaderOutputNodes( maxExecutionGraphShaderOutputNodes_ )
+      , maxExecutionGraphShaderPayloadSize( maxExecutionGraphShaderPayloadSize_ )
+      , maxExecutionGraphShaderPayloadCount( maxExecutionGraphShaderPayloadCount_ )
+      , executionGraphDispatchAddressAlignment( executionGraphDispatchAddressAlignment_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceShaderEnqueuePropertiesAMDX( PhysicalDeviceShaderEnqueuePropertiesAMDX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceShaderEnqueuePropertiesAMDX( VkPhysicalDeviceShaderEnqueuePropertiesAMDX const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceShaderEnqueuePropertiesAMDX( *reinterpret_cast<PhysicalDeviceShaderEnqueuePropertiesAMDX const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceShaderEnqueuePropertiesAMDX & operator=( PhysicalDeviceShaderEnqueuePropertiesAMDX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceShaderEnqueuePropertiesAMDX & operator=( VkPhysicalDeviceShaderEnqueuePropertiesAMDX const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceShaderEnqueuePropertiesAMDX const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceShaderEnqueuePropertiesAMDX & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceShaderEnqueuePropertiesAMDX & setMaxExecutionGraphDepth( uint32_t maxExecutionGraphDepth_ ) VULKAN_HPP_NOEXCEPT
+    {
+      maxExecutionGraphDepth = maxExecutionGraphDepth_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceShaderEnqueuePropertiesAMDX &
+                            setMaxExecutionGraphShaderOutputNodes( uint32_t maxExecutionGraphShaderOutputNodes_ ) VULKAN_HPP_NOEXCEPT
+    {
+      maxExecutionGraphShaderOutputNodes = maxExecutionGraphShaderOutputNodes_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceShaderEnqueuePropertiesAMDX &
+                            setMaxExecutionGraphShaderPayloadSize( uint32_t maxExecutionGraphShaderPayloadSize_ ) VULKAN_HPP_NOEXCEPT
+    {
+      maxExecutionGraphShaderPayloadSize = maxExecutionGraphShaderPayloadSize_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceShaderEnqueuePropertiesAMDX &
+                            setMaxExecutionGraphShaderPayloadCount( uint32_t maxExecutionGraphShaderPayloadCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      maxExecutionGraphShaderPayloadCount = maxExecutionGraphShaderPayloadCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceShaderEnqueuePropertiesAMDX &
+                            setExecutionGraphDispatchAddressAlignment( uint32_t executionGraphDispatchAddressAlignment_ ) VULKAN_HPP_NOEXCEPT
+    {
+      executionGraphDispatchAddressAlignment = executionGraphDispatchAddressAlignment_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceShaderEnqueuePropertiesAMDX const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceShaderEnqueuePropertiesAMDX *>( this );
+    }
+
+    operator VkPhysicalDeviceShaderEnqueuePropertiesAMDX &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceShaderEnqueuePropertiesAMDX *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               void * const &,
+               uint32_t const &,
+               uint32_t const &,
+               uint32_t const &,
+               uint32_t const &,
+               uint32_t const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType,
+                       pNext,
+                       maxExecutionGraphDepth,
+                       maxExecutionGraphShaderOutputNodes,
+                       maxExecutionGraphShaderPayloadSize,
+                       maxExecutionGraphShaderPayloadCount,
+                       executionGraphDispatchAddressAlignment );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceShaderEnqueuePropertiesAMDX const & ) const = default;
+#  else
+    bool operator==( PhysicalDeviceShaderEnqueuePropertiesAMDX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( maxExecutionGraphDepth == rhs.maxExecutionGraphDepth ) &&
+             ( maxExecutionGraphShaderOutputNodes == rhs.maxExecutionGraphShaderOutputNodes ) &&
+             ( maxExecutionGraphShaderPayloadSize == rhs.maxExecutionGraphShaderPayloadSize ) &&
+             ( maxExecutionGraphShaderPayloadCount == rhs.maxExecutionGraphShaderPayloadCount ) &&
+             ( executionGraphDispatchAddressAlignment == rhs.executionGraphDispatchAddressAlignment );
+#    endif
+    }
+
+    bool operator!=( PhysicalDeviceShaderEnqueuePropertiesAMDX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                                  = StructureType::ePhysicalDeviceShaderEnqueuePropertiesAMDX;
+    void *                              pNext                                  = {};
+    uint32_t                            maxExecutionGraphDepth                 = {};
+    uint32_t                            maxExecutionGraphShaderOutputNodes     = {};
+    uint32_t                            maxExecutionGraphShaderPayloadSize     = {};
+    uint32_t                            maxExecutionGraphShaderPayloadCount    = {};
+    uint32_t                            executionGraphDispatchAddressAlignment = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceShaderEnqueuePropertiesAMDX>
+  {
+    using Type = PhysicalDeviceShaderEnqueuePropertiesAMDX;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
   struct PhysicalDeviceShaderFloat16Int8Features
   {
     using NativeType = VkPhysicalDeviceShaderFloat16Int8Features;
@@ -84244,6 +85552,103 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PipelineCoverageToColorStateCreateInfoNV;
   };
 
+  struct PipelineCreateFlags2CreateInfoKHR
+  {
+    using NativeType = VkPipelineCreateFlags2CreateInfoKHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePipelineCreateFlags2CreateInfoKHR;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PipelineCreateFlags2CreateInfoKHR( VULKAN_HPP_NAMESPACE::PipelineCreateFlags2KHR flags_ = {},
+                                                            const void *                                  pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , flags( flags_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PipelineCreateFlags2CreateInfoKHR( PipelineCreateFlags2CreateInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PipelineCreateFlags2CreateInfoKHR( VkPipelineCreateFlags2CreateInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PipelineCreateFlags2CreateInfoKHR( *reinterpret_cast<PipelineCreateFlags2CreateInfoKHR const *>( &rhs ) )
+    {
+    }
+
+    PipelineCreateFlags2CreateInfoKHR & operator=( PipelineCreateFlags2CreateInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PipelineCreateFlags2CreateInfoKHR & operator=( VkPipelineCreateFlags2CreateInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PipelineCreateFlags2CreateInfoKHR const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PipelineCreateFlags2CreateInfoKHR & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PipelineCreateFlags2CreateInfoKHR & setFlags( VULKAN_HPP_NAMESPACE::PipelineCreateFlags2KHR flags_ ) VULKAN_HPP_NOEXCEPT
+    {
+      flags = flags_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPipelineCreateFlags2CreateInfoKHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPipelineCreateFlags2CreateInfoKHR *>( this );
+    }
+
+    operator VkPipelineCreateFlags2CreateInfoKHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPipelineCreateFlags2CreateInfoKHR *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, VULKAN_HPP_NAMESPACE::PipelineCreateFlags2KHR const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, flags );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PipelineCreateFlags2CreateInfoKHR const & ) const = default;
+#else
+    bool operator==( PipelineCreateFlags2CreateInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( flags == rhs.flags );
+#  endif
+    }
+
+    bool operator!=( PipelineCreateFlags2CreateInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType           sType = StructureType::ePipelineCreateFlags2CreateInfoKHR;
+    const void *                                  pNext = {};
+    VULKAN_HPP_NAMESPACE::PipelineCreateFlags2KHR flags = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePipelineCreateFlags2CreateInfoKHR>
+  {
+    using Type = PipelineCreateFlags2CreateInfoKHR;
+  };
+
   struct PipelineCreationFeedback
   {
     using NativeType = VkPipelineCreationFeedback;
@@ -85801,130 +87206,6 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PipelineLayoutCreateInfo;
   };
 
-  struct PipelineLibraryCreateInfoKHR
-  {
-    using NativeType = VkPipelineLibraryCreateInfoKHR;
-
-    static const bool                                  allowDuplicate = false;
-    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePipelineLibraryCreateInfoKHR;
-
-#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR PipelineLibraryCreateInfoKHR( uint32_t                               libraryCount_ = {},
-                                                       const VULKAN_HPP_NAMESPACE::Pipeline * pLibraries_   = {},
-                                                       const void *                           pNext_        = nullptr ) VULKAN_HPP_NOEXCEPT
-      : pNext( pNext_ )
-      , libraryCount( libraryCount_ )
-      , pLibraries( pLibraries_ )
-    {
-    }
-
-    VULKAN_HPP_CONSTEXPR PipelineLibraryCreateInfoKHR( PipelineLibraryCreateInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
-
-    PipelineLibraryCreateInfoKHR( VkPipelineLibraryCreateInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
-      : PipelineLibraryCreateInfoKHR( *reinterpret_cast<PipelineLibraryCreateInfoKHR const *>( &rhs ) )
-    {
-    }
-
-#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
-    PipelineLibraryCreateInfoKHR( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::Pipeline> const & libraries_,
-                                  const void *                                                                                pNext_ = nullptr )
-      : pNext( pNext_ ), libraryCount( static_cast<uint32_t>( libraries_.size() ) ), pLibraries( libraries_.data() )
-    {
-    }
-#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
-
-    PipelineLibraryCreateInfoKHR & operator=( PipelineLibraryCreateInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
-#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
-
-    PipelineLibraryCreateInfoKHR & operator=( VkPipelineLibraryCreateInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
-    {
-      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PipelineLibraryCreateInfoKHR const *>( &rhs );
-      return *this;
-    }
-
-#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
-    VULKAN_HPP_CONSTEXPR_14 PipelineLibraryCreateInfoKHR & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
-    {
-      pNext = pNext_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 PipelineLibraryCreateInfoKHR & setLibraryCount( uint32_t libraryCount_ ) VULKAN_HPP_NOEXCEPT
-    {
-      libraryCount = libraryCount_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 PipelineLibraryCreateInfoKHR & setPLibraries( const VULKAN_HPP_NAMESPACE::Pipeline * pLibraries_ ) VULKAN_HPP_NOEXCEPT
-    {
-      pLibraries = pLibraries_;
-      return *this;
-    }
-
-#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
-    PipelineLibraryCreateInfoKHR &
-      setLibraries( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::Pipeline> const & libraries_ ) VULKAN_HPP_NOEXCEPT
-    {
-      libraryCount = static_cast<uint32_t>( libraries_.size() );
-      pLibraries   = libraries_.data();
-      return *this;
-    }
-#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
-#endif   /*VULKAN_HPP_NO_STRUCT_SETTERS*/
-
-    operator VkPipelineLibraryCreateInfoKHR const &() const VULKAN_HPP_NOEXCEPT
-    {
-      return *reinterpret_cast<const VkPipelineLibraryCreateInfoKHR *>( this );
-    }
-
-    operator VkPipelineLibraryCreateInfoKHR &() VULKAN_HPP_NOEXCEPT
-    {
-      return *reinterpret_cast<VkPipelineLibraryCreateInfoKHR *>( this );
-    }
-
-#if defined( VULKAN_HPP_USE_REFLECT )
-#  if 14 <= VULKAN_HPP_CPP_VERSION
-    auto
-#  else
-    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, uint32_t const &, const VULKAN_HPP_NAMESPACE::Pipeline * const &>
-#  endif
-      reflect() const VULKAN_HPP_NOEXCEPT
-    {
-      return std::tie( sType, pNext, libraryCount, pLibraries );
-    }
-#endif
-
-#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
-    auto operator<=>( PipelineLibraryCreateInfoKHR const & ) const = default;
-#else
-    bool operator==( PipelineLibraryCreateInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
-    {
-#  if defined( VULKAN_HPP_USE_REFLECT )
-      return this->reflect() == rhs.reflect();
-#  else
-      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( libraryCount == rhs.libraryCount ) && ( pLibraries == rhs.pLibraries );
-#  endif
-    }
-
-    bool operator!=( PipelineLibraryCreateInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
-    {
-      return !operator==( rhs );
-    }
-#endif
-
-  public:
-    VULKAN_HPP_NAMESPACE::StructureType    sType        = StructureType::ePipelineLibraryCreateInfoKHR;
-    const void *                           pNext        = {};
-    uint32_t                               libraryCount = {};
-    const VULKAN_HPP_NAMESPACE::Pipeline * pLibraries   = {};
-  };
-
-  template <>
-  struct CppType<StructureType, StructureType::ePipelineLibraryCreateInfoKHR>
-  {
-    using Type = PipelineLibraryCreateInfoKHR;
-  };
-
   struct PipelinePropertiesIdentifierEXT
   {
     using NativeType = VkPipelinePropertiesIdentifierEXT;
@@ -87348,6 +88629,122 @@ namespace VULKAN_HPP_NAMESPACE
   {
     using Type = PipelineShaderStageModuleIdentifierCreateInfoEXT;
   };
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct PipelineShaderStageNodeCreateInfoAMDX
+  {
+    using NativeType = VkPipelineShaderStageNodeCreateInfoAMDX;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePipelineShaderStageNodeCreateInfoAMDX;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR
+      PipelineShaderStageNodeCreateInfoAMDX( const char * pName_ = {}, uint32_t index_ = {}, const void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , pName( pName_ )
+      , index( index_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PipelineShaderStageNodeCreateInfoAMDX( PipelineShaderStageNodeCreateInfoAMDX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PipelineShaderStageNodeCreateInfoAMDX( VkPipelineShaderStageNodeCreateInfoAMDX const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PipelineShaderStageNodeCreateInfoAMDX( *reinterpret_cast<PipelineShaderStageNodeCreateInfoAMDX const *>( &rhs ) )
+    {
+    }
+
+    PipelineShaderStageNodeCreateInfoAMDX & operator=( PipelineShaderStageNodeCreateInfoAMDX const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PipelineShaderStageNodeCreateInfoAMDX & operator=( VkPipelineShaderStageNodeCreateInfoAMDX const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PipelineShaderStageNodeCreateInfoAMDX const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PipelineShaderStageNodeCreateInfoAMDX & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PipelineShaderStageNodeCreateInfoAMDX & setPName( const char * pName_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pName = pName_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PipelineShaderStageNodeCreateInfoAMDX & setIndex( uint32_t index_ ) VULKAN_HPP_NOEXCEPT
+    {
+      index = index_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPipelineShaderStageNodeCreateInfoAMDX const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPipelineShaderStageNodeCreateInfoAMDX *>( this );
+    }
+
+    operator VkPipelineShaderStageNodeCreateInfoAMDX &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPipelineShaderStageNodeCreateInfoAMDX *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, const char * const &, uint32_t const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, pName, index );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    std::strong_ordering operator<=>( PipelineShaderStageNodeCreateInfoAMDX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      if ( auto cmp = sType <=> rhs.sType; cmp != 0 )
+        return cmp;
+      if ( auto cmp = pNext <=> rhs.pNext; cmp != 0 )
+        return cmp;
+      if ( pName != rhs.pName )
+        if ( auto cmp = strcmp( pName, rhs.pName ); cmp != 0 )
+          return ( cmp < 0 ) ? std::strong_ordering::less : std::strong_ordering::greater;
+      if ( auto cmp = index <=> rhs.index; cmp != 0 )
+        return cmp;
+
+      return std::strong_ordering::equivalent;
+    }
+#  endif
+
+    bool operator==( PipelineShaderStageNodeCreateInfoAMDX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( ( pName == rhs.pName ) || ( strcmp( pName, rhs.pName ) == 0 ) ) && ( index == rhs.index );
+    }
+
+    bool operator!=( PipelineShaderStageNodeCreateInfoAMDX const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType = StructureType::ePipelineShaderStageNodeCreateInfoAMDX;
+    const void *                        pNext = {};
+    const char *                        pName = {};
+    uint32_t                            index = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePipelineShaderStageNodeCreateInfoAMDX>
+  {
+    using Type = PipelineShaderStageNodeCreateInfoAMDX;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
   struct PipelineShaderStageRequiredSubgroupSizeCreateInfo
   {
@@ -95155,6 +96552,174 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = RenderPassTransformBeginInfoQCOM;
   };
 
+  struct RenderingAreaInfoKHR
+  {
+    using NativeType = VkRenderingAreaInfoKHR;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eRenderingAreaInfoKHR;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR RenderingAreaInfoKHR( uint32_t                             viewMask_                = {},
+                                               uint32_t                             colorAttachmentCount_    = {},
+                                               const VULKAN_HPP_NAMESPACE::Format * pColorAttachmentFormats_ = {},
+                                               VULKAN_HPP_NAMESPACE::Format         depthAttachmentFormat_   = VULKAN_HPP_NAMESPACE::Format::eUndefined,
+                                               VULKAN_HPP_NAMESPACE::Format         stencilAttachmentFormat_ = VULKAN_HPP_NAMESPACE::Format::eUndefined,
+                                               const void *                         pNext_                   = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , viewMask( viewMask_ )
+      , colorAttachmentCount( colorAttachmentCount_ )
+      , pColorAttachmentFormats( pColorAttachmentFormats_ )
+      , depthAttachmentFormat( depthAttachmentFormat_ )
+      , stencilAttachmentFormat( stencilAttachmentFormat_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR RenderingAreaInfoKHR( RenderingAreaInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    RenderingAreaInfoKHR( VkRenderingAreaInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : RenderingAreaInfoKHR( *reinterpret_cast<RenderingAreaInfoKHR const *>( &rhs ) )
+    {
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    RenderingAreaInfoKHR( uint32_t                                                                                  viewMask_,
+                          VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::Format> const & colorAttachmentFormats_,
+                          VULKAN_HPP_NAMESPACE::Format depthAttachmentFormat_   = VULKAN_HPP_NAMESPACE::Format::eUndefined,
+                          VULKAN_HPP_NAMESPACE::Format stencilAttachmentFormat_ = VULKAN_HPP_NAMESPACE::Format::eUndefined,
+                          const void *                 pNext_                   = nullptr )
+      : pNext( pNext_ )
+      , viewMask( viewMask_ )
+      , colorAttachmentCount( static_cast<uint32_t>( colorAttachmentFormats_.size() ) )
+      , pColorAttachmentFormats( colorAttachmentFormats_.data() )
+      , depthAttachmentFormat( depthAttachmentFormat_ )
+      , stencilAttachmentFormat( stencilAttachmentFormat_ )
+    {
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    RenderingAreaInfoKHR & operator=( RenderingAreaInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    RenderingAreaInfoKHR & operator=( VkRenderingAreaInfoKHR const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::RenderingAreaInfoKHR const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 RenderingAreaInfoKHR & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 RenderingAreaInfoKHR & setViewMask( uint32_t viewMask_ ) VULKAN_HPP_NOEXCEPT
+    {
+      viewMask = viewMask_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 RenderingAreaInfoKHR & setColorAttachmentCount( uint32_t colorAttachmentCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      colorAttachmentCount = colorAttachmentCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 RenderingAreaInfoKHR &
+                            setPColorAttachmentFormats( const VULKAN_HPP_NAMESPACE::Format * pColorAttachmentFormats_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pColorAttachmentFormats = pColorAttachmentFormats_;
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    RenderingAreaInfoKHR & setColorAttachmentFormats(
+      VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::Format> const & colorAttachmentFormats_ ) VULKAN_HPP_NOEXCEPT
+    {
+      colorAttachmentCount    = static_cast<uint32_t>( colorAttachmentFormats_.size() );
+      pColorAttachmentFormats = colorAttachmentFormats_.data();
+      return *this;
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    VULKAN_HPP_CONSTEXPR_14 RenderingAreaInfoKHR & setDepthAttachmentFormat( VULKAN_HPP_NAMESPACE::Format depthAttachmentFormat_ ) VULKAN_HPP_NOEXCEPT
+    {
+      depthAttachmentFormat = depthAttachmentFormat_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 RenderingAreaInfoKHR & setStencilAttachmentFormat( VULKAN_HPP_NAMESPACE::Format stencilAttachmentFormat_ ) VULKAN_HPP_NOEXCEPT
+    {
+      stencilAttachmentFormat = stencilAttachmentFormat_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkRenderingAreaInfoKHR const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkRenderingAreaInfoKHR *>( this );
+    }
+
+    operator VkRenderingAreaInfoKHR &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkRenderingAreaInfoKHR *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               uint32_t const &,
+               uint32_t const &,
+               const VULKAN_HPP_NAMESPACE::Format * const &,
+               VULKAN_HPP_NAMESPACE::Format const &,
+               VULKAN_HPP_NAMESPACE::Format const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, viewMask, colorAttachmentCount, pColorAttachmentFormats, depthAttachmentFormat, stencilAttachmentFormat );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( RenderingAreaInfoKHR const & ) const = default;
+#else
+    bool operator==( RenderingAreaInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( viewMask == rhs.viewMask ) && ( colorAttachmentCount == rhs.colorAttachmentCount ) &&
+             ( pColorAttachmentFormats == rhs.pColorAttachmentFormats ) && ( depthAttachmentFormat == rhs.depthAttachmentFormat ) &&
+             ( stencilAttachmentFormat == rhs.stencilAttachmentFormat );
+#  endif
+    }
+
+    bool operator!=( RenderingAreaInfoKHR const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType  sType                   = StructureType::eRenderingAreaInfoKHR;
+    const void *                         pNext                   = {};
+    uint32_t                             viewMask                = {};
+    uint32_t                             colorAttachmentCount    = {};
+    const VULKAN_HPP_NAMESPACE::Format * pColorAttachmentFormats = {};
+    VULKAN_HPP_NAMESPACE::Format         depthAttachmentFormat   = VULKAN_HPP_NAMESPACE::Format::eUndefined;
+    VULKAN_HPP_NAMESPACE::Format         stencilAttachmentFormat = VULKAN_HPP_NAMESPACE::Format::eUndefined;
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eRenderingAreaInfoKHR>
+  {
+    using Type = RenderingAreaInfoKHR;
+  };
+
   struct RenderingAttachmentInfo
   {
     using NativeType = VkRenderingAttachmentInfo;
@@ -100877,44 +102442,44 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = SubresourceHostMemcpySizeEXT;
   };
 
-  struct SubresourceLayout2EXT
+  struct SubresourceLayout2KHR
   {
-    using NativeType = VkSubresourceLayout2EXT;
+    using NativeType = VkSubresourceLayout2KHR;
 
     static const bool                                  allowDuplicate = false;
-    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eSubresourceLayout2EXT;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eSubresourceLayout2KHR;
 
 #if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR SubresourceLayout2EXT( VULKAN_HPP_NAMESPACE::SubresourceLayout subresourceLayout_ = {}, void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR SubresourceLayout2KHR( VULKAN_HPP_NAMESPACE::SubresourceLayout subresourceLayout_ = {}, void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
       , subresourceLayout( subresourceLayout_ )
     {
     }
 
-    VULKAN_HPP_CONSTEXPR SubresourceLayout2EXT( SubresourceLayout2EXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+    VULKAN_HPP_CONSTEXPR SubresourceLayout2KHR( SubresourceLayout2KHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
 
-    SubresourceLayout2EXT( VkSubresourceLayout2EXT const & rhs ) VULKAN_HPP_NOEXCEPT
-      : SubresourceLayout2EXT( *reinterpret_cast<SubresourceLayout2EXT const *>( &rhs ) )
+    SubresourceLayout2KHR( VkSubresourceLayout2KHR const & rhs ) VULKAN_HPP_NOEXCEPT
+      : SubresourceLayout2KHR( *reinterpret_cast<SubresourceLayout2KHR const *>( &rhs ) )
     {
     }
 
-    SubresourceLayout2EXT & operator=( SubresourceLayout2EXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+    SubresourceLayout2KHR & operator=( SubresourceLayout2KHR const & rhs ) VULKAN_HPP_NOEXCEPT = default;
 #endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
 
-    SubresourceLayout2EXT & operator=( VkSubresourceLayout2EXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    SubresourceLayout2KHR & operator=( VkSubresourceLayout2KHR const & rhs ) VULKAN_HPP_NOEXCEPT
     {
-      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::SubresourceLayout2EXT const *>( &rhs );
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::SubresourceLayout2KHR const *>( &rhs );
       return *this;
     }
 
-    operator VkSubresourceLayout2EXT const &() const VULKAN_HPP_NOEXCEPT
+    operator VkSubresourceLayout2KHR const &() const VULKAN_HPP_NOEXCEPT
     {
-      return *reinterpret_cast<const VkSubresourceLayout2EXT *>( this );
+      return *reinterpret_cast<const VkSubresourceLayout2KHR *>( this );
     }
 
-    operator VkSubresourceLayout2EXT &() VULKAN_HPP_NOEXCEPT
+    operator VkSubresourceLayout2KHR &() VULKAN_HPP_NOEXCEPT
     {
-      return *reinterpret_cast<VkSubresourceLayout2EXT *>( this );
+      return *reinterpret_cast<VkSubresourceLayout2KHR *>( this );
     }
 
 #if defined( VULKAN_HPP_USE_REFLECT )
@@ -100930,9 +102495,9 @@ namespace VULKAN_HPP_NAMESPACE
 #endif
 
 #if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
-    auto operator<=>( SubresourceLayout2EXT const & ) const = default;
+    auto operator<=>( SubresourceLayout2KHR const & ) const = default;
 #else
-    bool operator==( SubresourceLayout2EXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    bool operator==( SubresourceLayout2KHR const & rhs ) const VULKAN_HPP_NOEXCEPT
     {
 #  if defined( VULKAN_HPP_USE_REFLECT )
       return this->reflect() == rhs.reflect();
@@ -100941,23 +102506,24 @@ namespace VULKAN_HPP_NAMESPACE
 #  endif
     }
 
-    bool operator!=( SubresourceLayout2EXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    bool operator!=( SubresourceLayout2KHR const & rhs ) const VULKAN_HPP_NOEXCEPT
     {
       return !operator==( rhs );
     }
 #endif
 
   public:
-    VULKAN_HPP_NAMESPACE::StructureType     sType             = StructureType::eSubresourceLayout2EXT;
+    VULKAN_HPP_NAMESPACE::StructureType     sType             = StructureType::eSubresourceLayout2KHR;
     void *                                  pNext             = {};
     VULKAN_HPP_NAMESPACE::SubresourceLayout subresourceLayout = {};
   };
 
   template <>
-  struct CppType<StructureType, StructureType::eSubresourceLayout2EXT>
+  struct CppType<StructureType, StructureType::eSubresourceLayout2KHR>
   {
-    using Type = SubresourceLayout2EXT;
+    using Type = SubresourceLayout2KHR;
   };
+  using SubresourceLayout2EXT = SubresourceLayout2KHR;
 
   struct SurfaceCapabilities2EXT
   {
