@@ -9691,6 +9691,104 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = BindVideoSessionMemoryInfoKHR;
   };
 
+  struct BlitImageCubicWeightsInfoQCOM
+  {
+    using NativeType = VkBlitImageCubicWeightsInfoQCOM;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eBlitImageCubicWeightsInfoQCOM;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR
+      BlitImageCubicWeightsInfoQCOM( VULKAN_HPP_NAMESPACE::CubicFilterWeightsQCOM cubicWeights_ = VULKAN_HPP_NAMESPACE::CubicFilterWeightsQCOM::eCatmullRom,
+                                     const void *                                 pNext_        = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , cubicWeights( cubicWeights_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR BlitImageCubicWeightsInfoQCOM( BlitImageCubicWeightsInfoQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    BlitImageCubicWeightsInfoQCOM( VkBlitImageCubicWeightsInfoQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+      : BlitImageCubicWeightsInfoQCOM( *reinterpret_cast<BlitImageCubicWeightsInfoQCOM const *>( &rhs ) )
+    {
+    }
+
+    BlitImageCubicWeightsInfoQCOM & operator=( BlitImageCubicWeightsInfoQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    BlitImageCubicWeightsInfoQCOM & operator=( VkBlitImageCubicWeightsInfoQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::BlitImageCubicWeightsInfoQCOM const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 BlitImageCubicWeightsInfoQCOM & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 BlitImageCubicWeightsInfoQCOM & setCubicWeights( VULKAN_HPP_NAMESPACE::CubicFilterWeightsQCOM cubicWeights_ ) VULKAN_HPP_NOEXCEPT
+    {
+      cubicWeights = cubicWeights_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkBlitImageCubicWeightsInfoQCOM const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkBlitImageCubicWeightsInfoQCOM *>( this );
+    }
+
+    operator VkBlitImageCubicWeightsInfoQCOM &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkBlitImageCubicWeightsInfoQCOM *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, VULKAN_HPP_NAMESPACE::CubicFilterWeightsQCOM const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, cubicWeights );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( BlitImageCubicWeightsInfoQCOM const & ) const = default;
+#else
+    bool operator==( BlitImageCubicWeightsInfoQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( cubicWeights == rhs.cubicWeights );
+#  endif
+    }
+
+    bool operator!=( BlitImageCubicWeightsInfoQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType          sType        = StructureType::eBlitImageCubicWeightsInfoQCOM;
+    const void *                                 pNext        = {};
+    VULKAN_HPP_NAMESPACE::CubicFilterWeightsQCOM cubicWeights = VULKAN_HPP_NAMESPACE::CubicFilterWeightsQCOM::eCatmullRom;
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eBlitImageCubicWeightsInfoQCOM>
+  {
+    using Type = BlitImageCubicWeightsInfoQCOM;
+  };
+
   struct ImageSubresourceLayers
   {
     using NativeType = VkImageSubresourceLayers;
@@ -56634,6 +56732,200 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PhysicalDeviceCoverageReductionModeFeaturesNV;
   };
 
+  struct PhysicalDeviceCubicClampFeaturesQCOM
+  {
+    using NativeType = VkPhysicalDeviceCubicClampFeaturesQCOM;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceCubicClampFeaturesQCOM;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceCubicClampFeaturesQCOM( VULKAN_HPP_NAMESPACE::Bool32 cubicRangeClamp_ = {}, void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , cubicRangeClamp( cubicRangeClamp_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceCubicClampFeaturesQCOM( PhysicalDeviceCubicClampFeaturesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceCubicClampFeaturesQCOM( VkPhysicalDeviceCubicClampFeaturesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceCubicClampFeaturesQCOM( *reinterpret_cast<PhysicalDeviceCubicClampFeaturesQCOM const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceCubicClampFeaturesQCOM & operator=( PhysicalDeviceCubicClampFeaturesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceCubicClampFeaturesQCOM & operator=( VkPhysicalDeviceCubicClampFeaturesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceCubicClampFeaturesQCOM const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceCubicClampFeaturesQCOM & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceCubicClampFeaturesQCOM & setCubicRangeClamp( VULKAN_HPP_NAMESPACE::Bool32 cubicRangeClamp_ ) VULKAN_HPP_NOEXCEPT
+    {
+      cubicRangeClamp = cubicRangeClamp_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceCubicClampFeaturesQCOM const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceCubicClampFeaturesQCOM *>( this );
+    }
+
+    operator VkPhysicalDeviceCubicClampFeaturesQCOM &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceCubicClampFeaturesQCOM *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, cubicRangeClamp );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceCubicClampFeaturesQCOM const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceCubicClampFeaturesQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( cubicRangeClamp == rhs.cubicRangeClamp );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceCubicClampFeaturesQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType           = StructureType::ePhysicalDeviceCubicClampFeaturesQCOM;
+    void *                              pNext           = {};
+    VULKAN_HPP_NAMESPACE::Bool32        cubicRangeClamp = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceCubicClampFeaturesQCOM>
+  {
+    using Type = PhysicalDeviceCubicClampFeaturesQCOM;
+  };
+
+  struct PhysicalDeviceCubicWeightsFeaturesQCOM
+  {
+    using NativeType = VkPhysicalDeviceCubicWeightsFeaturesQCOM;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceCubicWeightsFeaturesQCOM;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceCubicWeightsFeaturesQCOM( VULKAN_HPP_NAMESPACE::Bool32 selectableCubicWeights_ = {},
+                                                                 void *                       pNext_                  = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , selectableCubicWeights( selectableCubicWeights_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceCubicWeightsFeaturesQCOM( PhysicalDeviceCubicWeightsFeaturesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceCubicWeightsFeaturesQCOM( VkPhysicalDeviceCubicWeightsFeaturesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceCubicWeightsFeaturesQCOM( *reinterpret_cast<PhysicalDeviceCubicWeightsFeaturesQCOM const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceCubicWeightsFeaturesQCOM & operator=( PhysicalDeviceCubicWeightsFeaturesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceCubicWeightsFeaturesQCOM & operator=( VkPhysicalDeviceCubicWeightsFeaturesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceCubicWeightsFeaturesQCOM const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceCubicWeightsFeaturesQCOM & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceCubicWeightsFeaturesQCOM &
+                            setSelectableCubicWeights( VULKAN_HPP_NAMESPACE::Bool32 selectableCubicWeights_ ) VULKAN_HPP_NOEXCEPT
+    {
+      selectableCubicWeights = selectableCubicWeights_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceCubicWeightsFeaturesQCOM const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceCubicWeightsFeaturesQCOM *>( this );
+    }
+
+    operator VkPhysicalDeviceCubicWeightsFeaturesQCOM &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceCubicWeightsFeaturesQCOM *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, selectableCubicWeights );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceCubicWeightsFeaturesQCOM const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceCubicWeightsFeaturesQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( selectableCubicWeights == rhs.selectableCubicWeights );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceCubicWeightsFeaturesQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                  = StructureType::ePhysicalDeviceCubicWeightsFeaturesQCOM;
+    void *                              pNext                  = {};
+    VULKAN_HPP_NAMESPACE::Bool32        selectableCubicWeights = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceCubicWeightsFeaturesQCOM>
+  {
+    using Type = PhysicalDeviceCubicWeightsFeaturesQCOM;
+  };
+
   struct PhysicalDeviceCustomBorderColorFeaturesEXT
   {
     using NativeType = VkPhysicalDeviceCustomBorderColorFeaturesEXT;
@@ -64895,6 +65187,187 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PhysicalDeviceImageFormatInfo2;
   };
   using PhysicalDeviceImageFormatInfo2KHR = PhysicalDeviceImageFormatInfo2;
+
+  struct PhysicalDeviceImageProcessing2FeaturesQCOM
+  {
+    using NativeType = VkPhysicalDeviceImageProcessing2FeaturesQCOM;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceImageProcessing2FeaturesQCOM;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceImageProcessing2FeaturesQCOM( VULKAN_HPP_NAMESPACE::Bool32 textureBlockMatch2_ = {},
+                                                                     void *                       pNext_              = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , textureBlockMatch2( textureBlockMatch2_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceImageProcessing2FeaturesQCOM( PhysicalDeviceImageProcessing2FeaturesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceImageProcessing2FeaturesQCOM( VkPhysicalDeviceImageProcessing2FeaturesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceImageProcessing2FeaturesQCOM( *reinterpret_cast<PhysicalDeviceImageProcessing2FeaturesQCOM const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceImageProcessing2FeaturesQCOM & operator=( PhysicalDeviceImageProcessing2FeaturesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceImageProcessing2FeaturesQCOM & operator=( VkPhysicalDeviceImageProcessing2FeaturesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceImageProcessing2FeaturesQCOM const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceImageProcessing2FeaturesQCOM & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceImageProcessing2FeaturesQCOM &
+                            setTextureBlockMatch2( VULKAN_HPP_NAMESPACE::Bool32 textureBlockMatch2_ ) VULKAN_HPP_NOEXCEPT
+    {
+      textureBlockMatch2 = textureBlockMatch2_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceImageProcessing2FeaturesQCOM const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceImageProcessing2FeaturesQCOM *>( this );
+    }
+
+    operator VkPhysicalDeviceImageProcessing2FeaturesQCOM &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceImageProcessing2FeaturesQCOM *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, textureBlockMatch2 );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceImageProcessing2FeaturesQCOM const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceImageProcessing2FeaturesQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( textureBlockMatch2 == rhs.textureBlockMatch2 );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceImageProcessing2FeaturesQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType              = StructureType::ePhysicalDeviceImageProcessing2FeaturesQCOM;
+    void *                              pNext              = {};
+    VULKAN_HPP_NAMESPACE::Bool32        textureBlockMatch2 = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceImageProcessing2FeaturesQCOM>
+  {
+    using Type = PhysicalDeviceImageProcessing2FeaturesQCOM;
+  };
+
+  struct PhysicalDeviceImageProcessing2PropertiesQCOM
+  {
+    using NativeType = VkPhysicalDeviceImageProcessing2PropertiesQCOM;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceImageProcessing2PropertiesQCOM;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceImageProcessing2PropertiesQCOM( VULKAN_HPP_NAMESPACE::Extent2D maxBlockMatchWindow_ = {},
+                                                                       void *                         pNext_               = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , maxBlockMatchWindow( maxBlockMatchWindow_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceImageProcessing2PropertiesQCOM( PhysicalDeviceImageProcessing2PropertiesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceImageProcessing2PropertiesQCOM( VkPhysicalDeviceImageProcessing2PropertiesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceImageProcessing2PropertiesQCOM( *reinterpret_cast<PhysicalDeviceImageProcessing2PropertiesQCOM const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceImageProcessing2PropertiesQCOM & operator=( PhysicalDeviceImageProcessing2PropertiesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceImageProcessing2PropertiesQCOM & operator=( VkPhysicalDeviceImageProcessing2PropertiesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceImageProcessing2PropertiesQCOM const *>( &rhs );
+      return *this;
+    }
+
+    operator VkPhysicalDeviceImageProcessing2PropertiesQCOM const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceImageProcessing2PropertiesQCOM *>( this );
+    }
+
+    operator VkPhysicalDeviceImageProcessing2PropertiesQCOM &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceImageProcessing2PropertiesQCOM *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Extent2D const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, maxBlockMatchWindow );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceImageProcessing2PropertiesQCOM const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceImageProcessing2PropertiesQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( maxBlockMatchWindow == rhs.maxBlockMatchWindow );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceImageProcessing2PropertiesQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType               = StructureType::ePhysicalDeviceImageProcessing2PropertiesQCOM;
+    void *                              pNext               = {};
+    VULKAN_HPP_NAMESPACE::Extent2D      maxBlockMatchWindow = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceImageProcessing2PropertiesQCOM>
+  {
+    using Type = PhysicalDeviceImageProcessing2PropertiesQCOM;
+  };
 
   struct PhysicalDeviceImageProcessingFeaturesQCOM
   {
@@ -84338,6 +84811,102 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT;
   };
 
+  struct PhysicalDeviceYcbcrDegammaFeaturesQCOM
+  {
+    using NativeType = VkPhysicalDeviceYcbcrDegammaFeaturesQCOM;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceYcbcrDegammaFeaturesQCOM;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceYcbcrDegammaFeaturesQCOM( VULKAN_HPP_NAMESPACE::Bool32 ycbcrDegamma_ = {}, void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , ycbcrDegamma( ycbcrDegamma_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceYcbcrDegammaFeaturesQCOM( PhysicalDeviceYcbcrDegammaFeaturesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceYcbcrDegammaFeaturesQCOM( VkPhysicalDeviceYcbcrDegammaFeaturesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceYcbcrDegammaFeaturesQCOM( *reinterpret_cast<PhysicalDeviceYcbcrDegammaFeaturesQCOM const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceYcbcrDegammaFeaturesQCOM & operator=( PhysicalDeviceYcbcrDegammaFeaturesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceYcbcrDegammaFeaturesQCOM & operator=( VkPhysicalDeviceYcbcrDegammaFeaturesQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceYcbcrDegammaFeaturesQCOM const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceYcbcrDegammaFeaturesQCOM & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceYcbcrDegammaFeaturesQCOM & setYcbcrDegamma( VULKAN_HPP_NAMESPACE::Bool32 ycbcrDegamma_ ) VULKAN_HPP_NOEXCEPT
+    {
+      ycbcrDegamma = ycbcrDegamma_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceYcbcrDegammaFeaturesQCOM const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceYcbcrDegammaFeaturesQCOM *>( this );
+    }
+
+    operator VkPhysicalDeviceYcbcrDegammaFeaturesQCOM &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceYcbcrDegammaFeaturesQCOM *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, ycbcrDegamma );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceYcbcrDegammaFeaturesQCOM const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceYcbcrDegammaFeaturesQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( ycbcrDegamma == rhs.ycbcrDegamma );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceYcbcrDegammaFeaturesQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType        = StructureType::ePhysicalDeviceYcbcrDegammaFeaturesQCOM;
+    void *                              pNext        = {};
+    VULKAN_HPP_NAMESPACE::Bool32        ycbcrDegamma = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceYcbcrDegammaFeaturesQCOM>
+  {
+    using Type = PhysicalDeviceYcbcrDegammaFeaturesQCOM;
+  };
+
   struct PhysicalDeviceYcbcrImageArraysFeaturesEXT
   {
     using NativeType = VkPhysicalDeviceYcbcrImageArraysFeaturesEXT;
@@ -97483,6 +98052,117 @@ namespace VULKAN_HPP_NAMESPACE
   };
   using ResolveImageInfo2KHR = ResolveImageInfo2;
 
+  struct SamplerBlockMatchWindowCreateInfoQCOM
+  {
+    using NativeType = VkSamplerBlockMatchWindowCreateInfoQCOM;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eSamplerBlockMatchWindowCreateInfoQCOM;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR SamplerBlockMatchWindowCreateInfoQCOM(
+      VULKAN_HPP_NAMESPACE::Extent2D                        windowExtent_      = {},
+      VULKAN_HPP_NAMESPACE::BlockMatchWindowCompareModeQCOM windowCompareMode_ = VULKAN_HPP_NAMESPACE::BlockMatchWindowCompareModeQCOM::eMin,
+      const void *                                          pNext_             = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , windowExtent( windowExtent_ )
+      , windowCompareMode( windowCompareMode_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR SamplerBlockMatchWindowCreateInfoQCOM( SamplerBlockMatchWindowCreateInfoQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    SamplerBlockMatchWindowCreateInfoQCOM( VkSamplerBlockMatchWindowCreateInfoQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+      : SamplerBlockMatchWindowCreateInfoQCOM( *reinterpret_cast<SamplerBlockMatchWindowCreateInfoQCOM const *>( &rhs ) )
+    {
+    }
+
+    SamplerBlockMatchWindowCreateInfoQCOM & operator=( SamplerBlockMatchWindowCreateInfoQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    SamplerBlockMatchWindowCreateInfoQCOM & operator=( VkSamplerBlockMatchWindowCreateInfoQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::SamplerBlockMatchWindowCreateInfoQCOM const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 SamplerBlockMatchWindowCreateInfoQCOM & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 SamplerBlockMatchWindowCreateInfoQCOM & setWindowExtent( VULKAN_HPP_NAMESPACE::Extent2D const & windowExtent_ ) VULKAN_HPP_NOEXCEPT
+    {
+      windowExtent = windowExtent_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 SamplerBlockMatchWindowCreateInfoQCOM &
+                            setWindowCompareMode( VULKAN_HPP_NAMESPACE::BlockMatchWindowCompareModeQCOM windowCompareMode_ ) VULKAN_HPP_NOEXCEPT
+    {
+      windowCompareMode = windowCompareMode_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkSamplerBlockMatchWindowCreateInfoQCOM const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkSamplerBlockMatchWindowCreateInfoQCOM *>( this );
+    }
+
+    operator VkSamplerBlockMatchWindowCreateInfoQCOM &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkSamplerBlockMatchWindowCreateInfoQCOM *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               VULKAN_HPP_NAMESPACE::Extent2D const &,
+               VULKAN_HPP_NAMESPACE::BlockMatchWindowCompareModeQCOM const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, windowExtent, windowCompareMode );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( SamplerBlockMatchWindowCreateInfoQCOM const & ) const = default;
+#else
+    bool operator==( SamplerBlockMatchWindowCreateInfoQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( windowExtent == rhs.windowExtent ) && ( windowCompareMode == rhs.windowCompareMode );
+#  endif
+    }
+
+    bool operator!=( SamplerBlockMatchWindowCreateInfoQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType                   sType             = StructureType::eSamplerBlockMatchWindowCreateInfoQCOM;
+    const void *                                          pNext             = {};
+    VULKAN_HPP_NAMESPACE::Extent2D                        windowExtent      = {};
+    VULKAN_HPP_NAMESPACE::BlockMatchWindowCompareModeQCOM windowCompareMode = VULKAN_HPP_NAMESPACE::BlockMatchWindowCompareModeQCOM::eMin;
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eSamplerBlockMatchWindowCreateInfoQCOM>
+  {
+    using Type = SamplerBlockMatchWindowCreateInfoQCOM;
+  };
+
   struct SamplerBorderColorComponentMappingCreateInfoEXT
   {
     using NativeType = VkSamplerBorderColorComponentMappingCreateInfoEXT;
@@ -97955,6 +98635,105 @@ namespace VULKAN_HPP_NAMESPACE
   struct CppType<StructureType, StructureType::eSamplerCreateInfo>
   {
     using Type = SamplerCreateInfo;
+  };
+
+  struct SamplerCubicWeightsCreateInfoQCOM
+  {
+    using NativeType = VkSamplerCubicWeightsCreateInfoQCOM;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eSamplerCubicWeightsCreateInfoQCOM;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR
+      SamplerCubicWeightsCreateInfoQCOM( VULKAN_HPP_NAMESPACE::CubicFilterWeightsQCOM cubicWeights_ = VULKAN_HPP_NAMESPACE::CubicFilterWeightsQCOM::eCatmullRom,
+                                         const void *                                 pNext_        = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , cubicWeights( cubicWeights_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR SamplerCubicWeightsCreateInfoQCOM( SamplerCubicWeightsCreateInfoQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    SamplerCubicWeightsCreateInfoQCOM( VkSamplerCubicWeightsCreateInfoQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+      : SamplerCubicWeightsCreateInfoQCOM( *reinterpret_cast<SamplerCubicWeightsCreateInfoQCOM const *>( &rhs ) )
+    {
+    }
+
+    SamplerCubicWeightsCreateInfoQCOM & operator=( SamplerCubicWeightsCreateInfoQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    SamplerCubicWeightsCreateInfoQCOM & operator=( VkSamplerCubicWeightsCreateInfoQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::SamplerCubicWeightsCreateInfoQCOM const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 SamplerCubicWeightsCreateInfoQCOM & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 SamplerCubicWeightsCreateInfoQCOM &
+                            setCubicWeights( VULKAN_HPP_NAMESPACE::CubicFilterWeightsQCOM cubicWeights_ ) VULKAN_HPP_NOEXCEPT
+    {
+      cubicWeights = cubicWeights_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkSamplerCubicWeightsCreateInfoQCOM const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkSamplerCubicWeightsCreateInfoQCOM *>( this );
+    }
+
+    operator VkSamplerCubicWeightsCreateInfoQCOM &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkSamplerCubicWeightsCreateInfoQCOM *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, VULKAN_HPP_NAMESPACE::CubicFilterWeightsQCOM const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, cubicWeights );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( SamplerCubicWeightsCreateInfoQCOM const & ) const = default;
+#else
+    bool operator==( SamplerCubicWeightsCreateInfoQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( cubicWeights == rhs.cubicWeights );
+#  endif
+    }
+
+    bool operator!=( SamplerCubicWeightsCreateInfoQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType          sType        = StructureType::eSamplerCubicWeightsCreateInfoQCOM;
+    const void *                                 pNext        = {};
+    VULKAN_HPP_NAMESPACE::CubicFilterWeightsQCOM cubicWeights = VULKAN_HPP_NAMESPACE::CubicFilterWeightsQCOM::eCatmullRom;
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eSamplerCubicWeightsCreateInfoQCOM>
+  {
+    using Type = SamplerCubicWeightsCreateInfoQCOM;
   };
 
   struct SamplerCustomBorderColorCreateInfoEXT
@@ -98505,6 +99284,115 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = SamplerYcbcrConversionInfo;
   };
   using SamplerYcbcrConversionInfoKHR = SamplerYcbcrConversionInfo;
+
+  struct SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM
+  {
+    using NativeType = VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM( VULKAN_HPP_NAMESPACE::Bool32 enableYDegamma_    = {},
+                                                                           VULKAN_HPP_NAMESPACE::Bool32 enableCbCrDegamma_ = {},
+                                                                           void *                       pNext_             = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , enableYDegamma( enableYDegamma_ )
+      , enableCbCrDegamma( enableCbCrDegamma_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR
+      SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM( SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM( VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+      : SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM( *reinterpret_cast<SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM const *>( &rhs ) )
+    {
+    }
+
+    SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM & operator=( SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM & operator=( VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM &
+                            setEnableYDegamma( VULKAN_HPP_NAMESPACE::Bool32 enableYDegamma_ ) VULKAN_HPP_NOEXCEPT
+    {
+      enableYDegamma = enableYDegamma_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM &
+                            setEnableCbCrDegamma( VULKAN_HPP_NAMESPACE::Bool32 enableCbCrDegamma_ ) VULKAN_HPP_NOEXCEPT
+    {
+      enableCbCrDegamma = enableCbCrDegamma_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM *>( this );
+    }
+
+    operator VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, enableYDegamma, enableCbCrDegamma );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM const & ) const = default;
+#else
+    bool operator==( SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( enableYDegamma == rhs.enableYDegamma ) && ( enableCbCrDegamma == rhs.enableCbCrDegamma );
+#  endif
+    }
+
+    bool operator!=( SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType             = StructureType::eSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM;
+    void *                              pNext             = {};
+    VULKAN_HPP_NAMESPACE::Bool32        enableYDegamma    = {};
+    VULKAN_HPP_NAMESPACE::Bool32        enableCbCrDegamma = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM>
+  {
+    using Type = SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM;
+  };
 
 #if defined( VK_USE_PLATFORM_SCREEN_QNX )
   struct ScreenBufferFormatPropertiesQNX
