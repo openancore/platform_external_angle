@@ -58815,6 +58815,106 @@ namespace VULKAN_HPP_NAMESPACE
   };
   using PhysicalDeviceDescriptorIndexingPropertiesEXT = PhysicalDeviceDescriptorIndexingProperties;
 
+  struct PhysicalDeviceDescriptorPoolOverallocationFeaturesNV
+  {
+    using NativeType = VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceDescriptorPoolOverallocationFeaturesNV;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceDescriptorPoolOverallocationFeaturesNV( VULKAN_HPP_NAMESPACE::Bool32 descriptorPoolOverallocation_ = {},
+                                                                               void *                       pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , descriptorPoolOverallocation( descriptorPoolOverallocation_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR
+      PhysicalDeviceDescriptorPoolOverallocationFeaturesNV( PhysicalDeviceDescriptorPoolOverallocationFeaturesNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceDescriptorPoolOverallocationFeaturesNV( VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceDescriptorPoolOverallocationFeaturesNV( *reinterpret_cast<PhysicalDeviceDescriptorPoolOverallocationFeaturesNV const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceDescriptorPoolOverallocationFeaturesNV &
+      operator=( PhysicalDeviceDescriptorPoolOverallocationFeaturesNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceDescriptorPoolOverallocationFeaturesNV & operator=( VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceDescriptorPoolOverallocationFeaturesNV const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceDescriptorPoolOverallocationFeaturesNV & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceDescriptorPoolOverallocationFeaturesNV &
+                            setDescriptorPoolOverallocation( VULKAN_HPP_NAMESPACE::Bool32 descriptorPoolOverallocation_ ) VULKAN_HPP_NOEXCEPT
+    {
+      descriptorPoolOverallocation = descriptorPoolOverallocation_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV *>( this );
+    }
+
+    operator VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, descriptorPoolOverallocation );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceDescriptorPoolOverallocationFeaturesNV const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceDescriptorPoolOverallocationFeaturesNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( descriptorPoolOverallocation == rhs.descriptorPoolOverallocation );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceDescriptorPoolOverallocationFeaturesNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                        = StructureType::ePhysicalDeviceDescriptorPoolOverallocationFeaturesNV;
+    void *                              pNext                        = {};
+    VULKAN_HPP_NAMESPACE::Bool32        descriptorPoolOverallocation = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceDescriptorPoolOverallocationFeaturesNV>
+  {
+    using Type = PhysicalDeviceDescriptorPoolOverallocationFeaturesNV;
+  };
+
   struct PhysicalDeviceDescriptorSetHostMappingFeaturesVALVE
   {
     using NativeType = VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE;
