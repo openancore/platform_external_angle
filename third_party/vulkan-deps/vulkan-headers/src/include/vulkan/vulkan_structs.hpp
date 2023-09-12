@@ -36694,6 +36694,225 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = FragmentShadingRateAttachmentInfoKHR;
   };
 
+  struct FrameBoundaryEXT
+  {
+    using NativeType = VkFrameBoundaryEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eFrameBoundaryEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR FrameBoundaryEXT( VULKAN_HPP_NAMESPACE::FrameBoundaryFlagsEXT flags_       = {},
+                                           uint64_t                                    frameID_     = {},
+                                           uint32_t                                    imageCount_  = {},
+                                           const VULKAN_HPP_NAMESPACE::Image *         pImages_     = {},
+                                           uint32_t                                    bufferCount_ = {},
+                                           const VULKAN_HPP_NAMESPACE::Buffer *        pBuffers_    = {},
+                                           uint64_t                                    tagName_     = {},
+                                           size_t                                      tagSize_     = {},
+                                           const void *                                pTag_        = {},
+                                           const void *                                pNext_       = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , flags( flags_ )
+      , frameID( frameID_ )
+      , imageCount( imageCount_ )
+      , pImages( pImages_ )
+      , bufferCount( bufferCount_ )
+      , pBuffers( pBuffers_ )
+      , tagName( tagName_ )
+      , tagSize( tagSize_ )
+      , pTag( pTag_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR FrameBoundaryEXT( FrameBoundaryEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    FrameBoundaryEXT( VkFrameBoundaryEXT const & rhs ) VULKAN_HPP_NOEXCEPT : FrameBoundaryEXT( *reinterpret_cast<FrameBoundaryEXT const *>( &rhs ) ) {}
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    FrameBoundaryEXT( VULKAN_HPP_NAMESPACE::FrameBoundaryFlagsEXT                                               flags_,
+                      uint64_t                                                                                  frameID_,
+                      VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::Image> const &  images_,
+                      VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::Buffer> const & buffers_ = {},
+                      uint64_t                                                                                  tagName_ = {},
+                      size_t                                                                                    tagSize_ = {},
+                      const void *                                                                              pTag_    = {},
+                      const void *                                                                              pNext_   = nullptr )
+      : pNext( pNext_ )
+      , flags( flags_ )
+      , frameID( frameID_ )
+      , imageCount( static_cast<uint32_t>( images_.size() ) )
+      , pImages( images_.data() )
+      , bufferCount( static_cast<uint32_t>( buffers_.size() ) )
+      , pBuffers( buffers_.data() )
+      , tagName( tagName_ )
+      , tagSize( tagSize_ )
+      , pTag( pTag_ )
+    {
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    FrameBoundaryEXT & operator=( FrameBoundaryEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    FrameBoundaryEXT & operator=( VkFrameBoundaryEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::FrameBoundaryEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 FrameBoundaryEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 FrameBoundaryEXT & setFlags( VULKAN_HPP_NAMESPACE::FrameBoundaryFlagsEXT flags_ ) VULKAN_HPP_NOEXCEPT
+    {
+      flags = flags_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 FrameBoundaryEXT & setFrameID( uint64_t frameID_ ) VULKAN_HPP_NOEXCEPT
+    {
+      frameID = frameID_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 FrameBoundaryEXT & setImageCount( uint32_t imageCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      imageCount = imageCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 FrameBoundaryEXT & setPImages( const VULKAN_HPP_NAMESPACE::Image * pImages_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pImages = pImages_;
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    FrameBoundaryEXT & setImages( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::Image> const & images_ ) VULKAN_HPP_NOEXCEPT
+    {
+      imageCount = static_cast<uint32_t>( images_.size() );
+      pImages    = images_.data();
+      return *this;
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    VULKAN_HPP_CONSTEXPR_14 FrameBoundaryEXT & setBufferCount( uint32_t bufferCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      bufferCount = bufferCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 FrameBoundaryEXT & setPBuffers( const VULKAN_HPP_NAMESPACE::Buffer * pBuffers_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pBuffers = pBuffers_;
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    FrameBoundaryEXT & setBuffers( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::Buffer> const & buffers_ ) VULKAN_HPP_NOEXCEPT
+    {
+      bufferCount = static_cast<uint32_t>( buffers_.size() );
+      pBuffers    = buffers_.data();
+      return *this;
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    VULKAN_HPP_CONSTEXPR_14 FrameBoundaryEXT & setTagName( uint64_t tagName_ ) VULKAN_HPP_NOEXCEPT
+    {
+      tagName = tagName_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 FrameBoundaryEXT & setTagSize( size_t tagSize_ ) VULKAN_HPP_NOEXCEPT
+    {
+      tagSize = tagSize_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 FrameBoundaryEXT & setPTag( const void * pTag_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pTag = pTag_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkFrameBoundaryEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkFrameBoundaryEXT *>( this );
+    }
+
+    operator VkFrameBoundaryEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkFrameBoundaryEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               VULKAN_HPP_NAMESPACE::FrameBoundaryFlagsEXT const &,
+               uint64_t const &,
+               uint32_t const &,
+               const VULKAN_HPP_NAMESPACE::Image * const &,
+               uint32_t const &,
+               const VULKAN_HPP_NAMESPACE::Buffer * const &,
+               uint64_t const &,
+               size_t const &,
+               const void * const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, flags, frameID, imageCount, pImages, bufferCount, pBuffers, tagName, tagSize, pTag );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( FrameBoundaryEXT const & ) const = default;
+#else
+    bool operator==( FrameBoundaryEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( flags == rhs.flags ) && ( frameID == rhs.frameID ) && ( imageCount == rhs.imageCount ) &&
+             ( pImages == rhs.pImages ) && ( bufferCount == rhs.bufferCount ) && ( pBuffers == rhs.pBuffers ) && ( tagName == rhs.tagName ) &&
+             ( tagSize == rhs.tagSize ) && ( pTag == rhs.pTag );
+#  endif
+    }
+
+    bool operator!=( FrameBoundaryEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType         sType       = StructureType::eFrameBoundaryEXT;
+    const void *                                pNext       = {};
+    VULKAN_HPP_NAMESPACE::FrameBoundaryFlagsEXT flags       = {};
+    uint64_t                                    frameID     = {};
+    uint32_t                                    imageCount  = {};
+    const VULKAN_HPP_NAMESPACE::Image *         pImages     = {};
+    uint32_t                                    bufferCount = {};
+    const VULKAN_HPP_NAMESPACE::Buffer *        pBuffers    = {};
+    uint64_t                                    tagName     = {};
+    size_t                                      tagSize     = {};
+    const void *                                pTag        = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eFrameBoundaryEXT>
+  {
+    using Type = FrameBoundaryEXT;
+  };
+
   struct FramebufferAttachmentImageInfo
   {
     using NativeType = VkFramebufferAttachmentImageInfo;
@@ -63789,6 +64008,102 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PhysicalDeviceFragmentShadingRatePropertiesKHR;
   };
 
+  struct PhysicalDeviceFrameBoundaryFeaturesEXT
+  {
+    using NativeType = VkPhysicalDeviceFrameBoundaryFeaturesEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceFrameBoundaryFeaturesEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceFrameBoundaryFeaturesEXT( VULKAN_HPP_NAMESPACE::Bool32 frameBoundary_ = {}, void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , frameBoundary( frameBoundary_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceFrameBoundaryFeaturesEXT( PhysicalDeviceFrameBoundaryFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceFrameBoundaryFeaturesEXT( VkPhysicalDeviceFrameBoundaryFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceFrameBoundaryFeaturesEXT( *reinterpret_cast<PhysicalDeviceFrameBoundaryFeaturesEXT const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceFrameBoundaryFeaturesEXT & operator=( PhysicalDeviceFrameBoundaryFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceFrameBoundaryFeaturesEXT & operator=( VkPhysicalDeviceFrameBoundaryFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceFrameBoundaryFeaturesEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceFrameBoundaryFeaturesEXT & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceFrameBoundaryFeaturesEXT & setFrameBoundary( VULKAN_HPP_NAMESPACE::Bool32 frameBoundary_ ) VULKAN_HPP_NOEXCEPT
+    {
+      frameBoundary = frameBoundary_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceFrameBoundaryFeaturesEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceFrameBoundaryFeaturesEXT *>( this );
+    }
+
+    operator VkPhysicalDeviceFrameBoundaryFeaturesEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceFrameBoundaryFeaturesEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, frameBoundary );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceFrameBoundaryFeaturesEXT const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceFrameBoundaryFeaturesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( frameBoundary == rhs.frameBoundary );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceFrameBoundaryFeaturesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType         = StructureType::ePhysicalDeviceFrameBoundaryFeaturesEXT;
+    void *                              pNext         = {};
+    VULKAN_HPP_NAMESPACE::Bool32        frameBoundary = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceFrameBoundaryFeaturesEXT>
+  {
+    using Type = PhysicalDeviceFrameBoundaryFeaturesEXT;
+  };
+
   struct PhysicalDeviceGlobalPriorityQueryFeaturesKHR
   {
     using NativeType = VkPhysicalDeviceGlobalPriorityQueryFeaturesKHR;
@@ -66694,6 +67009,90 @@ namespace VULKAN_HPP_NAMESPACE
   struct CppType<StructureType, StructureType::ePhysicalDeviceInvocationMaskFeaturesHUAWEI>
   {
     using Type = PhysicalDeviceInvocationMaskFeaturesHUAWEI;
+  };
+
+  struct PhysicalDeviceLayeredDriverPropertiesMSFT
+  {
+    using NativeType = VkPhysicalDeviceLayeredDriverPropertiesMSFT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceLayeredDriverPropertiesMSFT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceLayeredDriverPropertiesMSFT(
+      VULKAN_HPP_NAMESPACE::LayeredDriverUnderlyingApiMSFT underlyingAPI_ = VULKAN_HPP_NAMESPACE::LayeredDriverUnderlyingApiMSFT::eNone,
+      void *                                               pNext_         = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , underlyingAPI( underlyingAPI_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceLayeredDriverPropertiesMSFT( PhysicalDeviceLayeredDriverPropertiesMSFT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceLayeredDriverPropertiesMSFT( VkPhysicalDeviceLayeredDriverPropertiesMSFT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceLayeredDriverPropertiesMSFT( *reinterpret_cast<PhysicalDeviceLayeredDriverPropertiesMSFT const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceLayeredDriverPropertiesMSFT & operator=( PhysicalDeviceLayeredDriverPropertiesMSFT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceLayeredDriverPropertiesMSFT & operator=( VkPhysicalDeviceLayeredDriverPropertiesMSFT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceLayeredDriverPropertiesMSFT const *>( &rhs );
+      return *this;
+    }
+
+    operator VkPhysicalDeviceLayeredDriverPropertiesMSFT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceLayeredDriverPropertiesMSFT *>( this );
+    }
+
+    operator VkPhysicalDeviceLayeredDriverPropertiesMSFT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceLayeredDriverPropertiesMSFT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::LayeredDriverUnderlyingApiMSFT const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, underlyingAPI );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceLayeredDriverPropertiesMSFT const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceLayeredDriverPropertiesMSFT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( underlyingAPI == rhs.underlyingAPI );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceLayeredDriverPropertiesMSFT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType                  sType         = StructureType::ePhysicalDeviceLayeredDriverPropertiesMSFT;
+    void *                                               pNext         = {};
+    VULKAN_HPP_NAMESPACE::LayeredDriverUnderlyingApiMSFT underlyingAPI = VULKAN_HPP_NAMESPACE::LayeredDriverUnderlyingApiMSFT::eNone;
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceLayeredDriverPropertiesMSFT>
+  {
+    using Type = PhysicalDeviceLayeredDriverPropertiesMSFT;
   };
 
   struct PhysicalDeviceLegacyDitheringFeaturesEXT
