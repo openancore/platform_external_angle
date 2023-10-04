@@ -93684,10 +93684,10 @@ namespace VULKAN_HPP_NAMESPACE
 #if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
     VULKAN_HPP_CONSTEXPR RayTracingShaderGroupCreateInfoKHR(
       VULKAN_HPP_NAMESPACE::RayTracingShaderGroupTypeKHR type_                            = VULKAN_HPP_NAMESPACE::RayTracingShaderGroupTypeKHR::eGeneral,
-      uint32_t                                           generalShader_                   = {},
-      uint32_t                                           closestHitShader_                = {},
-      uint32_t                                           anyHitShader_                    = {},
-      uint32_t                                           intersectionShader_              = {},
+      uint32_t                                           generalShader_                   = VULKAN_HPP_NAMESPACE::ShaderUnusedKHR,
+      uint32_t                                           closestHitShader_                = VULKAN_HPP_NAMESPACE::ShaderUnusedKHR,
+      uint32_t                                           anyHitShader_                    = VULKAN_HPP_NAMESPACE::ShaderUnusedKHR,
+      uint32_t                                           intersectionShader_              = VULKAN_HPP_NAMESPACE::ShaderUnusedKHR,
       const void *                                       pShaderGroupCaptureReplayHandle_ = {},
       const void *                                       pNext_                           = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
@@ -93814,10 +93814,10 @@ namespace VULKAN_HPP_NAMESPACE
     VULKAN_HPP_NAMESPACE::StructureType                sType                           = StructureType::eRayTracingShaderGroupCreateInfoKHR;
     const void *                                       pNext                           = {};
     VULKAN_HPP_NAMESPACE::RayTracingShaderGroupTypeKHR type                            = VULKAN_HPP_NAMESPACE::RayTracingShaderGroupTypeKHR::eGeneral;
-    uint32_t                                           generalShader                   = {};
-    uint32_t                                           closestHitShader                = {};
-    uint32_t                                           anyHitShader                    = {};
-    uint32_t                                           intersectionShader              = {};
+    uint32_t                                           generalShader                   = VULKAN_HPP_NAMESPACE::ShaderUnusedKHR;
+    uint32_t                                           closestHitShader                = VULKAN_HPP_NAMESPACE::ShaderUnusedKHR;
+    uint32_t                                           anyHitShader                    = VULKAN_HPP_NAMESPACE::ShaderUnusedKHR;
+    uint32_t                                           intersectionShader              = VULKAN_HPP_NAMESPACE::ShaderUnusedKHR;
     const void *                                       pShaderGroupCaptureReplayHandle = {};
   };
 
@@ -94225,10 +94225,10 @@ namespace VULKAN_HPP_NAMESPACE
 #if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
     VULKAN_HPP_CONSTEXPR RayTracingShaderGroupCreateInfoNV(
       VULKAN_HPP_NAMESPACE::RayTracingShaderGroupTypeKHR type_               = VULKAN_HPP_NAMESPACE::RayTracingShaderGroupTypeKHR::eGeneral,
-      uint32_t                                           generalShader_      = {},
-      uint32_t                                           closestHitShader_   = {},
-      uint32_t                                           anyHitShader_       = {},
-      uint32_t                                           intersectionShader_ = {},
+      uint32_t                                           generalShader_      = VULKAN_HPP_NAMESPACE::ShaderUnusedNV,
+      uint32_t                                           closestHitShader_   = VULKAN_HPP_NAMESPACE::ShaderUnusedNV,
+      uint32_t                                           anyHitShader_       = VULKAN_HPP_NAMESPACE::ShaderUnusedNV,
+      uint32_t                                           intersectionShader_ = VULKAN_HPP_NAMESPACE::ShaderUnusedNV,
       const void *                                       pNext_              = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
       , type( type_ )
@@ -94344,10 +94344,10 @@ namespace VULKAN_HPP_NAMESPACE
     VULKAN_HPP_NAMESPACE::StructureType                sType              = StructureType::eRayTracingShaderGroupCreateInfoNV;
     const void *                                       pNext              = {};
     VULKAN_HPP_NAMESPACE::RayTracingShaderGroupTypeKHR type               = VULKAN_HPP_NAMESPACE::RayTracingShaderGroupTypeKHR::eGeneral;
-    uint32_t                                           generalShader      = {};
-    uint32_t                                           closestHitShader   = {};
-    uint32_t                                           anyHitShader       = {};
-    uint32_t                                           intersectionShader = {};
+    uint32_t                                           generalShader      = VULKAN_HPP_NAMESPACE::ShaderUnusedNV;
+    uint32_t                                           closestHitShader   = VULKAN_HPP_NAMESPACE::ShaderUnusedNV;
+    uint32_t                                           anyHitShader       = VULKAN_HPP_NAMESPACE::ShaderUnusedNV;
+    uint32_t                                           intersectionShader = VULKAN_HPP_NAMESPACE::ShaderUnusedNV;
   };
 
   template <>
