@@ -36818,13 +36818,13 @@ namespace VULKAN_HPP_NAMESPACE
     FrameBoundaryEXT( VkFrameBoundaryEXT const & rhs ) VULKAN_HPP_NOEXCEPT : FrameBoundaryEXT( *reinterpret_cast<FrameBoundaryEXT const *>( &rhs ) ) {}
 
 #  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    template <typename T>
     FrameBoundaryEXT( VULKAN_HPP_NAMESPACE::FrameBoundaryFlagsEXT                                               flags_,
                       uint64_t                                                                                  frameID_,
                       VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::Image> const &  images_,
                       VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::Buffer> const & buffers_ = {},
                       uint64_t                                                                                  tagName_ = {},
-                      size_t                                                                                    tagSize_ = {},
-                      const void *                                                                              pTag_    = {},
+                      VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const T> const &                            tag_     = {},
                       const void *                                                                              pNext_   = nullptr )
       : pNext( pNext_ )
       , flags( flags_ )
@@ -36834,8 +36834,8 @@ namespace VULKAN_HPP_NAMESPACE
       , bufferCount( static_cast<uint32_t>( buffers_.size() ) )
       , pBuffers( buffers_.data() )
       , tagName( tagName_ )
-      , tagSize( tagSize_ )
-      , pTag( pTag_ )
+      , tagSize( tag_.size() * sizeof( T ) )
+      , pTag( tag_.data() )
     {
     }
 #  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
@@ -36927,7 +36927,17 @@ namespace VULKAN_HPP_NAMESPACE
       pTag = pTag_;
       return *this;
     }
-#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    template <typename T>
+    FrameBoundaryEXT & setTag( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const T> const & tag_ ) VULKAN_HPP_NOEXCEPT
+    {
+      tagSize = tag_.size() * sizeof( T );
+      pTag    = tag_.data();
+      return *this;
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+#endif   /*VULKAN_HPP_NO_STRUCT_SETTERS*/
 
     operator VkFrameBoundaryEXT const &() const VULKAN_HPP_NOEXCEPT
     {
@@ -62354,6 +62364,202 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PhysicalDeviceExtendedDynamicStateFeaturesEXT;
   };
 
+  struct PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV
+  {
+    using NativeType = VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceExtendedSparseAddressSpaceFeaturesNV;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV( VULKAN_HPP_NAMESPACE::Bool32 extendedSparseAddressSpace_ = {},
+                                                                             void *                       pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , extendedSparseAddressSpace( extendedSparseAddressSpace_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR
+      PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV( PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV( VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV( *reinterpret_cast<PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV &
+      operator=( PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV & operator=( VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV &
+                            setExtendedSparseAddressSpace( VULKAN_HPP_NAMESPACE::Bool32 extendedSparseAddressSpace_ ) VULKAN_HPP_NOEXCEPT
+    {
+      extendedSparseAddressSpace = extendedSparseAddressSpace_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV *>( this );
+    }
+
+    operator VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, extendedSparseAddressSpace );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( extendedSparseAddressSpace == rhs.extendedSparseAddressSpace );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                      = StructureType::ePhysicalDeviceExtendedSparseAddressSpaceFeaturesNV;
+    void *                              pNext                      = {};
+    VULKAN_HPP_NAMESPACE::Bool32        extendedSparseAddressSpace = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceExtendedSparseAddressSpaceFeaturesNV>
+  {
+    using Type = PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV;
+  };
+
+  struct PhysicalDeviceExtendedSparseAddressSpacePropertiesNV
+  {
+    using NativeType = VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceExtendedSparseAddressSpacePropertiesNV;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceExtendedSparseAddressSpacePropertiesNV( VULKAN_HPP_NAMESPACE::DeviceSize       extendedSparseAddressSpaceSize_ = {},
+                                                                               VULKAN_HPP_NAMESPACE::ImageUsageFlags  extendedSparseImageUsageFlags_  = {},
+                                                                               VULKAN_HPP_NAMESPACE::BufferUsageFlags extendedSparseBufferUsageFlags_ = {},
+                                                                               void *                                 pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , extendedSparseAddressSpaceSize( extendedSparseAddressSpaceSize_ )
+      , extendedSparseImageUsageFlags( extendedSparseImageUsageFlags_ )
+      , extendedSparseBufferUsageFlags( extendedSparseBufferUsageFlags_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR
+      PhysicalDeviceExtendedSparseAddressSpacePropertiesNV( PhysicalDeviceExtendedSparseAddressSpacePropertiesNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceExtendedSparseAddressSpacePropertiesNV( VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceExtendedSparseAddressSpacePropertiesNV( *reinterpret_cast<PhysicalDeviceExtendedSparseAddressSpacePropertiesNV const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceExtendedSparseAddressSpacePropertiesNV &
+      operator=( PhysicalDeviceExtendedSparseAddressSpacePropertiesNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceExtendedSparseAddressSpacePropertiesNV & operator=( VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceExtendedSparseAddressSpacePropertiesNV const *>( &rhs );
+      return *this;
+    }
+
+    operator VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV *>( this );
+    }
+
+    operator VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               void * const &,
+               VULKAN_HPP_NAMESPACE::DeviceSize const &,
+               VULKAN_HPP_NAMESPACE::ImageUsageFlags const &,
+               VULKAN_HPP_NAMESPACE::BufferUsageFlags const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, extendedSparseAddressSpaceSize, extendedSparseImageUsageFlags, extendedSparseBufferUsageFlags );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceExtendedSparseAddressSpacePropertiesNV const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceExtendedSparseAddressSpacePropertiesNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( extendedSparseAddressSpaceSize == rhs.extendedSparseAddressSpaceSize ) &&
+             ( extendedSparseImageUsageFlags == rhs.extendedSparseImageUsageFlags ) && ( extendedSparseBufferUsageFlags == rhs.extendedSparseBufferUsageFlags );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceExtendedSparseAddressSpacePropertiesNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType    sType                          = StructureType::ePhysicalDeviceExtendedSparseAddressSpacePropertiesNV;
+    void *                                 pNext                          = {};
+    VULKAN_HPP_NAMESPACE::DeviceSize       extendedSparseAddressSpaceSize = {};
+    VULKAN_HPP_NAMESPACE::ImageUsageFlags  extendedSparseImageUsageFlags  = {};
+    VULKAN_HPP_NAMESPACE::BufferUsageFlags extendedSparseBufferUsageFlags = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceExtendedSparseAddressSpacePropertiesNV>
+  {
+    using Type = PhysicalDeviceExtendedSparseAddressSpacePropertiesNV;
+  };
+
   struct PhysicalDeviceExternalBufferInfo
   {
     using NativeType = VkPhysicalDeviceExternalBufferInfo;
@@ -71898,6 +72104,229 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PhysicalDeviceMutableDescriptorTypeFeaturesEXT;
   };
   using PhysicalDeviceMutableDescriptorTypeFeaturesVALVE = PhysicalDeviceMutableDescriptorTypeFeaturesEXT;
+
+  struct PhysicalDeviceNestedCommandBufferFeaturesEXT
+  {
+    using NativeType = VkPhysicalDeviceNestedCommandBufferFeaturesEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceNestedCommandBufferFeaturesEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceNestedCommandBufferFeaturesEXT( VULKAN_HPP_NAMESPACE::Bool32 nestedCommandBuffer_                = {},
+                                                                       VULKAN_HPP_NAMESPACE::Bool32 nestedCommandBufferRendering_       = {},
+                                                                       VULKAN_HPP_NAMESPACE::Bool32 nestedCommandBufferSimultaneousUse_ = {},
+                                                                       void *                       pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , nestedCommandBuffer( nestedCommandBuffer_ )
+      , nestedCommandBufferRendering( nestedCommandBufferRendering_ )
+      , nestedCommandBufferSimultaneousUse( nestedCommandBufferSimultaneousUse_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceNestedCommandBufferFeaturesEXT( PhysicalDeviceNestedCommandBufferFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceNestedCommandBufferFeaturesEXT( VkPhysicalDeviceNestedCommandBufferFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceNestedCommandBufferFeaturesEXT( *reinterpret_cast<PhysicalDeviceNestedCommandBufferFeaturesEXT const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceNestedCommandBufferFeaturesEXT & operator=( PhysicalDeviceNestedCommandBufferFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceNestedCommandBufferFeaturesEXT & operator=( VkPhysicalDeviceNestedCommandBufferFeaturesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceNestedCommandBufferFeaturesEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceNestedCommandBufferFeaturesEXT & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceNestedCommandBufferFeaturesEXT &
+                            setNestedCommandBuffer( VULKAN_HPP_NAMESPACE::Bool32 nestedCommandBuffer_ ) VULKAN_HPP_NOEXCEPT
+    {
+      nestedCommandBuffer = nestedCommandBuffer_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceNestedCommandBufferFeaturesEXT &
+                            setNestedCommandBufferRendering( VULKAN_HPP_NAMESPACE::Bool32 nestedCommandBufferRendering_ ) VULKAN_HPP_NOEXCEPT
+    {
+      nestedCommandBufferRendering = nestedCommandBufferRendering_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceNestedCommandBufferFeaturesEXT &
+                            setNestedCommandBufferSimultaneousUse( VULKAN_HPP_NAMESPACE::Bool32 nestedCommandBufferSimultaneousUse_ ) VULKAN_HPP_NOEXCEPT
+    {
+      nestedCommandBufferSimultaneousUse = nestedCommandBufferSimultaneousUse_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceNestedCommandBufferFeaturesEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceNestedCommandBufferFeaturesEXT *>( this );
+    }
+
+    operator VkPhysicalDeviceNestedCommandBufferFeaturesEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceNestedCommandBufferFeaturesEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               void * const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, nestedCommandBuffer, nestedCommandBufferRendering, nestedCommandBufferSimultaneousUse );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceNestedCommandBufferFeaturesEXT const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceNestedCommandBufferFeaturesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( nestedCommandBuffer == rhs.nestedCommandBuffer ) &&
+             ( nestedCommandBufferRendering == rhs.nestedCommandBufferRendering ) &&
+             ( nestedCommandBufferSimultaneousUse == rhs.nestedCommandBufferSimultaneousUse );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceNestedCommandBufferFeaturesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                              = StructureType::ePhysicalDeviceNestedCommandBufferFeaturesEXT;
+    void *                              pNext                              = {};
+    VULKAN_HPP_NAMESPACE::Bool32        nestedCommandBuffer                = {};
+    VULKAN_HPP_NAMESPACE::Bool32        nestedCommandBufferRendering       = {};
+    VULKAN_HPP_NAMESPACE::Bool32        nestedCommandBufferSimultaneousUse = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceNestedCommandBufferFeaturesEXT>
+  {
+    using Type = PhysicalDeviceNestedCommandBufferFeaturesEXT;
+  };
+
+  struct PhysicalDeviceNestedCommandBufferPropertiesEXT
+  {
+    using NativeType = VkPhysicalDeviceNestedCommandBufferPropertiesEXT;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceNestedCommandBufferPropertiesEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceNestedCommandBufferPropertiesEXT( uint32_t maxCommandBufferNestingLevel_ = {},
+                                                                         void *   pNext_                        = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , maxCommandBufferNestingLevel( maxCommandBufferNestingLevel_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR
+      PhysicalDeviceNestedCommandBufferPropertiesEXT( PhysicalDeviceNestedCommandBufferPropertiesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceNestedCommandBufferPropertiesEXT( VkPhysicalDeviceNestedCommandBufferPropertiesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceNestedCommandBufferPropertiesEXT( *reinterpret_cast<PhysicalDeviceNestedCommandBufferPropertiesEXT const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceNestedCommandBufferPropertiesEXT & operator=( PhysicalDeviceNestedCommandBufferPropertiesEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceNestedCommandBufferPropertiesEXT & operator=( VkPhysicalDeviceNestedCommandBufferPropertiesEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceNestedCommandBufferPropertiesEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceNestedCommandBufferPropertiesEXT & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceNestedCommandBufferPropertiesEXT &
+                            setMaxCommandBufferNestingLevel( uint32_t maxCommandBufferNestingLevel_ ) VULKAN_HPP_NOEXCEPT
+    {
+      maxCommandBufferNestingLevel = maxCommandBufferNestingLevel_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceNestedCommandBufferPropertiesEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceNestedCommandBufferPropertiesEXT *>( this );
+    }
+
+    operator VkPhysicalDeviceNestedCommandBufferPropertiesEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceNestedCommandBufferPropertiesEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, uint32_t const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, maxCommandBufferNestingLevel );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceNestedCommandBufferPropertiesEXT const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceNestedCommandBufferPropertiesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( maxCommandBufferNestingLevel == rhs.maxCommandBufferNestingLevel );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceNestedCommandBufferPropertiesEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                        = StructureType::ePhysicalDeviceNestedCommandBufferPropertiesEXT;
+    void *                              pNext                        = {};
+    uint32_t                            maxCommandBufferNestingLevel = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceNestedCommandBufferPropertiesEXT>
+  {
+    using Type = PhysicalDeviceNestedCommandBufferPropertiesEXT;
+  };
 
   struct PhysicalDeviceNonSeamlessCubeMapFeaturesEXT
   {
