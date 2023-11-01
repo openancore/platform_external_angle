@@ -19736,6 +19736,505 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = CuModuleCreateInfoNVX;
   };
 
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct CudaFunctionCreateInfoNV
+  {
+    using NativeType = VkCudaFunctionCreateInfoNV;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eCudaFunctionCreateInfoNV;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR
+      CudaFunctionCreateInfoNV( VULKAN_HPP_NAMESPACE::CudaModuleNV module_ = {}, const char * pName_ = {}, const void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , module( module_ )
+      , pName( pName_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR CudaFunctionCreateInfoNV( CudaFunctionCreateInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    CudaFunctionCreateInfoNV( VkCudaFunctionCreateInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT
+      : CudaFunctionCreateInfoNV( *reinterpret_cast<CudaFunctionCreateInfoNV const *>( &rhs ) )
+    {
+    }
+
+    CudaFunctionCreateInfoNV & operator=( CudaFunctionCreateInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    CudaFunctionCreateInfoNV & operator=( VkCudaFunctionCreateInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::CudaFunctionCreateInfoNV const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 CudaFunctionCreateInfoNV & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CudaFunctionCreateInfoNV & setModule( VULKAN_HPP_NAMESPACE::CudaModuleNV module_ ) VULKAN_HPP_NOEXCEPT
+    {
+      module = module_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CudaFunctionCreateInfoNV & setPName( const char * pName_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pName = pName_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkCudaFunctionCreateInfoNV const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkCudaFunctionCreateInfoNV *>( this );
+    }
+
+    operator VkCudaFunctionCreateInfoNV &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkCudaFunctionCreateInfoNV *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, VULKAN_HPP_NAMESPACE::CudaModuleNV const &, const char * const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, module, pName );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    std::strong_ordering operator<=>( CudaFunctionCreateInfoNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      if ( auto cmp = sType <=> rhs.sType; cmp != 0 )
+        return cmp;
+      if ( auto cmp = pNext <=> rhs.pNext; cmp != 0 )
+        return cmp;
+      if ( auto cmp = module <=> rhs.module; cmp != 0 )
+        return cmp;
+      if ( pName != rhs.pName )
+        if ( auto cmp = strcmp( pName, rhs.pName ); cmp != 0 )
+          return ( cmp < 0 ) ? std::strong_ordering::less : std::strong_ordering::greater;
+
+      return std::strong_ordering::equivalent;
+    }
+#  endif
+
+    bool operator==( CudaFunctionCreateInfoNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( module == rhs.module ) && ( ( pName == rhs.pName ) || ( strcmp( pName, rhs.pName ) == 0 ) );
+    }
+
+    bool operator!=( CudaFunctionCreateInfoNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType  = StructureType::eCudaFunctionCreateInfoNV;
+    const void *                        pNext  = {};
+    VULKAN_HPP_NAMESPACE::CudaModuleNV  module = {};
+    const char *                        pName  = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eCudaFunctionCreateInfoNV>
+  {
+    using Type = CudaFunctionCreateInfoNV;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct CudaLaunchInfoNV
+  {
+    using NativeType = VkCudaLaunchInfoNV;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eCudaLaunchInfoNV;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR CudaLaunchInfoNV( VULKAN_HPP_NAMESPACE::CudaFunctionNV function_       = {},
+                                           uint32_t                             gridDimX_       = {},
+                                           uint32_t                             gridDimY_       = {},
+                                           uint32_t                             gridDimZ_       = {},
+                                           uint32_t                             blockDimX_      = {},
+                                           uint32_t                             blockDimY_      = {},
+                                           uint32_t                             blockDimZ_      = {},
+                                           uint32_t                             sharedMemBytes_ = {},
+                                           size_t                               paramCount_     = {},
+                                           const void * const *                 pParams_        = {},
+                                           size_t                               extraCount_     = {},
+                                           const void * const *                 pExtras_        = {},
+                                           const void *                         pNext_          = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , function( function_ )
+      , gridDimX( gridDimX_ )
+      , gridDimY( gridDimY_ )
+      , gridDimZ( gridDimZ_ )
+      , blockDimX( blockDimX_ )
+      , blockDimY( blockDimY_ )
+      , blockDimZ( blockDimZ_ )
+      , sharedMemBytes( sharedMemBytes_ )
+      , paramCount( paramCount_ )
+      , pParams( pParams_ )
+      , extraCount( extraCount_ )
+      , pExtras( pExtras_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR CudaLaunchInfoNV( CudaLaunchInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    CudaLaunchInfoNV( VkCudaLaunchInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT : CudaLaunchInfoNV( *reinterpret_cast<CudaLaunchInfoNV const *>( &rhs ) ) {}
+
+#    if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    CudaLaunchInfoNV( VULKAN_HPP_NAMESPACE::CudaFunctionNV                                      function_,
+                      uint32_t                                                                  gridDimX_,
+                      uint32_t                                                                  gridDimY_,
+                      uint32_t                                                                  gridDimZ_,
+                      uint32_t                                                                  blockDimX_,
+                      uint32_t                                                                  blockDimY_,
+                      uint32_t                                                                  blockDimZ_,
+                      uint32_t                                                                  sharedMemBytes_,
+                      VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const void * const> const & params_,
+                      VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const void * const> const & extras_ = {},
+                      const void *                                                              pNext_  = nullptr )
+      : pNext( pNext_ )
+      , function( function_ )
+      , gridDimX( gridDimX_ )
+      , gridDimY( gridDimY_ )
+      , gridDimZ( gridDimZ_ )
+      , blockDimX( blockDimX_ )
+      , blockDimY( blockDimY_ )
+      , blockDimZ( blockDimZ_ )
+      , sharedMemBytes( sharedMemBytes_ )
+      , paramCount( params_.size() )
+      , pParams( params_.data() )
+      , extraCount( extras_.size() )
+      , pExtras( extras_.data() )
+    {
+    }
+#    endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    CudaLaunchInfoNV & operator=( CudaLaunchInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    CudaLaunchInfoNV & operator=( VkCudaLaunchInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::CudaLaunchInfoNV const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 CudaLaunchInfoNV & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CudaLaunchInfoNV & setFunction( VULKAN_HPP_NAMESPACE::CudaFunctionNV function_ ) VULKAN_HPP_NOEXCEPT
+    {
+      function = function_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CudaLaunchInfoNV & setGridDimX( uint32_t gridDimX_ ) VULKAN_HPP_NOEXCEPT
+    {
+      gridDimX = gridDimX_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CudaLaunchInfoNV & setGridDimY( uint32_t gridDimY_ ) VULKAN_HPP_NOEXCEPT
+    {
+      gridDimY = gridDimY_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CudaLaunchInfoNV & setGridDimZ( uint32_t gridDimZ_ ) VULKAN_HPP_NOEXCEPT
+    {
+      gridDimZ = gridDimZ_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CudaLaunchInfoNV & setBlockDimX( uint32_t blockDimX_ ) VULKAN_HPP_NOEXCEPT
+    {
+      blockDimX = blockDimX_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CudaLaunchInfoNV & setBlockDimY( uint32_t blockDimY_ ) VULKAN_HPP_NOEXCEPT
+    {
+      blockDimY = blockDimY_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CudaLaunchInfoNV & setBlockDimZ( uint32_t blockDimZ_ ) VULKAN_HPP_NOEXCEPT
+    {
+      blockDimZ = blockDimZ_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CudaLaunchInfoNV & setSharedMemBytes( uint32_t sharedMemBytes_ ) VULKAN_HPP_NOEXCEPT
+    {
+      sharedMemBytes = sharedMemBytes_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CudaLaunchInfoNV & setParamCount( size_t paramCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      paramCount = paramCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CudaLaunchInfoNV & setPParams( const void * const * pParams_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pParams = pParams_;
+      return *this;
+    }
+
+#    if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    CudaLaunchInfoNV & setParams( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const void * const> const & params_ ) VULKAN_HPP_NOEXCEPT
+    {
+      paramCount = params_.size();
+      pParams    = params_.data();
+      return *this;
+    }
+#    endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    VULKAN_HPP_CONSTEXPR_14 CudaLaunchInfoNV & setExtraCount( size_t extraCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      extraCount = extraCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CudaLaunchInfoNV & setPExtras( const void * const * pExtras_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pExtras = pExtras_;
+      return *this;
+    }
+
+#    if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    CudaLaunchInfoNV & setExtras( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const void * const> const & extras_ ) VULKAN_HPP_NOEXCEPT
+    {
+      extraCount = extras_.size();
+      pExtras    = extras_.data();
+      return *this;
+    }
+#    endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+#  endif   /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkCudaLaunchInfoNV const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkCudaLaunchInfoNV *>( this );
+    }
+
+    operator VkCudaLaunchInfoNV &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkCudaLaunchInfoNV *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               VULKAN_HPP_NAMESPACE::CudaFunctionNV const &,
+               uint32_t const &,
+               uint32_t const &,
+               uint32_t const &,
+               uint32_t const &,
+               uint32_t const &,
+               uint32_t const &,
+               uint32_t const &,
+               size_t const &,
+               const void * const * const &,
+               size_t const &,
+               const void * const * const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie(
+        sType, pNext, function, gridDimX, gridDimY, gridDimZ, blockDimX, blockDimY, blockDimZ, sharedMemBytes, paramCount, pParams, extraCount, pExtras );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( CudaLaunchInfoNV const & ) const = default;
+#  else
+    bool operator==( CudaLaunchInfoNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( function == rhs.function ) && ( gridDimX == rhs.gridDimX ) && ( gridDimY == rhs.gridDimY ) &&
+             ( gridDimZ == rhs.gridDimZ ) && ( blockDimX == rhs.blockDimX ) && ( blockDimY == rhs.blockDimY ) && ( blockDimZ == rhs.blockDimZ ) &&
+             ( sharedMemBytes == rhs.sharedMemBytes ) && ( paramCount == rhs.paramCount ) && ( pParams == rhs.pParams ) && ( extraCount == rhs.extraCount ) &&
+             ( pExtras == rhs.pExtras );
+#    endif
+    }
+
+    bool operator!=( CudaLaunchInfoNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType  sType          = StructureType::eCudaLaunchInfoNV;
+    const void *                         pNext          = {};
+    VULKAN_HPP_NAMESPACE::CudaFunctionNV function       = {};
+    uint32_t                             gridDimX       = {};
+    uint32_t                             gridDimY       = {};
+    uint32_t                             gridDimZ       = {};
+    uint32_t                             blockDimX      = {};
+    uint32_t                             blockDimY      = {};
+    uint32_t                             blockDimZ      = {};
+    uint32_t                             sharedMemBytes = {};
+    size_t                               paramCount     = {};
+    const void * const *                 pParams        = {};
+    size_t                               extraCount     = {};
+    const void * const *                 pExtras        = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eCudaLaunchInfoNV>
+  {
+    using Type = CudaLaunchInfoNV;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct CudaModuleCreateInfoNV
+  {
+    using NativeType = VkCudaModuleCreateInfoNV;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eCudaModuleCreateInfoNV;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR CudaModuleCreateInfoNV( size_t dataSize_ = {}, const void * pData_ = {}, const void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , dataSize( dataSize_ )
+      , pData( pData_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR CudaModuleCreateInfoNV( CudaModuleCreateInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    CudaModuleCreateInfoNV( VkCudaModuleCreateInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT
+      : CudaModuleCreateInfoNV( *reinterpret_cast<CudaModuleCreateInfoNV const *>( &rhs ) )
+    {
+    }
+
+#    if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    template <typename T>
+    CudaModuleCreateInfoNV( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const T> const & data_, const void * pNext_ = nullptr )
+      : pNext( pNext_ ), dataSize( data_.size() * sizeof( T ) ), pData( data_.data() )
+    {
+    }
+#    endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    CudaModuleCreateInfoNV & operator=( CudaModuleCreateInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    CudaModuleCreateInfoNV & operator=( VkCudaModuleCreateInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::CudaModuleCreateInfoNV const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 CudaModuleCreateInfoNV & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CudaModuleCreateInfoNV & setDataSize( size_t dataSize_ ) VULKAN_HPP_NOEXCEPT
+    {
+      dataSize = dataSize_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 CudaModuleCreateInfoNV & setPData( const void * pData_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pData = pData_;
+      return *this;
+    }
+
+#    if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    template <typename T>
+    CudaModuleCreateInfoNV & setData( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const T> const & data_ ) VULKAN_HPP_NOEXCEPT
+    {
+      dataSize = data_.size() * sizeof( T );
+      pData    = data_.data();
+      return *this;
+    }
+#    endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+#  endif   /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkCudaModuleCreateInfoNV const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkCudaModuleCreateInfoNV *>( this );
+    }
+
+    operator VkCudaModuleCreateInfoNV &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkCudaModuleCreateInfoNV *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, size_t const &, const void * const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, dataSize, pData );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( CudaModuleCreateInfoNV const & ) const = default;
+#  else
+    bool operator==( CudaModuleCreateInfoNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( dataSize == rhs.dataSize ) && ( pData == rhs.pData );
+#    endif
+    }
+
+    bool operator!=( CudaModuleCreateInfoNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType    = StructureType::eCudaModuleCreateInfoNV;
+    const void *                        pNext    = {};
+    size_t                              dataSize = {};
+    const void *                        pData    = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eCudaModuleCreateInfoNV>
+  {
+    using Type = CudaModuleCreateInfoNV;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
 #if defined( VK_USE_PLATFORM_WIN32_KHR )
   struct D3D12FenceSubmitInfoKHR
   {
@@ -29580,6 +30079,102 @@ namespace VULKAN_HPP_NAMESPACE
   struct CppType<StructureType, StructureType::eDeviceQueueInfo2>
   {
     using Type = DeviceQueueInfo2;
+  };
+
+  struct DeviceQueueShaderCoreControlCreateInfoARM
+  {
+    using NativeType = VkDeviceQueueShaderCoreControlCreateInfoARM;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eDeviceQueueShaderCoreControlCreateInfoARM;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR DeviceQueueShaderCoreControlCreateInfoARM( uint32_t shaderCoreCount_ = {}, void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , shaderCoreCount( shaderCoreCount_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR DeviceQueueShaderCoreControlCreateInfoARM( DeviceQueueShaderCoreControlCreateInfoARM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    DeviceQueueShaderCoreControlCreateInfoARM( VkDeviceQueueShaderCoreControlCreateInfoARM const & rhs ) VULKAN_HPP_NOEXCEPT
+      : DeviceQueueShaderCoreControlCreateInfoARM( *reinterpret_cast<DeviceQueueShaderCoreControlCreateInfoARM const *>( &rhs ) )
+    {
+    }
+
+    DeviceQueueShaderCoreControlCreateInfoARM & operator=( DeviceQueueShaderCoreControlCreateInfoARM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    DeviceQueueShaderCoreControlCreateInfoARM & operator=( VkDeviceQueueShaderCoreControlCreateInfoARM const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::DeviceQueueShaderCoreControlCreateInfoARM const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 DeviceQueueShaderCoreControlCreateInfoARM & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 DeviceQueueShaderCoreControlCreateInfoARM & setShaderCoreCount( uint32_t shaderCoreCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      shaderCoreCount = shaderCoreCount_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkDeviceQueueShaderCoreControlCreateInfoARM const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkDeviceQueueShaderCoreControlCreateInfoARM *>( this );
+    }
+
+    operator VkDeviceQueueShaderCoreControlCreateInfoARM &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkDeviceQueueShaderCoreControlCreateInfoARM *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, uint32_t const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, shaderCoreCount );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( DeviceQueueShaderCoreControlCreateInfoARM const & ) const = default;
+#else
+    bool operator==( DeviceQueueShaderCoreControlCreateInfoARM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( shaderCoreCount == rhs.shaderCoreCount );
+#  endif
+    }
+
+    bool operator!=( DeviceQueueShaderCoreControlCreateInfoARM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType           = StructureType::eDeviceQueueShaderCoreControlCreateInfoARM;
+    void *                              pNext           = {};
+    uint32_t                            shaderCoreCount = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eDeviceQueueShaderCoreControlCreateInfoARM>
+  {
+    using Type = DeviceQueueShaderCoreControlCreateInfoARM;
   };
 
   struct DirectDriverLoadingInfoLUNARG
@@ -58128,6 +58723,195 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PhysicalDeviceCubicWeightsFeaturesQCOM;
   };
 
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct PhysicalDeviceCudaKernelLaunchFeaturesNV
+  {
+    using NativeType = VkPhysicalDeviceCudaKernelLaunchFeaturesNV;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceCudaKernelLaunchFeaturesNV;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceCudaKernelLaunchFeaturesNV( VULKAN_HPP_NAMESPACE::Bool32 cudaKernelLaunchFeatures_ = {},
+                                                                   void *                       pNext_                    = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , cudaKernelLaunchFeatures( cudaKernelLaunchFeatures_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceCudaKernelLaunchFeaturesNV( PhysicalDeviceCudaKernelLaunchFeaturesNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceCudaKernelLaunchFeaturesNV( VkPhysicalDeviceCudaKernelLaunchFeaturesNV const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceCudaKernelLaunchFeaturesNV( *reinterpret_cast<PhysicalDeviceCudaKernelLaunchFeaturesNV const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceCudaKernelLaunchFeaturesNV & operator=( PhysicalDeviceCudaKernelLaunchFeaturesNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceCudaKernelLaunchFeaturesNV & operator=( VkPhysicalDeviceCudaKernelLaunchFeaturesNV const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceCudaKernelLaunchFeaturesNV const *>( &rhs );
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceCudaKernelLaunchFeaturesNV & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceCudaKernelLaunchFeaturesNV &
+                            setCudaKernelLaunchFeatures( VULKAN_HPP_NAMESPACE::Bool32 cudaKernelLaunchFeatures_ ) VULKAN_HPP_NOEXCEPT
+    {
+      cudaKernelLaunchFeatures = cudaKernelLaunchFeatures_;
+      return *this;
+    }
+#  endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceCudaKernelLaunchFeaturesNV const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceCudaKernelLaunchFeaturesNV *>( this );
+    }
+
+    operator VkPhysicalDeviceCudaKernelLaunchFeaturesNV &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceCudaKernelLaunchFeaturesNV *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, cudaKernelLaunchFeatures );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceCudaKernelLaunchFeaturesNV const & ) const = default;
+#  else
+    bool operator==( PhysicalDeviceCudaKernelLaunchFeaturesNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( cudaKernelLaunchFeatures == rhs.cudaKernelLaunchFeatures );
+#    endif
+    }
+
+    bool operator!=( PhysicalDeviceCudaKernelLaunchFeaturesNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                    = StructureType::ePhysicalDeviceCudaKernelLaunchFeaturesNV;
+    void *                              pNext                    = {};
+    VULKAN_HPP_NAMESPACE::Bool32        cudaKernelLaunchFeatures = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceCudaKernelLaunchFeaturesNV>
+  {
+    using Type = PhysicalDeviceCudaKernelLaunchFeaturesNV;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
+#if defined( VK_ENABLE_BETA_EXTENSIONS )
+  struct PhysicalDeviceCudaKernelLaunchPropertiesNV
+  {
+    using NativeType = VkPhysicalDeviceCudaKernelLaunchPropertiesNV;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceCudaKernelLaunchPropertiesNV;
+
+#  if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceCudaKernelLaunchPropertiesNV( uint32_t computeCapabilityMinor_ = {},
+                                                                     uint32_t computeCapabilityMajor_ = {},
+                                                                     void *   pNext_                  = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , computeCapabilityMinor( computeCapabilityMinor_ )
+      , computeCapabilityMajor( computeCapabilityMajor_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceCudaKernelLaunchPropertiesNV( PhysicalDeviceCudaKernelLaunchPropertiesNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceCudaKernelLaunchPropertiesNV( VkPhysicalDeviceCudaKernelLaunchPropertiesNV const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceCudaKernelLaunchPropertiesNV( *reinterpret_cast<PhysicalDeviceCudaKernelLaunchPropertiesNV const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceCudaKernelLaunchPropertiesNV & operator=( PhysicalDeviceCudaKernelLaunchPropertiesNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#  endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceCudaKernelLaunchPropertiesNV & operator=( VkPhysicalDeviceCudaKernelLaunchPropertiesNV const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceCudaKernelLaunchPropertiesNV const *>( &rhs );
+      return *this;
+    }
+
+    operator VkPhysicalDeviceCudaKernelLaunchPropertiesNV const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceCudaKernelLaunchPropertiesNV *>( this );
+    }
+
+    operator VkPhysicalDeviceCudaKernelLaunchPropertiesNV &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceCudaKernelLaunchPropertiesNV *>( this );
+    }
+
+#  if defined( VULKAN_HPP_USE_REFLECT )
+#    if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#    else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, uint32_t const &, uint32_t const &>
+#    endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, computeCapabilityMinor, computeCapabilityMajor );
+    }
+#  endif
+
+#  if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceCudaKernelLaunchPropertiesNV const & ) const = default;
+#  else
+    bool operator==( PhysicalDeviceCudaKernelLaunchPropertiesNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#    if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#    else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( computeCapabilityMinor == rhs.computeCapabilityMinor ) &&
+             ( computeCapabilityMajor == rhs.computeCapabilityMajor );
+#    endif
+    }
+
+    bool operator!=( PhysicalDeviceCudaKernelLaunchPropertiesNV const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#  endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                  = StructureType::ePhysicalDeviceCudaKernelLaunchPropertiesNV;
+    void *                              pNext                  = {};
+    uint32_t                            computeCapabilityMinor = {};
+    uint32_t                            computeCapabilityMajor = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceCudaKernelLaunchPropertiesNV>
+  {
+    using Type = PhysicalDeviceCudaKernelLaunchPropertiesNV;
+  };
+#endif /*VK_ENABLE_BETA_EXTENSIONS*/
+
   struct PhysicalDeviceCustomBorderColorFeaturesEXT
   {
     using NativeType = VkPhysicalDeviceCustomBorderColorFeaturesEXT;
@@ -77722,6 +78506,204 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = PhysicalDeviceScalarBlockLayoutFeatures;
   };
   using PhysicalDeviceScalarBlockLayoutFeaturesEXT = PhysicalDeviceScalarBlockLayoutFeatures;
+
+  struct PhysicalDeviceSchedulingControlsFeaturesARM
+  {
+    using NativeType = VkPhysicalDeviceSchedulingControlsFeaturesARM;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceSchedulingControlsFeaturesARM;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceSchedulingControlsFeaturesARM( VULKAN_HPP_NAMESPACE::Bool32 schedulingControls_ = {},
+                                                                      void *                       pNext_              = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , schedulingControls( schedulingControls_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceSchedulingControlsFeaturesARM( PhysicalDeviceSchedulingControlsFeaturesARM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceSchedulingControlsFeaturesARM( VkPhysicalDeviceSchedulingControlsFeaturesARM const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceSchedulingControlsFeaturesARM( *reinterpret_cast<PhysicalDeviceSchedulingControlsFeaturesARM const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceSchedulingControlsFeaturesARM & operator=( PhysicalDeviceSchedulingControlsFeaturesARM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceSchedulingControlsFeaturesARM & operator=( VkPhysicalDeviceSchedulingControlsFeaturesARM const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceSchedulingControlsFeaturesARM const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceSchedulingControlsFeaturesARM & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceSchedulingControlsFeaturesARM &
+                            setSchedulingControls( VULKAN_HPP_NAMESPACE::Bool32 schedulingControls_ ) VULKAN_HPP_NOEXCEPT
+    {
+      schedulingControls = schedulingControls_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceSchedulingControlsFeaturesARM const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceSchedulingControlsFeaturesARM *>( this );
+    }
+
+    operator VkPhysicalDeviceSchedulingControlsFeaturesARM &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceSchedulingControlsFeaturesARM *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, schedulingControls );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceSchedulingControlsFeaturesARM const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceSchedulingControlsFeaturesARM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( schedulingControls == rhs.schedulingControls );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceSchedulingControlsFeaturesARM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType              = StructureType::ePhysicalDeviceSchedulingControlsFeaturesARM;
+    void *                              pNext              = {};
+    VULKAN_HPP_NAMESPACE::Bool32        schedulingControls = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceSchedulingControlsFeaturesARM>
+  {
+    using Type = PhysicalDeviceSchedulingControlsFeaturesARM;
+  };
+
+  struct PhysicalDeviceSchedulingControlsPropertiesARM
+  {
+    using NativeType = VkPhysicalDeviceSchedulingControlsPropertiesARM;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceSchedulingControlsPropertiesARM;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR
+      PhysicalDeviceSchedulingControlsPropertiesARM( VULKAN_HPP_NAMESPACE::PhysicalDeviceSchedulingControlsFlagsARM schedulingControlsFlags_ = {},
+                                                     void *                                                         pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , schedulingControlsFlags( schedulingControlsFlags_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR
+      PhysicalDeviceSchedulingControlsPropertiesARM( PhysicalDeviceSchedulingControlsPropertiesARM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceSchedulingControlsPropertiesARM( VkPhysicalDeviceSchedulingControlsPropertiesARM const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceSchedulingControlsPropertiesARM( *reinterpret_cast<PhysicalDeviceSchedulingControlsPropertiesARM const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceSchedulingControlsPropertiesARM & operator=( PhysicalDeviceSchedulingControlsPropertiesARM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceSchedulingControlsPropertiesARM & operator=( VkPhysicalDeviceSchedulingControlsPropertiesARM const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceSchedulingControlsPropertiesARM const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceSchedulingControlsPropertiesARM & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceSchedulingControlsPropertiesARM &
+      setSchedulingControlsFlags( VULKAN_HPP_NAMESPACE::PhysicalDeviceSchedulingControlsFlagsARM schedulingControlsFlags_ ) VULKAN_HPP_NOEXCEPT
+    {
+      schedulingControlsFlags = schedulingControlsFlags_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceSchedulingControlsPropertiesARM const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceSchedulingControlsPropertiesARM *>( this );
+    }
+
+    operator VkPhysicalDeviceSchedulingControlsPropertiesARM &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceSchedulingControlsPropertiesARM *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::PhysicalDeviceSchedulingControlsFlagsARM const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, schedulingControlsFlags );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceSchedulingControlsPropertiesARM const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceSchedulingControlsPropertiesARM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( schedulingControlsFlags == rhs.schedulingControlsFlags );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceSchedulingControlsPropertiesARM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType                            sType                   = StructureType::ePhysicalDeviceSchedulingControlsPropertiesARM;
+    void *                                                         pNext                   = {};
+    VULKAN_HPP_NAMESPACE::PhysicalDeviceSchedulingControlsFlagsARM schedulingControlsFlags = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceSchedulingControlsPropertiesARM>
+  {
+    using Type = PhysicalDeviceSchedulingControlsPropertiesARM;
+  };
 
   struct PhysicalDeviceSeparateDepthStencilLayoutsFeatures
   {
