@@ -30295,7 +30295,7 @@ namespace VULKAN_HPP_NAMESPACE
       VULKAN_HPP_NAMESPACE::DirectDriverLoadingModeLUNARG         mode_        = VULKAN_HPP_NAMESPACE::DirectDriverLoadingModeLUNARG::eExclusive,
       uint32_t                                                    driverCount_ = {},
       const VULKAN_HPP_NAMESPACE::DirectDriverLoadingInfoLUNARG * pDrivers_    = {},
-      void *                                                      pNext_       = nullptr ) VULKAN_HPP_NOEXCEPT
+      const void *                                                pNext_       = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
       , mode( mode_ )
       , driverCount( driverCount_ )
@@ -30313,7 +30313,7 @@ namespace VULKAN_HPP_NAMESPACE
 #  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
     DirectDriverLoadingListLUNARG( VULKAN_HPP_NAMESPACE::DirectDriverLoadingModeLUNARG                                                              mode_,
                                    VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::DirectDriverLoadingInfoLUNARG> const & drivers_,
-                                   void * pNext_ = nullptr )
+                                   const void * pNext_ = nullptr )
       : pNext( pNext_ ), mode( mode_ ), driverCount( static_cast<uint32_t>( drivers_.size() ) ), pDrivers( drivers_.data() )
     {
     }
@@ -30329,7 +30329,7 @@ namespace VULKAN_HPP_NAMESPACE
     }
 
 #if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
-    VULKAN_HPP_CONSTEXPR_14 DirectDriverLoadingListLUNARG & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR_14 DirectDriverLoadingListLUNARG & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
     {
       pNext = pNext_;
       return *this;
@@ -30380,7 +30380,7 @@ namespace VULKAN_HPP_NAMESPACE
     auto
 #  else
     std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
-               void * const &,
+               const void * const &,
                VULKAN_HPP_NAMESPACE::DirectDriverLoadingModeLUNARG const &,
                uint32_t const &,
                const VULKAN_HPP_NAMESPACE::DirectDriverLoadingInfoLUNARG * const &>
@@ -30407,7 +30407,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   public:
     VULKAN_HPP_NAMESPACE::StructureType                         sType       = StructureType::eDirectDriverLoadingListLUNARG;
-    void *                                                      pNext       = {};
+    const void *                                                pNext       = {};
     VULKAN_HPP_NAMESPACE::DirectDriverLoadingModeLUNARG         mode        = VULKAN_HPP_NAMESPACE::DirectDriverLoadingModeLUNARG::eExclusive;
     uint32_t                                                    driverCount = {};
     const VULKAN_HPP_NAMESPACE::DirectDriverLoadingInfoLUNARG * pDrivers    = {};
@@ -77802,6 +77802,106 @@ namespace VULKAN_HPP_NAMESPACE
   struct CppType<StructureType, StructureType::ePhysicalDeviceRayTracingPropertiesNV>
   {
     using Type = PhysicalDeviceRayTracingPropertiesNV;
+  };
+
+  struct PhysicalDeviceRelaxedLineRasterizationFeaturesIMG
+  {
+    using NativeType = VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceRelaxedLineRasterizationFeaturesIMG;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceRelaxedLineRasterizationFeaturesIMG( VULKAN_HPP_NAMESPACE::Bool32 relaxedLineRasterization_ = {},
+                                                                            void *                       pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , relaxedLineRasterization( relaxedLineRasterization_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR
+      PhysicalDeviceRelaxedLineRasterizationFeaturesIMG( PhysicalDeviceRelaxedLineRasterizationFeaturesIMG const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceRelaxedLineRasterizationFeaturesIMG( VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceRelaxedLineRasterizationFeaturesIMG( *reinterpret_cast<PhysicalDeviceRelaxedLineRasterizationFeaturesIMG const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceRelaxedLineRasterizationFeaturesIMG &
+      operator=( PhysicalDeviceRelaxedLineRasterizationFeaturesIMG const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceRelaxedLineRasterizationFeaturesIMG & operator=( VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceRelaxedLineRasterizationFeaturesIMG const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceRelaxedLineRasterizationFeaturesIMG & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceRelaxedLineRasterizationFeaturesIMG &
+                            setRelaxedLineRasterization( VULKAN_HPP_NAMESPACE::Bool32 relaxedLineRasterization_ ) VULKAN_HPP_NOEXCEPT
+    {
+      relaxedLineRasterization = relaxedLineRasterization_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG *>( this );
+    }
+
+    operator VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, relaxedLineRasterization );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceRelaxedLineRasterizationFeaturesIMG const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceRelaxedLineRasterizationFeaturesIMG const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( relaxedLineRasterization == rhs.relaxedLineRasterization );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceRelaxedLineRasterizationFeaturesIMG const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                    = StructureType::ePhysicalDeviceRelaxedLineRasterizationFeaturesIMG;
+    void *                              pNext                    = {};
+    VULKAN_HPP_NAMESPACE::Bool32        relaxedLineRasterization = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceRelaxedLineRasterizationFeaturesIMG>
+  {
+    using Type = PhysicalDeviceRelaxedLineRasterizationFeaturesIMG;
   };
 
   struct PhysicalDeviceRepresentativeFragmentTestFeaturesNV
