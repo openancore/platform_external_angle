@@ -1,9 +1,9 @@
 {
   "version info": {
     "schema version": 2,
-    "api version": "1.3.269",
-    "comment": "from git branch: github-main commit: 463f8c616f49fb83ae4736de0d84b0048a7c76e2",
-    "date": "2023-10-20 10:25:47Z"
+    "api version": "1.3.270",
+    "comment": "from git branch: github-main commit: b4792eab92a1d132ef95b56a7681cc6af69b570e",
+    "date": "2023-11-10 11:37:06Z"
   },
   "validation": {
     "vkGetInstanceProcAddr": {
@@ -853,7 +853,7 @@
         },
         {
           "vuid": "VUID-VkDeviceCreateInfo-pNext-pNext",
-          "text": "Each <code>pNext</code> member of any structure (including this one) in the <code>pNext</code> chain <strong class=\"purple\">must</strong> be either <code>NULL</code> or a pointer to a valid instance of <a href=\"#VkDeviceDeviceMemoryReportCreateInfoEXT\">VkDeviceDeviceMemoryReportCreateInfoEXT</a>, <a href=\"#VkDeviceDiagnosticsConfigCreateInfoNV\">VkDeviceDiagnosticsConfigCreateInfoNV</a>, <a href=\"#VkDeviceGroupDeviceCreateInfo\">VkDeviceGroupDeviceCreateInfo</a>, <a href=\"#VkDeviceMemoryOverallocationCreateInfoAMD\">VkDeviceMemoryOverallocationCreateInfoAMD</a>, <a href=\"#VkDevicePrivateDataCreateInfo\">VkDevicePrivateDataCreateInfo</a>, <a href=\"#VkDeviceQueueShaderCoreControlCreateInfoARM\">VkDeviceQueueShaderCoreControlCreateInfoARM</a>, <a href=\"#VkPhysicalDevice16BitStorageFeatures\">VkPhysicalDevice16BitStorageFeatures</a>, <a href=\"#VkPhysicalDevice4444FormatsFeaturesEXT\">VkPhysicalDevice4444FormatsFeaturesEXT</a>, <a href=\"#VkPhysicalDevice8BitStorageFeatures\">VkPhysicalDevice8BitStorageFeatures</a>, <a href=\"#VkPhysicalDeviceASTCDecodeFeaturesEXT\">VkPhysicalDeviceASTCDecodeFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceAccelerationStructureFeaturesKHR\">VkPhysicalDeviceAccelerationStructureFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceAddressBindingReportFeaturesEXT\">VkPhysicalDeviceAddressBindingReportFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceAmigoProfilingFeaturesSEC\">VkPhysicalDeviceAmigoProfilingFeaturesSEC</a>, <a href=\"#VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT\">VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT\">VkPhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT\">VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceBorderColorSwizzleFeaturesEXT\">VkPhysicalDeviceBorderColorSwizzleFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceBufferDeviceAddressFeatures\">VkPhysicalDeviceBufferDeviceAddressFeatures</a>, <a href=\"#VkPhysicalDeviceBufferDeviceAddressFeaturesEXT\">VkPhysicalDeviceBufferDeviceAddressFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI\">VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI</a>, <a href=\"#VkPhysicalDeviceCoherentMemoryFeaturesAMD\">VkPhysicalDeviceCoherentMemoryFeaturesAMD</a>, <a href=\"#VkPhysicalDeviceColorWriteEnableFeaturesEXT\">VkPhysicalDeviceColorWriteEnableFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceComputeShaderDerivativesFeaturesNV\">VkPhysicalDeviceComputeShaderDerivativesFeaturesNV</a>, <a href=\"#VkPhysicalDeviceConditionalRenderingFeaturesEXT\">VkPhysicalDeviceConditionalRenderingFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceCooperativeMatrixFeaturesKHR\">VkPhysicalDeviceCooperativeMatrixFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceCooperativeMatrixFeaturesNV\">VkPhysicalDeviceCooperativeMatrixFeaturesNV</a>, <a href=\"#VkPhysicalDeviceCopyMemoryIndirectFeaturesNV\">VkPhysicalDeviceCopyMemoryIndirectFeaturesNV</a>, <a href=\"#VkPhysicalDeviceCornerSampledImageFeaturesNV\">VkPhysicalDeviceCornerSampledImageFeaturesNV</a>, <a href=\"#VkPhysicalDeviceCoverageReductionModeFeaturesNV\">VkPhysicalDeviceCoverageReductionModeFeaturesNV</a>, <a href=\"#VkPhysicalDeviceCubicClampFeaturesQCOM\">VkPhysicalDeviceCubicClampFeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceCubicWeightsFeaturesQCOM\">VkPhysicalDeviceCubicWeightsFeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceCudaKernelLaunchFeaturesNV\">VkPhysicalDeviceCudaKernelLaunchFeaturesNV</a>, <a href=\"#VkPhysicalDeviceCustomBorderColorFeaturesEXT\">VkPhysicalDeviceCustomBorderColorFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV\">VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV</a>, <a href=\"#VkPhysicalDeviceDepthBiasControlFeaturesEXT\">VkPhysicalDeviceDepthBiasControlFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceDepthClampZeroOneFeaturesEXT\">VkPhysicalDeviceDepthClampZeroOneFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceDepthClipControlFeaturesEXT\">VkPhysicalDeviceDepthClipControlFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceDepthClipEnableFeaturesEXT\">VkPhysicalDeviceDepthClipEnableFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceDescriptorBufferFeaturesEXT\">VkPhysicalDeviceDescriptorBufferFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceDescriptorIndexingFeatures\">VkPhysicalDeviceDescriptorIndexingFeatures</a>, <a href=\"#VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV\">VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV</a>, <a href=\"#VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE\">VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE</a>, <a href=\"#VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV\">VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV</a>, <a href=\"#VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNV\">VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNV</a>, <a href=\"#VkPhysicalDeviceDeviceMemoryReportFeaturesEXT\">VkPhysicalDeviceDeviceMemoryReportFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceDiagnosticsConfigFeaturesNV\">VkPhysicalDeviceDiagnosticsConfigFeaturesNV</a>, <a href=\"#VkPhysicalDeviceDisplacementMicromapFeaturesNV\">VkPhysicalDeviceDisplacementMicromapFeaturesNV</a>, <a href=\"#VkPhysicalDeviceDynamicRenderingFeatures\">VkPhysicalDeviceDynamicRenderingFeatures</a>, <a href=\"#VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT\">VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceExclusiveScissorFeaturesNV\">VkPhysicalDeviceExclusiveScissorFeaturesNV</a>, <a href=\"#VkPhysicalDeviceExtendedDynamicState2FeaturesEXT\">VkPhysicalDeviceExtendedDynamicState2FeaturesEXT</a>, <a href=\"#VkPhysicalDeviceExtendedDynamicState3FeaturesEXT\">VkPhysicalDeviceExtendedDynamicState3FeaturesEXT</a>, <a href=\"#VkPhysicalDeviceExtendedDynamicStateFeaturesEXT\">VkPhysicalDeviceExtendedDynamicStateFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV\">VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV</a>, <a href=\"#VkPhysicalDeviceExternalFormatResolveFeaturesANDROID\">VkPhysicalDeviceExternalFormatResolveFeaturesANDROID</a>, <a href=\"#VkPhysicalDeviceExternalMemoryRDMAFeaturesNV\">VkPhysicalDeviceExternalMemoryRDMAFeaturesNV</a>, <a href=\"#VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX\">VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX</a>, <a href=\"#VkPhysicalDeviceFaultFeaturesEXT\">VkPhysicalDeviceFaultFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceFeatures2\">VkPhysicalDeviceFeatures2</a>, <a href=\"#VkPhysicalDeviceFragmentDensityMap2FeaturesEXT\">VkPhysicalDeviceFragmentDensityMap2FeaturesEXT</a>, <a href=\"#VkPhysicalDeviceFragmentDensityMapFeaturesEXT\">VkPhysicalDeviceFragmentDensityMapFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceFragmentDensityMapOffsetFeaturesQCOM\">VkPhysicalDeviceFragmentDensityMapOffsetFeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR\">VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT\">VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV\">VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV</a>, <a href=\"#VkPhysicalDeviceFragmentShadingRateFeaturesKHR\">VkPhysicalDeviceFragmentShadingRateFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceFrameBoundaryFeaturesEXT\">VkPhysicalDeviceFrameBoundaryFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceGlobalPriorityQueryFeaturesKHR\">VkPhysicalDeviceGlobalPriorityQueryFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT\">VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceHostImageCopyFeaturesEXT\">VkPhysicalDeviceHostImageCopyFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceHostQueryResetFeatures\">VkPhysicalDeviceHostQueryResetFeatures</a>, <a href=\"#VkPhysicalDeviceImage2DViewOf3DFeaturesEXT\">VkPhysicalDeviceImage2DViewOf3DFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceImageCompressionControlFeaturesEXT\">VkPhysicalDeviceImageCompressionControlFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceImageCompressionControlSwapchainFeaturesEXT\">VkPhysicalDeviceImageCompressionControlSwapchainFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceImageProcessing2FeaturesQCOM\">VkPhysicalDeviceImageProcessing2FeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceImageProcessingFeaturesQCOM\">VkPhysicalDeviceImageProcessingFeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceImageRobustnessFeatures\">VkPhysicalDeviceImageRobustnessFeatures</a>, <a href=\"#VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT\">VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceImageViewMinLodFeaturesEXT\">VkPhysicalDeviceImageViewMinLodFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceImagelessFramebufferFeatures\">VkPhysicalDeviceImagelessFramebufferFeatures</a>, <a href=\"#VkPhysicalDeviceIndexTypeUint8FeaturesEXT\">VkPhysicalDeviceIndexTypeUint8FeaturesEXT</a>, <a href=\"#VkPhysicalDeviceInheritedViewportScissorFeaturesNV\">VkPhysicalDeviceInheritedViewportScissorFeaturesNV</a>, <a href=\"#VkPhysicalDeviceInlineUniformBlockFeatures\">VkPhysicalDeviceInlineUniformBlockFeatures</a>, <a href=\"#VkPhysicalDeviceInvocationMaskFeaturesHUAWEI\">VkPhysicalDeviceInvocationMaskFeaturesHUAWEI</a>, <a href=\"#VkPhysicalDeviceLegacyDitheringFeaturesEXT\">VkPhysicalDeviceLegacyDitheringFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceLineRasterizationFeaturesEXT\">VkPhysicalDeviceLineRasterizationFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceLinearColorAttachmentFeaturesNV\">VkPhysicalDeviceLinearColorAttachmentFeaturesNV</a>, <a href=\"#VkPhysicalDeviceMaintenance4Features\">VkPhysicalDeviceMaintenance4Features</a>, <a href=\"#VkPhysicalDeviceMaintenance5FeaturesKHR\">VkPhysicalDeviceMaintenance5FeaturesKHR</a>, <a href=\"#VkPhysicalDeviceMemoryDecompressionFeaturesNV\">VkPhysicalDeviceMemoryDecompressionFeaturesNV</a>, <a href=\"#VkPhysicalDeviceMemoryPriorityFeaturesEXT\">VkPhysicalDeviceMemoryPriorityFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceMeshShaderFeaturesEXT\">VkPhysicalDeviceMeshShaderFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceMeshShaderFeaturesNV\">VkPhysicalDeviceMeshShaderFeaturesNV</a>, <a href=\"#VkPhysicalDeviceMultiDrawFeaturesEXT\">VkPhysicalDeviceMultiDrawFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT\">VkPhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceMultiviewFeatures\">VkPhysicalDeviceMultiviewFeatures</a>, <a href=\"#VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM\">VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM\">VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceMutableDescriptorTypeFeaturesEXT\">VkPhysicalDeviceMutableDescriptorTypeFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceNestedCommandBufferFeaturesEXT\">VkPhysicalDeviceNestedCommandBufferFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT\">VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceOpacityMicromapFeaturesEXT\">VkPhysicalDeviceOpacityMicromapFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceOpticalFlowFeaturesNV\">VkPhysicalDeviceOpticalFlowFeaturesNV</a>, <a href=\"#VkPhysicalDevicePageableDeviceLocalMemoryFeaturesEXT\">VkPhysicalDevicePageableDeviceLocalMemoryFeaturesEXT</a>, <a href=\"#VkPhysicalDevicePerformanceQueryFeaturesKHR\">VkPhysicalDevicePerformanceQueryFeaturesKHR</a>, <a href=\"#VkPhysicalDevicePipelineCreationCacheControlFeatures\">VkPhysicalDevicePipelineCreationCacheControlFeatures</a>, <a href=\"#VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR\">VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR</a>, <a href=\"#VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT\">VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT</a>, <a href=\"#VkPhysicalDevicePipelinePropertiesFeaturesEXT\">VkPhysicalDevicePipelinePropertiesFeaturesEXT</a>, <a href=\"#VkPhysicalDevicePipelineProtectedAccessFeaturesEXT\">VkPhysicalDevicePipelineProtectedAccessFeaturesEXT</a>, <a href=\"#VkPhysicalDevicePipelineRobustnessFeaturesEXT\">VkPhysicalDevicePipelineRobustnessFeaturesEXT</a>, <a href=\"#VkPhysicalDevicePortabilitySubsetFeaturesKHR\">VkPhysicalDevicePortabilitySubsetFeaturesKHR</a>, <a href=\"#VkPhysicalDevicePresentBarrierFeaturesNV\">VkPhysicalDevicePresentBarrierFeaturesNV</a>, <a href=\"#VkPhysicalDevicePresentIdFeaturesKHR\">VkPhysicalDevicePresentIdFeaturesKHR</a>, <a href=\"#VkPhysicalDevicePresentWaitFeaturesKHR\">VkPhysicalDevicePresentWaitFeaturesKHR</a>, <a href=\"#VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT\">VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT</a>, <a href=\"#VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT\">VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT</a>, <a href=\"#VkPhysicalDevicePrivateDataFeatures\">VkPhysicalDevicePrivateDataFeatures</a>, <a href=\"#VkPhysicalDeviceProtectedMemoryFeatures\">VkPhysicalDeviceProtectedMemoryFeatures</a>, <a href=\"#VkPhysicalDeviceProvokingVertexFeaturesEXT\">VkPhysicalDeviceProvokingVertexFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT\">VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT\">VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceRayQueryFeaturesKHR\">VkPhysicalDeviceRayQueryFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceRayTracingInvocationReorderFeaturesNV\">VkPhysicalDeviceRayTracingInvocationReorderFeaturesNV</a>, <a href=\"#VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR\">VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR</a>, <a href=\"#VkPhysicalDeviceRayTracingMotionBlurFeaturesNV\">VkPhysicalDeviceRayTracingMotionBlurFeaturesNV</a>, <a href=\"#VkPhysicalDeviceRayTracingPipelineFeaturesKHR\">VkPhysicalDeviceRayTracingPipelineFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR\">VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV\">VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV</a>, <a href=\"#VkPhysicalDeviceRobustness2FeaturesEXT\">VkPhysicalDeviceRobustness2FeaturesEXT</a>, <a href=\"#VkPhysicalDeviceSamplerYcbcrConversionFeatures\">VkPhysicalDeviceSamplerYcbcrConversionFeatures</a>, <a href=\"#VkPhysicalDeviceScalarBlockLayoutFeatures\">VkPhysicalDeviceScalarBlockLayoutFeatures</a>, <a href=\"#VkPhysicalDeviceSchedulingControlsFeaturesARM\">VkPhysicalDeviceSchedulingControlsFeaturesARM</a>, <a href=\"#VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures\">VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures</a>, <a href=\"#VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT\">VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT</a>, <a href=\"#VkPhysicalDeviceShaderAtomicFloatFeaturesEXT\">VkPhysicalDeviceShaderAtomicFloatFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceShaderAtomicInt64Features\">VkPhysicalDeviceShaderAtomicInt64Features</a>, <a href=\"#VkPhysicalDeviceShaderClockFeaturesKHR\">VkPhysicalDeviceShaderClockFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceShaderCoreBuiltinsFeaturesARM\">VkPhysicalDeviceShaderCoreBuiltinsFeaturesARM</a>, <a href=\"#VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures\">VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures</a>, <a href=\"#VkPhysicalDeviceShaderDrawParametersFeatures\">VkPhysicalDeviceShaderDrawParametersFeatures</a>, <a href=\"#VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD\">VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD</a>, <a href=\"#VkPhysicalDeviceShaderEnqueueFeaturesAMDX\">VkPhysicalDeviceShaderEnqueueFeaturesAMDX</a>, <a href=\"#VkPhysicalDeviceShaderFloat16Int8Features\">VkPhysicalDeviceShaderFloat16Int8Features</a>, <a href=\"#VkPhysicalDeviceShaderImageAtomicInt64FeaturesEXT\">VkPhysicalDeviceShaderImageAtomicInt64FeaturesEXT</a>, <a href=\"#VkPhysicalDeviceShaderImageFootprintFeaturesNV\">VkPhysicalDeviceShaderImageFootprintFeaturesNV</a>, <a href=\"#VkPhysicalDeviceShaderIntegerDotProductFeatures\">VkPhysicalDeviceShaderIntegerDotProductFeatures</a>, <a href=\"#VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL\">VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL</a>, <a href=\"#VkPhysicalDeviceShaderModuleIdentifierFeaturesEXT\">VkPhysicalDeviceShaderModuleIdentifierFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceShaderObjectFeaturesEXT\">VkPhysicalDeviceShaderObjectFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceShaderSMBuiltinsFeaturesNV\">VkPhysicalDeviceShaderSMBuiltinsFeaturesNV</a>, <a href=\"#VkPhysicalDeviceShaderSubgroupExtendedTypesFeatures\">VkPhysicalDeviceShaderSubgroupExtendedTypesFeatures</a>, <a href=\"#VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR\">VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceShaderTerminateInvocationFeatures\">VkPhysicalDeviceShaderTerminateInvocationFeatures</a>, <a href=\"#VkPhysicalDeviceShaderTileImageFeaturesEXT\">VkPhysicalDeviceShaderTileImageFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceShadingRateImageFeaturesNV\">VkPhysicalDeviceShadingRateImageFeaturesNV</a>, <a href=\"#VkPhysicalDeviceSubgroupSizeControlFeatures\">VkPhysicalDeviceSubgroupSizeControlFeatures</a>, <a href=\"#VkPhysicalDeviceSubpassMergeFeedbackFeaturesEXT\">VkPhysicalDeviceSubpassMergeFeedbackFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceSubpassShadingFeaturesHUAWEI\">VkPhysicalDeviceSubpassShadingFeaturesHUAWEI</a>, <a href=\"#VkPhysicalDeviceSwapchainMaintenance1FeaturesEXT\">VkPhysicalDeviceSwapchainMaintenance1FeaturesEXT</a>, <a href=\"#VkPhysicalDeviceSynchronization2Features\">VkPhysicalDeviceSynchronization2Features</a>, <a href=\"#VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT\">VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceTextureCompressionASTCHDRFeatures\">VkPhysicalDeviceTextureCompressionASTCHDRFeatures</a>, <a href=\"#VkPhysicalDeviceTilePropertiesFeaturesQCOM\">VkPhysicalDeviceTilePropertiesFeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceTimelineSemaphoreFeatures\">VkPhysicalDeviceTimelineSemaphoreFeatures</a>, <a href=\"#VkPhysicalDeviceTransformFeedbackFeaturesEXT\">VkPhysicalDeviceTransformFeedbackFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceUniformBufferStandardLayoutFeatures\">VkPhysicalDeviceUniformBufferStandardLayoutFeatures</a>, <a href=\"#VkPhysicalDeviceVariablePointersFeatures\">VkPhysicalDeviceVariablePointersFeatures</a>, <a href=\"#VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT\">VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceVertexInputDynamicStateFeaturesEXT\">VkPhysicalDeviceVertexInputDynamicStateFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceVulkan11Features\">VkPhysicalDeviceVulkan11Features</a>, <a href=\"#VkPhysicalDeviceVulkan12Features\">VkPhysicalDeviceVulkan12Features</a>, <a href=\"#VkPhysicalDeviceVulkan13Features\">VkPhysicalDeviceVulkan13Features</a>, <a href=\"#VkPhysicalDeviceVulkanMemoryModelFeatures\">VkPhysicalDeviceVulkanMemoryModelFeatures</a>, <a href=\"#VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR\">VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT\">VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceYcbcrDegammaFeaturesQCOM\">VkPhysicalDeviceYcbcrDegammaFeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceYcbcrImageArraysFeaturesEXT\">VkPhysicalDeviceYcbcrImageArraysFeaturesEXT</a>, or <a href=\"#VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures\">VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures</a>",
+          "text": "Each <code>pNext</code> member of any structure (including this one) in the <code>pNext</code> chain <strong class=\"purple\">must</strong> be either <code>NULL</code> or a pointer to a valid instance of <a href=\"#VkDeviceDeviceMemoryReportCreateInfoEXT\">VkDeviceDeviceMemoryReportCreateInfoEXT</a>, <a href=\"#VkDeviceDiagnosticsConfigCreateInfoNV\">VkDeviceDiagnosticsConfigCreateInfoNV</a>, <a href=\"#VkDeviceGroupDeviceCreateInfo\">VkDeviceGroupDeviceCreateInfo</a>, <a href=\"#VkDeviceMemoryOverallocationCreateInfoAMD\">VkDeviceMemoryOverallocationCreateInfoAMD</a>, <a href=\"#VkDevicePrivateDataCreateInfo\">VkDevicePrivateDataCreateInfo</a>, <a href=\"#VkDeviceQueueShaderCoreControlCreateInfoARM\">VkDeviceQueueShaderCoreControlCreateInfoARM</a>, <a href=\"#VkPhysicalDevice16BitStorageFeatures\">VkPhysicalDevice16BitStorageFeatures</a>, <a href=\"#VkPhysicalDevice4444FormatsFeaturesEXT\">VkPhysicalDevice4444FormatsFeaturesEXT</a>, <a href=\"#VkPhysicalDevice8BitStorageFeatures\">VkPhysicalDevice8BitStorageFeatures</a>, <a href=\"#VkPhysicalDeviceASTCDecodeFeaturesEXT\">VkPhysicalDeviceASTCDecodeFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceAccelerationStructureFeaturesKHR\">VkPhysicalDeviceAccelerationStructureFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceAddressBindingReportFeaturesEXT\">VkPhysicalDeviceAddressBindingReportFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceAmigoProfilingFeaturesSEC\">VkPhysicalDeviceAmigoProfilingFeaturesSEC</a>, <a href=\"#VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT\">VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT\">VkPhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT\">VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceBorderColorSwizzleFeaturesEXT\">VkPhysicalDeviceBorderColorSwizzleFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceBufferDeviceAddressFeatures\">VkPhysicalDeviceBufferDeviceAddressFeatures</a>, <a href=\"#VkPhysicalDeviceBufferDeviceAddressFeaturesEXT\">VkPhysicalDeviceBufferDeviceAddressFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI\">VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI</a>, <a href=\"#VkPhysicalDeviceCoherentMemoryFeaturesAMD\">VkPhysicalDeviceCoherentMemoryFeaturesAMD</a>, <a href=\"#VkPhysicalDeviceColorWriteEnableFeaturesEXT\">VkPhysicalDeviceColorWriteEnableFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceComputeShaderDerivativesFeaturesNV\">VkPhysicalDeviceComputeShaderDerivativesFeaturesNV</a>, <a href=\"#VkPhysicalDeviceConditionalRenderingFeaturesEXT\">VkPhysicalDeviceConditionalRenderingFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceCooperativeMatrixFeaturesKHR\">VkPhysicalDeviceCooperativeMatrixFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceCooperativeMatrixFeaturesNV\">VkPhysicalDeviceCooperativeMatrixFeaturesNV</a>, <a href=\"#VkPhysicalDeviceCopyMemoryIndirectFeaturesNV\">VkPhysicalDeviceCopyMemoryIndirectFeaturesNV</a>, <a href=\"#VkPhysicalDeviceCornerSampledImageFeaturesNV\">VkPhysicalDeviceCornerSampledImageFeaturesNV</a>, <a href=\"#VkPhysicalDeviceCoverageReductionModeFeaturesNV\">VkPhysicalDeviceCoverageReductionModeFeaturesNV</a>, <a href=\"#VkPhysicalDeviceCubicClampFeaturesQCOM\">VkPhysicalDeviceCubicClampFeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceCubicWeightsFeaturesQCOM\">VkPhysicalDeviceCubicWeightsFeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceCudaKernelLaunchFeaturesNV\">VkPhysicalDeviceCudaKernelLaunchFeaturesNV</a>, <a href=\"#VkPhysicalDeviceCustomBorderColorFeaturesEXT\">VkPhysicalDeviceCustomBorderColorFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV\">VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV</a>, <a href=\"#VkPhysicalDeviceDepthBiasControlFeaturesEXT\">VkPhysicalDeviceDepthBiasControlFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceDepthClampZeroOneFeaturesEXT\">VkPhysicalDeviceDepthClampZeroOneFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceDepthClipControlFeaturesEXT\">VkPhysicalDeviceDepthClipControlFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceDepthClipEnableFeaturesEXT\">VkPhysicalDeviceDepthClipEnableFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceDescriptorBufferFeaturesEXT\">VkPhysicalDeviceDescriptorBufferFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceDescriptorIndexingFeatures\">VkPhysicalDeviceDescriptorIndexingFeatures</a>, <a href=\"#VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV\">VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV</a>, <a href=\"#VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE\">VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE</a>, <a href=\"#VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV\">VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV</a>, <a href=\"#VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNV\">VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNV</a>, <a href=\"#VkPhysicalDeviceDeviceMemoryReportFeaturesEXT\">VkPhysicalDeviceDeviceMemoryReportFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceDiagnosticsConfigFeaturesNV\">VkPhysicalDeviceDiagnosticsConfigFeaturesNV</a>, <a href=\"#VkPhysicalDeviceDisplacementMicromapFeaturesNV\">VkPhysicalDeviceDisplacementMicromapFeaturesNV</a>, <a href=\"#VkPhysicalDeviceDynamicRenderingFeatures\">VkPhysicalDeviceDynamicRenderingFeatures</a>, <a href=\"#VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT\">VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceExclusiveScissorFeaturesNV\">VkPhysicalDeviceExclusiveScissorFeaturesNV</a>, <a href=\"#VkPhysicalDeviceExtendedDynamicState2FeaturesEXT\">VkPhysicalDeviceExtendedDynamicState2FeaturesEXT</a>, <a href=\"#VkPhysicalDeviceExtendedDynamicState3FeaturesEXT\">VkPhysicalDeviceExtendedDynamicState3FeaturesEXT</a>, <a href=\"#VkPhysicalDeviceExtendedDynamicStateFeaturesEXT\">VkPhysicalDeviceExtendedDynamicStateFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV\">VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV</a>, <a href=\"#VkPhysicalDeviceExternalFormatResolveFeaturesANDROID\">VkPhysicalDeviceExternalFormatResolveFeaturesANDROID</a>, <a href=\"#VkPhysicalDeviceExternalMemoryRDMAFeaturesNV\">VkPhysicalDeviceExternalMemoryRDMAFeaturesNV</a>, <a href=\"#VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX\">VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX</a>, <a href=\"#VkPhysicalDeviceFaultFeaturesEXT\">VkPhysicalDeviceFaultFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceFeatures2\">VkPhysicalDeviceFeatures2</a>, <a href=\"#VkPhysicalDeviceFragmentDensityMap2FeaturesEXT\">VkPhysicalDeviceFragmentDensityMap2FeaturesEXT</a>, <a href=\"#VkPhysicalDeviceFragmentDensityMapFeaturesEXT\">VkPhysicalDeviceFragmentDensityMapFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceFragmentDensityMapOffsetFeaturesQCOM\">VkPhysicalDeviceFragmentDensityMapOffsetFeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR\">VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT\">VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV\">VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV</a>, <a href=\"#VkPhysicalDeviceFragmentShadingRateFeaturesKHR\">VkPhysicalDeviceFragmentShadingRateFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceFrameBoundaryFeaturesEXT\">VkPhysicalDeviceFrameBoundaryFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceGlobalPriorityQueryFeaturesKHR\">VkPhysicalDeviceGlobalPriorityQueryFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT\">VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceHostImageCopyFeaturesEXT\">VkPhysicalDeviceHostImageCopyFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceHostQueryResetFeatures\">VkPhysicalDeviceHostQueryResetFeatures</a>, <a href=\"#VkPhysicalDeviceImage2DViewOf3DFeaturesEXT\">VkPhysicalDeviceImage2DViewOf3DFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceImageCompressionControlFeaturesEXT\">VkPhysicalDeviceImageCompressionControlFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceImageCompressionControlSwapchainFeaturesEXT\">VkPhysicalDeviceImageCompressionControlSwapchainFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceImageProcessing2FeaturesQCOM\">VkPhysicalDeviceImageProcessing2FeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceImageProcessingFeaturesQCOM\">VkPhysicalDeviceImageProcessingFeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceImageRobustnessFeatures\">VkPhysicalDeviceImageRobustnessFeatures</a>, <a href=\"#VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT\">VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceImageViewMinLodFeaturesEXT\">VkPhysicalDeviceImageViewMinLodFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceImagelessFramebufferFeatures\">VkPhysicalDeviceImagelessFramebufferFeatures</a>, <a href=\"#VkPhysicalDeviceIndexTypeUint8FeaturesEXT\">VkPhysicalDeviceIndexTypeUint8FeaturesEXT</a>, <a href=\"#VkPhysicalDeviceInheritedViewportScissorFeaturesNV\">VkPhysicalDeviceInheritedViewportScissorFeaturesNV</a>, <a href=\"#VkPhysicalDeviceInlineUniformBlockFeatures\">VkPhysicalDeviceInlineUniformBlockFeatures</a>, <a href=\"#VkPhysicalDeviceInvocationMaskFeaturesHUAWEI\">VkPhysicalDeviceInvocationMaskFeaturesHUAWEI</a>, <a href=\"#VkPhysicalDeviceLegacyDitheringFeaturesEXT\">VkPhysicalDeviceLegacyDitheringFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceLineRasterizationFeaturesEXT\">VkPhysicalDeviceLineRasterizationFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceLinearColorAttachmentFeaturesNV\">VkPhysicalDeviceLinearColorAttachmentFeaturesNV</a>, <a href=\"#VkPhysicalDeviceMaintenance4Features\">VkPhysicalDeviceMaintenance4Features</a>, <a href=\"#VkPhysicalDeviceMaintenance5FeaturesKHR\">VkPhysicalDeviceMaintenance5FeaturesKHR</a>, <a href=\"#VkPhysicalDeviceMemoryDecompressionFeaturesNV\">VkPhysicalDeviceMemoryDecompressionFeaturesNV</a>, <a href=\"#VkPhysicalDeviceMemoryPriorityFeaturesEXT\">VkPhysicalDeviceMemoryPriorityFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceMeshShaderFeaturesEXT\">VkPhysicalDeviceMeshShaderFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceMeshShaderFeaturesNV\">VkPhysicalDeviceMeshShaderFeaturesNV</a>, <a href=\"#VkPhysicalDeviceMultiDrawFeaturesEXT\">VkPhysicalDeviceMultiDrawFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT\">VkPhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceMultiviewFeatures\">VkPhysicalDeviceMultiviewFeatures</a>, <a href=\"#VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM\">VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM\">VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceMutableDescriptorTypeFeaturesEXT\">VkPhysicalDeviceMutableDescriptorTypeFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceNestedCommandBufferFeaturesEXT\">VkPhysicalDeviceNestedCommandBufferFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT\">VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceOpacityMicromapFeaturesEXT\">VkPhysicalDeviceOpacityMicromapFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceOpticalFlowFeaturesNV\">VkPhysicalDeviceOpticalFlowFeaturesNV</a>, <a href=\"#VkPhysicalDevicePageableDeviceLocalMemoryFeaturesEXT\">VkPhysicalDevicePageableDeviceLocalMemoryFeaturesEXT</a>, <a href=\"#VkPhysicalDevicePerformanceQueryFeaturesKHR\">VkPhysicalDevicePerformanceQueryFeaturesKHR</a>, <a href=\"#VkPhysicalDevicePipelineCreationCacheControlFeatures\">VkPhysicalDevicePipelineCreationCacheControlFeatures</a>, <a href=\"#VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR\">VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR</a>, <a href=\"#VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT\">VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT</a>, <a href=\"#VkPhysicalDevicePipelinePropertiesFeaturesEXT\">VkPhysicalDevicePipelinePropertiesFeaturesEXT</a>, <a href=\"#VkPhysicalDevicePipelineProtectedAccessFeaturesEXT\">VkPhysicalDevicePipelineProtectedAccessFeaturesEXT</a>, <a href=\"#VkPhysicalDevicePipelineRobustnessFeaturesEXT\">VkPhysicalDevicePipelineRobustnessFeaturesEXT</a>, <a href=\"#VkPhysicalDevicePortabilitySubsetFeaturesKHR\">VkPhysicalDevicePortabilitySubsetFeaturesKHR</a>, <a href=\"#VkPhysicalDevicePresentBarrierFeaturesNV\">VkPhysicalDevicePresentBarrierFeaturesNV</a>, <a href=\"#VkPhysicalDevicePresentIdFeaturesKHR\">VkPhysicalDevicePresentIdFeaturesKHR</a>, <a href=\"#VkPhysicalDevicePresentWaitFeaturesKHR\">VkPhysicalDevicePresentWaitFeaturesKHR</a>, <a href=\"#VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT\">VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT</a>, <a href=\"#VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT\">VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT</a>, <a href=\"#VkPhysicalDevicePrivateDataFeatures\">VkPhysicalDevicePrivateDataFeatures</a>, <a href=\"#VkPhysicalDeviceProtectedMemoryFeatures\">VkPhysicalDeviceProtectedMemoryFeatures</a>, <a href=\"#VkPhysicalDeviceProvokingVertexFeaturesEXT\">VkPhysicalDeviceProvokingVertexFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT\">VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT\">VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceRayQueryFeaturesKHR\">VkPhysicalDeviceRayQueryFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceRayTracingInvocationReorderFeaturesNV\">VkPhysicalDeviceRayTracingInvocationReorderFeaturesNV</a>, <a href=\"#VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR\">VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR</a>, <a href=\"#VkPhysicalDeviceRayTracingMotionBlurFeaturesNV\">VkPhysicalDeviceRayTracingMotionBlurFeaturesNV</a>, <a href=\"#VkPhysicalDeviceRayTracingPipelineFeaturesKHR\">VkPhysicalDeviceRayTracingPipelineFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR\">VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG\">VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG</a>, <a href=\"#VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV\">VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV</a>, <a href=\"#VkPhysicalDeviceRobustness2FeaturesEXT\">VkPhysicalDeviceRobustness2FeaturesEXT</a>, <a href=\"#VkPhysicalDeviceSamplerYcbcrConversionFeatures\">VkPhysicalDeviceSamplerYcbcrConversionFeatures</a>, <a href=\"#VkPhysicalDeviceScalarBlockLayoutFeatures\">VkPhysicalDeviceScalarBlockLayoutFeatures</a>, <a href=\"#VkPhysicalDeviceSchedulingControlsFeaturesARM\">VkPhysicalDeviceSchedulingControlsFeaturesARM</a>, <a href=\"#VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures\">VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures</a>, <a href=\"#VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT\">VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT</a>, <a href=\"#VkPhysicalDeviceShaderAtomicFloatFeaturesEXT\">VkPhysicalDeviceShaderAtomicFloatFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceShaderAtomicInt64Features\">VkPhysicalDeviceShaderAtomicInt64Features</a>, <a href=\"#VkPhysicalDeviceShaderClockFeaturesKHR\">VkPhysicalDeviceShaderClockFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceShaderCoreBuiltinsFeaturesARM\">VkPhysicalDeviceShaderCoreBuiltinsFeaturesARM</a>, <a href=\"#VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures\">VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures</a>, <a href=\"#VkPhysicalDeviceShaderDrawParametersFeatures\">VkPhysicalDeviceShaderDrawParametersFeatures</a>, <a href=\"#VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD\">VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD</a>, <a href=\"#VkPhysicalDeviceShaderEnqueueFeaturesAMDX\">VkPhysicalDeviceShaderEnqueueFeaturesAMDX</a>, <a href=\"#VkPhysicalDeviceShaderFloat16Int8Features\">VkPhysicalDeviceShaderFloat16Int8Features</a>, <a href=\"#VkPhysicalDeviceShaderImageAtomicInt64FeaturesEXT\">VkPhysicalDeviceShaderImageAtomicInt64FeaturesEXT</a>, <a href=\"#VkPhysicalDeviceShaderImageFootprintFeaturesNV\">VkPhysicalDeviceShaderImageFootprintFeaturesNV</a>, <a href=\"#VkPhysicalDeviceShaderIntegerDotProductFeatures\">VkPhysicalDeviceShaderIntegerDotProductFeatures</a>, <a href=\"#VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL\">VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL</a>, <a href=\"#VkPhysicalDeviceShaderModuleIdentifierFeaturesEXT\">VkPhysicalDeviceShaderModuleIdentifierFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceShaderObjectFeaturesEXT\">VkPhysicalDeviceShaderObjectFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceShaderSMBuiltinsFeaturesNV\">VkPhysicalDeviceShaderSMBuiltinsFeaturesNV</a>, <a href=\"#VkPhysicalDeviceShaderSubgroupExtendedTypesFeatures\">VkPhysicalDeviceShaderSubgroupExtendedTypesFeatures</a>, <a href=\"#VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR\">VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceShaderTerminateInvocationFeatures\">VkPhysicalDeviceShaderTerminateInvocationFeatures</a>, <a href=\"#VkPhysicalDeviceShaderTileImageFeaturesEXT\">VkPhysicalDeviceShaderTileImageFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceShadingRateImageFeaturesNV\">VkPhysicalDeviceShadingRateImageFeaturesNV</a>, <a href=\"#VkPhysicalDeviceSubgroupSizeControlFeatures\">VkPhysicalDeviceSubgroupSizeControlFeatures</a>, <a href=\"#VkPhysicalDeviceSubpassMergeFeedbackFeaturesEXT\">VkPhysicalDeviceSubpassMergeFeedbackFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceSubpassShadingFeaturesHUAWEI\">VkPhysicalDeviceSubpassShadingFeaturesHUAWEI</a>, <a href=\"#VkPhysicalDeviceSwapchainMaintenance1FeaturesEXT\">VkPhysicalDeviceSwapchainMaintenance1FeaturesEXT</a>, <a href=\"#VkPhysicalDeviceSynchronization2Features\">VkPhysicalDeviceSynchronization2Features</a>, <a href=\"#VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT\">VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceTextureCompressionASTCHDRFeatures\">VkPhysicalDeviceTextureCompressionASTCHDRFeatures</a>, <a href=\"#VkPhysicalDeviceTilePropertiesFeaturesQCOM\">VkPhysicalDeviceTilePropertiesFeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceTimelineSemaphoreFeatures\">VkPhysicalDeviceTimelineSemaphoreFeatures</a>, <a href=\"#VkPhysicalDeviceTransformFeedbackFeaturesEXT\">VkPhysicalDeviceTransformFeedbackFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceUniformBufferStandardLayoutFeatures\">VkPhysicalDeviceUniformBufferStandardLayoutFeatures</a>, <a href=\"#VkPhysicalDeviceVariablePointersFeatures\">VkPhysicalDeviceVariablePointersFeatures</a>, <a href=\"#VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT\">VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceVertexInputDynamicStateFeaturesEXT\">VkPhysicalDeviceVertexInputDynamicStateFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceVulkan11Features\">VkPhysicalDeviceVulkan11Features</a>, <a href=\"#VkPhysicalDeviceVulkan12Features\">VkPhysicalDeviceVulkan12Features</a>, <a href=\"#VkPhysicalDeviceVulkan13Features\">VkPhysicalDeviceVulkan13Features</a>, <a href=\"#VkPhysicalDeviceVulkanMemoryModelFeatures\">VkPhysicalDeviceVulkanMemoryModelFeatures</a>, <a href=\"#VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR\">VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR</a>, <a href=\"#VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT\">VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT</a>, <a href=\"#VkPhysicalDeviceYcbcrDegammaFeaturesQCOM\">VkPhysicalDeviceYcbcrDegammaFeaturesQCOM</a>, <a href=\"#VkPhysicalDeviceYcbcrImageArraysFeaturesEXT\">VkPhysicalDeviceYcbcrImageArraysFeaturesEXT</a>, or <a href=\"#VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures\">VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures</a>",
           "page": "vkspec"
         },
         {
@@ -4955,7 +4955,7 @@
         },
         {
           "vuid": "VUID-vkCmdWaitEvents2-srcStageMask-03842",
-          "text": "The <code>srcStageMask</code> member of any element of the <code>pMemoryBarriers</code>, <code>pBufferMemoryBarriers</code>, or <code>pImageMemoryBarriers</code> members of <code>pDependencyInfos</code> <strong class=\"purple\">must</strong> either include only pipeline stages valid for the queue family that was used to create the command pool that <code>commandBuffer</code> was allocated from, or include only <code>VK_PIPELINE_STAGE_2_HOST_BIT</code>",
+          "text": "The <code>srcStageMask</code> member of any element of the <code>pMemoryBarriers</code>, <code>pBufferMemoryBarriers</code>, or <code>pImageMemoryBarriers</code> members of <code>pDependencyInfos</code> <strong class=\"purple\">must</strong> either include only pipeline stages valid for the queue family that was used to create the command pool that <code>commandBuffer</code> was allocated from",
           "page": "vkspec"
         },
         {
@@ -8292,7 +8292,12 @@
         },
         {
           "vuid": "VUID-VkRenderingInfo-multisampledRenderToSingleSampled-06857",
-          "text": "If none of the <code><a href=\"#VK_AMD_mixed_attachment_samples\">VK_AMD_mixed_attachment_samples</a></code> extension, the <code><a href=\"#VK_NV_framebuffer_mixed_samples\">VK_NV_framebuffer_mixed_samples</a></code> extension, or the <a href=\"#features-multisampledRenderToSingleSampled\"><code>multisampledRenderToSingleSampled</code></a> feature are enabled, <code>imageView</code> members of <code>pDepthAttachment</code>, <code>pStencilAttachment</code>, and elements of <code>pColorAttachments</code> that are not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a> <strong class=\"purple\">must</strong> have been created with the same <code>sampleCount</code>",
+          "text": "<code>imageView</code> members of <code>pDepthAttachment</code>, <code>pStencilAttachment</code>, and elements of <code>pColorAttachments</code> that are not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a> <strong class=\"purple\">must</strong> have been created with the same <code>sampleCount</code> , if none of the following are enabled:<div class=\"ulist\">\n<ul>\n<li>\n<p>The <code><a href=\"#VK_AMD_mixed_attachment_samples\">VK_AMD_mixed_attachment_samples</a></code> extension</p>\n</li>\n<li>\n<p>The <code><a href=\"#VK_NV_framebuffer_mixed_samples\">VK_NV_framebuffer_mixed_samples</a></code> extension</p>\n</li>\n<li>\n<p>The <a href=\"#features-multisampledRenderToSingleSampled\"><code>multisampledRenderToSingleSampled</code></a> feature,</p>\n</li>\n</ul>\n</div>",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-VkRenderingInfo-imageView-09429",
+          "text": "<code>imageView</code> members of elements of <code>pColorAttachments</code> that are not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a> <strong class=\"purple\">must</strong> have been created with the same <code>sampleCount</code> , if the <a href=\"#features-multisampledRenderToSingleSampled\"><code>multisampledRenderToSingleSampled</code></a> feature is not enabled",
           "page": "vkspec"
         },
         {
@@ -9664,8 +9669,8 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-VkSubpassDescription-pColorAttachments-06868",
-          "text": "If neither the <code><a href=\"#VK_AMD_mixed_attachment_samples\">VK_AMD_mixed_attachment_samples</a></code> extension nor the <code><a href=\"#VK_NV_framebuffer_mixed_samples\">VK_NV_framebuffer_mixed_samples</a></code> extension is enabled, all attachments in <code>pColorAttachments</code> that are not <code>VK_ATTACHMENT_UNUSED</code> <strong class=\"purple\">must</strong> have the same sample count",
+          "vuid": "VUID-VkSubpassDescription-pColorAttachments-09430",
+          "text": "All attachments in <code>pColorAttachments</code> that are not <code>VK_ATTACHMENT_UNUSED</code> <strong class=\"purple\">must</strong> have the same sample count",
           "page": "vkspec"
         },
         {
@@ -9704,13 +9709,13 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-VkSubpassDescription-pColorAttachments-01506",
-          "text": "If the <code><a href=\"#VK_AMD_mixed_attachment_samples\">VK_AMD_mixed_attachment_samples</a></code> extension is enabled, all attachments in <code>pColorAttachments</code> that are not <code>VK_ATTACHMENT_UNUSED</code> <strong class=\"purple\">must</strong> have a sample count that is smaller than or equal to the sample count of <code>pDepthStencilAttachment</code> if it is not <code>VK_ATTACHMENT_UNUSED</code>",
+          "vuid": "VUID-VkSubpassDescription-None-09431",
+          "text": "If either of the following is enabled:<div class=\"ulist\">\n<ul>\n<li>\n<p>The <code><a href=\"#VK_AMD_mixed_attachment_samples\">VK_AMD_mixed_attachment_samples</a></code> extension</p>\n</li>\n<li>\n<p>The <code><a href=\"#VK_NV_framebuffer_mixed_samples\">VK_NV_framebuffer_mixed_samples</a></code> extension</p>\n</li>\n</ul>\n</div>\n<div class=\"paragraph\">\n<p>all attachments in <code>pColorAttachments</code> that are not\n<code>VK_ATTACHMENT_UNUSED</code> <strong class=\"purple\">must</strong> have a sample count that is smaller than or\nequal to the sample count of <code>pDepthStencilAttachment</code> if it is not\n<code>VK_ATTACHMENT_UNUSED</code></p>\n</div>",
           "page": "vkspec"
         },
         {
           "vuid": "VUID-VkSubpassDescription-pDepthStencilAttachment-01418",
-          "text": "If neither the <code><a href=\"#VK_AMD_mixed_attachment_samples\">VK_AMD_mixed_attachment_samples</a></code> nor the <code><a href=\"#VK_NV_framebuffer_mixed_samples\">VK_NV_framebuffer_mixed_samples</a></code> extensions are enabled, and if <code>pDepthStencilAttachment</code> is not <code>VK_ATTACHMENT_UNUSED</code> and any attachments in <code>pColorAttachments</code> are not <code>VK_ATTACHMENT_UNUSED</code>, they <strong class=\"purple\">must</strong> have the same sample count",
+          "text": "If <code>pDepthStencilAttachment</code> is not <code>VK_ATTACHMENT_UNUSED</code> and any attachments in <code>pColorAttachments</code> are not <code>VK_ATTACHMENT_UNUSED</code>, they <strong class=\"purple\">must</strong> have the same sample count , if none of the following are enabled:<div class=\"ulist\">\n<ul>\n<li>\n<p>The <code><a href=\"#VK_AMD_mixed_attachment_samples\">VK_AMD_mixed_attachment_samples</a></code> extension</p>\n</li>\n<li>\n<p>The <code><a href=\"#VK_NV_framebuffer_mixed_samples\">VK_NV_framebuffer_mixed_samples</a></code> extension</p>\n</li>\n</ul>\n</div>",
           "page": "vkspec"
         },
         {
@@ -10617,7 +10622,7 @@
         },
         {
           "vuid": "VUID-VkSubpassDescription2-multisampledRenderToSingleSampled-06869",
-          "text": "If none of the <code><a href=\"#VK_AMD_mixed_attachment_samples\">VK_AMD_mixed_attachment_samples</a></code> extension, the <code><a href=\"#VK_NV_framebuffer_mixed_samples\">VK_NV_framebuffer_mixed_samples</a></code> extension, or the <a href=\"#features-multisampledRenderToSingleSampled\"><code>multisampledRenderToSingleSampled</code></a> feature are enabled, all attachments in <code>pColorAttachments</code> that are not <code>VK_ATTACHMENT_UNUSED</code> <strong class=\"purple\">must</strong> have the same sample count",
+          "text": "If the <a href=\"#features-multisampledRenderToSingleSampled\"><code>multisampledRenderToSingleSampled</code></a> feature is not enabled, all attachments in <code>pColorAttachments</code> that are not <code>VK_ATTACHMENT_UNUSED</code> <strong class=\"purple\">must</strong> have the same sample count",
           "page": "vkspec"
         },
         {
@@ -10672,7 +10677,7 @@
         },
         {
           "vuid": "VUID-VkSubpassDescription2-multisampledRenderToSingleSampled-06872",
-          "text": "If none of the <code><a href=\"#VK_AMD_mixed_attachment_samples\">VK_AMD_mixed_attachment_samples</a></code> extension, the <code><a href=\"#VK_NV_framebuffer_mixed_samples\">VK_NV_framebuffer_mixed_samples</a></code> extension, or the <a href=\"#features-multisampledRenderToSingleSampled\"><code>multisampledRenderToSingleSampled</code></a> feature are enabled, all attachments in <code>pDepthStencilAttachment</code> or <code>pColorAttachments</code> that are not <code>VK_ATTACHMENT_UNUSED</code> <strong class=\"purple\">must</strong> have the same sample count",
+          "text": "All attachments in <code>pDepthStencilAttachment</code> or <code>pColorAttachments</code> that are not <code>VK_ATTACHMENT_UNUSED</code> <strong class=\"purple\">must</strong> have the same sample count , if none of the following are enabled:<div class=\"ulist\">\n<ul>\n<li>\n<p>The <code><a href=\"#VK_AMD_mixed_attachment_samples\">VK_AMD_mixed_attachment_samples</a></code> extension</p>\n</li>\n<li>\n<p>The <code><a href=\"#VK_NV_framebuffer_mixed_samples\">VK_NV_framebuffer_mixed_samples</a></code> extension</p>\n</li>\n<li>\n<p>The <a href=\"#features-multisampledRenderToSingleSampled\"><code>multisampledRenderToSingleSampled</code></a> feature,</p>\n</li>\n</ul>\n</div>",
           "page": "vkspec"
         },
         {
@@ -15077,11 +15082,6 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-VkGraphicsPipelineCreateInfo-pViewportState-04892",
-          "text": "If the pipeline requires <a href=\"#pipelines-graphics-subsets-pre-rasterization\">pre-rasterization shader state</a>, and the graphics pipeline state was created with the <code>VK_DYNAMIC_STATE_RASTERIZER_DISCARD_ENABLE</code> dynamic state enabled, <code>pViewportState</code> <strong class=\"purple\">must</strong> be a valid pointer to a valid <a href=\"#VkPipelineViewportStateCreateInfo\">VkPipelineViewportStateCreateInfo</a> structure",
-          "page": "vkspec"
-        },
-        {
           "vuid": "VUID-VkGraphicsPipelineCreateInfo-pMultisampleState-09026",
           "text": "If the pipeline requires <a href=\"#pipelines-graphics-subsets-fragment-output\">fragment output interface state</a>, and the <code><a href=\"#VK_EXT_extended_dynamic_state3\">VK_EXT_extended_dynamic_state3</a></code> extension is not enabled or any of the <code>VK_DYNAMIC_STATE_RASTERIZATION_SAMPLES_EXT</code>, <code>VK_DYNAMIC_STATE_SAMPLE_MASK_EXT</code>, or <code>VK_DYNAMIC_STATE_ALPHA_TO_COVERAGE_ENABLE_EXT</code> dynamic states is not set, or <a href=\"#features-alphaToOne\">alphaToOne</a> is enabled on the device and <code>VK_DYNAMIC_STATE_ALPHA_TO_ONE_ENABLE_EXT</code> is not set, <code>pMultisampleState</code> <strong class=\"purple\">must</strong> be a valid pointer to a valid <a href=\"#VkPipelineMultisampleStateCreateInfo\">VkPipelineMultisampleStateCreateInfo</a> structure",
           "page": "vkspec"
@@ -15118,7 +15118,7 @@
         },
         {
           "vuid": "VUID-VkGraphicsPipelineCreateInfo-pDynamicStates-02510",
-          "text": "If the pipeline requires <a href=\"#pipelines-graphics-subsets-fragment-shader\">fragment shader state</a>, and the <code><a href=\"#VK_EXT_depth_range_unrestricted\">VK_EXT_depth_range_unrestricted</a></code> extension is not enabled and no element of the <code>pDynamicStates</code> member of <code>pDynamicState</code> is <code>VK_DYNAMIC_STATE_DEPTH_BOUNDS</code>, and the <code>depthBoundsTestEnable</code> member of <code>pDepthStencilState</code> is <code>VK_TRUE</code>, the <code>minDepthBounds</code> and <code>maxDepthBounds</code> members of <code>pDepthStencilState</code> <strong class=\"purple\">must</strong> be between <code>0.0</code> and <code>1.0</code>, inclusive",
+          "text": "If the pipeline requires <a href=\"#pipelines-graphics-subsets-fragment-shader\">fragment shader state</a>, the <code><a href=\"#VK_EXT_depth_range_unrestricted\">VK_EXT_depth_range_unrestricted</a></code> extension is not enabled and no element of the <code>pDynamicStates</code> member of <code>pDynamicState</code> is <code>VK_DYNAMIC_STATE_DEPTH_BOUNDS</code>, and the <code>depthBoundsTestEnable</code> member of <code>pDepthStencilState</code> is <code>VK_TRUE</code>, the <code>minDepthBounds</code> and <code>maxDepthBounds</code> members of <code>pDepthStencilState</code> <strong class=\"purple\">must</strong> be between <code>0.0</code> and <code>1.0</code>, inclusive",
           "page": "vkspec"
         },
         {
@@ -15863,7 +15863,7 @@
         },
         {
           "vuid": "VUID-VkGraphicsPipelineCreateInfo-pRasterizationState-09039",
-          "text": "If the <code><a href=\"#VK_EXT_extended_dynamic_state3\">VK_EXT_extended_dynamic_state3</a></code> extension is not enabled, or any of the <code>VK_DYNAMIC_STATE_RASTERIZATION_SAMPLES_EXT</code>, <code>VK_DYNAMIC_STATE_SAMPLE_MASK_EXT</code>, or <code>VK_DYNAMIC_STATE_ALPHA_TO_COVERAGE_ENABLE_EXT</code> dynamic states are not set, or <a href=\"#features-alphaToOne\">alphaToOne</a> is enabled on the device and <code>VK_DYNAMIC_STATE_ALPHA_TO_ONE_ENABLE_EXT</code> is not set, then <code>pMultisampleState</code> <strong class=\"purple\">must</strong> be a valid pointer to a valid <a href=\"#VkPipelineMultisampleStateCreateInfo\">VkPipelineMultisampleStateCreateInfo</a> structure",
+          "text": "If <a href=\"#VkGraphicsPipelineLibraryCreateInfoEXT\">VkGraphicsPipelineLibraryCreateInfoEXT</a>::<code>flags</code> includes <code>VK_GRAPHICS_PIPELINE_LIBRARY_PRE_RASTERIZATION_SHADERS_BIT_EXT</code>, and the <code><a href=\"#VK_EXT_extended_dynamic_state3\">VK_EXT_extended_dynamic_state3</a></code> extension is not enabled, or any of the <code>VK_DYNAMIC_STATE_RASTERIZATION_SAMPLES_EXT</code>, <code>VK_DYNAMIC_STATE_SAMPLE_MASK_EXT</code>, or <code>VK_DYNAMIC_STATE_ALPHA_TO_COVERAGE_ENABLE_EXT</code> dynamic states are not set, or <a href=\"#features-alphaToOne\">alphaToOne</a> is enabled on the device and <code>VK_DYNAMIC_STATE_ALPHA_TO_ONE_ENABLE_EXT</code> is not set, then <code>pMultisampleState</code> <strong class=\"purple\">must</strong> be a valid pointer to a valid <a href=\"#VkPipelineMultisampleStateCreateInfo\">VkPipelineMultisampleStateCreateInfo</a> structure",
           "page": "vkspec"
         },
         {
@@ -16094,16 +16094,6 @@
         {
           "vuid": "VUID-VkGraphicsPipelineCreateInfo-flags-06640",
           "text": "If <a href=\"#VkGraphicsPipelineLibraryCreateInfoEXT\">VkGraphicsPipelineLibraryCreateInfoEXT</a>::<code>flags</code> includes <code>VK_GRAPHICS_PIPELINE_LIBRARY_PRE_RASTERIZATION_SHADERS_BIT_EXT</code> or <code>VK_GRAPHICS_PIPELINE_LIBRARY_FRAGMENT_SHADER_BIT_EXT</code>, <code>pStages</code> <strong class=\"purple\">must</strong> be a valid pointer to an array of <code>stageCount</code> valid <a href=\"#VkPipelineShaderStageCreateInfo\">VkPipelineShaderStageCreateInfo</a> structures",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-VkGraphicsPipelineCreateInfo-flags-09041",
-          "text": "If <a href=\"#VkGraphicsPipelineLibraryCreateInfoEXT\">VkGraphicsPipelineLibraryCreateInfoEXT</a>::<code>flags</code> includes <code>VK_GRAPHICS_PIPELINE_LIBRARY_PRE_RASTERIZATION_SHADERS_BIT_EXT</code>, and the <code><a href=\"#VK_EXT_extended_dynamic_state3\">VK_EXT_extended_dynamic_state3</a></code> extension is not enabled, or any of the <code>VK_DYNAMIC_STATE_RASTERIZATION_SAMPLES_EXT</code>, <code>VK_DYNAMIC_STATE_SAMPLE_MASK_EXT</code>, or <code>VK_DYNAMIC_STATE_ALPHA_TO_COVERAGE_ENABLE_EXT</code> dynamic states are not set, or <a href=\"#features-alphaToOne\">alphaToOne</a> is enabled on the device and <code>VK_DYNAMIC_STATE_ALPHA_TO_ONE_ENABLE_EXT</code> is not set, <code>pMultisampleState</code> <strong class=\"purple\">must</strong> be a valid pointer to a valid <a href=\"#VkPipelineMultisampleStateCreateInfo\">VkPipelineMultisampleStateCreateInfo</a> structure",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-VkGraphicsPipelineCreateInfo-pRasterizationState-09042",
-          "text": "If <code>pRasterizationState</code> is not <code>NULL</code> it <strong class=\"purple\">must</strong> be a valid pointer to a valid <a href=\"#VkPipelineRasterizationStateCreateInfo\">VkPipelineRasterizationStateCreateInfo</a> structure",
           "page": "vkspec"
         },
         {
@@ -16424,6 +16414,11 @@
         {
           "vuid": "VUID-VkGraphicsPipelineCreateInfo-flags-08907",
           "text": "If <a href=\"#VkGraphicsPipelineLibraryCreateInfoEXT\">VkGraphicsPipelineLibraryCreateInfoEXT</a>::<code>flags</code> includes <code>VK_GRAPHICS_PIPELINE_LIBRARY_FRAGMENT_SHADER_BIT_EXT</code>, and <a href=\"#pipelines-graphics-subsets-pre-rasterization\">pre-rasterization shader state</a> is not specified, the pipeline <strong class=\"purple\">must</strong> define <a href=\"#pipelines-graphics-subsets-fragment-output\">fragment output interface state</a>",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-VkGraphicsPipelineCreateInfo-flags-08909",
+          "text": "If <code>flags</code> does not include <code>VK_PIPELINE_CREATE_LIBRARY_BIT_KHR</code>, <a href=\"#pipelines-graphics-subsets-pre-rasterization\">pre-rasterization shader state</a> is specified either in a library or by the inclusion of <code>VK_GRAPHICS_PIPELINE_LIBRARY_PRE_RASTERIZATION_SHADERS_BIT_EXT</code>, and that state either includes <code>VK_DYNAMIC_STATE_RASTERIZER_DISCARD_ENABLE</code> or has <code>pRasterizationState-&gt;rasterizerDiscardEnable</code> set to <code>VK_FALSE</code>, the pipeline <strong class=\"purple\">must</strong> define <a href=\"#pipelines-graphics-subsets-fragment-output\">fragment output interface state</a> and <a href=\"#pipelines-graphics-subsets-fragment-shader\">fragment shader state</a> or include those states in linked pipeline libraries",
           "page": "vkspec"
         },
         {
@@ -18060,11 +18055,6 @@
         {
           "vuid": "VUID-vkCmdBindPipeline-pipelineBindPoint-04950",
           "text": "If <code>pipelineBindPoint</code> is <code>VK_PIPELINE_BIND_POINT_SUBPASS_SHADING_HUAWEI</code>, <code>pipeline</code> <strong class=\"purple\">must</strong> be a subpass shading pipeline",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-vkCmdBindPipeline-pipelineBindPoint-06653",
-          "text": "If <code>pipelineBindPoint</code> is <code>VK_PIPELINE_BIND_POINT_GRAPHICS</code>, <code>pipeline</code> <strong class=\"purple\">must</strong> have been created without <code>VK_PIPELINE_CREATE_LIBRARY_BIT_KHR</code>",
           "page": "vkspec"
         },
         {
@@ -20770,7 +20760,7 @@
         },
         {
           "vuid": "VUID-VkBufferCreateInfo-sharingMode-01419",
-          "text": "If <code>sharingMode</code> is <code>VK_SHARING_MODE_CONCURRENT</code>, each element of <code>pQueueFamilyIndices</code> <strong class=\"purple\">must</strong> be unique and <strong class=\"purple\">must</strong> be less than <code>pQueueFamilyPropertyCount</code> returned by either <a href=\"#vkGetPhysicalDeviceQueueFamilyProperties\">vkGetPhysicalDeviceQueueFamilyProperties</a> or <a href=\"#vkGetPhysicalDeviceQueueFamilyProperties2\">vkGetPhysicalDeviceQueueFamilyProperties2</a> for the <code>physicalDevice</code> that was used to create <code>device</code>",
+          "text": "If <code>sharingMode</code> is <code>VK_SHARING_MODE_CONCURRENT</code>, each element of <code>pQueueFamilyIndices</code> <strong class=\"purple\">must</strong> be unique and <strong class=\"purple\">must</strong> be less than <code>pQueueFamilyPropertyCount</code> returned by either <a href=\"#vkGetPhysicalDeviceQueueFamilyProperties2\">vkGetPhysicalDeviceQueueFamilyProperties2</a> or <a href=\"#vkGetPhysicalDeviceQueueFamilyProperties\">vkGetPhysicalDeviceQueueFamilyProperties</a> for the <code>physicalDevice</code> that was used to create <code>device</code>",
           "page": "vkspec"
         },
         {
@@ -20825,7 +20815,7 @@
         },
         {
           "vuid": "VUID-VkBufferCreateInfo-flags-03338",
-          "text": "If <code>flags</code> includes <code>VK_BUFFER_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT</code>, the <a href=\"#features-bufferDeviceAddressCaptureReplay\"><code>bufferDeviceAddressCaptureReplay</code></a> or <a href=\"#features-bufferDeviceAddressCaptureReplayEXT\"><code>bufferDeviceAddressCaptureReplayEXT</code></a> feature <strong class=\"purple\">must</strong> be enabled",
+          "text": "If <code>flags</code> includes <code>VK_BUFFER_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT</code>, the <a href=\"#features-bufferDeviceAddressCaptureReplayEXT\"><code>bufferDeviceAddressCaptureReplay</code></a> feature <strong class=\"purple\">must</strong> be enabled",
           "page": "vkspec"
         },
         {
@@ -27403,6 +27393,11 @@
           "page": "vkspec"
         },
         {
+          "vuid": "VUID-VkDescriptorPoolCreateInfo-pPoolSizes-09424",
+          "text": "If <code>pPoolSizes</code> contains a <code>descriptorType</code> of <code>VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK</code>, the <code>pNext</code> chain <strong class=\"purple\">must</strong> include a <a href=\"#VkDescriptorPoolInlineUniformBlockCreateInfo\">VkDescriptorPoolInlineUniformBlockCreateInfo</a> structure whose <code>maxInlineUniformBlockBindings</code> member is not zero",
+          "page": "vkspec"
+        },
+        {
           "vuid": "VUID-VkDescriptorPoolCreateInfo-sType-sType",
           "text": "<code>sType</code> <strong class=\"purple\">must</strong> be <code>VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO</code>",
           "page": "vkspec"
@@ -28086,6 +28081,16 @@
           "page": "vkspec"
         },
         {
+          "vuid": "VUID-VkDescriptorImageInfo-imageLayout-09425",
+          "text": "If <code>imageLayout</code> is <code>VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL</code>, then the <code>aspectMask</code> used to create <code>imageView</code> <strong class=\"purple\">must</strong> not include either <code>VK_IMAGE_ASPECT_DEPTH_BIT</code> or <code>VK_IMAGE_ASPECT_STENCIL_BIT</code>",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-VkDescriptorImageInfo-imageLayout-09426",
+          "text": "If <code>imageLayout</code> is <code>VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL</code>, <code>VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_STENCIL_READ_ONLY_OPTIMAL</code>, <code>VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_OPTIMAL</code>, <code>VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_OPTIMAL</code>, <code>VK_IMAGE_LAYOUT_STENCIL_READ_ONLY_OPTIMAL</code>, <code>VK_IMAGE_LAYOUT_STENCIL_ATTACHMENT_OPTIMAL</code>, <code>VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL</code> or <code>VK_IMAGE_LAYOUT_DEPTH_STENCIL_READ_ONLY_OPTIMAL</code>, then the <code>aspectMask</code> used to create <code>imageView</code> <strong class=\"purple\">must</strong> not include <code>VK_IMAGE_ASPECT_COLOR_BIT</code>",
+          "page": "vkspec"
+        },
+        {
           "vuid": "VUID-VkDescriptorImageInfo-imageLayout-00344",
           "text": "<code>imageLayout</code> <strong class=\"purple\">must</strong> match the actual <a href=\"#VkImageLayout\">VkImageLayout</a> of each subresource accessible from <code>imageView</code> at the time this descriptor is accessed as defined by the <a href=\"#resources-image-layouts-matching-rule\">image layout matching rules</a>",
           "page": "vkspec"
@@ -28553,11 +28558,6 @@
         {
           "vuid": "VUID-vkCmdBindDescriptorSets-graphicsPipelineLibrary-06754",
           "text": "If <a href=\"#features-graphicsPipelineLibrary\"><code>graphicsPipelineLibrary</code></a> is not enabled, each element of <code>pDescriptorSets</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkDescriptorSet\">VkDescriptorSet</a>",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-vkCmdBindDescriptorSets-pDescriptorSets-08010",
-          "text": "Each element of <code>pDescriptorSets</code> <strong class=\"purple\">must</strong> have been allocated with a <code>VkDescriptorSetLayout</code> which was not created with <code>VK_DESCRIPTOR_SET_LAYOUT_CREATE_DESCRIPTOR_BUFFER_BIT_EXT</code>",
           "page": "vkspec"
         },
         {
@@ -29073,6 +29073,16 @@
         {
           "vuid": "VUID-VkDescriptorGetInfoEXT-type-08027",
           "text": "If <code>type</code> is <code>VK_DESCRIPTOR_TYPE_STORAGE_BUFFER</code>, <code>pStorageBuffer</code> is not <code>NULL</code> and <code>pStorageBuffer-&gt;address</code> is not zero, <code>pStorageBuffer-&gt;address</code> must be an address within a <a href=\"#VkBuffer\">VkBuffer</a> created on <code>device</code>",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-VkDescriptorGetInfoEXT-type-09427",
+          "text": "If <code>type</code> is <code>VK_DESCRIPTOR_TYPE_UNIFORM_TEXEL_BUFFER</code>, <code>pUniformBuffer</code> is not <code>NULL</code> , the number of texel buffer elements given by <span class=\"eq\">(⌊<code>pUniformBuffer-&gt;range</code> / (texel block size)⌋ × (texels per block))</span> where texel block size and texels per block are as defined in the <a href=\"#formats-compatibility\">Compatible Formats</a> table for <code>pUniformBuffer-&gt;format</code>, <strong class=\"purple\">must</strong> be less than or equal to <code>VkPhysicalDeviceLimits</code>::<code>maxTexelBufferElements</code>",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-VkDescriptorGetInfoEXT-type-09428",
+          "text": "If <code>type</code> is <code>VK_DESCRIPTOR_TYPE_STORAGE_TEXEL_BUFFER</code>, <code>pStorageBuffer</code> is not <code>NULL</code> , the number of texel buffer elements given by <span class=\"eq\">(⌊<code>pStorageBuffer-&gt;range</code> / (texel block size)⌋ × (texels per block))</span> where texel block size and texels per block are as defined in the <a href=\"#formats-compatibility\">Compatible Formats</a> table for <code>pStorageBuffer-&gt;format</code>, <strong class=\"purple\">must</strong> be less than or equal to <code>VkPhysicalDeviceLimits</code>::<code>maxTexelBufferElements</code>",
           "page": "vkspec"
         },
         {
@@ -34938,11 +34948,6 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-vkCmdCopyImage-maintenance5-08792",
-          "text": "If the <a href=\"#features-maintenance5\"><code>maintenance5</code></a> feature is not enabled, the <code>layerCount</code> member of <code>srcSubresource</code> or <code>dstSubresource</code> <strong class=\"purple\">must</strong> not be <code>VK_REMAINING_ARRAY_LAYERS</code>",
-          "page": "vkspec"
-        },
-        {
           "vuid": "VUID-vkCmdCopyImage-srcImage-08794",
           "text": "If <code>srcImage</code> and <code>dstImage</code> have the same <a href=\"#VkImageType\">VkImageType</a>, and one of the <code>layerCount</code> members of <code>srcSubresource</code> or <code>dstSubresource</code> is <code>VK_REMAINING_ARRAY_LAYERS</code>, the other member <strong class=\"purple\">must</strong> be either <code>VK_REMAINING_ARRAY_LAYERS</code> or equal to the <code>arrayLayers</code> member of the <a href=\"#VkImageCreateInfo\">VkImageCreateInfo</a> used to create the image minus <code>baseArrayLayer</code>",
           "page": "vkspec"
@@ -35466,11 +35471,6 @@
         {
           "vuid": "VUID-VkCopyImageInfo2-srcImage-08793",
           "text": "If <code>srcImage</code> and <code>dstImage</code> have the same <a href=\"#VkImageType\">VkImageType</a>, for each element of <code>pRegions</code>, if neither of the <code>layerCount</code> members of <code>srcSubresource</code> or <code>dstSubresource</code> are <code>VK_REMAINING_ARRAY_LAYERS</code>, the <code>layerCount</code> members of <code>srcSubresource</code> or <code>dstSubresource</code> <strong class=\"purple\">must</strong> match",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-VkCopyImageInfo2-maintenance5-08792",
-          "text": "If the <a href=\"#features-maintenance5\"><code>maintenance5</code></a> feature is not enabled, the <code>layerCount</code> member of <code>srcSubresource</code> or <code>dstSubresource</code> <strong class=\"purple\">must</strong> not be <code>VK_REMAINING_ARRAY_LAYERS</code>",
           "page": "vkspec"
         },
         {
@@ -37983,11 +37983,6 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-vkCmdCopyMemoryToImageIndirectNV-layerCount-09244",
-          "text": "If the <a href=\"#features-maintenance5\"><code>maintenance5</code></a> feature is not enabled, <code>layerCount</code> <strong class=\"purple\">must</strong> not be <code>VK_REMAINING_ARRAY_LAYERS</code>",
-          "page": "vkspec"
-        },
-        {
           "vuid": "VUID-vkCmdCopyMemoryToImageIndirectNV-layerCount-08764",
           "text": "If <code>layerCount</code> is not <code>VK_REMAINING_ARRAY_LAYERS</code>, the specified <code>baseArrayLayer</code> +  <code>layerCount</code> of each region <strong class=\"purple\">must</strong> be less than or equal to the <code>arrayLayers</code> specified in <a href=\"#VkImageCreateInfo\">VkImageCreateInfo</a> when <code>dstImage</code> was created",
           "page": "vkspec"
@@ -38415,11 +38410,6 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-VkImageBlit-maintenance5-08799",
-          "text": "If the <a href=\"#features-maintenance5\"><code>maintenance5</code></a> feature is not enabled, the <code>layerCount</code> member of <code>srcSubresource</code> or <code>dstSubresource</code> <strong class=\"purple\">must</strong> not be <code>VK_REMAINING_ARRAY_LAYERS</code>",
-          "page": "vkspec"
-        },
-        {
           "vuid": "VUID-VkImageBlit-layerCount-08801",
           "text": "If one of the <code>layerCount</code> members of <code>srcSubresource</code> or <code>dstSubresource</code> is <code>VK_REMAINING_ARRAY_LAYERS</code>, the other member <strong class=\"purple\">must</strong> be either <code>VK_REMAINING_ARRAY_LAYERS</code> or equal to the <code>arrayLayers</code> member of the <a href=\"#VkImageCreateInfo\">VkImageCreateInfo</a> used to create the image minus <code>baseArrayLayer</code>",
           "page": "vkspec"
@@ -38801,11 +38791,6 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-VkImageBlit2-maintenance5-08799",
-          "text": "If the <a href=\"#features-maintenance5\"><code>maintenance5</code></a> feature is not enabled, the <code>layerCount</code> member of <code>srcSubresource</code> or <code>dstSubresource</code> <strong class=\"purple\">must</strong> not be <code>VK_REMAINING_ARRAY_LAYERS</code>",
-          "page": "vkspec"
-        },
-        {
           "vuid": "VUID-VkImageBlit2-layerCount-08801",
           "text": "If one of the <code>layerCount</code> members of <code>srcSubresource</code> or <code>dstSubresource</code> is <code>VK_REMAINING_ARRAY_LAYERS</code>, the other member <strong class=\"purple\">must</strong> be either <code>VK_REMAINING_ARRAY_LAYERS</code> or equal to the <code>arrayLayers</code> member of the <a href=\"#VkImageCreateInfo\">VkImageCreateInfo</a> used to create the image minus <code>baseArrayLayer</code>",
           "page": "vkspec"
@@ -39091,11 +39076,6 @@
         {
           "vuid": "VUID-VkImageResolve-layerCount-08803",
           "text": "If neither of the <code>layerCount</code> members of <code>srcSubresource</code> or <code>dstSubresource</code> are <code>VK_REMAINING_ARRAY_LAYERS</code>, the <code>layerCount</code> member of <code>srcSubresource</code> and <code>dstSubresource</code> <strong class=\"purple\">must</strong> match",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-VkImageResolve-maintenance5-08802",
-          "text": "If the <a href=\"#features-maintenance5\"><code>maintenance5</code></a> feature is not enabled, the <code>layerCount</code> member of <code>srcSubresource</code> or <code>dstSubresource</code> <strong class=\"purple\">must</strong> not be <code>VK_REMAINING_ARRAY_LAYERS</code>",
           "page": "vkspec"
         },
         {
@@ -39388,11 +39368,6 @@
         {
           "vuid": "VUID-VkImageResolve2-layerCount-08803",
           "text": "If neither of the <code>layerCount</code> members of <code>srcSubresource</code> or <code>dstSubresource</code> are <code>VK_REMAINING_ARRAY_LAYERS</code>, the <code>layerCount</code> member of <code>srcSubresource</code> and <code>dstSubresource</code> <strong class=\"purple\">must</strong> match",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-VkImageResolve2-maintenance5-08802",
-          "text": "If the <a href=\"#features-maintenance5\"><code>maintenance5</code></a> feature is not enabled, the <code>layerCount</code> member of <code>srcSubresource</code> or <code>dstSubresource</code> <strong class=\"purple\">must</strong> not be <code>VK_REMAINING_ARRAY_LAYERS</code>",
           "page": "vkspec"
         },
         {
@@ -40699,7 +40674,7 @@
         },
         {
           "vuid": "VUID-vkCmdDraw-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -41634,7 +41609,7 @@
         },
         {
           "vuid": "VUID-vkCmdDraw-pStrides-04913",
-          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but not the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
+          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but without the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
           "page": "vkspec"
         },
         {
@@ -42488,7 +42463,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndexed-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -43423,7 +43398,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndexed-pStrides-04913",
-          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but not the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
+          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but without the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
           "page": "vkspec"
         },
         {
@@ -44292,7 +44267,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMultiEXT-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -45227,7 +45202,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMultiEXT-pStrides-04913",
-          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but not the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
+          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but without the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
           "page": "vkspec"
         },
         {
@@ -46101,7 +46076,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMultiIndexedEXT-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -47036,7 +47011,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMultiIndexedEXT-pStrides-04913",
-          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but not the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
+          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but without the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
           "page": "vkspec"
         },
         {
@@ -47930,7 +47905,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndirect-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -48850,7 +48825,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndirect-pStrides-04913",
-          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but not the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
+          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but without the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
           "page": "vkspec"
         },
         {
@@ -49773,7 +49748,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectCount-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -50693,7 +50668,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectCount-pStrides-04913",
-          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but not the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
+          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but without the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
           "page": "vkspec"
         },
         {
@@ -51632,7 +51607,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirect-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -52552,7 +52527,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirect-pStrides-04913",
-          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but not the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
+          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but without the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
           "page": "vkspec"
         },
         {
@@ -53490,7 +53465,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirectCount-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -54410,7 +54385,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndexedIndirectCount-pStrides-04913",
-          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but not the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
+          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but without the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
           "page": "vkspec"
         },
         {
@@ -55359,7 +55334,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectByteCountEXT-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -56279,7 +56254,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawIndirectByteCountEXT-pStrides-04913",
-          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but not the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
+          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but without the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
           "page": "vkspec"
         },
         {
@@ -57295,7 +57270,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksNV-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -59014,7 +58989,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectNV-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -60792,7 +60767,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountNV-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -62591,7 +62566,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksEXT-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -64345,7 +64320,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectEXT-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -66158,7 +66133,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountEXT-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -67957,7 +67932,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawClusterHUAWEI-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -69691,7 +69666,7 @@
         },
         {
           "vuid": "VUID-vkCmdDrawClusterIndirectHUAWEI-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -75287,6 +75262,11 @@
           "page": "vkspec"
         },
         {
+          "vuid": "VUID-vkCmdSetLogicOpEnableEXT-logicOp-07366",
+          "text": "If the <a href=\"#features-logicOp\"><code>logicOp</code></a> feature is not enabled, <code>logicOpEnable</code> <strong class=\"purple\">must</strong> be <code>VK_FALSE</code>",
+          "page": "vkspec"
+        },
+        {
           "vuid": "VUID-vkCmdSetLogicOpEnableEXT-commandBuffer-parameter",
           "text": "<code>commandBuffer</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkCommandBuffer\">VkCommandBuffer</a> handle",
           "page": "vkspec"
@@ -78372,7 +78352,7 @@
         },
         {
           "vuid": "VUID-vkCmdExecuteGeneratedCommandsNV-colorAttachmentCount-06179",
-          "text": "If the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
+          "text": "If the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled and the current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the currently bound graphics pipeline <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>colorAttachmentCount</code> equal to <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>colorAttachmentCount</code>",
           "page": "vkspec"
         },
         {
@@ -79292,7 +79272,7 @@
         },
         {
           "vuid": "VUID-vkCmdExecuteGeneratedCommandsNV-pStrides-04913",
-          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but not the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
+          "text": "If the bound graphics pipeline was created with the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT</code> dynamic state enabled, but without the <code>VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</code> dynamic state enabled, then <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> have been called in the current command buffer prior to this draw command, and the <code>pStrides</code> parameter of <a href=\"#vkCmdBindVertexBuffers2EXT\">vkCmdBindVertexBuffers2EXT</a> <strong class=\"purple\">must</strong> not be <code>NULL</code>",
           "page": "vkspec"
         },
         {
@@ -84258,12 +84238,12 @@
         },
         {
           "vuid": "VUID-vkCmdBuildAccelerationStructuresKHR-primitiveCount-03769",
-          "text": "For each <code>VkAccelerationStructureBuildRangeInfoKHR</code> referenced by this command, its <code>primitiveCount</code> member <strong class=\"purple\">must</strong> have the same value which was specified when <code>srcAccelerationStructure</code> was last built",
+          "text": "For each element of <code>pInfos</code>, if its <code>mode</code> member is <code>VK_BUILD_ACCELERATION_STRUCTURE_MODE_UPDATE_KHR</code>, then for each <code>VkAccelerationStructureGeometryKHR</code> structure referred to by its <code>pGeometries</code> or <code>ppGeometries</code> members, the <code>primitiveCount</code> member of its corresponding <code>VkAccelerationStructureBuildRangeInfoKHR</code> structure <strong class=\"purple\">must</strong> have the same value which was specified when <code>srcAccelerationStructure</code> was last built",
           "page": "vkspec"
         },
         {
           "vuid": "VUID-vkCmdBuildAccelerationStructuresKHR-firstVertex-03770",
-          "text": "For each <code>VkAccelerationStructureBuildRangeInfoKHR</code> referenced by this command, if the corresponding geometry uses indices, its <code>firstVertex</code> member <strong class=\"purple\">must</strong> have the same value which was specified when <code>srcAccelerationStructure</code> was last built",
+          "text": "For each element of <code>pInfos</code>, if its <code>mode</code> member is <code>VK_BUILD_ACCELERATION_STRUCTURE_MODE_UPDATE_KHR</code>, then for each <code>VkAccelerationStructureGeometryKHR</code> structure referred to by its <code>pGeometries</code> or <code>ppGeometries</code> members, if the geometry uses indices, the <code>firstVertex</code> member of its corresponding <code>VkAccelerationStructureBuildRangeInfoKHR</code> structure <strong class=\"purple\">must</strong> have the same value which was specified when <code>srcAccelerationStructure</code> was last built",
           "page": "vkspec"
         },
         {
@@ -84622,12 +84602,12 @@
         },
         {
           "vuid": "VUID-vkCmdBuildAccelerationStructuresIndirectKHR-primitiveCount-03769",
-          "text": "For each <code>VkAccelerationStructureBuildRangeInfoKHR</code> referenced by this command, its <code>primitiveCount</code> member <strong class=\"purple\">must</strong> have the same value which was specified when <code>srcAccelerationStructure</code> was last built",
+          "text": "For each element of <code>pInfos</code>, if its <code>mode</code> member is <code>VK_BUILD_ACCELERATION_STRUCTURE_MODE_UPDATE_KHR</code>, then for each <code>VkAccelerationStructureGeometryKHR</code> structure referred to by its <code>pGeometries</code> or <code>ppGeometries</code> members, the <code>primitiveCount</code> member of its corresponding <code>VkAccelerationStructureBuildRangeInfoKHR</code> structure <strong class=\"purple\">must</strong> have the same value which was specified when <code>srcAccelerationStructure</code> was last built",
           "page": "vkspec"
         },
         {
           "vuid": "VUID-vkCmdBuildAccelerationStructuresIndirectKHR-firstVertex-03770",
-          "text": "For each <code>VkAccelerationStructureBuildRangeInfoKHR</code> referenced by this command, if the corresponding geometry uses indices, its <code>firstVertex</code> member <strong class=\"purple\">must</strong> have the same value which was specified when <code>srcAccelerationStructure</code> was last built",
+          "text": "For each element of <code>pInfos</code>, if its <code>mode</code> member is <code>VK_BUILD_ACCELERATION_STRUCTURE_MODE_UPDATE_KHR</code>, then for each <code>VkAccelerationStructureGeometryKHR</code> structure referred to by its <code>pGeometries</code> or <code>ppGeometries</code> members, if the geometry uses indices, the <code>firstVertex</code> member of its corresponding <code>VkAccelerationStructureBuildRangeInfoKHR</code> structure <strong class=\"purple\">must</strong> have the same value which was specified when <code>srcAccelerationStructure</code> was last built",
           "page": "vkspec"
         },
         {
@@ -86090,12 +86070,12 @@
         },
         {
           "vuid": "VUID-vkBuildAccelerationStructuresKHR-primitiveCount-03769",
-          "text": "For each <code>VkAccelerationStructureBuildRangeInfoKHR</code> referenced by this command, its <code>primitiveCount</code> member <strong class=\"purple\">must</strong> have the same value which was specified when <code>srcAccelerationStructure</code> was last built",
+          "text": "For each element of <code>pInfos</code>, if its <code>mode</code> member is <code>VK_BUILD_ACCELERATION_STRUCTURE_MODE_UPDATE_KHR</code>, then for each <code>VkAccelerationStructureGeometryKHR</code> structure referred to by its <code>pGeometries</code> or <code>ppGeometries</code> members, the <code>primitiveCount</code> member of its corresponding <code>VkAccelerationStructureBuildRangeInfoKHR</code> structure <strong class=\"purple\">must</strong> have the same value which was specified when <code>srcAccelerationStructure</code> was last built",
           "page": "vkspec"
         },
         {
           "vuid": "VUID-vkBuildAccelerationStructuresKHR-firstVertex-03770",
-          "text": "For each <code>VkAccelerationStructureBuildRangeInfoKHR</code> referenced by this command, if the corresponding geometry uses indices, its <code>firstVertex</code> member <strong class=\"purple\">must</strong> have the same value which was specified when <code>srcAccelerationStructure</code> was last built",
+          "text": "For each element of <code>pInfos</code>, if its <code>mode</code> member is <code>VK_BUILD_ACCELERATION_STRUCTURE_MODE_UPDATE_KHR</code>, then for each <code>VkAccelerationStructureGeometryKHR</code> structure referred to by its <code>pGeometries</code> or <code>ppGeometries</code> members, if the geometry uses indices, the <code>firstVertex</code> member of its corresponding <code>VkAccelerationStructureBuildRangeInfoKHR</code> structure <strong class=\"purple\">must</strong> have the same value which was specified when <code>srcAccelerationStructure</code> was last built",
           "page": "vkspec"
         },
         {
@@ -96517,6 +96497,15 @@
         {
           "vuid": "VUID-VkPhysicalDeviceSchedulingControlsFeaturesARM-sType-sType",
           "text": "<code>sType</code> <strong class=\"purple\">must</strong> be <code>VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SCHEDULING_CONTROLS_FEATURES_ARM</code>",
+          "page": "vkspec"
+        }
+      ]
+    },
+    "VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG": {
+      "core": [
+        {
+          "vuid": "VUID-VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG-sType-sType",
+          "text": "<code>sType</code> <strong class=\"purple\">must</strong> be <code>VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RELAXED_LINE_RASTERIZATION_FEATURES_IMG</code>",
           "page": "vkspec"
         }
       ]
