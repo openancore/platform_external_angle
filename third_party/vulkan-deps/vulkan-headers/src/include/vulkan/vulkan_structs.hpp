@@ -38980,9 +38980,11 @@ namespace VULKAN_HPP_NAMESPACE
     static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eGetLatencyMarkerInfoNV;
 
 #if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR GetLatencyMarkerInfoNV( VULKAN_HPP_NAMESPACE::LatencyTimingsFrameReportNV * pTimings_ = {},
-                                                 const void *                                        pNext_    = nullptr ) VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_CONSTEXPR GetLatencyMarkerInfoNV( uint32_t                                            timingCount_ = {},
+                                                 VULKAN_HPP_NAMESPACE::LatencyTimingsFrameReportNV * pTimings_    = {},
+                                                 const void *                                        pNext_       = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext( pNext_ )
+      , timingCount( timingCount_ )
       , pTimings( pTimings_ )
     {
     }
@@ -38993,6 +38995,14 @@ namespace VULKAN_HPP_NAMESPACE
       : GetLatencyMarkerInfoNV( *reinterpret_cast<GetLatencyMarkerInfoNV const *>( &rhs ) )
     {
     }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    GetLatencyMarkerInfoNV( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<VULKAN_HPP_NAMESPACE::LatencyTimingsFrameReportNV> const & timings_,
+                            const void *                                                                                             pNext_ = nullptr )
+      : pNext( pNext_ ), timingCount( static_cast<uint32_t>( timings_.size() ) ), pTimings( timings_.data() )
+    {
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
 
     GetLatencyMarkerInfoNV & operator=( GetLatencyMarkerInfoNV const & rhs ) VULKAN_HPP_NOEXCEPT = default;
 #endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
@@ -39010,12 +39020,28 @@ namespace VULKAN_HPP_NAMESPACE
       return *this;
     }
 
+    VULKAN_HPP_CONSTEXPR_14 GetLatencyMarkerInfoNV & setTimingCount( uint32_t timingCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      timingCount = timingCount_;
+      return *this;
+    }
+
     VULKAN_HPP_CONSTEXPR_14 GetLatencyMarkerInfoNV & setPTimings( VULKAN_HPP_NAMESPACE::LatencyTimingsFrameReportNV * pTimings_ ) VULKAN_HPP_NOEXCEPT
     {
       pTimings = pTimings_;
       return *this;
     }
-#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    GetLatencyMarkerInfoNV &
+      setTimings( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<VULKAN_HPP_NAMESPACE::LatencyTimingsFrameReportNV> const & timings_ ) VULKAN_HPP_NOEXCEPT
+    {
+      timingCount = static_cast<uint32_t>( timings_.size() );
+      pTimings    = timings_.data();
+      return *this;
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+#endif   /*VULKAN_HPP_NO_STRUCT_SETTERS*/
 
     operator VkGetLatencyMarkerInfoNV const &() const VULKAN_HPP_NOEXCEPT
     {
@@ -39031,11 +39057,11 @@ namespace VULKAN_HPP_NAMESPACE
 #  if 14 <= VULKAN_HPP_CPP_VERSION
     auto
 #  else
-    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, VULKAN_HPP_NAMESPACE::LatencyTimingsFrameReportNV * const &>
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, uint32_t const &, VULKAN_HPP_NAMESPACE::LatencyTimingsFrameReportNV * const &>
 #  endif
       reflect() const VULKAN_HPP_NOEXCEPT
     {
-      return std::tie( sType, pNext, pTimings );
+      return std::tie( sType, pNext, timingCount, pTimings );
     }
 #endif
 
@@ -39047,7 +39073,7 @@ namespace VULKAN_HPP_NAMESPACE
 #  if defined( VULKAN_HPP_USE_REFLECT )
       return this->reflect() == rhs.reflect();
 #  else
-      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( pTimings == rhs.pTimings );
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( timingCount == rhs.timingCount ) && ( pTimings == rhs.pTimings );
 #  endif
     }
 
@@ -39058,9 +39084,10 @@ namespace VULKAN_HPP_NAMESPACE
 #endif
 
   public:
-    VULKAN_HPP_NAMESPACE::StructureType                 sType    = StructureType::eGetLatencyMarkerInfoNV;
-    const void *                                        pNext    = {};
-    VULKAN_HPP_NAMESPACE::LatencyTimingsFrameReportNV * pTimings = {};
+    VULKAN_HPP_NAMESPACE::StructureType                 sType       = StructureType::eGetLatencyMarkerInfoNV;
+    const void *                                        pNext       = {};
+    uint32_t                                            timingCount = {};
+    VULKAN_HPP_NAMESPACE::LatencyTimingsFrameReportNV * pTimings    = {};
   };
 
   template <>
