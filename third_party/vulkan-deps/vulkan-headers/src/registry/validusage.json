@@ -1,9 +1,9 @@
 {
   "version info": {
     "schema version": 2,
-    "api version": "1.3.270",
-    "comment": "from git branch: github-main commit: b4792eab92a1d132ef95b56a7681cc6af69b570e",
-    "date": "2023-11-10 11:37:06Z"
+    "api version": "1.3.271",
+    "comment": "from git branch: github-main commit: dbad946f7edc9137dbb972ea8e271592e3fb9746",
+    "date": "2023-11-27 05:16:04Z"
   },
   "validation": {
     "vkGetInstanceProcAddr": {
@@ -3892,8 +3892,8 @@
     "vkDestroySemaphore": {
       "core": [
         {
-          "vuid": "VUID-vkDestroySemaphore-semaphore-01137",
-          "text": "All submitted batches that refer to <code>semaphore</code> <strong class=\"purple\">must</strong> have completed execution",
+          "vuid": "VUID-vkDestroySemaphore-semaphore-05149",
+          "text": "All     submitted batches that refer to <code>semaphore</code> <strong class=\"purple\">must</strong> have completed     execution",
           "page": "vkspec"
         },
         {
@@ -7646,13 +7646,13 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-VkImageMemoryBarrier2-image-03319",
-          "text": "If <code>image</code> has a depth/stencil format with both depth and stencil and the <a href=\"#features-separateDepthStencilLayouts\"><code>separateDepthStencilLayouts</code></a> feature is enabled, then the <code>aspectMask</code> member of <code>subresourceRange</code> <strong class=\"purple\">must</strong> include either or both <code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and <code>VK_IMAGE_ASPECT_STENCIL_BIT</code>",
+          "vuid": "VUID-VkImageMemoryBarrier2-image-03320",
+          "text": "If <code>image</code> has a depth/stencil format with both depth and stencil and the <a href=\"#features-separateDepthStencilLayouts\"><code>separateDepthStencilLayouts</code></a> feature is not enabled, then the <code>aspectMask</code> member of <code>subresourceRange</code> <strong class=\"purple\">must</strong> include both <code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and <code>VK_IMAGE_ASPECT_STENCIL_BIT</code>",
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-VkImageMemoryBarrier2-image-03320",
-          "text": "If <code>image</code> has a depth/stencil format with both depth and stencil and the <a href=\"#features-separateDepthStencilLayouts\"><code>separateDepthStencilLayouts</code></a> feature is not enabled, then the <code>aspectMask</code> member of <code>subresourceRange</code> <strong class=\"purple\">must</strong> include both <code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and <code>VK_IMAGE_ASPECT_STENCIL_BIT</code>",
+          "vuid": "VUID-VkImageMemoryBarrier2-image-03319",
+          "text": "If <code>image</code> has a depth/stencil format with both depth and stencil and the <a href=\"#features-separateDepthStencilLayouts\"><code>separateDepthStencilLayouts</code></a> feature is enabled, then the <code>aspectMask</code> member of <code>subresourceRange</code> <strong class=\"purple\">must</strong> include either or both <code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and <code>VK_IMAGE_ASPECT_STENCIL_BIT</code>",
           "page": "vkspec"
         },
         {
@@ -7945,13 +7945,13 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-VkImageMemoryBarrier-image-03319",
-          "text": "If <code>image</code> has a depth/stencil format with both depth and stencil and the <a href=\"#features-separateDepthStencilLayouts\"><code>separateDepthStencilLayouts</code></a> feature is enabled, then the <code>aspectMask</code> member of <code>subresourceRange</code> <strong class=\"purple\">must</strong> include either or both <code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and <code>VK_IMAGE_ASPECT_STENCIL_BIT</code>",
+          "vuid": "VUID-VkImageMemoryBarrier-image-03320",
+          "text": "If <code>image</code> has a depth/stencil format with both depth and stencil and the <a href=\"#features-separateDepthStencilLayouts\"><code>separateDepthStencilLayouts</code></a> feature is not enabled, then the <code>aspectMask</code> member of <code>subresourceRange</code> <strong class=\"purple\">must</strong> include both <code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and <code>VK_IMAGE_ASPECT_STENCIL_BIT</code>",
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-VkImageMemoryBarrier-image-03320",
-          "text": "If <code>image</code> has a depth/stencil format with both depth and stencil and the <a href=\"#features-separateDepthStencilLayouts\"><code>separateDepthStencilLayouts</code></a> feature is not enabled, then the <code>aspectMask</code> member of <code>subresourceRange</code> <strong class=\"purple\">must</strong> include both <code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and <code>VK_IMAGE_ASPECT_STENCIL_BIT</code>",
+          "vuid": "VUID-VkImageMemoryBarrier-image-03319",
+          "text": "If <code>image</code> has a depth/stencil format with both depth and stencil and the <a href=\"#features-separateDepthStencilLayouts\"><code>separateDepthStencilLayouts</code></a> feature is enabled, then the <code>aspectMask</code> member of <code>subresourceRange</code> <strong class=\"purple\">must</strong> include either or both <code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and <code>VK_IMAGE_ASPECT_STENCIL_BIT</code>",
           "page": "vkspec"
         },
         {
@@ -8083,13 +8083,13 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-VkHostImageLayoutTransitionInfoEXT-image-03319",
-          "text": "If <code>image</code> has a depth/stencil format with both depth and stencil and the <a href=\"#features-separateDepthStencilLayouts\"><code>separateDepthStencilLayouts</code></a> feature is enabled, then the <code>aspectMask</code> member of <code>subresourceRange</code> <strong class=\"purple\">must</strong> include either or both <code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and <code>VK_IMAGE_ASPECT_STENCIL_BIT</code>",
+          "vuid": "VUID-VkHostImageLayoutTransitionInfoEXT-image-03320",
+          "text": "If <code>image</code> has a depth/stencil format with both depth and stencil and the <a href=\"#features-separateDepthStencilLayouts\"><code>separateDepthStencilLayouts</code></a> feature is not enabled, then the <code>aspectMask</code> member of <code>subresourceRange</code> <strong class=\"purple\">must</strong> include both <code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and <code>VK_IMAGE_ASPECT_STENCIL_BIT</code>",
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-VkHostImageLayoutTransitionInfoEXT-image-03320",
-          "text": "If <code>image</code> has a depth/stencil format with both depth and stencil and the <a href=\"#features-separateDepthStencilLayouts\"><code>separateDepthStencilLayouts</code></a> feature is not enabled, then the <code>aspectMask</code> member of <code>subresourceRange</code> <strong class=\"purple\">must</strong> include both <code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and <code>VK_IMAGE_ASPECT_STENCIL_BIT</code>",
+          "vuid": "VUID-VkHostImageLayoutTransitionInfoEXT-image-03319",
+          "text": "If <code>image</code> has a depth/stencil format with both depth and stencil and the <a href=\"#features-separateDepthStencilLayouts\"><code>separateDepthStencilLayouts</code></a> feature is enabled, then the <code>aspectMask</code> member of <code>subresourceRange</code> <strong class=\"purple\">must</strong> include either or both <code>VK_IMAGE_ASPECT_DEPTH_BIT</code> and <code>VK_IMAGE_ASPECT_STENCIL_BIT</code>",
           "page": "vkspec"
         },
         {
@@ -11977,12 +11977,12 @@
         },
         {
           "vuid": "VUID-VkRenderPassBeginInfo-None-08996",
-          "text": "If <a href=\"#VkDeviceGroupRenderPassBeginInfo\">VkDeviceGroupRenderPassBeginInfo</a>::<code>deviceRenderAreaCount</code> is 0, <code>renderArea.extent.width</code> <strong class=\"purple\">must</strong> be greater than 0",
+          "text": "If the <code>pNext</code> chain does not contain <a href=\"#VkDeviceGroupRenderPassBeginInfo\">VkDeviceGroupRenderPassBeginInfo</a> or its <code>deviceRenderAreaCount</code> member is equal to 0, <code>renderArea.extent.width</code> <strong class=\"purple\">must</strong> be greater than 0",
           "page": "vkspec"
         },
         {
           "vuid": "VUID-VkRenderPassBeginInfo-None-08997",
-          "text": "If <a href=\"#VkDeviceGroupRenderPassBeginInfo\">VkDeviceGroupRenderPassBeginInfo</a>::<code>deviceRenderAreaCount</code> is 0, <code>renderArea.extent.height</code> <strong class=\"purple\">must</strong> be greater than 0",
+          "text": "If the <code>pNext</code> chain does not contain <a href=\"#VkDeviceGroupRenderPassBeginInfo\">VkDeviceGroupRenderPassBeginInfo</a> or its <code>deviceRenderAreaCount</code> member is equal to 0, <code>renderArea.extent.height</code> <strong class=\"purple\">must</strong> be greater than 0",
           "page": "vkspec"
         },
         {
@@ -14068,16 +14068,6 @@
     },
     "vkGetCudaModuleCacheNV": {
       "core": [
-        {
-          "vuid": "VUID-vkGetCudaModuleCacheNV-pCacheSize-09414",
-          "text": "<code>pCacheSize</code> <strong class=\"purple\">must</strong> be a pointer containing the amount of bytes to be copied in <code>pCacheData</code>. If <code>pCacheData</code> is NULL, the function will return in this pointer the total amount of bytes required to later perform the copy into <code>pCacheData</code>.",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-vkGetCudaModuleCacheNV-pCacheData-09415",
-          "text": "<code>pCacheData</code> <strong class=\"purple\">may</strong> be a pointer to a buffer in which the binary cache will be copied. The amount of bytes copied is defined by the value in <code>pCacheSize</code>. This pointer <strong class=\"purple\">may</strong> be NULL. In this case, the function will write the total amount of required data in <code>pCacheSize</code>.",
-          "page": "vkspec"
-        },
         {
           "vuid": "VUID-vkGetCudaModuleCacheNV-device-parameter",
           "text": "<code>device</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkDevice\">VkDevice</a> handle",
@@ -22164,12 +22154,12 @@
         },
         {
           "vuid": "VUID-vkGetImageSubresourceLayout-mipLevel-01716",
-          "text": "The <code>mipLevel</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be less than the <code>mipLevels</code> specified in <a href=\"#VkImageCreateInfo\">VkImageCreateInfo</a> when <code>image</code> was created",
+          "text": "The <code>mipLevel</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be less than the <code>mipLevels</code> specified in <code>image</code>",
           "page": "vkspec"
         },
         {
           "vuid": "VUID-vkGetImageSubresourceLayout-arrayLayer-01717",
-          "text": "The <code>arrayLayer</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be less than the <code>arrayLayers</code> specified in <a href=\"#VkImageCreateInfo\">VkImageCreateInfo</a> when <code>image</code> was created",
+          "text": "The <code>arrayLayer</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be less than the <code>arrayLayers</code> specified in <code>image</code>",
           "page": "vkspec"
         },
         {
@@ -22198,12 +22188,12 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-vkGetImageSubresourceLayout-image-01895",
+          "vuid": "VUID-vkGetImageSubresourceLayout-image-09432",
           "text": "If <code>image</code> was created with the <code>VK_EXTERNAL_MEMORY_HANDLE_TYPE_ANDROID_HARDWARE_BUFFER_BIT_ANDROID</code> external memory handle type, then <code>image</code> <strong class=\"purple\">must</strong> be bound to memory",
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-vkGetImageSubresourceLayout-tiling-02271",
+          "vuid": "VUID-vkGetImageSubresourceLayout-tiling-09433",
           "text": "If the <code>tiling</code> of the <code>image</code> is <code>VK_IMAGE_TILING_DRM_FORMAT_MODIFIER_EXT</code>, then the <code>aspectMask</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be <code>VK_IMAGE_ASPECT_MEMORY_PLANE<em>_i_</em>BIT_EXT</code> and the index <em>i</em> <strong class=\"purple\">must</strong> be less than the <a href=\"#VkDrmFormatModifierPropertiesEXT\">VkDrmFormatModifierPropertiesEXT</a>::<code>drmFormatModifierPlaneCount</code> associated with the image&#8217;s <code>format</code> and <a href=\"#VkImageDrmFormatModifierPropertiesEXT\">VkImageDrmFormatModifierPropertiesEXT</a>::<code>drmFormatModifier</code>",
           "page": "vkspec"
         },
@@ -22257,12 +22247,12 @@
         },
         {
           "vuid": "VUID-vkGetImageSubresourceLayout2KHR-mipLevel-01716",
-          "text": "The <code>mipLevel</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be less than the <code>mipLevels</code> specified in <a href=\"#VkImageCreateInfo\">VkImageCreateInfo</a> when <code>image</code> was created",
+          "text": "The <code>mipLevel</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be less than the <code>mipLevels</code> specified in <code>image</code>",
           "page": "vkspec"
         },
         {
           "vuid": "VUID-vkGetImageSubresourceLayout2KHR-arrayLayer-01717",
-          "text": "The <code>arrayLayer</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be less than the <code>arrayLayers</code> specified in <a href=\"#VkImageCreateInfo\">VkImageCreateInfo</a> when <code>image</code> was created",
+          "text": "The <code>arrayLayer</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be less than the <code>arrayLayers</code> specified in <code>image</code>",
           "page": "vkspec"
         },
         {
@@ -22291,12 +22281,12 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-vkGetImageSubresourceLayout2KHR-image-01895",
+          "vuid": "VUID-vkGetImageSubresourceLayout2KHR-image-09434",
           "text": "If <code>image</code> was created with the <code>VK_EXTERNAL_MEMORY_HANDLE_TYPE_ANDROID_HARDWARE_BUFFER_BIT_ANDROID</code> external memory handle type, then <code>image</code> <strong class=\"purple\">must</strong> be bound to memory",
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-vkGetImageSubresourceLayout2KHR-tiling-02271",
+          "vuid": "VUID-vkGetImageSubresourceLayout2KHR-tiling-09435",
           "text": "If the <code>tiling</code> of the <code>image</code> is <code>VK_IMAGE_TILING_DRM_FORMAT_MODIFIER_EXT</code>, then the <code>aspectMask</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be <code>VK_IMAGE_ASPECT_MEMORY_PLANE<em>_i_</em>BIT_EXT</code> and the index <em>i</em> <strong class=\"purple\">must</strong> be less than the <a href=\"#VkDrmFormatModifierPropertiesEXT\">VkDrmFormatModifierPropertiesEXT</a>::<code>drmFormatModifierPlaneCount</code> associated with the image&#8217;s <code>format</code> and <a href=\"#VkImageDrmFormatModifierPropertiesEXT\">VkImageDrmFormatModifierPropertiesEXT</a>::<code>drmFormatModifier</code>",
           "page": "vkspec"
         },
@@ -22402,47 +22392,37 @@
         },
         {
           "vuid": "VUID-VkDeviceImageSubresourceInfoKHR-mipLevel-01716",
-          "text": "The <code>mipLevel</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be less than the <code>mipLevels</code> specified in <a href=\"#VkImageCreateInfo\">VkImageCreateInfo</a> when <code>image</code> was created",
+          "text": "The <code>mipLevel</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be less than the <code>mipLevels</code> specified in <code>pCreateInfo</code>",
           "page": "vkspec"
         },
         {
           "vuid": "VUID-VkDeviceImageSubresourceInfoKHR-arrayLayer-01717",
-          "text": "The <code>arrayLayer</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be less than the <code>arrayLayers</code> specified in <a href=\"#VkImageCreateInfo\">VkImageCreateInfo</a> when <code>image</code> was created",
+          "text": "The <code>arrayLayer</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be less than the <code>arrayLayers</code> specified in <code>pCreateInfo</code>",
           "page": "vkspec"
         },
         {
           "vuid": "VUID-VkDeviceImageSubresourceInfoKHR-format-08886",
-          "text": "If <code>format</code> of the <code>image</code> is a color format, <code>tiling</code> of the <code>image</code> is <code>VK_IMAGE_TILING_LINEAR</code> or <code>VK_IMAGE_TILING_OPTIMAL</code>, and does not have a <a href=\"#formats-requiring-sampler-ycbcr-conversion\">multi-planar image format</a>, the <code>aspectMask</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be <code>VK_IMAGE_ASPECT_COLOR_BIT</code>",
+          "text": "If <code>format</code> of the <code>pCreateInfo</code> is a color format, <code>tiling</code> of the <code>pCreateInfo</code> is <code>VK_IMAGE_TILING_LINEAR</code> or <code>VK_IMAGE_TILING_OPTIMAL</code>, and does not have a <a href=\"#formats-requiring-sampler-ycbcr-conversion\">multi-planar image format</a>, the <code>aspectMask</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be <code>VK_IMAGE_ASPECT_COLOR_BIT</code>",
           "page": "vkspec"
         },
         {
           "vuid": "VUID-VkDeviceImageSubresourceInfoKHR-format-04462",
-          "text": "If <code>format</code> of the <code>image</code> has a depth component, the <code>aspectMask</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> contain <code>VK_IMAGE_ASPECT_DEPTH_BIT</code>",
+          "text": "If <code>format</code> of the <code>pCreateInfo</code> has a depth component, the <code>aspectMask</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> contain <code>VK_IMAGE_ASPECT_DEPTH_BIT</code>",
           "page": "vkspec"
         },
         {
           "vuid": "VUID-VkDeviceImageSubresourceInfoKHR-format-04463",
-          "text": "If <code>format</code> of the <code>image</code> has a stencil component, the <code>aspectMask</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> contain <code>VK_IMAGE_ASPECT_STENCIL_BIT</code>",
+          "text": "If <code>format</code> of the <code>pCreateInfo</code> has a stencil component, the <code>aspectMask</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> contain <code>VK_IMAGE_ASPECT_STENCIL_BIT</code>",
           "page": "vkspec"
         },
         {
           "vuid": "VUID-VkDeviceImageSubresourceInfoKHR-format-04464",
-          "text": "If <code>format</code> of the <code>image</code> does not contain a stencil or depth component, the <code>aspectMask</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> not contain <code>VK_IMAGE_ASPECT_DEPTH_BIT</code> or <code>VK_IMAGE_ASPECT_STENCIL_BIT</code>",
+          "text": "If <code>format</code> of the <code>pCreateInfo</code> does not contain a stencil or depth component, the <code>aspectMask</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> not contain <code>VK_IMAGE_ASPECT_DEPTH_BIT</code> or <code>VK_IMAGE_ASPECT_STENCIL_BIT</code>",
           "page": "vkspec"
         },
         {
           "vuid": "VUID-VkDeviceImageSubresourceInfoKHR-tiling-08717",
-          "text": "If the <code>tiling</code> of the <code>image</code> is <code>VK_IMAGE_TILING_LINEAR</code> and has a <a href=\"#formats-requiring-sampler-ycbcr-conversion\">multi-planar image format</a>, then the <code>aspectMask</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be a single valid <a href=\"#formats-planes-image-aspect\">multi-planar aspect mask</a> bit",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-VkDeviceImageSubresourceInfoKHR-image-01895",
-          "text": "If <code>image</code> was created with the <code>VK_EXTERNAL_MEMORY_HANDLE_TYPE_ANDROID_HARDWARE_BUFFER_BIT_ANDROID</code> external memory handle type, then <code>image</code> <strong class=\"purple\">must</strong> be bound to memory",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-VkDeviceImageSubresourceInfoKHR-tiling-02271",
-          "text": "If the <code>tiling</code> of the <code>image</code> is <code>VK_IMAGE_TILING_DRM_FORMAT_MODIFIER_EXT</code>, then the <code>aspectMask</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be <code>VK_IMAGE_ASPECT_MEMORY_PLANE<em>_i_</em>BIT_EXT</code> and the index <em>i</em> <strong class=\"purple\">must</strong> be less than the <a href=\"#VkDrmFormatModifierPropertiesEXT\">VkDrmFormatModifierPropertiesEXT</a>::<code>drmFormatModifierPlaneCount</code> associated with the image&#8217;s <code>format</code> and <a href=\"#VkImageDrmFormatModifierPropertiesEXT\">VkImageDrmFormatModifierPropertiesEXT</a>::<code>drmFormatModifier</code>",
+          "text": "If the <code>tiling</code> of the <code>pCreateInfo</code> is <code>VK_IMAGE_TILING_LINEAR</code> and has a <a href=\"#formats-requiring-sampler-ycbcr-conversion\">multi-planar image format</a>, then the <code>aspectMask</code> member of <code>pSubresource</code> <strong class=\"purple\">must</strong> be a single valid <a href=\"#formats-planes-image-aspect\">multi-planar aspect mask</a> bit",
           "page": "vkspec"
         },
         {
@@ -32365,16 +32345,6 @@
     "vkCmdResetQueryPool": {
       "core": [
         {
-          "vuid": "VUID-vkCmdResetQueryPool-firstQuery-00796",
-          "text": "<code>firstQuery</code> <strong class=\"purple\">must</strong> be less than the number of queries in <code>queryPool</code>",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-vkCmdResetQueryPool-firstQuery-00797",
-          "text": "The sum of <code>firstQuery</code> and <code>queryCount</code> <strong class=\"purple\">must</strong> be less than or equal to the number of queries in <code>queryPool</code>",
-          "page": "vkspec"
-        },
-        {
           "vuid": "VUID-vkCmdResetQueryPool-None-02841",
           "text": "All queries used by the command <strong class=\"purple\">must</strong> not be active",
           "page": "vkspec"
@@ -32426,16 +32396,6 @@
         {
           "vuid": "VUID-vkResetQueryPool-None-02665",
           "text": "The <a href=\"#features-hostQueryReset\"><code>hostQueryReset</code></a> feature <strong class=\"purple\">must</strong> be enabled",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-vkResetQueryPool-firstQuery-02666",
-          "text": "<code>firstQuery</code> <strong class=\"purple\">must</strong> be less than the number of queries in <code>queryPool</code>",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-vkResetQueryPool-firstQuery-02667",
-          "text": "The sum of <code>firstQuery</code> and <code>queryCount</code> <strong class=\"purple\">must</strong> be less than or equal to the number of queries in <code>queryPool</code>",
           "page": "vkspec"
         },
         {
@@ -33024,11 +32984,6 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-vkGetQueryPoolResults-firstQuery-00813",
-          "text": "<code>firstQuery</code> <strong class=\"purple\">must</strong> be less than the number of queries in <code>queryPool</code>",
-          "page": "vkspec"
-        },
-        {
           "vuid": "VUID-vkGetQueryPoolResults-flags-02828",
           "text": "If <code>VK_QUERY_RESULT_64_BIT</code> is not set in <code>flags</code> and the <code>queryType</code> used to create <code>queryPool</code> was not <code>VK_QUERY_TYPE_PERFORMANCE_QUERY_KHR</code>, then <code>pData</code> and <code>stride</code> <strong class=\"purple\">must</strong> be multiples of <code>4</code>",
           "page": "vkspec"
@@ -33054,38 +33009,8 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-vkGetQueryPoolResults-firstQuery-00816",
-          "text": "The sum of <code>firstQuery</code> and <code>queryCount</code> <strong class=\"purple\">must</strong> be less than or equal to the number of queries in <code>queryPool</code>",
-          "page": "vkspec"
-        },
-        {
           "vuid": "VUID-vkGetQueryPoolResults-dataSize-00817",
           "text": "<code>dataSize</code> <strong class=\"purple\">must</strong> be large enough to contain the result of each query, as described <a href=\"#queries-operation-memorylayout\">here</a>",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-vkGetQueryPoolResults-queryType-00818",
-          "text": "If the <code>queryType</code> used to create <code>queryPool</code> was <code>VK_QUERY_TYPE_TIMESTAMP</code>, <code>flags</code> <strong class=\"purple\">must</strong> not contain <code>VK_QUERY_RESULT_PARTIAL_BIT</code>",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-vkGetQueryPoolResults-queryType-03230",
-          "text": "If the <code>queryType</code> used to create <code>queryPool</code> was <code>VK_QUERY_TYPE_PERFORMANCE_QUERY_KHR</code>, <code>flags</code> <strong class=\"purple\">must</strong> not contain <code>VK_QUERY_RESULT_WITH_AVAILABILITY_BIT</code>, <code>VK_QUERY_RESULT_WITH_STATUS_BIT_KHR</code>, <code>VK_QUERY_RESULT_PARTIAL_BIT</code>, or <code>VK_QUERY_RESULT_64_BIT</code>",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-vkGetQueryPoolResults-queryType-03231",
-          "text": "If the <code>queryType</code> used to create <code>queryPool</code> was <code>VK_QUERY_TYPE_PERFORMANCE_QUERY_KHR</code>, the <code>queryPool</code> <strong class=\"purple\">must</strong> have been recorded once for each pass as retrieved via a call to <a href=\"#vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR\">vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR</a>",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-vkGetQueryPoolResults-queryType-04810",
-          "text": "If the <code>queryType</code> used to create <code>queryPool</code> was <code>VK_QUERY_TYPE_RESULT_STATUS_ONLY_KHR</code>, then <code>flags</code> <strong class=\"purple\">must</strong> include <code>VK_QUERY_RESULT_WITH_STATUS_BIT_KHR</code>",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-vkGetQueryPoolResults-flags-04811",
-          "text": "If <code>flags</code> includes <code>VK_QUERY_RESULT_WITH_STATUS_BIT_KHR</code>, then it <strong class=\"purple\">must</strong> not include <code>VK_QUERY_RESULT_WITH_AVAILABILITY_BIT</code>",
           "page": "vkspec"
         },
         {
@@ -33133,16 +33058,6 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-vkCmdCopyQueryPoolResults-firstQuery-00820",
-          "text": "<code>firstQuery</code> <strong class=\"purple\">must</strong> be less than the number of queries in <code>queryPool</code>",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-vkCmdCopyQueryPoolResults-firstQuery-00821",
-          "text": "The sum of <code>firstQuery</code> and <code>queryCount</code> <strong class=\"purple\">must</strong> be less than or equal to the number of queries in <code>queryPool</code>",
-          "page": "vkspec"
-        },
-        {
           "vuid": "VUID-vkCmdCopyQueryPoolResults-flags-00822",
           "text": "If <code>VK_QUERY_RESULT_64_BIT</code> is not set in <code>flags</code> then <code>dstOffset</code> and <code>stride</code> <strong class=\"purple\">must</strong> be multiples of <code>4</code>",
           "page": "vkspec"
@@ -33168,38 +33083,13 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-vkCmdCopyQueryPoolResults-queryType-00827",
-          "text": "If the <code>queryType</code> used to create <code>queryPool</code> was <code>VK_QUERY_TYPE_TIMESTAMP</code>, <code>flags</code> <strong class=\"purple\">must</strong> not contain <code>VK_QUERY_RESULT_PARTIAL_BIT</code>",
-          "page": "vkspec"
-        },
-        {
           "vuid": "VUID-vkCmdCopyQueryPoolResults-queryType-03232",
           "text": "If the <code>queryType</code> used to create <code>queryPool</code> was <code>VK_QUERY_TYPE_PERFORMANCE_QUERY_KHR</code>, <a href=\"#VkPhysicalDevicePerformanceQueryPropertiesKHR\">VkPhysicalDevicePerformanceQueryPropertiesKHR</a>::<code>allowCommandBufferQueryCopies</code> <strong class=\"purple\">must</strong> be <code>VK_TRUE</code>",
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-vkCmdCopyQueryPoolResults-queryType-03233",
-          "text": "If the <code>queryType</code> used to create <code>queryPool</code> was <code>VK_QUERY_TYPE_PERFORMANCE_QUERY_KHR</code>, <code>flags</code> <strong class=\"purple\">must</strong> not contain <code>VK_QUERY_RESULT_WITH_AVAILABILITY_BIT</code>, <code>VK_QUERY_RESULT_WITH_STATUS_BIT_KHR</code>, <code>VK_QUERY_RESULT_PARTIAL_BIT</code>, or <code>VK_QUERY_RESULT_64_BIT</code>",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-vkCmdCopyQueryPoolResults-queryType-03234",
-          "text": "If the <code>queryType</code> used to create <code>queryPool</code> was <code>VK_QUERY_TYPE_PERFORMANCE_QUERY_KHR</code>, the <code>queryPool</code> <strong class=\"purple\">must</strong> have been submitted once for each pass as retrieved via a call to <a href=\"#vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR\">vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR</a>",
-          "page": "vkspec"
-        },
-        {
           "vuid": "VUID-vkCmdCopyQueryPoolResults-queryType-02734",
           "text": "<a href=\"#vkCmdCopyQueryPoolResults\">vkCmdCopyQueryPoolResults</a> <strong class=\"purple\">must</strong> not be called if the <code>queryType</code> used to create <code>queryPool</code> was <code>VK_QUERY_TYPE_PERFORMANCE_QUERY_INTEL</code>",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-vkCmdCopyQueryPoolResults-queryType-06901",
-          "text": "If the <code>queryType</code> used to create <code>queryPool</code> was <code>VK_QUERY_TYPE_RESULT_STATUS_ONLY_KHR</code>, then <code>flags</code> <strong class=\"purple\">must</strong> include <code>VK_QUERY_RESULT_WITH_STATUS_BIT_KHR</code>",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-vkCmdCopyQueryPoolResults-flags-06902",
-          "text": "If <code>flags</code> includes <code>VK_QUERY_RESULT_WITH_STATUS_BIT_KHR</code>, then it <strong class=\"purple\">must</strong> not include <code>VK_QUERY_RESULT_WITH_AVAILABILITY_BIT</code>",
           "page": "vkspec"
         },
         {
@@ -71346,7 +71236,7 @@
         },
         {
           "vuid": "VUID-vkCmdBeginTransformFeedbackEXT-None-06233",
-          "text": "A valid graphics pipeline <strong class=\"purple\">must</strong> be bound to <code>VK_PIPELINE_BIND_POINT_GRAPHICS</code>",
+          "text": "If the <a href=\"#features-shaderObject\"><code>shaderObject</code></a> feature is not enabled, a valid graphics pipeline <strong class=\"purple\">must</strong> be bound to <code>VK_PIPELINE_BIND_POINT_GRAPHICS</code>",
           "page": "vkspec"
         },
         {
@@ -94724,11 +94614,6 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-vkGetLatencyTimingsNV-pTimingCount-parameter",
-          "text": "<code>pTimingCount</code> <strong class=\"purple\">must</strong> be a valid pointer to a <code>uint32_t</code> value",
-          "page": "vkspec"
-        },
-        {
           "vuid": "VUID-vkGetLatencyTimingsNV-pLatencyMarkerInfo-parameter",
           "text": "<code>pLatencyMarkerInfo</code> <strong class=\"purple\">must</strong> be a valid pointer to a <a href=\"#VkGetLatencyMarkerInfoNV\">VkGetLatencyMarkerInfoNV</a> structure",
           "page": "vkspec"
@@ -94749,7 +94634,7 @@
         },
         {
           "vuid": "VUID-VkGetLatencyMarkerInfoNV-pTimings-parameter",
-          "text": "<code>pTimings</code> <strong class=\"purple\">must</strong> be a valid pointer to a <a href=\"#VkLatencyTimingsFrameReportNV\">VkLatencyTimingsFrameReportNV</a> structure",
+          "text": "If <code>timingCount</code> is not <code>0</code>, and <code>pTimings</code> is not <code>NULL</code>, <code>pTimings</code> <strong class=\"purple\">must</strong> be a valid pointer to an array of <code>timingCount</code> <a href=\"#VkLatencyTimingsFrameReportNV\">VkLatencyTimingsFrameReportNV</a> structures",
           "page": "vkspec"
         }
       ]
@@ -100820,12 +100705,7 @@
         },
         {
           "vuid": "VUID-VkCuModuleCreateInfoNVX-pData-parameter",
-          "text": "<code>pData</code> <strong class=\"purple\">must</strong> be a valid pointer to an array of <code>dataSize</code> bytes",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-VkCuModuleCreateInfoNVX-dataSize-arraylength",
-          "text": "<code>dataSize</code> <strong class=\"purple\">must</strong> be greater than <code>0</code>",
+          "text": "If <code>dataSize</code> is not <code>0</code>, <code>pData</code> <strong class=\"purple\">must</strong> be a valid pointer to an array of <code>dataSize</code> bytes",
           "page": "vkspec"
         }
       ]
