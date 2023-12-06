@@ -49503,6 +49503,280 @@ namespace VULKAN_HPP_NAMESPACE
     VULKAN_HPP_NAMESPACE::ArrayWrapper1D<char, VK_MAX_DESCRIPTION_SIZE>    description           = {};
   };
 
+  struct LayerSettingEXT
+  {
+    using NativeType = VkLayerSettingEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR LayerSettingEXT( const char *                              pLayerName_   = {},
+                                          const char *                              pSettingName_ = {},
+                                          VULKAN_HPP_NAMESPACE::LayerSettingTypeEXT type_         = VULKAN_HPP_NAMESPACE::LayerSettingTypeEXT::eBool32,
+                                          uint32_t                                  valueCount_   = {},
+                                          const void *                              pValues_      = {} ) VULKAN_HPP_NOEXCEPT
+      : pLayerName( pLayerName_ )
+      , pSettingName( pSettingName_ )
+      , type( type_ )
+      , valueCount( valueCount_ )
+      , pValues( pValues_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR LayerSettingEXT( LayerSettingEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    LayerSettingEXT( VkLayerSettingEXT const & rhs ) VULKAN_HPP_NOEXCEPT : LayerSettingEXT( *reinterpret_cast<LayerSettingEXT const *>( &rhs ) ) {}
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    template <typename T>
+    LayerSettingEXT( const char *                                                   pLayerName_,
+                     const char *                                                   pSettingName_,
+                     VULKAN_HPP_NAMESPACE::LayerSettingTypeEXT                      type_,
+                     VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const T> const & values_ )
+      : pLayerName( pLayerName_ )
+      , pSettingName( pSettingName_ )
+      , type( type_ )
+      , valueCount( static_cast<uint32_t>( values_.size() * sizeof( T ) ) )
+      , pValues( values_.data() )
+    {
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    LayerSettingEXT & operator=( LayerSettingEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    LayerSettingEXT & operator=( VkLayerSettingEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::LayerSettingEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 LayerSettingEXT & setPLayerName( const char * pLayerName_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pLayerName = pLayerName_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 LayerSettingEXT & setPSettingName( const char * pSettingName_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pSettingName = pSettingName_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 LayerSettingEXT & setType( VULKAN_HPP_NAMESPACE::LayerSettingTypeEXT type_ ) VULKAN_HPP_NOEXCEPT
+    {
+      type = type_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 LayerSettingEXT & setValueCount( uint32_t valueCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      valueCount = valueCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 LayerSettingEXT & setPValues( const void * pValues_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pValues = pValues_;
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    template <typename T>
+    LayerSettingEXT & setValues( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const T> const & values_ ) VULKAN_HPP_NOEXCEPT
+    {
+      valueCount = static_cast<uint32_t>( values_.size() * sizeof( T ) );
+      pValues    = values_.data();
+      return *this;
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+#endif   /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkLayerSettingEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkLayerSettingEXT *>( this );
+    }
+
+    operator VkLayerSettingEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkLayerSettingEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<const char * const &, const char * const &, VULKAN_HPP_NAMESPACE::LayerSettingTypeEXT const &, uint32_t const &, const void * const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( pLayerName, pSettingName, type, valueCount, pValues );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    std::strong_ordering operator<=>( LayerSettingEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      if ( pLayerName != rhs.pLayerName )
+        if ( auto cmp = strcmp( pLayerName, rhs.pLayerName ); cmp != 0 )
+          return ( cmp < 0 ) ? std::strong_ordering::less : std::strong_ordering::greater;
+      if ( pSettingName != rhs.pSettingName )
+        if ( auto cmp = strcmp( pSettingName, rhs.pSettingName ); cmp != 0 )
+          return ( cmp < 0 ) ? std::strong_ordering::less : std::strong_ordering::greater;
+      if ( auto cmp = type <=> rhs.type; cmp != 0 )
+        return cmp;
+      if ( auto cmp = valueCount <=> rhs.valueCount; cmp != 0 )
+        return cmp;
+      if ( auto cmp = pValues <=> rhs.pValues; cmp != 0 )
+        return cmp;
+
+      return std::strong_ordering::equivalent;
+    }
+#endif
+
+    bool operator==( LayerSettingEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return ( ( pLayerName == rhs.pLayerName ) || ( strcmp( pLayerName, rhs.pLayerName ) == 0 ) ) &&
+             ( ( pSettingName == rhs.pSettingName ) || ( strcmp( pSettingName, rhs.pSettingName ) == 0 ) ) && ( type == rhs.type ) &&
+             ( valueCount == rhs.valueCount ) && ( pValues == rhs.pValues );
+    }
+
+    bool operator!=( LayerSettingEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+
+  public:
+    const char *                              pLayerName   = {};
+    const char *                              pSettingName = {};
+    VULKAN_HPP_NAMESPACE::LayerSettingTypeEXT type         = VULKAN_HPP_NAMESPACE::LayerSettingTypeEXT::eBool32;
+    uint32_t                                  valueCount   = {};
+    const void *                              pValues      = {};
+  };
+
+  struct LayerSettingsCreateInfoEXT
+  {
+    using NativeType = VkLayerSettingsCreateInfoEXT;
+
+    static const bool                                  allowDuplicate = true;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eLayerSettingsCreateInfoEXT;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR LayerSettingsCreateInfoEXT( uint32_t                                      settingCount_ = {},
+                                                     const VULKAN_HPP_NAMESPACE::LayerSettingEXT * pSettings_    = {},
+                                                     const void *                                  pNext_        = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , settingCount( settingCount_ )
+      , pSettings( pSettings_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR LayerSettingsCreateInfoEXT( LayerSettingsCreateInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    LayerSettingsCreateInfoEXT( VkLayerSettingsCreateInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+      : LayerSettingsCreateInfoEXT( *reinterpret_cast<LayerSettingsCreateInfoEXT const *>( &rhs ) )
+    {
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    LayerSettingsCreateInfoEXT( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::LayerSettingEXT> const & settings_,
+                                const void *                                                                                       pNext_ = nullptr )
+      : pNext( pNext_ ), settingCount( static_cast<uint32_t>( settings_.size() ) ), pSettings( settings_.data() )
+    {
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    LayerSettingsCreateInfoEXT & operator=( LayerSettingsCreateInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    LayerSettingsCreateInfoEXT & operator=( VkLayerSettingsCreateInfoEXT const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::LayerSettingsCreateInfoEXT const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 LayerSettingsCreateInfoEXT & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 LayerSettingsCreateInfoEXT & setSettingCount( uint32_t settingCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      settingCount = settingCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 LayerSettingsCreateInfoEXT & setPSettings( const VULKAN_HPP_NAMESPACE::LayerSettingEXT * pSettings_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pSettings = pSettings_;
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    LayerSettingsCreateInfoEXT &
+      setSettings( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::LayerSettingEXT> const & settings_ ) VULKAN_HPP_NOEXCEPT
+    {
+      settingCount = static_cast<uint32_t>( settings_.size() );
+      pSettings    = settings_.data();
+      return *this;
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+#endif   /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkLayerSettingsCreateInfoEXT const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkLayerSettingsCreateInfoEXT *>( this );
+    }
+
+    operator VkLayerSettingsCreateInfoEXT &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkLayerSettingsCreateInfoEXT *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, uint32_t const &, const VULKAN_HPP_NAMESPACE::LayerSettingEXT * const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, settingCount, pSettings );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( LayerSettingsCreateInfoEXT const & ) const = default;
+#else
+    bool operator==( LayerSettingsCreateInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( settingCount == rhs.settingCount ) && ( pSettings == rhs.pSettings );
+#  endif
+    }
+
+    bool operator!=( LayerSettingsCreateInfoEXT const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType           sType        = StructureType::eLayerSettingsCreateInfoEXT;
+    const void *                                  pNext        = {};
+    uint32_t                                      settingCount = {};
+    const VULKAN_HPP_NAMESPACE::LayerSettingEXT * pSettings    = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eLayerSettingsCreateInfoEXT>
+  {
+    using Type = LayerSettingsCreateInfoEXT;
+  };
+
 #if defined( VK_USE_PLATFORM_MACOS_MVK )
   struct MacOSSurfaceCreateInfoMVK
   {
@@ -57241,6 +57515,106 @@ namespace VULKAN_HPP_NAMESPACE
   struct CppType<StructureType, StructureType::ePhysicalDeviceClusterCullingShaderPropertiesHUAWEI>
   {
     using Type = PhysicalDeviceClusterCullingShaderPropertiesHUAWEI;
+  };
+
+  struct PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI
+  {
+    using NativeType = VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI( VULKAN_HPP_NAMESPACE::Bool32 clusterShadingRate_ = {},
+                                                                              void *                       pNext_              = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , clusterShadingRate( clusterShadingRate_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR
+      PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI( PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI( VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI( *reinterpret_cast<PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI &
+      operator=( PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI & operator=( VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI &
+                            setClusterShadingRate( VULKAN_HPP_NAMESPACE::Bool32 clusterShadingRate_ ) VULKAN_HPP_NOEXCEPT
+    {
+      clusterShadingRate = clusterShadingRate_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI *>( this );
+    }
+
+    operator VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, clusterShadingRate );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( clusterShadingRate == rhs.clusterShadingRate );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType              = StructureType::ePhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI;
+    void *                              pNext              = {};
+    VULKAN_HPP_NAMESPACE::Bool32        clusterShadingRate = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI>
+  {
+    using Type = PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI;
   };
 
   struct PhysicalDeviceCoherentMemoryFeaturesAMD
@@ -77929,6 +78303,191 @@ namespace VULKAN_HPP_NAMESPACE
   struct CppType<StructureType, StructureType::ePhysicalDeviceRelaxedLineRasterizationFeaturesIMG>
   {
     using Type = PhysicalDeviceRelaxedLineRasterizationFeaturesIMG;
+  };
+
+  struct PhysicalDeviceRenderPassStripedFeaturesARM
+  {
+    using NativeType = VkPhysicalDeviceRenderPassStripedFeaturesARM;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceRenderPassStripedFeaturesARM;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceRenderPassStripedFeaturesARM( VULKAN_HPP_NAMESPACE::Bool32 renderPassStriped_ = {},
+                                                                     void *                       pNext_             = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , renderPassStriped( renderPassStriped_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceRenderPassStripedFeaturesARM( PhysicalDeviceRenderPassStripedFeaturesARM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceRenderPassStripedFeaturesARM( VkPhysicalDeviceRenderPassStripedFeaturesARM const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceRenderPassStripedFeaturesARM( *reinterpret_cast<PhysicalDeviceRenderPassStripedFeaturesARM const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceRenderPassStripedFeaturesARM & operator=( PhysicalDeviceRenderPassStripedFeaturesARM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceRenderPassStripedFeaturesARM & operator=( VkPhysicalDeviceRenderPassStripedFeaturesARM const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceRenderPassStripedFeaturesARM const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceRenderPassStripedFeaturesARM & setPNext( void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceRenderPassStripedFeaturesARM &
+                            setRenderPassStriped( VULKAN_HPP_NAMESPACE::Bool32 renderPassStriped_ ) VULKAN_HPP_NOEXCEPT
+    {
+      renderPassStriped = renderPassStriped_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkPhysicalDeviceRenderPassStripedFeaturesARM const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceRenderPassStripedFeaturesARM *>( this );
+    }
+
+    operator VkPhysicalDeviceRenderPassStripedFeaturesARM &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceRenderPassStripedFeaturesARM *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Bool32 const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, renderPassStriped );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceRenderPassStripedFeaturesARM const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceRenderPassStripedFeaturesARM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( renderPassStriped == rhs.renderPassStriped );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceRenderPassStripedFeaturesARM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType             = StructureType::ePhysicalDeviceRenderPassStripedFeaturesARM;
+    void *                              pNext             = {};
+    VULKAN_HPP_NAMESPACE::Bool32        renderPassStriped = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceRenderPassStripedFeaturesARM>
+  {
+    using Type = PhysicalDeviceRenderPassStripedFeaturesARM;
+  };
+
+  struct PhysicalDeviceRenderPassStripedPropertiesARM
+  {
+    using NativeType = VkPhysicalDeviceRenderPassStripedPropertiesARM;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::ePhysicalDeviceRenderPassStripedPropertiesARM;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceRenderPassStripedPropertiesARM( VULKAN_HPP_NAMESPACE::Extent2D renderPassStripeGranularity_ = {},
+                                                                       uint32_t                       maxRenderPassStripes_        = {},
+                                                                       void *                         pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , renderPassStripeGranularity( renderPassStripeGranularity_ )
+      , maxRenderPassStripes( maxRenderPassStripes_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR PhysicalDeviceRenderPassStripedPropertiesARM( PhysicalDeviceRenderPassStripedPropertiesARM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    PhysicalDeviceRenderPassStripedPropertiesARM( VkPhysicalDeviceRenderPassStripedPropertiesARM const & rhs ) VULKAN_HPP_NOEXCEPT
+      : PhysicalDeviceRenderPassStripedPropertiesARM( *reinterpret_cast<PhysicalDeviceRenderPassStripedPropertiesARM const *>( &rhs ) )
+    {
+    }
+
+    PhysicalDeviceRenderPassStripedPropertiesARM & operator=( PhysicalDeviceRenderPassStripedPropertiesARM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    PhysicalDeviceRenderPassStripedPropertiesARM & operator=( VkPhysicalDeviceRenderPassStripedPropertiesARM const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::PhysicalDeviceRenderPassStripedPropertiesARM const *>( &rhs );
+      return *this;
+    }
+
+    operator VkPhysicalDeviceRenderPassStripedPropertiesARM const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkPhysicalDeviceRenderPassStripedPropertiesARM *>( this );
+    }
+
+    operator VkPhysicalDeviceRenderPassStripedPropertiesARM &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkPhysicalDeviceRenderPassStripedPropertiesARM *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, void * const &, VULKAN_HPP_NAMESPACE::Extent2D const &, uint32_t const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, renderPassStripeGranularity, maxRenderPassStripes );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( PhysicalDeviceRenderPassStripedPropertiesARM const & ) const = default;
+#else
+    bool operator==( PhysicalDeviceRenderPassStripedPropertiesARM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( renderPassStripeGranularity == rhs.renderPassStripeGranularity ) &&
+             ( maxRenderPassStripes == rhs.maxRenderPassStripes );
+#  endif
+    }
+
+    bool operator!=( PhysicalDeviceRenderPassStripedPropertiesARM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType                       = StructureType::ePhysicalDeviceRenderPassStripedPropertiesARM;
+    void *                              pNext                       = {};
+    VULKAN_HPP_NAMESPACE::Extent2D      renderPassStripeGranularity = {};
+    uint32_t                            maxRenderPassStripes        = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::ePhysicalDeviceRenderPassStripedPropertiesARM>
+  {
+    using Type = PhysicalDeviceRenderPassStripedPropertiesARM;
   };
 
   struct PhysicalDeviceRepresentativeFragmentTestFeaturesNV
@@ -100060,6 +100619,484 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = RenderPassSampleLocationsBeginInfoEXT;
   };
 
+  struct RenderPassStripeInfoARM
+  {
+    using NativeType = VkRenderPassStripeInfoARM;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eRenderPassStripeInfoARM;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR RenderPassStripeInfoARM( VULKAN_HPP_NAMESPACE::Rect2D stripeArea_ = {}, const void * pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , stripeArea( stripeArea_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR RenderPassStripeInfoARM( RenderPassStripeInfoARM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    RenderPassStripeInfoARM( VkRenderPassStripeInfoARM const & rhs ) VULKAN_HPP_NOEXCEPT
+      : RenderPassStripeInfoARM( *reinterpret_cast<RenderPassStripeInfoARM const *>( &rhs ) )
+    {
+    }
+
+    RenderPassStripeInfoARM & operator=( RenderPassStripeInfoARM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    RenderPassStripeInfoARM & operator=( VkRenderPassStripeInfoARM const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::RenderPassStripeInfoARM const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 RenderPassStripeInfoARM & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 RenderPassStripeInfoARM & setStripeArea( VULKAN_HPP_NAMESPACE::Rect2D const & stripeArea_ ) VULKAN_HPP_NOEXCEPT
+    {
+      stripeArea = stripeArea_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkRenderPassStripeInfoARM const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkRenderPassStripeInfoARM *>( this );
+    }
+
+    operator VkRenderPassStripeInfoARM &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkRenderPassStripeInfoARM *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, VULKAN_HPP_NAMESPACE::Rect2D const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, stripeArea );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( RenderPassStripeInfoARM const & ) const = default;
+#else
+    bool operator==( RenderPassStripeInfoARM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( stripeArea == rhs.stripeArea );
+#  endif
+    }
+
+    bool operator!=( RenderPassStripeInfoARM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType sType      = StructureType::eRenderPassStripeInfoARM;
+    const void *                        pNext      = {};
+    VULKAN_HPP_NAMESPACE::Rect2D        stripeArea = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eRenderPassStripeInfoARM>
+  {
+    using Type = RenderPassStripeInfoARM;
+  };
+
+  struct RenderPassStripeBeginInfoARM
+  {
+    using NativeType = VkRenderPassStripeBeginInfoARM;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eRenderPassStripeBeginInfoARM;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR RenderPassStripeBeginInfoARM( uint32_t                                        stripeInfoCount_ = {},
+                                                       VULKAN_HPP_NAMESPACE::RenderPassStripeInfoARM * pStripeInfos_    = {},
+                                                       const void *                                    pNext_           = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , stripeInfoCount( stripeInfoCount_ )
+      , pStripeInfos( pStripeInfos_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR RenderPassStripeBeginInfoARM( RenderPassStripeBeginInfoARM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    RenderPassStripeBeginInfoARM( VkRenderPassStripeBeginInfoARM const & rhs ) VULKAN_HPP_NOEXCEPT
+      : RenderPassStripeBeginInfoARM( *reinterpret_cast<RenderPassStripeBeginInfoARM const *>( &rhs ) )
+    {
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    RenderPassStripeBeginInfoARM( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<VULKAN_HPP_NAMESPACE::RenderPassStripeInfoARM> const & stripeInfos_,
+                                  const void *                                                                                         pNext_ = nullptr )
+      : pNext( pNext_ ), stripeInfoCount( static_cast<uint32_t>( stripeInfos_.size() ) ), pStripeInfos( stripeInfos_.data() )
+    {
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    RenderPassStripeBeginInfoARM & operator=( RenderPassStripeBeginInfoARM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    RenderPassStripeBeginInfoARM & operator=( VkRenderPassStripeBeginInfoARM const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::RenderPassStripeBeginInfoARM const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 RenderPassStripeBeginInfoARM & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 RenderPassStripeBeginInfoARM & setStripeInfoCount( uint32_t stripeInfoCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      stripeInfoCount = stripeInfoCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 RenderPassStripeBeginInfoARM & setPStripeInfos( VULKAN_HPP_NAMESPACE::RenderPassStripeInfoARM * pStripeInfos_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pStripeInfos = pStripeInfos_;
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    RenderPassStripeBeginInfoARM &
+      setStripeInfos( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<VULKAN_HPP_NAMESPACE::RenderPassStripeInfoARM> const & stripeInfos_ ) VULKAN_HPP_NOEXCEPT
+    {
+      stripeInfoCount = static_cast<uint32_t>( stripeInfos_.size() );
+      pStripeInfos    = stripeInfos_.data();
+      return *this;
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+#endif   /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkRenderPassStripeBeginInfoARM const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkRenderPassStripeBeginInfoARM *>( this );
+    }
+
+    operator VkRenderPassStripeBeginInfoARM &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkRenderPassStripeBeginInfoARM *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, uint32_t const &, VULKAN_HPP_NAMESPACE::RenderPassStripeInfoARM * const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, stripeInfoCount, pStripeInfos );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( RenderPassStripeBeginInfoARM const & ) const = default;
+#else
+    bool operator==( RenderPassStripeBeginInfoARM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( stripeInfoCount == rhs.stripeInfoCount ) && ( pStripeInfos == rhs.pStripeInfos );
+#  endif
+    }
+
+    bool operator!=( RenderPassStripeBeginInfoARM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType             sType           = StructureType::eRenderPassStripeBeginInfoARM;
+    const void *                                    pNext           = {};
+    uint32_t                                        stripeInfoCount = {};
+    VULKAN_HPP_NAMESPACE::RenderPassStripeInfoARM * pStripeInfos    = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eRenderPassStripeBeginInfoARM>
+  {
+    using Type = RenderPassStripeBeginInfoARM;
+  };
+
+  struct SemaphoreSubmitInfo
+  {
+    using NativeType = VkSemaphoreSubmitInfo;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eSemaphoreSubmitInfo;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR SemaphoreSubmitInfo( VULKAN_HPP_NAMESPACE::Semaphore           semaphore_   = {},
+                                              uint64_t                                  value_       = {},
+                                              VULKAN_HPP_NAMESPACE::PipelineStageFlags2 stageMask_   = {},
+                                              uint32_t                                  deviceIndex_ = {},
+                                              const void *                              pNext_       = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , semaphore( semaphore_ )
+      , value( value_ )
+      , stageMask( stageMask_ )
+      , deviceIndex( deviceIndex_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR SemaphoreSubmitInfo( SemaphoreSubmitInfo const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    SemaphoreSubmitInfo( VkSemaphoreSubmitInfo const & rhs ) VULKAN_HPP_NOEXCEPT : SemaphoreSubmitInfo( *reinterpret_cast<SemaphoreSubmitInfo const *>( &rhs ) )
+    {
+    }
+
+    SemaphoreSubmitInfo & operator=( SemaphoreSubmitInfo const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    SemaphoreSubmitInfo & operator=( VkSemaphoreSubmitInfo const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::SemaphoreSubmitInfo const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 SemaphoreSubmitInfo & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 SemaphoreSubmitInfo & setSemaphore( VULKAN_HPP_NAMESPACE::Semaphore semaphore_ ) VULKAN_HPP_NOEXCEPT
+    {
+      semaphore = semaphore_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 SemaphoreSubmitInfo & setValue( uint64_t value_ ) VULKAN_HPP_NOEXCEPT
+    {
+      value = value_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 SemaphoreSubmitInfo & setStageMask( VULKAN_HPP_NAMESPACE::PipelineStageFlags2 stageMask_ ) VULKAN_HPP_NOEXCEPT
+    {
+      stageMask = stageMask_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 SemaphoreSubmitInfo & setDeviceIndex( uint32_t deviceIndex_ ) VULKAN_HPP_NOEXCEPT
+    {
+      deviceIndex = deviceIndex_;
+      return *this;
+    }
+#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkSemaphoreSubmitInfo const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkSemaphoreSubmitInfo *>( this );
+    }
+
+    operator VkSemaphoreSubmitInfo &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkSemaphoreSubmitInfo *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
+               const void * const &,
+               VULKAN_HPP_NAMESPACE::Semaphore const &,
+               uint64_t const &,
+               VULKAN_HPP_NAMESPACE::PipelineStageFlags2 const &,
+               uint32_t const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, semaphore, value, stageMask, deviceIndex );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( SemaphoreSubmitInfo const & ) const = default;
+#else
+    bool operator==( SemaphoreSubmitInfo const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( semaphore == rhs.semaphore ) && ( value == rhs.value ) && ( stageMask == rhs.stageMask ) &&
+             ( deviceIndex == rhs.deviceIndex );
+#  endif
+    }
+
+    bool operator!=( SemaphoreSubmitInfo const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType       sType       = StructureType::eSemaphoreSubmitInfo;
+    const void *                              pNext       = {};
+    VULKAN_HPP_NAMESPACE::Semaphore           semaphore   = {};
+    uint64_t                                  value       = {};
+    VULKAN_HPP_NAMESPACE::PipelineStageFlags2 stageMask   = {};
+    uint32_t                                  deviceIndex = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eSemaphoreSubmitInfo>
+  {
+    using Type = SemaphoreSubmitInfo;
+  };
+  using SemaphoreSubmitInfoKHR = SemaphoreSubmitInfo;
+
+  struct RenderPassStripeSubmitInfoARM
+  {
+    using NativeType = VkRenderPassStripeSubmitInfoARM;
+
+    static const bool                                  allowDuplicate = false;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eRenderPassStripeSubmitInfoARM;
+
+#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
+    VULKAN_HPP_CONSTEXPR RenderPassStripeSubmitInfoARM( uint32_t                                          stripeSemaphoreInfoCount_ = {},
+                                                        const VULKAN_HPP_NAMESPACE::SemaphoreSubmitInfo * pStripeSemaphoreInfos_    = {},
+                                                        const void *                                      pNext_ = nullptr ) VULKAN_HPP_NOEXCEPT
+      : pNext( pNext_ )
+      , stripeSemaphoreInfoCount( stripeSemaphoreInfoCount_ )
+      , pStripeSemaphoreInfos( pStripeSemaphoreInfos_ )
+    {
+    }
+
+    VULKAN_HPP_CONSTEXPR RenderPassStripeSubmitInfoARM( RenderPassStripeSubmitInfoARM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+
+    RenderPassStripeSubmitInfoARM( VkRenderPassStripeSubmitInfoARM const & rhs ) VULKAN_HPP_NOEXCEPT
+      : RenderPassStripeSubmitInfoARM( *reinterpret_cast<RenderPassStripeSubmitInfoARM const *>( &rhs ) )
+    {
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    RenderPassStripeSubmitInfoARM( VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::SemaphoreSubmitInfo> const & stripeSemaphoreInfos_,
+                                   const void *                                                                                           pNext_ = nullptr )
+      : pNext( pNext_ )
+      , stripeSemaphoreInfoCount( static_cast<uint32_t>( stripeSemaphoreInfos_.size() ) )
+      , pStripeSemaphoreInfos( stripeSemaphoreInfos_.data() )
+    {
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+
+    RenderPassStripeSubmitInfoARM & operator=( RenderPassStripeSubmitInfoARM const & rhs ) VULKAN_HPP_NOEXCEPT = default;
+#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
+
+    RenderPassStripeSubmitInfoARM & operator=( VkRenderPassStripeSubmitInfoARM const & rhs ) VULKAN_HPP_NOEXCEPT
+    {
+      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::RenderPassStripeSubmitInfoARM const *>( &rhs );
+      return *this;
+    }
+
+#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
+    VULKAN_HPP_CONSTEXPR_14 RenderPassStripeSubmitInfoARM & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pNext = pNext_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 RenderPassStripeSubmitInfoARM & setStripeSemaphoreInfoCount( uint32_t stripeSemaphoreInfoCount_ ) VULKAN_HPP_NOEXCEPT
+    {
+      stripeSemaphoreInfoCount = stripeSemaphoreInfoCount_;
+      return *this;
+    }
+
+    VULKAN_HPP_CONSTEXPR_14 RenderPassStripeSubmitInfoARM &
+                            setPStripeSemaphoreInfos( const VULKAN_HPP_NAMESPACE::SemaphoreSubmitInfo * pStripeSemaphoreInfos_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pStripeSemaphoreInfos = pStripeSemaphoreInfos_;
+      return *this;
+    }
+
+#  if !defined( VULKAN_HPP_DISABLE_ENHANCED_MODE )
+    RenderPassStripeSubmitInfoARM & setStripeSemaphoreInfos(
+      VULKAN_HPP_NAMESPACE::ArrayProxyNoTemporaries<const VULKAN_HPP_NAMESPACE::SemaphoreSubmitInfo> const & stripeSemaphoreInfos_ ) VULKAN_HPP_NOEXCEPT
+    {
+      stripeSemaphoreInfoCount = static_cast<uint32_t>( stripeSemaphoreInfos_.size() );
+      pStripeSemaphoreInfos    = stripeSemaphoreInfos_.data();
+      return *this;
+    }
+#  endif /*VULKAN_HPP_DISABLE_ENHANCED_MODE*/
+#endif   /*VULKAN_HPP_NO_STRUCT_SETTERS*/
+
+    operator VkRenderPassStripeSubmitInfoARM const &() const VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<const VkRenderPassStripeSubmitInfoARM *>( this );
+    }
+
+    operator VkRenderPassStripeSubmitInfoARM &() VULKAN_HPP_NOEXCEPT
+    {
+      return *reinterpret_cast<VkRenderPassStripeSubmitInfoARM *>( this );
+    }
+
+#if defined( VULKAN_HPP_USE_REFLECT )
+#  if 14 <= VULKAN_HPP_CPP_VERSION
+    auto
+#  else
+    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &, const void * const &, uint32_t const &, const VULKAN_HPP_NAMESPACE::SemaphoreSubmitInfo * const &>
+#  endif
+      reflect() const VULKAN_HPP_NOEXCEPT
+    {
+      return std::tie( sType, pNext, stripeSemaphoreInfoCount, pStripeSemaphoreInfos );
+    }
+#endif
+
+#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
+    auto operator<=>( RenderPassStripeSubmitInfoARM const & ) const = default;
+#else
+    bool operator==( RenderPassStripeSubmitInfoARM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+#  if defined( VULKAN_HPP_USE_REFLECT )
+      return this->reflect() == rhs.reflect();
+#  else
+      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( stripeSemaphoreInfoCount == rhs.stripeSemaphoreInfoCount ) &&
+             ( pStripeSemaphoreInfos == rhs.pStripeSemaphoreInfos );
+#  endif
+    }
+
+    bool operator!=( RenderPassStripeSubmitInfoARM const & rhs ) const VULKAN_HPP_NOEXCEPT
+    {
+      return !operator==( rhs );
+    }
+#endif
+
+  public:
+    VULKAN_HPP_NAMESPACE::StructureType               sType                    = StructureType::eRenderPassStripeSubmitInfoARM;
+    const void *                                      pNext                    = {};
+    uint32_t                                          stripeSemaphoreInfoCount = {};
+    const VULKAN_HPP_NAMESPACE::SemaphoreSubmitInfo * pStripeSemaphoreInfos    = {};
+  };
+
+  template <>
+  struct CppType<StructureType, StructureType::eRenderPassStripeSubmitInfoARM>
+  {
+    using Type = RenderPassStripeSubmitInfoARM;
+  };
+
   struct RenderPassSubpassFeedbackInfoEXT
   {
     using NativeType = VkRenderPassSubpassFeedbackInfoEXT;
@@ -103485,136 +104522,6 @@ namespace VULKAN_HPP_NAMESPACE
     using Type = SemaphoreSignalInfo;
   };
   using SemaphoreSignalInfoKHR = SemaphoreSignalInfo;
-
-  struct SemaphoreSubmitInfo
-  {
-    using NativeType = VkSemaphoreSubmitInfo;
-
-    static const bool                                  allowDuplicate = false;
-    static VULKAN_HPP_CONST_OR_CONSTEXPR StructureType structureType  = StructureType::eSemaphoreSubmitInfo;
-
-#if !defined( VULKAN_HPP_NO_STRUCT_CONSTRUCTORS )
-    VULKAN_HPP_CONSTEXPR SemaphoreSubmitInfo( VULKAN_HPP_NAMESPACE::Semaphore           semaphore_   = {},
-                                              uint64_t                                  value_       = {},
-                                              VULKAN_HPP_NAMESPACE::PipelineStageFlags2 stageMask_   = {},
-                                              uint32_t                                  deviceIndex_ = {},
-                                              const void *                              pNext_       = nullptr ) VULKAN_HPP_NOEXCEPT
-      : pNext( pNext_ )
-      , semaphore( semaphore_ )
-      , value( value_ )
-      , stageMask( stageMask_ )
-      , deviceIndex( deviceIndex_ )
-    {
-    }
-
-    VULKAN_HPP_CONSTEXPR SemaphoreSubmitInfo( SemaphoreSubmitInfo const & rhs ) VULKAN_HPP_NOEXCEPT = default;
-
-    SemaphoreSubmitInfo( VkSemaphoreSubmitInfo const & rhs ) VULKAN_HPP_NOEXCEPT : SemaphoreSubmitInfo( *reinterpret_cast<SemaphoreSubmitInfo const *>( &rhs ) )
-    {
-    }
-
-    SemaphoreSubmitInfo & operator=( SemaphoreSubmitInfo const & rhs ) VULKAN_HPP_NOEXCEPT = default;
-#endif /*VULKAN_HPP_NO_STRUCT_CONSTRUCTORS*/
-
-    SemaphoreSubmitInfo & operator=( VkSemaphoreSubmitInfo const & rhs ) VULKAN_HPP_NOEXCEPT
-    {
-      *this = *reinterpret_cast<VULKAN_HPP_NAMESPACE::SemaphoreSubmitInfo const *>( &rhs );
-      return *this;
-    }
-
-#if !defined( VULKAN_HPP_NO_STRUCT_SETTERS )
-    VULKAN_HPP_CONSTEXPR_14 SemaphoreSubmitInfo & setPNext( const void * pNext_ ) VULKAN_HPP_NOEXCEPT
-    {
-      pNext = pNext_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 SemaphoreSubmitInfo & setSemaphore( VULKAN_HPP_NAMESPACE::Semaphore semaphore_ ) VULKAN_HPP_NOEXCEPT
-    {
-      semaphore = semaphore_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 SemaphoreSubmitInfo & setValue( uint64_t value_ ) VULKAN_HPP_NOEXCEPT
-    {
-      value = value_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 SemaphoreSubmitInfo & setStageMask( VULKAN_HPP_NAMESPACE::PipelineStageFlags2 stageMask_ ) VULKAN_HPP_NOEXCEPT
-    {
-      stageMask = stageMask_;
-      return *this;
-    }
-
-    VULKAN_HPP_CONSTEXPR_14 SemaphoreSubmitInfo & setDeviceIndex( uint32_t deviceIndex_ ) VULKAN_HPP_NOEXCEPT
-    {
-      deviceIndex = deviceIndex_;
-      return *this;
-    }
-#endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
-
-    operator VkSemaphoreSubmitInfo const &() const VULKAN_HPP_NOEXCEPT
-    {
-      return *reinterpret_cast<const VkSemaphoreSubmitInfo *>( this );
-    }
-
-    operator VkSemaphoreSubmitInfo &() VULKAN_HPP_NOEXCEPT
-    {
-      return *reinterpret_cast<VkSemaphoreSubmitInfo *>( this );
-    }
-
-#if defined( VULKAN_HPP_USE_REFLECT )
-#  if 14 <= VULKAN_HPP_CPP_VERSION
-    auto
-#  else
-    std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
-               const void * const &,
-               VULKAN_HPP_NAMESPACE::Semaphore const &,
-               uint64_t const &,
-               VULKAN_HPP_NAMESPACE::PipelineStageFlags2 const &,
-               uint32_t const &>
-#  endif
-      reflect() const VULKAN_HPP_NOEXCEPT
-    {
-      return std::tie( sType, pNext, semaphore, value, stageMask, deviceIndex );
-    }
-#endif
-
-#if defined( VULKAN_HPP_HAS_SPACESHIP_OPERATOR )
-    auto operator<=>( SemaphoreSubmitInfo const & ) const = default;
-#else
-    bool operator==( SemaphoreSubmitInfo const & rhs ) const VULKAN_HPP_NOEXCEPT
-    {
-#  if defined( VULKAN_HPP_USE_REFLECT )
-      return this->reflect() == rhs.reflect();
-#  else
-      return ( sType == rhs.sType ) && ( pNext == rhs.pNext ) && ( semaphore == rhs.semaphore ) && ( value == rhs.value ) && ( stageMask == rhs.stageMask ) &&
-             ( deviceIndex == rhs.deviceIndex );
-#  endif
-    }
-
-    bool operator!=( SemaphoreSubmitInfo const & rhs ) const VULKAN_HPP_NOEXCEPT
-    {
-      return !operator==( rhs );
-    }
-#endif
-
-  public:
-    VULKAN_HPP_NAMESPACE::StructureType       sType       = StructureType::eSemaphoreSubmitInfo;
-    const void *                              pNext       = {};
-    VULKAN_HPP_NAMESPACE::Semaphore           semaphore   = {};
-    uint64_t                                  value       = {};
-    VULKAN_HPP_NAMESPACE::PipelineStageFlags2 stageMask   = {};
-    uint32_t                                  deviceIndex = {};
-  };
-
-  template <>
-  struct CppType<StructureType, StructureType::eSemaphoreSubmitInfo>
-  {
-    using Type = SemaphoreSubmitInfo;
-  };
-  using SemaphoreSubmitInfoKHR = SemaphoreSubmitInfo;
 
   struct SemaphoreTypeCreateInfo
   {
