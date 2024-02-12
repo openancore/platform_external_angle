@@ -1,9 +1,9 @@
 {
   "version info": {
     "schema version": 2,
-    "api version": "1.3.276",
-    "comment": "from git branch: github-main commit: bf11e6d4ca4b71ae311bb925ae68d215fbe09a86",
-    "date": "2024-01-25 08:53:29Z"
+    "api version": "1.3.277",
+    "comment": "from git branch: github-main commit: 8c4e3f27f12060fd0bd1302393c4808fee6ce81f",
+    "date": "2024-02-01 13:38:10Z"
   },
   "validation": {
     "vkGetInstanceProcAddr": {
@@ -5400,7 +5400,7 @@
         },
         {
           "vuid": "VUID-vkCmdPipelineBarrier2-None-09553",
-          "text": "If     neither the <a href=\"#features-shaderTileImageColorReadAccess\"><code>shaderTileImageColorReadAccess</code></a> nor     <a href=\"#features-shaderTileImageDepthReadAccess\"><code>shaderTileImageDepthReadAccess</code></a> features are enabled, and     the <a href=\"#features-dynamicRenderingLocalRead\"><code>dynamicRenderingLocalRead</code></a> feature is not enabled,     <code>vkCmdPipelineBarrier2</code> <strong class=\"purple\">must</strong> not be called within a render pass instance     started with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>",
+          "text": "If     none of the <a href=\"#features-shaderTileImageColorReadAccess\"><code>shaderTileImageColorReadAccess</code></a>,     <a href=\"#features-shaderTileImageStencilReadAccess\"><code>shaderTileImageStencilReadAccess</code></a>, or     <a href=\"#features-shaderTileImageDepthReadAccess\"><code>shaderTileImageDepthReadAccess</code></a> features are enabled, and     the <a href=\"#features-dynamicRenderingLocalRead\"><code>dynamicRenderingLocalRead</code></a> feature is not enabled,     <code>vkCmdPipelineBarrier2</code> <strong class=\"purple\">must</strong> not be called within a render pass instance     started with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>",
           "page": "vkspec"
         },
         {
@@ -5659,7 +5659,7 @@
         },
         {
           "vuid": "VUID-vkCmdPipelineBarrier-None-09553",
-          "text": "If     neither the <a href=\"#features-shaderTileImageColorReadAccess\"><code>shaderTileImageColorReadAccess</code></a> nor     <a href=\"#features-shaderTileImageDepthReadAccess\"><code>shaderTileImageDepthReadAccess</code></a> features are enabled, and     the <a href=\"#features-dynamicRenderingLocalRead\"><code>dynamicRenderingLocalRead</code></a> feature is not enabled,     <code>vkCmdPipelineBarrier</code> <strong class=\"purple\">must</strong> not be called within a render pass instance     started with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>",
+          "text": "If     none of the <a href=\"#features-shaderTileImageColorReadAccess\"><code>shaderTileImageColorReadAccess</code></a>,     <a href=\"#features-shaderTileImageStencilReadAccess\"><code>shaderTileImageStencilReadAccess</code></a>, or     <a href=\"#features-shaderTileImageDepthReadAccess\"><code>shaderTileImageDepthReadAccess</code></a> features are enabled, and     the <a href=\"#features-dynamicRenderingLocalRead\"><code>dynamicRenderingLocalRead</code></a> feature is not enabled,     <code>vkCmdPipelineBarrier</code> <strong class=\"purple\">must</strong> not be called within a render pass instance     started with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>",
           "page": "vkspec"
         },
         {
@@ -11951,7 +11951,7 @@
       "core": [
         {
           "vuid": "VUID-VkFramebufferAttachmentImageInfo-viewFormatCount-09536",
-          "text": "If <code>viewFormatCount</code> is not 0, each element of <code>pViewFormats</code> <strong class=\"purple\">must</strong> not be <code>VK_FORMAT_UNDEFINED</code>",
+          "text": "If <code>viewFormatCount</code> is not 0, and the render pass is not being used with an external format resolve attachment, each element of <code>pViewFormats</code> <strong class=\"purple\">must</strong> not be <code>VK_FORMAT_UNDEFINED</code>",
           "page": "vkspec"
         },
         {
@@ -16133,7 +16133,7 @@
         },
         {
           "vuid": "VUID-VkGraphicsPipelineCreateInfo-renderPass-06603",
-          "text": "If <a href=\"#pipelines-graphics-subsets-pre-rasterization\">pre-rasterization shader state</a>, <a href=\"#pipelines-graphics-subsets-fragment-shader\">fragment shader state</a>, or <a href=\"#pipelines-graphics-subsets-fragment-output\">fragment output state</a>, and <code>renderPass</code> is not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>, <code>renderPass</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkRenderPass\">VkRenderPass</a> handle",
+          "text": "If the pipeline requires <a href=\"#pipelines-graphics-subsets-pre-rasterization\">pre-rasterization shader state</a>, <a href=\"#pipelines-graphics-subsets-fragment-shader\">fragment shader state</a>, or <a href=\"#pipelines-graphics-subsets-fragment-output\">fragment output state</a>, and <code>renderPass</code> is not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>, <code>renderPass</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkRenderPass\">VkRenderPass</a> handle",
           "page": "vkspec"
         },
         {
@@ -16324,6 +16324,11 @@
         {
           "vuid": "VUID-VkGraphicsPipelineCreateInfo-flags-06637",
           "text": "If <a href=\"#VkGraphicsPipelineLibraryCreateInfoEXT\">VkGraphicsPipelineLibraryCreateInfoEXT</a>::<code>flags</code> includes <code>VK_GRAPHICS_PIPELINE_LIBRARY_FRAGMENT_OUTPUT_INTERFACE_BIT_EXT</code>, <code>pMultisampleState-&gt;sampleShadingEnable</code> is <code>VK_TRUE</code>, and an element of <a href=\"#VkPipelineLibraryCreateInfoKHR\">VkPipelineLibraryCreateInfoKHR</a>::<code>pLibraries</code> was created with <code>VK_GRAPHICS_PIPELINE_LIBRARY_FRAGMENT_SHADER_BIT_EXT</code>, the <code>pMultisampleState</code> used to create that library <strong class=\"purple\">must</strong> be <em>identically defined</em> <code>pMultisampleState</code>",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-VkGraphicsPipelineCreateInfo-pLibraries-09567",
+          "text": "If one element of <a href=\"#VkPipelineLibraryCreateInfoKHR\">VkPipelineLibraryCreateInfoKHR</a>::<code>pLibraries</code> was created with <code>VK_GRAPHICS_PIPELINE_LIBRARY_FRAGMENT_OUTPUT_INTERFACE_BIT_EXT</code> and a value of <code>pMultisampleState-&gt;sampleShadingEnable</code> equal <code>VK_TRUE</code>, and if <a href=\"#VkGraphicsPipelineLibraryCreateInfoEXT\">VkGraphicsPipelineLibraryCreateInfoEXT</a>::<code>flags</code> includes <code>VK_GRAPHICS_PIPELINE_LIBRARY_FRAGMENT_OUTPUT_INTERFACE_BIT_EXT</code>, <code>pMultisampleState</code> <strong class=\"purple\">must</strong> be <em>identically defined</em> to that used to create the library",
           "page": "vkspec"
         },
         {
@@ -27133,11 +27138,6 @@
         },
         {
           "vuid": "VUID-VkDescriptorSetLayoutBindingFlagsCreateInfo-pBindingFlags-03004",
-          "text": "If an element of <code>pBindingFlags</code> includes <code>VK_DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BIT</code>, then all other elements of <a href=\"#VkDescriptorSetLayoutCreateInfo\">VkDescriptorSetLayoutCreateInfo</a>::<code>pBindings</code> <strong class=\"purple\">must</strong> have a smaller value of <code>binding</code>",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-VkDescriptorSetLayoutBindingFlagsCreateInfo-pBindingFlags-09379",
           "text": "If an element of <code>pBindingFlags</code> includes <code>VK_DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BIT</code>, then it <strong class=\"purple\">must</strong> be the element with the highest <code>binding</code> number",
           "page": "vkspec"
         },
@@ -27908,11 +27908,6 @@
         {
           "vuid": "VUID-VkDescriptorSetVariableDescriptorCountAllocateInfo-descriptorSetCount-03045",
           "text": "If <code>descriptorSetCount</code> is not zero, <code>descriptorSetCount</code> <strong class=\"purple\">must</strong> equal <a href=\"#VkDescriptorSetAllocateInfo\">VkDescriptorSetAllocateInfo</a>::<code>descriptorSetCount</code>",
-          "page": "vkspec"
-        },
-        {
-          "vuid": "VUID-VkDescriptorSetVariableDescriptorCountAllocateInfo-pSetLayouts-03046",
-          "text": "If <a href=\"#VkDescriptorSetAllocateInfo\">VkDescriptorSetAllocateInfo</a>::<code>pSetLayouts</code>[i] has a variable-sized descriptor binding, then <code>pDescriptorCounts</code>[i] <strong class=\"purple\">must</strong> be less than or equal to the descriptor count specified for that binding when the descriptor set layout was created",
           "page": "vkspec"
         },
         {
@@ -29803,13 +29798,8 @@
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-vkGetDescriptorEXT-pDescriptor-08016",
-          "text": "<code>pDescriptor</code> <strong class=\"purple\">must</strong> be a valid pointer to an array of at least <code>dataSize</code> bytes",
-          "page": "vkspec"
-        },
-        {
           "vuid": "VUID-vkGetDescriptorEXT-pDescriptorInfo-09507",
-          "text": "If <code>pDescriptorInfo-&gt;type</code> is <code>VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER</code> and <code>pDescriptorInfo-&gt;data.pCombinedImageSampler</code> is <code>NULL</code> or it has a <code>imageView</code> that is <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a> then <code>dataSize</code> <strong class=\"purple\">must</strong> be equal to the size of <a href=\"#VkPhysicalDeviceDescriptorBufferPropertiesEXT\">VkPhysicalDeviceDescriptorBufferPropertiesEXT</a>::<code>combinedImageSamplerDescriptorSize</code>",
+          "text": "If <code>pDescriptorInfo-&gt;type</code> is <code>VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER</code> and it has a <code>imageView</code> that is <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a> then <code>dataSize</code> <strong class=\"purple\">must</strong> be equal to the size of <a href=\"#VkPhysicalDeviceDescriptorBufferPropertiesEXT\">VkPhysicalDeviceDescriptorBufferPropertiesEXT</a>::<code>combinedImageSamplerDescriptorSize</code>",
           "page": "vkspec"
         },
         {
@@ -33502,7 +33492,7 @@
         },
         {
           "vuid": "VUID-VkQueryPoolCreateInfo-pNext-pNext",
-          "text": "Each <code>pNext</code> member of any structure (including this one) in the <code>pNext</code> chain <strong class=\"purple\">must</strong> be either <code>NULL</code> or a pointer to a valid instance of <a href=\"#VkQueryPoolPerformanceCreateInfoKHR\">VkQueryPoolPerformanceCreateInfoKHR</a>, <a href=\"#VkQueryPoolPerformanceQueryCreateInfoINTEL\">VkQueryPoolPerformanceQueryCreateInfoINTEL</a>, <a href=\"#VkQueryPoolVideoEncodeFeedbackCreateInfoKHR\">VkQueryPoolVideoEncodeFeedbackCreateInfoKHR</a>, <a href=\"#VkVideoDecodeH264ProfileInfoKHR\">VkVideoDecodeH264ProfileInfoKHR</a>, <a href=\"#VkVideoDecodeH265ProfileInfoKHR\">VkVideoDecodeH265ProfileInfoKHR</a>, <a href=\"#VkVideoDecodeUsageInfoKHR\">VkVideoDecodeUsageInfoKHR</a>, <a href=\"#VkVideoEncodeH264ProfileInfoKHR\">VkVideoEncodeH264ProfileInfoKHR</a>, <a href=\"#VkVideoEncodeH265ProfileInfoKHR\">VkVideoEncodeH265ProfileInfoKHR</a>, <a href=\"#VkVideoEncodeUsageInfoKHR\">VkVideoEncodeUsageInfoKHR</a>, or <a href=\"#VkVideoProfileInfoKHR\">VkVideoProfileInfoKHR</a>",
+          "text": "Each <code>pNext</code> member of any structure (including this one) in the <code>pNext</code> chain <strong class=\"purple\">must</strong> be either <code>NULL</code> or a pointer to a valid instance of <a href=\"#VkQueryPoolPerformanceCreateInfoKHR\">VkQueryPoolPerformanceCreateInfoKHR</a>, <a href=\"#VkQueryPoolPerformanceQueryCreateInfoINTEL\">VkQueryPoolPerformanceQueryCreateInfoINTEL</a>, <a href=\"#VkQueryPoolVideoEncodeFeedbackCreateInfoKHR\">VkQueryPoolVideoEncodeFeedbackCreateInfoKHR</a>, <a href=\"#VkVideoDecodeAV1ProfileInfoKHR\">VkVideoDecodeAV1ProfileInfoKHR</a>, <a href=\"#VkVideoDecodeH264ProfileInfoKHR\">VkVideoDecodeH264ProfileInfoKHR</a>, <a href=\"#VkVideoDecodeH265ProfileInfoKHR\">VkVideoDecodeH265ProfileInfoKHR</a>, <a href=\"#VkVideoDecodeUsageInfoKHR\">VkVideoDecodeUsageInfoKHR</a>, <a href=\"#VkVideoEncodeH264ProfileInfoKHR\">VkVideoEncodeH264ProfileInfoKHR</a>, <a href=\"#VkVideoEncodeH265ProfileInfoKHR\">VkVideoEncodeH265ProfileInfoKHR</a>, <a href=\"#VkVideoEncodeUsageInfoKHR\">VkVideoEncodeUsageInfoKHR</a>, or <a href=\"#VkVideoProfileInfoKHR\">VkVideoProfileInfoKHR</a>",
           "page": "vkspec"
         },
         {
@@ -74536,37 +74526,37 @@
     "VkPipelineRasterizationLineStateCreateInfoKHR": {
       "core": [
         {
-          "vuid": "VUID-VkPipelineRasterizationLineStateCreateInfoEXT-lineRasterizationMode-02768",
+          "vuid": "VUID-VkPipelineRasterizationLineStateCreateInfoKHR-lineRasterizationMode-02768",
           "text": "If <code>lineRasterizationMode</code> is <code>VK_LINE_RASTERIZATION_MODE_RECTANGULAR_KHR</code>, then the <a href=\"#features-rectangularLines\"><code>rectangularLines</code></a> feature <strong class=\"purple\">must</strong> be enabled",
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-VkPipelineRasterizationLineStateCreateInfoEXT-lineRasterizationMode-02769",
+          "vuid": "VUID-VkPipelineRasterizationLineStateCreateInfoKHR-lineRasterizationMode-02769",
           "text": "If <code>lineRasterizationMode</code> is <code>VK_LINE_RASTERIZATION_MODE_BRESENHAM_KHR</code>, then the <a href=\"#features-bresenhamLines\"><code>bresenhamLines</code></a> feature <strong class=\"purple\">must</strong> be enabled",
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-VkPipelineRasterizationLineStateCreateInfoEXT-lineRasterizationMode-02770",
+          "vuid": "VUID-VkPipelineRasterizationLineStateCreateInfoKHR-lineRasterizationMode-02770",
           "text": "If <code>lineRasterizationMode</code> is <code>VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH_KHR</code>, then the <a href=\"#features-smoothLines\"><code>smoothLines</code></a> feature <strong class=\"purple\">must</strong> be enabled",
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-VkPipelineRasterizationLineStateCreateInfoEXT-stippledLineEnable-02771",
+          "vuid": "VUID-VkPipelineRasterizationLineStateCreateInfoKHR-stippledLineEnable-02771",
           "text": "If <code>stippledLineEnable</code> is <code>VK_TRUE</code> and <code>lineRasterizationMode</code> is <code>VK_LINE_RASTERIZATION_MODE_RECTANGULAR_KHR</code>, then the <a href=\"#features-stippledRectangularLines\"><code>stippledRectangularLines</code></a> feature <strong class=\"purple\">must</strong> be enabled",
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-VkPipelineRasterizationLineStateCreateInfoEXT-stippledLineEnable-02772",
+          "vuid": "VUID-VkPipelineRasterizationLineStateCreateInfoKHR-stippledLineEnable-02772",
           "text": "If <code>stippledLineEnable</code> is <code>VK_TRUE</code> and <code>lineRasterizationMode</code> is <code>VK_LINE_RASTERIZATION_MODE_BRESENHAM_KHR</code>, then the <a href=\"#features-stippledBresenhamLines\"><code>stippledBresenhamLines</code></a> feature <strong class=\"purple\">must</strong> be enabled",
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-VkPipelineRasterizationLineStateCreateInfoEXT-stippledLineEnable-02773",
+          "vuid": "VUID-VkPipelineRasterizationLineStateCreateInfoKHR-stippledLineEnable-02773",
           "text": "If <code>stippledLineEnable</code> is <code>VK_TRUE</code> and <code>lineRasterizationMode</code> is <code>VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH_KHR</code>, then the <a href=\"#features-stippledSmoothLines\"><code>stippledSmoothLines</code></a> feature <strong class=\"purple\">must</strong> be enabled",
           "page": "vkspec"
         },
         {
-          "vuid": "VUID-VkPipelineRasterizationLineStateCreateInfoEXT-stippledLineEnable-02774",
+          "vuid": "VUID-VkPipelineRasterizationLineStateCreateInfoKHR-stippledLineEnable-02774",
           "text": "If <code>stippledLineEnable</code> is <code>VK_TRUE</code> and <code>lineRasterizationMode</code> is <code>VK_LINE_RASTERIZATION_MODE_DEFAULT_KHR</code>, then the <a href=\"#features-stippledRectangularLines\"><code>stippledRectangularLines</code></a> feature <strong class=\"purple\">must</strong> be enabled and <a href=\"#VkPhysicalDeviceLimits\">VkPhysicalDeviceLimits</a>::<code>strictLines</code> <strong class=\"purple\">must</strong> be <code>VK_TRUE</code>",
           "page": "vkspec"
         },
@@ -74692,7 +74682,7 @@
     "vkCmdSetLineStippleKHR": {
       "core": [
         {
-          "vuid": "VUID-vkCmdSetLineStippleEXT-lineStippleFactor-02776",
+          "vuid": "VUID-vkCmdSetLineStippleKHR-lineStippleFactor-02776",
           "text": "<code>lineStippleFactor</code> <strong class=\"purple\">must</strong> be in the range <span class=\"eq\">[1,256]</span>",
           "page": "vkspec"
         },
@@ -83735,6 +83725,21 @@
           "vuid": "VUID-vkReleaseFullScreenExclusiveModeEXT-swapchain-02678",
           "text": "<code>swapchain</code> <strong class=\"purple\">must</strong> be a swapchain created with a <a href=\"#VkSurfaceFullScreenExclusiveInfoEXT\">VkSurfaceFullScreenExclusiveInfoEXT</a> structure, with <code>fullScreenExclusive</code> set to <code>VK_FULL_SCREEN_EXCLUSIVE_APPLICATION_CONTROLLED_EXT</code>",
           "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-vkReleaseFullScreenExclusiveModeEXT-device-parameter",
+          "text": "<code>device</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkDevice\">VkDevice</a> handle",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-vkReleaseFullScreenExclusiveModeEXT-swapchain-parameter",
+          "text": "<code>swapchain</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkSwapchainKHR\">VkSwapchainKHR</a> handle",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-vkReleaseFullScreenExclusiveModeEXT-swapchain-parent",
+          "text": "<code>swapchain</code> <strong class=\"purple\">must</strong> have been created, allocated, or retrieved from <code>device</code>",
+          "page": "vkspec"
         }
       ]
     },
@@ -86338,7 +86343,7 @@
         },
         {
           "vuid": "VUID-VkAccelerationStructureBuildGeometryInfoKHR-pGeometries-03788",
-          "text": "Only one of <code>pGeometries</code> or <code>ppGeometries</code> <strong class=\"purple\">can</strong> be a valid pointer, the other <strong class=\"purple\">must</strong> be <code>NULL</code>",
+          "text": "If <code>geometryCount</code> is not <code>0</code>, exactly one of <code>pGeometries</code> or <code>ppGeometries</code> <strong class=\"purple\">must</strong> be a valid pointer, the other <strong class=\"purple\">must</strong> be <code>NULL</code>",
           "page": "vkspec"
         },
         {
@@ -86798,7 +86803,7 @@
         },
         {
           "vuid": "VUID-vkCmdWriteAccelerationStructuresPropertiesKHR-query-04880",
-          "text": "The sum of <code>query</code> plus <code>accelerationStructureCount</code> <strong class=\"purple\">must</strong> be less than or equal to the number of queries in <code>queryPool</code>",
+          "text": "The sum of <code>firstQuery</code> plus <code>accelerationStructureCount</code> <strong class=\"purple\">must</strong> be less than or equal to the number of queries in <code>queryPool</code>",
           "page": "vkspec"
         },
         {
@@ -91456,6 +91461,11 @@
           "page": "vkspec"
         },
         {
+          "vuid": "VUID-VkVideoProfileInfoKHR-videoCodecOperation-09256",
+          "text": "If <code>videoCodecOperation</code> is <code>VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR</code>, then the <code>pNext</code> chain <strong class=\"purple\">must</strong> include a <a href=\"#VkVideoDecodeAV1ProfileInfoKHR\">VkVideoDecodeAV1ProfileInfoKHR</a> structure",
+          "page": "vkspec"
+        },
+        {
           "vuid": "VUID-VkVideoProfileInfoKHR-videoCodecOperation-07181",
           "text": "If <code>videoCodecOperation</code> is <code>VK_VIDEO_CODEC_OPERATION_ENCODE_H264_BIT_KHR</code>, then the <code>pNext</code> chain <strong class=\"purple\">must</strong> include a <a href=\"#VkVideoEncodeH264ProfileInfoKHR\">VkVideoEncodeH264ProfileInfoKHR</a> structure",
           "page": "vkspec"
@@ -91577,6 +91587,11 @@
           "page": "vkspec"
         },
         {
+          "vuid": "VUID-vkGetPhysicalDeviceVideoCapabilitiesKHR-pVideoProfile-09257",
+          "text": "If <code>pVideoProfile-&gt;videoCodecOperation</code> is <code>VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR</code>, then the <code>pNext</code> chain of <code>pCapabilities</code> <strong class=\"purple\">must</strong> include a <a href=\"#VkVideoDecodeAV1CapabilitiesKHR\">VkVideoDecodeAV1CapabilitiesKHR</a> structure",
+          "page": "vkspec"
+        },
+        {
           "vuid": "VUID-vkGetPhysicalDeviceVideoCapabilitiesKHR-pVideoProfile-07186",
           "text": "If <code>pVideoProfile-&gt;videoCodecOperation</code> specifies an encode operation, then the <code>pNext</code> chain of <code>pCapabilities</code> <strong class=\"purple\">must</strong> include a <a href=\"#VkVideoEncodeCapabilitiesKHR\">VkVideoEncodeCapabilitiesKHR</a> structure",
           "page": "vkspec"
@@ -91617,7 +91632,7 @@
         },
         {
           "vuid": "VUID-VkVideoCapabilitiesKHR-pNext-pNext",
-          "text": "Each <code>pNext</code> member of any structure (including this one) in the <code>pNext</code> chain <strong class=\"purple\">must</strong> be either <code>NULL</code> or a pointer to a valid instance of <a href=\"#VkVideoDecodeCapabilitiesKHR\">VkVideoDecodeCapabilitiesKHR</a>, <a href=\"#VkVideoDecodeH264CapabilitiesKHR\">VkVideoDecodeH264CapabilitiesKHR</a>, <a href=\"#VkVideoDecodeH265CapabilitiesKHR\">VkVideoDecodeH265CapabilitiesKHR</a>, <a href=\"#VkVideoEncodeCapabilitiesKHR\">VkVideoEncodeCapabilitiesKHR</a>, <a href=\"#VkVideoEncodeH264CapabilitiesKHR\">VkVideoEncodeH264CapabilitiesKHR</a>, or <a href=\"#VkVideoEncodeH265CapabilitiesKHR\">VkVideoEncodeH265CapabilitiesKHR</a>",
+          "text": "Each <code>pNext</code> member of any structure (including this one) in the <code>pNext</code> chain <strong class=\"purple\">must</strong> be either <code>NULL</code> or a pointer to a valid instance of <a href=\"#VkVideoDecodeAV1CapabilitiesKHR\">VkVideoDecodeAV1CapabilitiesKHR</a>, <a href=\"#VkVideoDecodeCapabilitiesKHR\">VkVideoDecodeCapabilitiesKHR</a>, <a href=\"#VkVideoDecodeH264CapabilitiesKHR\">VkVideoDecodeH264CapabilitiesKHR</a>, <a href=\"#VkVideoDecodeH265CapabilitiesKHR\">VkVideoDecodeH265CapabilitiesKHR</a>, <a href=\"#VkVideoEncodeCapabilitiesKHR\">VkVideoEncodeCapabilitiesKHR</a>, <a href=\"#VkVideoEncodeH264CapabilitiesKHR\">VkVideoEncodeH264CapabilitiesKHR</a>, or <a href=\"#VkVideoEncodeH265CapabilitiesKHR\">VkVideoEncodeH265CapabilitiesKHR</a>",
           "page": "vkspec"
         },
         {
@@ -92084,6 +92099,16 @@
           "page": "vkspec"
         },
         {
+          "vuid": "VUID-VkVideoSessionParametersCreateInfoKHR-videoSession-09258",
+          "text": "If <code>videoSession</code> was created with the video codec operation <code>VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR</code>, then <code>videoSessionParametersTemplate</code> <strong class=\"purple\">must</strong> be <code>VK_NULL_HANDLE</code>",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-VkVideoSessionParametersCreateInfoKHR-videoSession-09259",
+          "text": "If <code>videoSession</code> was created with the video codec operation <code>VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR</code>, then the <code>pNext</code> chain <strong class=\"purple\">must</strong> include a <a href=\"#VkVideoDecodeAV1SessionParametersCreateInfoKHR\">VkVideoDecodeAV1SessionParametersCreateInfoKHR</a> structure",
+          "page": "vkspec"
+        },
+        {
           "vuid": "VUID-VkVideoSessionParametersCreateInfoKHR-videoSession-07210",
           "text": "If <code>videoSession</code> was created with the video codec operation <code>VK_VIDEO_CODEC_OPERATION_ENCODE_H264_BIT_KHR</code>, then the <code>pNext</code> chain <strong class=\"purple\">must</strong> include a <a href=\"#VkVideoEncodeH264SessionParametersCreateInfoKHR\">VkVideoEncodeH264SessionParametersCreateInfoKHR</a> structure",
           "page": "vkspec"
@@ -92135,7 +92160,7 @@
         },
         {
           "vuid": "VUID-VkVideoSessionParametersCreateInfoKHR-pNext-pNext",
-          "text": "Each <code>pNext</code> member of any structure (including this one) in the <code>pNext</code> chain <strong class=\"purple\">must</strong> be either <code>NULL</code> or a pointer to a valid instance of <a href=\"#VkVideoDecodeH264SessionParametersCreateInfoKHR\">VkVideoDecodeH264SessionParametersCreateInfoKHR</a>, <a href=\"#VkVideoDecodeH265SessionParametersCreateInfoKHR\">VkVideoDecodeH265SessionParametersCreateInfoKHR</a>, <a href=\"#VkVideoEncodeH264SessionParametersCreateInfoKHR\">VkVideoEncodeH264SessionParametersCreateInfoKHR</a>, <a href=\"#VkVideoEncodeH265SessionParametersCreateInfoKHR\">VkVideoEncodeH265SessionParametersCreateInfoKHR</a>, or <a href=\"#VkVideoEncodeQualityLevelInfoKHR\">VkVideoEncodeQualityLevelInfoKHR</a>",
+          "text": "Each <code>pNext</code> member of any structure (including this one) in the <code>pNext</code> chain <strong class=\"purple\">must</strong> be either <code>NULL</code> or a pointer to a valid instance of <a href=\"#VkVideoDecodeAV1SessionParametersCreateInfoKHR\">VkVideoDecodeAV1SessionParametersCreateInfoKHR</a>, <a href=\"#VkVideoDecodeH264SessionParametersCreateInfoKHR\">VkVideoDecodeH264SessionParametersCreateInfoKHR</a>, <a href=\"#VkVideoDecodeH265SessionParametersCreateInfoKHR\">VkVideoDecodeH265SessionParametersCreateInfoKHR</a>, <a href=\"#VkVideoEncodeH264SessionParametersCreateInfoKHR\">VkVideoEncodeH264SessionParametersCreateInfoKHR</a>, <a href=\"#VkVideoEncodeH265SessionParametersCreateInfoKHR\">VkVideoEncodeH265SessionParametersCreateInfoKHR</a>, or <a href=\"#VkVideoEncodeQualityLevelInfoKHR\">VkVideoEncodeQualityLevelInfoKHR</a>",
           "page": "vkspec"
         },
         {
@@ -92264,6 +92289,11 @@
         {
           "vuid": "VUID-vkUpdateVideoSessionParametersKHR-videoSessionParameters-07225",
           "text": "If <code>videoSessionParameters</code> was created with the video codec operation <code>VK_VIDEO_CODEC_OPERATION_DECODE_H265_BIT_KHR</code>, then the number of <code>StdVideoH265PictureParameterSet</code> entries already stored in it plus the value of the <code>stdPPSCount</code> member of the <a href=\"#VkVideoDecodeH265SessionParametersAddInfoKHR\">VkVideoDecodeH265SessionParametersAddInfoKHR</a> structure included in the <code>pUpdateInfo-&gt;pNext</code> chain <strong class=\"purple\">must</strong> be less than or equal to the <a href=\"#VkVideoDecodeH265SessionParametersCreateInfoKHR\">VkVideoDecodeH265SessionParametersCreateInfoKHR</a>::<code>maxStdPPSCount</code> <code>videoSessionParameters</code> was created with",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-vkUpdateVideoSessionParametersKHR-videoSessionParameters-09260",
+          "text": "<code>videoSessionParameters</code> <strong class=\"purple\">must</strong> not have been created with the video codec operation <code>VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR</code>",
           "page": "vkspec"
         },
         {
@@ -92529,6 +92559,11 @@
           "page": "vkspec"
         },
         {
+          "vuid": "VUID-VkVideoBeginCodingInfoKHR-videoSession-09261",
+          "text": "If <code>videoSession</code> was created with the video codec operation <code>VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR</code>, then <code>videoSessionParameters</code> <strong class=\"purple\">must</strong> not be <code>VK_NULL_HANDLE</code>",
+          "page": "vkspec"
+        },
+        {
           "vuid": "VUID-VkVideoBeginCodingInfoKHR-videoSession-07249",
           "text": "If <code>videoSession</code> was created with the video codec operation <code>VK_VIDEO_CODEC_OPERATION_ENCODE_H264_BIT_KHR</code>, then <code>videoSessionParameters</code> <strong class=\"purple\">must</strong> not be <code>VK_NULL_HANDLE</code>",
           "page": "vkspec"
@@ -92599,7 +92634,7 @@
         },
         {
           "vuid": "VUID-VkVideoReferenceSlotInfoKHR-pNext-pNext",
-          "text": "Each <code>pNext</code> member of any structure (including this one) in the <code>pNext</code> chain <strong class=\"purple\">must</strong> be either <code>NULL</code> or a pointer to a valid instance of <a href=\"#VkVideoDecodeH264DpbSlotInfoKHR\">VkVideoDecodeH264DpbSlotInfoKHR</a>, <a href=\"#VkVideoDecodeH265DpbSlotInfoKHR\">VkVideoDecodeH265DpbSlotInfoKHR</a>, <a href=\"#VkVideoEncodeH264DpbSlotInfoKHR\">VkVideoEncodeH264DpbSlotInfoKHR</a>, or <a href=\"#VkVideoEncodeH265DpbSlotInfoKHR\">VkVideoEncodeH265DpbSlotInfoKHR</a>",
+          "text": "Each <code>pNext</code> member of any structure (including this one) in the <code>pNext</code> chain <strong class=\"purple\">must</strong> be either <code>NULL</code> or a pointer to a valid instance of <a href=\"#VkVideoDecodeAV1DpbSlotInfoKHR\">VkVideoDecodeAV1DpbSlotInfoKHR</a>, <a href=\"#VkVideoDecodeH264DpbSlotInfoKHR\">VkVideoDecodeH264DpbSlotInfoKHR</a>, <a href=\"#VkVideoDecodeH265DpbSlotInfoKHR\">VkVideoDecodeH265DpbSlotInfoKHR</a>, <a href=\"#VkVideoEncodeH264DpbSlotInfoKHR\">VkVideoEncodeH264DpbSlotInfoKHR</a>, or <a href=\"#VkVideoEncodeH265DpbSlotInfoKHR\">VkVideoEncodeH265DpbSlotInfoKHR</a>",
           "page": "vkspec"
         },
         {
@@ -92872,7 +92907,7 @@
         },
         {
           "vuid": "VUID-vkCmdDecodeVideoKHR-pDecodeInfo-07141",
-          "text": "If <code>pDecodeInfo-&gt;pSetupReferenceSlot</code> is not <code>NULL</code> and <a href=\"#VkVideoDecodeCapabilitiesKHR\">VkVideoDecodeCapabilitiesKHR</a>::<code>flags</code> does not include <code>VK_VIDEO_DECODE_CAPABILITY_DPB_AND_OUTPUT_DISTINCT_BIT_KHR</code>, as returned by <a href=\"#vkGetPhysicalDeviceVideoCapabilitiesKHR\">vkGetPhysicalDeviceVideoCapabilitiesKHR</a> for the video profile the bound video session was created with, then the video picture resources specified by <code>pDecodeInfo-&gt;dstPictureResource</code> and <code>pDecodeInfo-&gt;pSetupReferenceSlot-&gt;pPictureResource</code> <strong class=\"purple\">must</strong> <a href=\"#video-picture-resource-matching\">match</a>",
+          "text": "If <code>pDecodeInfo-&gt;pSetupReferenceSlot</code> is not <code>NULL</code> and none of the following is true:<div class=\"ulist\">\n<ul>\n<li>\n<p><a href=\"#VkVideoDecodeCapabilitiesKHR\">VkVideoDecodeCapabilitiesKHR</a>::<code>flags</code> includes\n<code>VK_VIDEO_DECODE_CAPABILITY_DPB_AND_OUTPUT_DISTINCT_BIT_KHR</code>, as\nreturned by <a href=\"#vkGetPhysicalDeviceVideoCapabilitiesKHR\">vkGetPhysicalDeviceVideoCapabilitiesKHR</a> for the video\nprofile the bound video session was created with</p>\n</li>\n<li>\n<p>the bound video session was created with the video codec operation\n<code>VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR</code> and\n<a href=\"#VkVideoDecodeAV1ProfileInfoKHR\">VkVideoDecodeAV1ProfileInfoKHR</a>::<code>filmGrainSupport</code> set to\n<code>VK_TRUE</code>, and <a href=\"#decode-av1-film-grain\">film grain</a> is enabled for\nthe decoded picture</p>\n</li>\n</ul>\n</div>\n<div class=\"paragraph\">\n<p>then the video picture resources specified by\n    <code>pDecodeInfo-&gt;dstPictureResource</code> and\n    <code>pDecodeInfo-&gt;pSetupReferenceSlot-&gt;pPictureResource</code> <strong class=\"purple\">must</strong>\n    <a href=\"#video-picture-resource-matching\">match</a></p>\n</div>",
           "page": "vkspec"
         },
         {
@@ -93101,6 +93136,56 @@
           "page": "vkspec"
         },
         {
+          "vuid": "VUID-vkCmdDecodeVideoKHR-filmGrainSupport-09248",
+          "text": "If the bound video session was created with the video codec operation <code>VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR</code> and <a href=\"#VkVideoDecodeAV1ProfileInfoKHR\">VkVideoDecodeAV1ProfileInfoKHR</a>::<code>filmGrainSupport</code> set to <code>VK_FALSE</code>, then <a href=\"#decode-av1-film-grain\">film grain</a> <strong class=\"purple\">must</strong> not be enabled for the decoded picture",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-vkCmdDecodeVideoKHR-pDecodeInfo-09249",
+          "text": "If the bound video session was created with the video codec operation <code>VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR</code>, <code>pDecodeInfo-&gt;pSetupReferenceSlot</code> is not <code>NULL</code>, and <a href=\"#decode-av1-film-grain\">film grain</a> is enabled for the decoded picture, then the video picture resources specified by <code>pDecodeInfo-&gt;dstPictureResource</code> and <code>pDecodeInfo-&gt;pSetupReferenceSlot-&gt;pPictureResource</code> <strong class=\"purple\">must</strong> not <a href=\"#video-picture-resource-matching\">match</a>",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-vkCmdDecodeVideoKHR-pNext-09250",
+          "text": "If the bound video session was created with the video codec operation <code>VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR</code>, then the <code>pNext</code> chain of <code>pDecodeInfo</code> <strong class=\"purple\">must</strong> include a <a href=\"#VkVideoDecodeAV1PictureInfoKHR\">VkVideoDecodeAV1PictureInfoKHR</a> structure",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-vkCmdDecodeVideoKHR-frameHeaderOffset-09251",
+          "text": "If the bound video session was created with the video codec operation <code>VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR</code>, then the <code>frameHeaderOffset</code> member of the <a href=\"#VkVideoDecodeAV1PictureInfoKHR\">VkVideoDecodeAV1PictureInfoKHR</a> structure included in the <code>pNext</code> chain of <code>pDecodeInfo</code> <strong class=\"purple\">must</strong> be less than the minimum of <code>pDecodeInfo-&gt;srcBufferRange</code>",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-vkCmdDecodeVideoKHR-pTileOffsets-09253",
+          "text": "If the bound video session was created with the video codec operation <code>VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR</code>, then all elements of the <code>pTileOffsets</code> member of the <a href=\"#VkVideoDecodeAV1PictureInfoKHR\">VkVideoDecodeAV1PictureInfoKHR</a> structure included in the <code>pNext</code> chain of <code>pDecodeInfo</code> <strong class=\"purple\">must</strong> be less than <code>pDecodeInfo-&gt;srcBufferRange</code>",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-vkCmdDecodeVideoKHR-pTileOffsets-09252",
+          "text": "If the bound video session was created with the video codec operation <code>VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR</code>, then for each element <span class=\"eq\">i</span> of the <code>pTileOffsets</code> and <code>pTileSizes</code> members of the <a href=\"#VkVideoDecodeAV1PictureInfoKHR\">VkVideoDecodeAV1PictureInfoKHR</a> structure included in the <code>pNext</code> chain of <code>pDecodeInfo</code> the sum of <code>pTileOffsets</code>[i] and <code>pTileSizes</code>[i] <strong class=\"purple\">must</strong> be less than or equal to <code>pDecodeInfo-&gt;srcBufferRange</code>",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-vkCmdDecodeVideoKHR-pDecodeInfo-09254",
+          "text": "If the bound video session was created with the video codec operation <code>VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR</code> and <code>pDecodeInfo-&gt;pSetupReferenceSlot</code> is not <code>NULL</code>, then the <code>pNext</code> chain of <code>pDecodeInfo-&gt;pSetupReferenceSlot</code> <strong class=\"purple\">must</strong> include a <a href=\"#VkVideoDecodeAV1DpbSlotInfoKHR\">VkVideoDecodeAV1DpbSlotInfoKHR</a> structure",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-vkCmdDecodeVideoKHR-pNext-09255",
+          "text": "If the bound video session was created with the video codec operation <code>VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR</code>, then the <code>pNext</code> chain of each element of <code>pDecodeInfo-&gt;pReferenceSlots</code> <strong class=\"purple\">must</strong> include a <a href=\"#VkVideoDecodeAV1DpbSlotInfoKHR\">VkVideoDecodeAV1DpbSlotInfoKHR</a> structure",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-vkCmdDecodeVideoKHR-referenceNameSlotIndices-09262",
+          "text": "If the bound video session was created with the video codec operation <code>VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR</code>, then each element of the <code>referenceNameSlotIndices</code> array member of the <a href=\"#VkVideoDecodeAV1PictureInfoKHR\">VkVideoDecodeAV1PictureInfoKHR</a> structure included in the <code>pNext</code> chain of <code>pDecodeInfo</code> <strong class=\"purple\">must</strong> either be negative or <strong class=\"purple\">must</strong> equal the <code>slotIndex</code> member of one of the elements of <code>pDecodeInfo-&gt;pReferenceSlots</code>",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-vkCmdDecodeVideoKHR-slotIndex-09263",
+          "text": "If the bound video session was created with the video codec operation <code>VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR</code>, then the <code>slotIndex</code> member of each element of <code>pDecodeInfo-&gt;pReferenceSlots</code> <strong class=\"purple\">must</strong> equal one of the elements of the <code>referenceNameSlotIndices</code> array member of the <a href=\"#VkVideoDecodeAV1PictureInfoKHR\">VkVideoDecodeAV1PictureInfoKHR</a> structure included in the <code>pNext</code> chain of <code>pDecodeInfo</code>",
+          "page": "vkspec"
+        },
+        {
           "vuid": "VUID-vkCmdDecodeVideoKHR-commandBuffer-parameter",
           "text": "<code>commandBuffer</code> <strong class=\"purple\">must</strong> be a valid <a href=\"#VkCommandBuffer\">VkCommandBuffer</a> handle",
           "page": "vkspec"
@@ -93181,7 +93266,7 @@
         },
         {
           "vuid": "VUID-VkVideoDecodeInfoKHR-pNext-pNext",
-          "text": "Each <code>pNext</code> member of any structure (including this one) in the <code>pNext</code> chain <strong class=\"purple\">must</strong> be either <code>NULL</code> or a pointer to a valid instance of <a href=\"#VkVideoDecodeH264PictureInfoKHR\">VkVideoDecodeH264PictureInfoKHR</a>, <a href=\"#VkVideoDecodeH265PictureInfoKHR\">VkVideoDecodeH265PictureInfoKHR</a>, or <a href=\"#VkVideoInlineQueryInfoKHR\">VkVideoInlineQueryInfoKHR</a>",
+          "text": "Each <code>pNext</code> member of any structure (including this one) in the <code>pNext</code> chain <strong class=\"purple\">must</strong> be either <code>NULL</code> or a pointer to a valid instance of <a href=\"#VkVideoDecodeAV1PictureInfoKHR\">VkVideoDecodeAV1PictureInfoKHR</a>, <a href=\"#VkVideoDecodeH264PictureInfoKHR\">VkVideoDecodeH264PictureInfoKHR</a>, <a href=\"#VkVideoDecodeH265PictureInfoKHR\">VkVideoDecodeH265PictureInfoKHR</a>, or <a href=\"#VkVideoInlineQueryInfoKHR\">VkVideoInlineQueryInfoKHR</a>",
           "page": "vkspec"
         },
         {
@@ -93425,6 +93510,81 @@
         {
           "vuid": "VUID-VkVideoDecodeH265DpbSlotInfoKHR-pStdReferenceInfo-parameter",
           "text": "<code>pStdReferenceInfo</code> <strong class=\"purple\">must</strong> be a valid pointer to a valid <code>StdVideoDecodeH265ReferenceInfo</code> value",
+          "page": "vkspec"
+        }
+      ]
+    },
+    "VkVideoDecodeAV1ProfileInfoKHR": {
+      "core": [
+        {
+          "vuid": "VUID-VkVideoDecodeAV1ProfileInfoKHR-sType-sType",
+          "text": "<code>sType</code> <strong class=\"purple\">must</strong> be <code>VK_STRUCTURE_TYPE_VIDEO_DECODE_AV1_PROFILE_INFO_KHR</code>",
+          "page": "vkspec"
+        }
+      ]
+    },
+    "VkVideoDecodeAV1CapabilitiesKHR": {
+      "core": [
+        {
+          "vuid": "VUID-VkVideoDecodeAV1CapabilitiesKHR-sType-sType",
+          "text": "<code>sType</code> <strong class=\"purple\">must</strong> be <code>VK_STRUCTURE_TYPE_VIDEO_DECODE_AV1_CAPABILITIES_KHR</code>",
+          "page": "vkspec"
+        }
+      ]
+    },
+    "VkVideoDecodeAV1SessionParametersCreateInfoKHR": {
+      "core": [
+        {
+          "vuid": "VUID-VkVideoDecodeAV1SessionParametersCreateInfoKHR-sType-sType",
+          "text": "<code>sType</code> <strong class=\"purple\">must</strong> be <code>VK_STRUCTURE_TYPE_VIDEO_DECODE_AV1_SESSION_PARAMETERS_CREATE_INFO_KHR</code>",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-VkVideoDecodeAV1SessionParametersCreateInfoKHR-pStdSequenceHeader-parameter",
+          "text": "<code>pStdSequenceHeader</code> <strong class=\"purple\">must</strong> be a valid pointer to a valid <code>StdVideoAV1SequenceHeader</code> value",
+          "page": "vkspec"
+        }
+      ]
+    },
+    "VkVideoDecodeAV1PictureInfoKHR": {
+      "core": [
+        {
+          "vuid": "VUID-VkVideoDecodeAV1PictureInfoKHR-sType-sType",
+          "text": "<code>sType</code> <strong class=\"purple\">must</strong> be <code>VK_STRUCTURE_TYPE_VIDEO_DECODE_AV1_PICTURE_INFO_KHR</code>",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-VkVideoDecodeAV1PictureInfoKHR-pStdPictureInfo-parameter",
+          "text": "<code>pStdPictureInfo</code> <strong class=\"purple\">must</strong> be a valid pointer to a valid <code>StdVideoDecodeAV1PictureInfo</code> value",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-VkVideoDecodeAV1PictureInfoKHR-pTileOffsets-parameter",
+          "text": "<code>pTileOffsets</code> <strong class=\"purple\">must</strong> be a valid pointer to an array of <code>tileCount</code> <code>uint32_t</code> values",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-VkVideoDecodeAV1PictureInfoKHR-pTileSizes-parameter",
+          "text": "<code>pTileSizes</code> <strong class=\"purple\">must</strong> be a valid pointer to an array of <code>tileCount</code> <code>uint32_t</code> values",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-VkVideoDecodeAV1PictureInfoKHR-tileCount-arraylength",
+          "text": "<code>tileCount</code> <strong class=\"purple\">must</strong> be greater than <code>0</code>",
+          "page": "vkspec"
+        }
+      ]
+    },
+    "VkVideoDecodeAV1DpbSlotInfoKHR": {
+      "core": [
+        {
+          "vuid": "VUID-VkVideoDecodeAV1DpbSlotInfoKHR-sType-sType",
+          "text": "<code>sType</code> <strong class=\"purple\">must</strong> be <code>VK_STRUCTURE_TYPE_VIDEO_DECODE_AV1_DPB_SLOT_INFO_KHR</code>",
+          "page": "vkspec"
+        },
+        {
+          "vuid": "VUID-VkVideoDecodeAV1DpbSlotInfoKHR-pStdReferenceInfo-parameter",
+          "text": "<code>pStdReferenceInfo</code> <strong class=\"purple\">must</strong> be a valid pointer to a valid <code>StdVideoDecodeAV1ReferenceInfo</code> value",
           "page": "vkspec"
         }
       ]
@@ -103107,12 +103267,12 @@
         },
         {
           "vuid": "VUID-RuntimeSpirv-pNext-09226",
-          "text": "If a <code>OpImageBlockMatchWindow*QCOM</code> operation is used, then     <code>target</code> <code>sampled</code> <code>image</code> <strong class=\"purple\">must</strong> have been created using     asampler object that included     <a href=\"#VkSamplerBlockMatchWindowCreateInfoQCOM\">VkSamplerBlockMatchWindowCreateInfoQCOM</a> in the <code>pNext</code> chain. ifdef:VK_KHR_shader_maximal_reconvergence[]",
+          "text": "If a <code>OpImageBlockMatchWindow*QCOM</code> operation is used, then <code>target</code> <code>sampled</code> <code>image</code> <strong class=\"purple\">must</strong> have been created using asampler object that included <a href=\"#VkSamplerBlockMatchWindowCreateInfoQCOM\">VkSamplerBlockMatchWindowCreateInfoQCOM</a> in the <code>pNext</code> chain.",
           "page": "vkspec"
         },
         {
           "vuid": "VUID-RuntimeSpirv-MaximallyReconvergesKHR-09565",
-          "text": "The execution mode <code>MaximallyReconvergesKHR</code> <strong class=\"purple\">must</strong> not be applied to     an entry point unless the entry point does not execute any     <a href=\"#ray-tracing-repack\"><em>invocation repack instructions</em></a>. endif:VK_KHR_shader_maximal_reconvergence[]",
+          "text": "The execution mode <code>MaximallyReconvergesKHR</code> <strong class=\"purple\">must</strong> not be applied to an entry point unless the entry point does not execute any <a href=\"#ray-tracing-repack\"><em>invocation repack instructions</em></a>.",
           "page": "vkspec"
         },
         {
